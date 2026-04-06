@@ -11,7 +11,7 @@ interface HeadingProps {
 
 const headingStyles: Record<HeadingLevel, string> = {
     1: '[font-family:var(--font-heading)] text-5xl leading-none sm:text-6xl lg:text-7xl',
-    2: 'font-[var(--font-body)] text-3xl font-semibold leading-tight sm:text-4xl lg:text-5xl',
+    2: '[font-family:var(--font-heading)] text-3xl leading-tight sm:text-4xl lg:text-5xl',
     3: 'font-[var(--font-body)] text-2xl font-medium leading-tight sm:text-3xl',
 };
 

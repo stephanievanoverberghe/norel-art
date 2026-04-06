@@ -87,7 +87,7 @@ export function Header({ className }: HeaderProps) {
                             </Link>
 
                             <div className="hidden xl:block">
-                                <p className="text-[11px] uppercase tracking-[0.28em] text-white/35">L’art du regard</p>
+                                <p className="text-[11px] uppercase tracking-[0.28em] text-white/50">L’art du regard</p>
                                 <p className="mt-1 text-sm text-white/62">Entrer. Regarder. Ressentir.</p>
                             </div>
                         </div>
