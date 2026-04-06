@@ -10,7 +10,7 @@ interface FooterNavGroupProps {
 export function FooterNavGroup({ title, links }: FooterNavGroupProps) {
     return (
         <div>
-            <p className="mb-5 text-[11px] uppercase tracking-[0.24em] text-white/35">{title}</p>
+            <p className="mb-5 text-[11px] uppercase tracking-[0.24em] text-white/50">{title}</p>
 
             <ul className="space-y-3">
                 {links.map((item) => (

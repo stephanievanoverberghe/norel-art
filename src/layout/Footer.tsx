@@ -24,7 +24,7 @@ export function Footer() {
                         </Link>
 
                         <div className="mt-8 space-y-5">
-                            <p className="text-[11px] uppercase tracking-[0.28em] text-white/35">L’art du regard, le trait de l’âme</p>
+                            <p className="text-[11px] uppercase tracking-[0.28em] text-white/50">L’art du regard, le trait de l’âme</p>
 
                             <Heading level={3} className="max-w-xl text-white">
                                 Des regards à accueillir. Des traces à choisir. Des présences à faire entrer chez soi.
@@ -37,7 +37,7 @@ export function Footer() {
                     </div>
 
                     <div className="rounded-4xl border border-white/10 bg-white/3 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur-sm sm:p-8">
-                        <p className="text-[11px] uppercase tracking-[0.28em] text-white/35">Une envie, une commande, un mur</p>
+                        <p className="text-[11px] uppercase tracking-[0.28em] text-white/50">Une envie, une commande, un mur</p>
 
                         <Heading level={3} className="mt-4 text-white">
                             Entrer en lien avec l&apos;artiste
@@ -71,7 +71,7 @@ export function Footer() {
                     ))}
 
                     <div>
-                        <p className="mb-5 text-[11px] uppercase tracking-[0.24em] text-white/35">Présence</p>
+                        <p className="mb-5 text-[11px] uppercase tracking-[0.24em] text-white/50">Présence</p>
 
                         <div className="space-y-3">
                             <Text variant="small" className="text-white/68">
@@ -87,7 +87,7 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <p className="mb-5 text-[11px] uppercase tracking-[0.24em] text-white/35">Suivre le regard</p>
+                        <p className="mb-5 text-[11px] uppercase tracking-[0.24em] text-white/50">Suivre le regard</p>
 
                         <SocialLinks links={socialLinks} />
 
@@ -97,7 +97,7 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/40 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
                     <p>© {new Date().getFullYear()} Norel Art. Tous droits réservés.</p>
 
                     <div className="flex flex-wrap items-center gap-4">
