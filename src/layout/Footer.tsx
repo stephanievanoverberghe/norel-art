@@ -47,7 +47,7 @@ export function Footer() {
                             Tu veux accueillir une œuvre, confier un visage, parler d’une fresque ou poser une question&nbsp;? Le plus simple est d’ouvrir l’échange.
                         </Text>
 
-                        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                        <div className="mt-8 flex flex-col md:flex-row lg:flex-col gap-3 xl:flex-row">
                             <Link
                                 href="/contact"
                                 className="inline-flex min-h-12 items-center justify-center rounded-full bg-(--accent) px-6 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"

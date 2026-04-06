@@ -1,0 +1,21 @@
+export type ArtworkType = 'original' | 'print';
+export type ArtworkAvailability = 'available' | 'reserved' | 'sold';
+
+export interface Artwork {
+    id: string;
+    slug: string;
+    title: string;
+    excerpt: string;
+    story: string;
+    image: string;
+    category: string;
+    collection: string;
+    type: ArtworkType;
+    technique: string;
+    support: string;
+    dimensions: string;
+    priceEur: number;
+    availability: ArtworkAvailability;
+    highlighted?: boolean;
+    tags: string[];
+}

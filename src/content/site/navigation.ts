@@ -12,7 +12,7 @@ export const mainNavigationLinks: NavigationItem[] = [
     { label: 'Œuvres', href: '/oeuvres' },
     { label: 'À propos', href: '/a-propos' },
     { label: 'Commandes', href: '/commandes' },
-    { label: 'Fresques', href: '/fresques-murales' },
+    { label: 'Fresques', href: '/fresques' },
 ];
 
 export const footerNavigationGroups: FooterNavGroup[] = [
@@ -23,10 +23,10 @@ export const footerNavigationGroups: FooterNavGroup[] = [
     {
         title: 'Collection',
         links: [
-            { label: 'Originaux', href: '/oeuvres?type=originaux' },
-            { label: 'Impressions', href: '/oeuvres?type=impressions' },
+            { label: 'Originaux', href: '/oeuvres?type=original' },
+            { label: 'Impressions', href: '/oeuvres?type=print' },
             { label: 'Commandes sur mesure', href: '/commandes' },
-            { label: 'Fresques murales', href: '/fresques-murales' },
+            { label: 'Fresques murales', href: '/fresques' },
         ],
     },
 ];
