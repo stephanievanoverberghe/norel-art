@@ -7,13 +7,13 @@ import { Text } from '@/ui/Text';
 export default function HomePage() {
     return (
         <main>
-            <Section>
+            <Section className="min-h-screen flex items-center">
                 <Container className="space-y-6">
                     <Heading level={1}>Norel Art</Heading>
 
                     <Text>L’art du regard, le trait de l’âme.</Text>
 
-                    <div className="flex gap-4">
+                    <div className="flex flex-wrap gap-4">
                         <Button>Je la choisis</Button>
                         <Button variant="secondary">Voir les œuvres</Button>
                         <Button variant="ghost">Explorer</Button>
