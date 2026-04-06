@@ -9,6 +9,10 @@
   --text-primary: #f7f7f7;
   --text-muted: #a1a1aa;
 
+  /* 🖋️ Typography */
+  --font-heading: "Catchy Mager", cursive;
+  --font-body: "Montserrat", sans-serif;
+
   /* 📐 Radius */
   --radius-sm: 6px;
   --radius-md: 10px;
