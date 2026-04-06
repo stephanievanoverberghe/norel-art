@@ -1,4 +1,5 @@
 import { getHomeRevealArtworks } from '@/application/artworks';
+import { CategoriesSection } from '@/components/marketing/home/CategoriesSection';
 import { FeaturedReveal } from '@/components/marketing/home/FeaturedReveal';
 import { Hero } from '@/components/marketing/home/Hero';
 import { Container } from '@/ui/Container';
@@ -10,6 +11,7 @@ export default function HomePage() {
         <>
             <Hero />
             <FeaturedReveal artworks={revealArtworks} />
+            <CategoriesSection />
             <section className="py-16">
                 <Container className="grid gap-5 rounded-3xl border border-white/10 bg-white/3 p-8 md:grid-cols-3">
                     <div>
