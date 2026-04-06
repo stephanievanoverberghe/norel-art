@@ -6,9 +6,11 @@ import { Button } from '@/ui/Button';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
+import { cn } from '@/lib/utils/cn';
 
 interface FeaturedRevealProps {
     artworks: Artwork[];
+    className?: string;
 }
 
 const availabilityLabel: Record<Artwork['availability'], string> = {
@@ -17,67 +19,152 @@ const availabilityLabel: Record<Artwork['availability'], string> = {
     sold: 'Vendue',
 };
 
-export function FeaturedReveal({ artworks }: FeaturedRevealProps) {
+export function FeaturedReveal({ artworks, className }: FeaturedRevealProps) {
+    const [mainArtwork, leftArtwork, rightArtwork] = artworks;
+
+    if (!mainArtwork) return null;
+
     return (
-        <section id="selection-oeuvres" aria-label="Première révélation des œuvres" className="relative -mt-20 pb-20">
-            <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-40 bg-[linear-gradient(180deg,rgba(6,12,21,0)_0%,rgba(6,12,21,0.9)_72%,#060C15_100%)]" />
+        <section
+            id="selection-oeuvres"
+            aria-label="Premières œuvres révélées"
+            className={cn('relative overflow-hidden bg-[var(--bg-primary)] pb-24 pt-16 sm:pb-28 sm:pt-20 lg:pb-32 lg:pt-24', className)}
+        >
+            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-[linear-gradient(180deg,#060C15_0%,rgba(6,12,21,0)_100%)]" />
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.18)_50%,rgba(255,255,255,0)_100%)]"
+            />
+            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-8 h-36 w-[34rem] -translate-x-1/2 bg-[var(--accent)]/10 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute left-[-6rem] top-40 h-72 w-72 rounded-full bg-white/[0.025] blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute bottom-0 right-[-4rem] h-72 w-72 rounded-full bg-[var(--surface)]/18 blur-3xl" />
 
             <Container className="relative z-10">
-                <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(155deg,rgba(14,24,35,0.88)_2%,rgba(9,15,25,0.95)_100%)] p-6 shadow-[0_26px_56px_rgba(0,0,0,0.4)] backdrop-blur-sm sm:p-9 lg:p-12">
-                    <div className="grid gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start">
-                        <div>
-                            <p className="text-[11px] uppercase tracking-[0.3em] text-white/52">Première révélation</p>
-                            <Heading level={2} className="mt-4 text-white">
-                                Le rideau s&apos;ouvre sur les premières présences.
-                            </Heading>
-                            <Text variant="muted" className="mt-5 max-w-md text-white/72 sm:text-base">
-                                Originaux puissants et impressions signées, choisis pour commencer l&apos;exploration sans rompre la tension du seuil.
-                            </Text>
+                <div className="mx-auto max-w-2xl text-center">
+                    <p className="text-[11px] uppercase tracking-[0.3em] text-white/40">Première apparition</p>
 
-                            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                                <Link href="/oeuvres" className="inline-flex">
-                                    <Button className="min-h-12 w-full rounded-full px-7 sm:w-auto">Explorer toutes les œuvres</Button>
-                                </Link>
-                                <Link
-                                    href="/commandes"
-                                    className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
-                                >
-                                    Commander une pièce
-                                </Link>
+                    <Heading level={2} className="mt-4 text-white">
+                        Le regard vient avant le choix.
+                    </Heading>
+
+                    <Text variant="muted" className="mx-auto mt-5 max-w-xl text-white/68">
+                        Quelques présences pour entrer plus loin.
+                    </Text>
+                </div>
+
+                <div className="mt-14 grid gap-6 lg:grid-cols-12 lg:gap-8">
+                    {leftArtwork && (
+                        <article className="group relative lg:col-span-3 lg:pt-16">
+                            <Link href={`/oeuvres/${leftArtwork.slug}`} className="block overflow-hidden rounded-[1.75rem] border border-white/8 bg-white/[0.03]">
+                                <div className="relative aspect-[4/5] overflow-hidden">
+                                    <Image
+                                        src={leftArtwork.image}
+                                        alt={leftArtwork.title}
+                                        fill
+                                        sizes="(max-width: 1024px) 100vw, 24vw"
+                                        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                                    />
+                                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,10,18,0.02)_0%,rgba(4,10,18,0.08)_28%,rgba(4,10,18,0.88)_100%)]" />
+                                </div>
+
+                                <div className="absolute inset-x-0 bottom-0 flex min-h-[42%] flex-col justify-end p-5">
+                                    <p className="text-[10px] uppercase tracking-[0.22em] text-white/52">{leftArtwork.collection}</p>
+
+                                    <h3 className="mt-3 text-xl text-white">{leftArtwork.title}</h3>
+
+                                    <div className="mt-4 flex items-center justify-between text-xs text-white/72">
+                                        <span>{leftArtwork.priceEur.toLocaleString('fr-FR')} €</span>
+                                        <span>{availabilityLabel[leftArtwork.availability]}</span>
+                                    </div>
+                                </div>
+                            </Link>
+                        </article>
+                    )}
+
+                    <article className="group relative lg:col-span-6">
+                        <Link href={`/oeuvres/${mainArtwork.slug}`} className="block overflow-hidden rounded-[2.25rem] border border-white/10 bg-white/[0.03]">
+                            <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[16/14] lg:aspect-[4/5]">
+                                <Image
+                                    src={mainArtwork.image}
+                                    alt={mainArtwork.title}
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                                />
+                                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,10,18,0.02)_0%,rgba(4,10,18,0.1)_26%,rgba(4,10,18,0.84)_100%)]" />
                             </div>
-                        </div>
 
-                        <div className="grid gap-4 sm:grid-cols-2">
-                            {artworks.map((artwork, index) => (
-                                <article
-                                    key={artwork.id}
-                                    className={[
-                                        'group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-white/25',
-                                        index === 0 ? 'sm:col-span-2' : '',
-                                    ].join(' ')}
-                                >
-                                    <div className={index === 0 ? 'relative h-64 sm:h-72' : 'relative h-56'}>
-                                        <Image
-                                            src={artwork.image}
-                                            alt={artwork.title}
-                                            fill
-                                            className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                                            sizes="(max-width: 640px) 100vw, 50vw"
-                                        />
-                                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,10,18,0.14)_0%,rgba(4,10,18,0.86)_92%)]" />
+                            <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8 lg:p-10">
+                                <div className="flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.24em] text-white/52">
+                                    <span>{mainArtwork.collection}</span>
+                                    <span className="h-1 w-1 rounded-full bg-white/25" />
+                                    <span>{mainArtwork.technique}</span>
+                                </div>
+
+                                <Heading level={3} className="mt-4 max-w-2xl text-white sm:text-4xl">
+                                    {mainArtwork.title}
+                                </Heading>
+
+                                <Text variant="muted" className="mt-4 max-w-2xl text-white/72">
+                                    {mainArtwork.story}
+                                </Text>
+
+                                <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/80">
+                                    <span>{mainArtwork.priceEur.toLocaleString('fr-FR')} €</span>
+                                    <span className="text-white/35">—</span>
+                                    <span>{availabilityLabel[mainArtwork.availability]}</span>
+                                    <span className="text-white/35">—</span>
+                                    <span className="text-white/68">Voir cette présence</span>
+                                </div>
+                            </div>
+                        </Link>
+                    </article>
+
+                    {rightArtwork && (
+                        <article className="group relative lg:col-span-3 lg:pt-28">
+                            <Link href={`/oeuvres/${rightArtwork.slug}`} className="block overflow-hidden rounded-[1.75rem] border border-white/8 bg-white/[0.03]">
+                                <div className="relative aspect-[4/5] overflow-hidden">
+                                    <Image
+                                        src={rightArtwork.image}
+                                        alt={rightArtwork.title}
+                                        fill
+                                        sizes="(max-width: 1024px) 100vw, 24vw"
+                                        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                                    />
+                                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,10,18,0.02)_0%,rgba(4,10,18,0.1)_30%,rgba(4,10,18,0.9)_100%)]" />
+                                </div>
+
+                                <div className="absolute inset-x-0 bottom-0 flex min-h-[42%] flex-col justify-end p-5">
+                                    <p className="text-[10px] uppercase tracking-[0.22em] text-white/52">{rightArtwork.collection}</p>
+
+                                    <h3 className="mt-3 text-xl text-white">{rightArtwork.title}</h3>
+
+                                    <div className="mt-4 flex items-center justify-between text-xs text-white/72">
+                                        <span>{rightArtwork.priceEur.toLocaleString('fr-FR')} €</span>
+                                        <span>{availabilityLabel[rightArtwork.availability]}</span>
                                     </div>
-                                    <div className="absolute inset-x-0 bottom-0 p-5">
-                                        <p className="text-[10px] uppercase tracking-[0.24em] text-white/65">{artwork.collection}</p>
-                                        <h3 className="mt-2 text-xl text-white">{artwork.title}</h3>
-                                        <div className="mt-3 flex items-center justify-between text-xs text-white/70">
-                                            <span>{artwork.priceEur.toLocaleString('fr-FR')} €</span>
-                                            <span>{availabilityLabel[artwork.availability]}</span>
-                                        </div>
-                                    </div>
-                                    <Link href={`/oeuvres/${artwork.slug}`} className="absolute inset-0" aria-label={`Voir le détail de ${artwork.title}`} />
-                                </article>
-                            ))}
-                        </div>
+                                </div>
+                            </Link>
+                        </article>
+                    )}
+                </div>
+
+                <div className="mt-14 flex flex-col items-center gap-4 text-center">
+                    <Text variant="small" className="max-w-xl text-white/54">
+                        Originaux, impressions signées, fragments à accueillir ou à prolonger autrement.
+                    </Text>
+
+                    <div className="flex flex-col gap-3 sm:flex-row">
+                        <Link href="/oeuvres" className="inline-flex">
+                            <Button className="min-h-12 rounded-full px-7">Explorer les œuvres</Button>
+                        </Link>
+
+                        <Link
+                            href="/commandes"
+                            className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] px-7 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/[0.1]"
+                        >
+                            Me confier un visage
+                        </Link>
                     </div>
                 </div>
             </Container>

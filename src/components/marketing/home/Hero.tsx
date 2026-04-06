@@ -31,13 +31,14 @@ export function Hero({ className }: HeroProps) {
                 <Image src="/images/hero/norel-hero.jpg" alt="Regard intense dans une atmosphère sombre" fill priority className="object-cover object-center" sizes="100vw" />
             </div>
 
-            <div className="absolute inset-0 bg-[linear-gradient(106deg,rgba(3,9,17,0.94)_4%,rgba(3,9,17,0.68)_40%,rgba(3,9,17,0.84)_100%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_16%,rgba(132,16,54,0.32),transparent_42%)]" />
-            <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,rgba(4,10,18,0.7)_0%,rgba(4,10,18,0)_100%)]" />
-            <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(180deg,rgba(4,10,18,0)_0%,rgba(4,10,18,0.78)_56%,#060C15_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(106deg,rgba(3,9,17,0.72)_4%,rgba(3,9,17,0.42)_40%,rgba(3,9,17,0.62)_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_16%,rgba(132,16,54,0.22),transparent_48%)]" />
+            <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,rgba(4,10,18,0.45)_0%,rgba(4,10,18,0)_100%)]" />
+            <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(180deg,rgba(4,10,18,0)_0%,rgba(4,10,18,0.55)_60%,#060C15_100%)]" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[radial-gradient(70%_120%_at_50%_100%,rgba(130,15,56,0.16),transparent_70%)]" />
 
-            <Container className="relative flex min-h-screen items-end pb-28 pt-36 sm:pt-44 lg:pb-32 lg:pt-52">
-                <div className="max-w-2xl">
+            <Container className="relative z-10 flex min-h-screen items-end pb-28 pt-32 sm:pt-40 lg:pb-32 lg:pt-48">
+                <div className="max-w-2xl pb-4 sm:pb-6">
                     <p className="mb-6 text-[11px] uppercase tracking-[0.32em] text-white/58 sm:mb-8">Norel Art · Peinture et illustration</p>
 
                     <Heading level={1} className="text-(--text-primary) drop-shadow-[0_12px_34px_rgba(0,0,0,0.44)]">
@@ -67,15 +68,14 @@ export function Hero({ className }: HeroProps) {
                 </div>
             </Container>
 
-            <div className="pointer-events-none absolute inset-x-0 bottom-14 z-10 flex justify-center">
-                <div className="flex flex-col items-center gap-2 text-white/45">
+            <div className="pointer-events-none absolute inset-x-0 bottom-4 z-20 flex justify-center">
+                <div className="flex flex-col items-center gap-2 text-white/50">
                     <span className="text-[10px] uppercase tracking-[0.28em]">Descendre</span>
                     <span className="relative block h-12 w-px overflow-hidden bg-white/15">
                         <span className="absolute left-0 top-0 h-5 w-px animate-[heroScroll_2.2s_ease-in-out_infinite] bg-white/75" />
                     </span>
                 </div>
             </div>
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[radial-gradient(70%_100%_at_50%_100%,rgba(130,15,56,0.24),transparent_70%)]" />
         </section>
     );
 }

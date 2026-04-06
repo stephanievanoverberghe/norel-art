@@ -1,7 +1,6 @@
 import { getHomeRevealArtworks } from '@/application/artworks';
 import { FeaturedReveal } from '@/components/marketing/home/FeaturedReveal';
 import { Hero } from '@/components/marketing/home/Hero';
-import { PageIntro } from '@/components/marketing/PageIntro';
 import { Container } from '@/ui/Container';
 
 export default function HomePage() {
