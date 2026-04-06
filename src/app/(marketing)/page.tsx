@@ -1,21 +1,16 @@
-import { getFeaturedArtworks } from '@/application/artworks';
-import { ArtworkGrid } from '@/components/marketing/ArtworkGrid';
+import { getHomeRevealArtworks } from '@/application/artworks';
+import { FeaturedReveal } from '@/components/marketing/home/FeaturedReveal';
 import { Hero } from '@/components/marketing/home/Hero';
 import { PageIntro } from '@/components/marketing/PageIntro';
 import { Container } from '@/ui/Container';
 
 export default function HomePage() {
-    const featured = getFeaturedArtworks();
+    const revealArtworks = getHomeRevealArtworks();
 
     return (
         <>
             <Hero />
-            <PageIntro
-                eyebrow="Exploration"
-                title="Une sélection d’œuvres pour entrer dans l’univers Norel Art"
-                description="Des originaux puissants et des impressions signées pour créer un dialogue visuel dans vos espaces de vie."
-            />
-            <ArtworkGrid artworks={featured} />
+            <FeaturedReveal artworks={revealArtworks} />
             <section className="py-16">
                 <Container className="grid gap-5 rounded-3xl border border-white/10 bg-white/3 p-8 md:grid-cols-3">
                     <div>

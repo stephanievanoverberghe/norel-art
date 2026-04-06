@@ -5,6 +5,18 @@ export function getFeaturedArtworks(): Artwork[] {
     return artworks.filter((artwork) => artwork.highlighted);
 }
 
+export function getHomeRevealArtworks(limit = 4): Artwork[] {
+    const featured = getFeaturedArtworks();
+
+    if (featured.length >= limit) {
+        return featured.slice(0, limit);
+    }
+
+    const remaining = artworks.filter((artwork) => !featured.some((item) => item.id === artwork.id));
+
+    return [...featured, ...remaining].slice(0, limit);
+}
+
 export function getArtworkBySlug(slug: string): Artwork | undefined {
     return artworks.find((artwork) => artwork.slug === slug);
 }
