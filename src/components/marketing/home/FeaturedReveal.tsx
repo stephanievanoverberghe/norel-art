@@ -118,7 +118,10 @@ export function FeaturedReveal({ artworks, className }: FeaturedRevealProps) {
                             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1 lg:pt-6">
                                 {firstSatellite && (
                                     <article className="group relative lg:-ml-2">
-                                        <Link href={`/oeuvres/${firstSatellite.slug}`} className="relative block overflow-hidden rounded-[1.4rem] border border-white/8 bg-white/3">
+                                        <Link
+                                            href={`/oeuvres/${firstSatellite.slug}`}
+                                            className="snake-border relative block overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/3"
+                                        >
                                             <div className="relative aspect-[4/4.7] overflow-hidden">
                                                 <Image
                                                     src={firstSatellite.image}
@@ -147,7 +150,7 @@ export function FeaturedReveal({ artworks, className }: FeaturedRevealProps) {
                                     <article className="group relative lg:ml-6">
                                         <Link
                                             href={`/oeuvres/${secondSatellite.slug}`}
-                                            className="relative block overflow-hidden rounded-[1.4rem] border border-white/8 bg-white/2"
+                                            className="snake-border relative block overflow-hidden rounded-[1.4rem] border border-white/8 bg-white/3"
                                         >
                                             <div className="relative aspect-4/3.5 overflow-hidden">
                                                 <Image
