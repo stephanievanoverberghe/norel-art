@@ -56,20 +56,16 @@ export function Header({ className }: HeaderProps) {
             <header className={cn('fixed inset-x-0 top-0 z-50 transition-all duration-500', className)}>
                 <div
                     aria-hidden="true"
-                    className={cn('pointer-events-none absolute inset-x-0 top-0 h-32 transition-opacity duration-500', isScrolled ? 'opacity-100' : 'opacity-70')}
+                    className={cn('pointer-events-none absolute inset-x-0 top-0 h-28 transition-opacity duration-500', isScrolled ? 'opacity-100' : 'opacity-80')}
                 >
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(13,27,42,0.88)_0%,rgba(13,27,42,0.55)_55%,rgba(13,27,42,0)_100%)]" />
-                    <div className="absolute left-1/2 top-0 h-24 w-xl -translate-x-1/2 rounded-full bg-(--accent)/10 blur-3xl" />
-                    <div className="absolute right-0 top-0 h-20 w-40 bg-(--surface)/15 blur-2xl" />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,16,26,0.82)_0%,rgba(8,16,26,0.5)_48%,rgba(8,16,26,0)_100%)]" />
                 </div>
 
                 <Container className="relative">
                     <div
                         className={cn(
                             'mt-4 flex min-h-20 items-center justify-between gap-4 rounded-full border px-4 transition-all duration-500 sm:px-5 lg:px-6',
-                            isScrolled
-                                ? 'border-white/10 bg-[rgba(13,27,42,0.72)] shadow-[0_10px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl'
-                                : 'border-white/8 bg-[rgba(13,27,42,0.28)] backdrop-blur-md',
+                            isScrolled ? 'border-white/12 bg-[rgba(8,16,26,0.66)] shadow-[0_12px_56px_rgba(0,0,0,0.32)] backdrop-blur-xl' : 'border-white/10 bg-transparent',
                         )}
                     >
                         <div className="flex min-w-0 items-center gap-4">

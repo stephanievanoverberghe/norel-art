@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+
 import { Footer } from '@/layout/Footer';
 import { Header } from '@/layout/Header';
 
@@ -16,7 +17,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
     return (
         <div className="min-h-screen bg-(--bg-primary) text-(--text-primary)">
             <Header />
-            <main className="pt-28 sm:pt-32">{children}</main>
+            <main>{children}</main>
             <Footer />
         </div>
     );

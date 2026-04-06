@@ -1,6 +1,6 @@
 import { getFeaturedArtworks } from '@/application/artworks';
 import { ArtworkGrid } from '@/components/marketing/ArtworkGrid';
-import { Hero } from '@/components/marketing/Hero';
+import { Hero } from '@/components/marketing/home/Hero';
 import { PageIntro } from '@/components/marketing/PageIntro';
 import { Container } from '@/ui/Container';
 
