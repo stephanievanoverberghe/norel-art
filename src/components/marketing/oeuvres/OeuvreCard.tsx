@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import type { Artwork } from '@/domain/artworks/types';
+import { formatArtworkPrice, getAvailabilityLabel } from '@/domain/artworks/presentation';
 import { cn } from '@/lib/utils/cn';
 import { SnakeBorder } from '@/components/shared/SnakeBorder';
 
@@ -9,21 +10,11 @@ interface OeuvreCardProps {
     artwork: Artwork;
 }
 
-const availabilityLabel: Record<Artwork['availability'], string> = {
-    available: 'Disponible',
-    reserved: 'Réservée',
-    sold: 'Vendue',
-};
-
 const availabilityTone: Record<Artwork['availability'], string> = {
     available: 'bg-white/20 text-white',
     reserved: 'bg-[color:var(--accent)]/40 text-white',
     sold: 'bg-black/40 text-white/70',
 };
-
-function formatPrice(price: number) {
-    return `${price.toLocaleString('fr-FR')} €`;
-}
 
 export function OeuvreCard({ artwork }: OeuvreCardProps) {
     return (
@@ -41,7 +32,7 @@ export function OeuvreCard({ artwork }: OeuvreCardProps) {
                     {artwork.availability === 'sold' && <div className="absolute inset-0 bg-black/70 grayscale-[0.5]" />}
                     <div className="absolute right-3 top-3 z-20">
                         <span className={cn('rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.08em] backdrop-blur-md', availabilityTone[artwork.availability])}>
-                            {availabilityLabel[artwork.availability]}
+                            {getAvailabilityLabel(artwork.availability)}
                         </span>
                     </div>
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_55%,rgba(0,0,0,0.8)_100%)]" />
@@ -50,7 +41,7 @@ export function OeuvreCard({ artwork }: OeuvreCardProps) {
                 <div className="absolute inset-x-0 bottom-0 p-4 sm:hidden">
                     <h3 className="text-base text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">{artwork.title}</h3>
 
-                    <div className="mt-1 text-sm text-white/90">{formatPrice(artwork.priceEur)}</div>
+                    <div className="mt-1 text-sm text-white/90">{formatArtworkPrice(artwork.priceEur)}</div>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 hidden p-5 sm:block">
                     <h3 className="text-xl text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.5)] transition-opacity duration-300 group-hover:opacity-0">{artwork.title}</h3>
@@ -63,7 +54,7 @@ export function OeuvreCard({ artwork }: OeuvreCardProps) {
                         <h3 className="mt-3 text-xl text-white">{artwork.title}</h3>
                         <p className="mt-2 line-clamp-2 text-sm text-white/80">{artwork.excerpt}</p>
                         <div className="mt-4 flex items-center gap-2">
-                            <span className="text-sm text-white">{formatPrice(artwork.priceEur)}</span>
+                            <span className="text-sm text-white">{formatArtworkPrice(artwork.priceEur)}</span>
                         </div>
                         <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/80">
                             <span>Voir l’œuvre</span>

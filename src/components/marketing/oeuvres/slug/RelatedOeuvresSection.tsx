@@ -21,7 +21,9 @@ function getRelatedArtworks(currentArtwork: Artwork, artworks: Artwork[]) {
 
     const fallback = artworks.filter((item) => item.id !== currentArtwork.id);
 
-    return [...sameCategory, ...sameCollection, ...fallback].slice(0, 4);
+    const uniqueArtworks = [...sameCategory, ...sameCollection, ...fallback].filter((item, index, array) => array.findIndex((artwork) => artwork.id === item.id) === index);
+
+    return uniqueArtworks.slice(0, 4);
 }
 
 export function RelatedOeuvresSection({ artwork, artworks, className }: RelatedOeuvresSectionProps) {
@@ -30,7 +32,7 @@ export function RelatedOeuvresSection({ artwork, artworks, className }: RelatedO
     if (relatedArtworks.length === 0) return null;
 
     return (
-        <section aria-label="Œuvres liées" className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
+        <section aria-label="Œuvres liées" className={cn('relative overflow-hidden bg(--bg-primary)] py-16 sm:py-20 lg:py-24', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-10 h-24 w-[20rem] -translate-x-1/2 bg-(--accent)/6 blur-3xl" />
 
             <Container className="relative z-10">
@@ -53,7 +55,7 @@ export function RelatedOeuvresSection({ artwork, artworks, className }: RelatedO
                     </Link>
                 </div>
 
-                <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 xl:grid-cols-4">
+                <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 xl:grid-cols-4">
                     {relatedArtworks.map((relatedArtwork) => (
                         <OeuvreCard key={relatedArtwork.id} artwork={relatedArtwork} />
                     ))}

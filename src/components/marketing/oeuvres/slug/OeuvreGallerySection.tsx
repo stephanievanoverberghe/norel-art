@@ -43,7 +43,7 @@ function OeuvreLightbox({ images, title, activeIndex, isOpen, onClose, onPrev, o
 
             <div className="flex min-h-screen items-center justify-center px-4 py-16 sm:px-6">
                 <div className="relative w-full max-w-6xl">
-                    <div className="relative aspect-4/5 overflow-hidden rounded-3xlborder border-white/10 bg-white/3 sm:aspect-16/10">
+                    <div className="relative aspect-4/5 overflow-hidden rounded-3xl border border-white/10 bg-white/3 sm:aspect-16/10">
                         <Image src={images[activeIndex]} alt={`${title} — vue ${activeIndex + 1}`} fill sizes="100vw" className="object-contain" />
                     </div>
 

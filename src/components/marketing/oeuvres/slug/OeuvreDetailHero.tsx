@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import type { Artwork } from '@/domain/artworks/types';
+import { formatArtworkPrice, getAvailabilityLabel, getArtworkTypeLabel } from '@/domain/artworks/presentation';
 import { cn } from '@/lib/utils/cn';
 import { Button } from '@/ui/Button';
 import { Container } from '@/ui/Container';
@@ -13,21 +14,11 @@ interface OeuvreDetailHeroProps {
     className?: string;
 }
 
-const availabilityLabel: Record<Artwork['availability'], string> = {
-    available: 'Disponible',
-    reserved: 'Réservée',
-    sold: 'Vendue',
-};
-
 const availabilityTone: Record<Artwork['availability'], string> = {
     available: 'bg-white/15 text-white',
     reserved: 'bg-[color:var(--accent)]/35 text-white',
     sold: 'bg-black/35 text-white/70',
 };
-
-function formatPrice(price: number) {
-    return `${price.toLocaleString('fr-FR')} €`;
-}
 
 export function OeuvreDetailHero({ artwork, className }: OeuvreDetailHeroProps) {
     const isAvailable = artwork.availability === 'available';
@@ -57,7 +48,7 @@ export function OeuvreDetailHero({ artwork, className }: OeuvreDetailHeroProps) 
                                                 availabilityTone[artwork.availability],
                                             )}
                                         >
-                                            {availabilityLabel[artwork.availability]}
+                                            {getAvailabilityLabel(artwork.availability)}
                                         </span>
                                     </div>
 
@@ -92,7 +83,7 @@ export function OeuvreDetailHero({ artwork, className }: OeuvreDetailHeroProps) 
                         </Text>
 
                         <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-                            <span className="text-lg text-white">{formatPrice(artwork.priceEur)}</span>
+                            <span className="text-lg text-white">{formatArtworkPrice(artwork.priceEur)}</span>
                             <span className="text-sm text-white/55">{artwork.dimensions}</span>
                         </div>
 
@@ -131,7 +122,7 @@ export function OeuvreDetailHero({ artwork, className }: OeuvreDetailHeroProps) 
 
                             <div>
                                 <p className="text-[10px] uppercase tracking-[0.2em] text-white/42">Type</p>
-                                <p className="mt-2 text-sm text-white/84">{artwork.type === 'original' ? 'Original' : 'Impression'}</p>
+                                <p className="mt-2 text-sm text-white/84">{getArtworkTypeLabel(artwork.type)}</p>
                             </div>
 
                             <div>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import type { Artwork } from '@/domain/artworks/types';
+import { getAvailabilityLabel } from '@/domain/artworks/presentation';
 import { cn } from '@/lib/utils/cn';
 import { Button } from '@/ui/Button';
 import { Container } from '@/ui/Container';
@@ -11,12 +12,6 @@ interface OeuvreFinalCtaSectionProps {
     artwork: Artwork;
     className?: string;
 }
-
-const availabilityLabel: Record<Artwork['availability'], string> = {
-    available: 'Disponible',
-    reserved: 'Réservée',
-    sold: 'Vendue',
-};
 
 export function OeuvreFinalCtaSection({ artwork, className }: OeuvreFinalCtaSectionProps) {
     const isAvailable = artwork.availability === 'available';
@@ -34,7 +29,7 @@ export function OeuvreFinalCtaSection({ artwork, className }: OeuvreFinalCtaSect
                     </Heading>
 
                     <Text variant="muted" className="mx-auto mt-5 max-w-2xl text-white/70">
-                        <span className="text-white/86">{artwork.title}</span> est actuellement {availabilityLabel[artwork.availability].toLowerCase()}.
+                        <span className="text-white/86">{artwork.title}</span> est actuellement {getAvailabilityLabel(artwork.availability).toLowerCase()}.
                         <br />
                         Tu peux écrire à propos de cette œuvre, ou me confier un autre visage.
                     </Text>
