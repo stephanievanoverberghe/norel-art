@@ -1,10 +1,8 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useMemo, useState } from 'react';
 
-import type { Artwork } from '@/domain/artworks/types';
-import type { ArtworkType } from '@/domain/artworks/types';
+import type { Artwork, ArtworkType } from '@/domain/artworks/types';
 import type { ArtworkCategory } from '@/domain/artworks/categories';
 import { Container } from '@/ui/Container';
 
@@ -15,46 +13,29 @@ interface OeuvresLayoutProps {
     artworks: Artwork[];
     categories: readonly ArtworkCategory[];
     collections: readonly string[];
+    initialCategory?: string;
+    initialCollection?: string;
+    initialType?: string;
 }
 
 type CategoryFilterValue = ArtworkCategory | 'all';
 type CollectionFilterValue = string | 'all';
 type TypeFilterValue = ArtworkType | 'all';
 
-type InitialFilters = {
-    category: CategoryFilterValue;
-    collection: CollectionFilterValue;
-    type: TypeFilterValue;
-};
-
-function getInitialFiltersFromSearchParams(searchParams: Pick<URLSearchParams, 'get'>, categories: readonly ArtworkCategory[], collections: readonly string[]): InitialFilters {
-    const queryCategory = searchParams.get('category');
-    const queryCollection = searchParams.get('collection');
-    const queryType = searchParams.get('type');
-
-    const category = queryCategory !== null && categories.includes(queryCategory as ArtworkCategory) ? (queryCategory as ArtworkCategory) : 'all';
-
-    const collection = queryCollection !== null && collections.includes(queryCollection) ? queryCollection : 'all';
-
-    const type = queryType === 'original' || queryType === 'print' ? queryType : 'all';
-
-    return { category, collection, type };
+function isArtworkCategory(value: string | undefined, categories: readonly ArtworkCategory[]): value is ArtworkCategory {
+    return !!value && categories.includes(value as ArtworkCategory);
 }
 
-export function OeuvresLayout({ artworks, categories, collections }: OeuvresLayoutProps) {
-    const searchParams = useSearchParams();
+function isArtworkType(value: string | undefined): value is ArtworkType {
+    return value === 'original' || value === 'print';
+}
 
-    const initialFilters = useMemo(() => getInitialFiltersFromSearchParams(searchParams, categories, collections), [searchParams, categories, collections]);
+export function OeuvresLayout({ artworks, categories, collections, initialCategory, initialCollection, initialType }: OeuvresLayoutProps) {
+    const [selectedCategory, setSelectedCategory] = useState<CategoryFilterValue>(isArtworkCategory(initialCategory, categories) ? initialCategory : 'all');
 
-    const [selectedCategory, setSelectedCategory] = useState<CategoryFilterValue>(initialFilters.category);
-    const [selectedCollection, setSelectedCollection] = useState<CollectionFilterValue>(initialFilters.collection);
-    const [selectedType, setSelectedType] = useState<TypeFilterValue>(initialFilters.type);
+    const [selectedCollection, setSelectedCollection] = useState<CollectionFilterValue>(initialCollection && collections.includes(initialCollection) ? initialCollection : 'all');
 
-    useEffect(() => {
-        setSelectedCategory(initialFilters.category);
-        setSelectedCollection(initialFilters.collection);
-        setSelectedType(initialFilters.type);
-    }, [initialFilters]);
+    const [selectedType, setSelectedType] = useState<TypeFilterValue>(isArtworkType(initialType) ? initialType : 'all');
 
     const filteredArtworks = useMemo(() => {
         return artworks.filter((artwork) => {
