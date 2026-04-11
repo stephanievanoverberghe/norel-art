@@ -40,6 +40,17 @@ const categories: Category[] = [
     },
 ];
 
+function SnakeBorder() {
+    return (
+        <span className="pointer-events-none absolute inset-0 z-20 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="absolute left-0 top-0 h-px w-0 bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all duration-500 group-hover:w-full" />
+            <span className="absolute right-0 top-0 h-0 w-px bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all delay-100 duration-500 group-hover:h-full" />
+            <span className="absolute bottom-0 right-0 h-px w-0 bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all delay-200 duration-500 group-hover:w-full" />
+            <span className="absolute bottom-0 left-0 h-0 w-px bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all delay-300 duration-500 group-hover:h-full" />
+        </span>
+    );
+}
+
 export function CategoriesSection({ className }: { className?: string }) {
     return (
         <section aria-label="Explorer par catégories" className={cn('relative bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
@@ -59,6 +70,7 @@ export function CategoriesSection({ className }: { className?: string }) {
                 <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
                     {categories.map((category) => (
                         <Link key={category.slug} href={`/oeuvres?categorie=${category.slug}`} className="group relative overflow-hidden rounded-3xl">
+                            <SnakeBorder />
                             <div className="relative aspect-4/5 overflow-hidden">
                                 <Image
                                     src={category.image}

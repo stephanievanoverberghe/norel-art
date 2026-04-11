@@ -29,6 +29,17 @@ function formatPrice(price: number) {
     return `${price.toLocaleString('fr-FR')} €`;
 }
 
+function SnakeBorder() {
+    return (
+        <span className="pointer-events-none absolute inset-0 z-20 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="absolute left-0 top-0 h-px w-0 bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all duration-500 group-hover:w-full" />
+            <span className="absolute right-0 top-0 h-0 w-px bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all delay-100 duration-500 group-hover:h-full" />
+            <span className="absolute bottom-0 right-0 h-px w-0 bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all delay-200 duration-500 group-hover:w-full" />
+            <span className="absolute bottom-0 left-0 h-0 w-px bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all delay-300 duration-500 group-hover:h-full" />
+        </span>
+    );
+}
+
 function ArtworkMeta({ price, availability }: { price: number; availability: Artwork['availability'] }) {
     return (
         <div className="mt-4 flex flex-wrap items-center gap-2 text-xs sm:text-sm">
@@ -78,13 +89,14 @@ export function FeaturedReveal({ artworks, className }: FeaturedRevealProps) {
                         <div className="grid gap-5 lg:grid-cols-[1.08fr_0.92fr] lg:gap-6">
                             <article className="group relative">
                                 <Link href={`/oeuvres/${mainArtwork.slug}`} className="relative block overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/3">
+                                    <SnakeBorder />
                                     <div className="relative aspect-4/5 overflow-hidden sm:aspect-16/12 lg:aspect-5/6">
                                         <Image
                                             src={mainArtwork.image}
                                             alt={mainArtwork.title}
                                             fill
                                             sizes="(max-width: 1024px) 100vw, 42vw"
-                                            className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                                            className="object-cover object-center transition-transform duration-700 ease-out will-change-transform group-hover:scale-[1.025]"
                                         />
                                         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,10,18,0.02)_0%,rgba(4,10,18,0.14)_44%,rgba(4,10,18,0.84)_100%)]" />
                                     </div>
@@ -122,13 +134,14 @@ export function FeaturedReveal({ artworks, className }: FeaturedRevealProps) {
                                             href={`/oeuvres/${firstSatellite.slug}`}
                                             className="snake-border relative block overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/3"
                                         >
+                                            <SnakeBorder />
                                             <div className="relative aspect-[4/4.7] overflow-hidden">
                                                 <Image
                                                     src={firstSatellite.image}
                                                     alt={firstSatellite.title}
                                                     fill
                                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 24vw"
-                                                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                                                    className="object-cover object-center transition-transform duration-700 ease-out will-change-transform group-hover:scale-[1.04]"
                                                 />
                                                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,10,18,0.02)_0%,rgba(4,10,18,0.78)_100%)]" />
                                             </div>
@@ -152,13 +165,14 @@ export function FeaturedReveal({ artworks, className }: FeaturedRevealProps) {
                                             href={`/oeuvres/${secondSatellite.slug}`}
                                             className="snake-border relative block overflow-hidden rounded-[1.4rem] border border-white/8 bg-white/3"
                                         >
+                                            <SnakeBorder />
                                             <div className="relative aspect-4/3.5 overflow-hidden">
                                                 <Image
                                                     src={secondSatellite.image}
                                                     alt={secondSatellite.title}
                                                     fill
                                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 22vw"
-                                                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                                                    className="object-cover object-center transition-transform duration-700 ease-out will-change-transform group-hover:scale-[1.04]"
                                                 />
                                                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,10,18,0.02)_0%,rgba(4,10,18,0.82)_100%)]" />
                                             </div>
@@ -179,7 +193,7 @@ export function FeaturedReveal({ artworks, className }: FeaturedRevealProps) {
                         </div>
 
                         <div className="mt-8 border-t border-white/10 pt-6">
-                            <Text variant="small" className="max-w-xl text-white/58">
+                            <Text variant="small" className="text-white/58">
                                 Originaux, impressions signées, pièces disponibles ou en réserve : chaque présence ouvre un dialogue différent.
                             </Text>
                         </div>
