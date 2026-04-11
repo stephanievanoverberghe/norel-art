@@ -1,3 +1,5 @@
+import type { ArtworkCategory } from '@/domain/artworks/categories';
+
 export type ArtworkType = 'original' | 'print';
 export type ArtworkAvailability = 'available' | 'reserved' | 'sold';
 
@@ -8,7 +10,7 @@ export interface Artwork {
     excerpt: string;
     story: string;
     image: string;
-    category: string;
+    category: ArtworkCategory;
     collection: string;
     type: ArtworkType;
     technique: string;

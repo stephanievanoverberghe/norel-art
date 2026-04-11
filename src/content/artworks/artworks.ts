@@ -1,6 +1,5 @@
 import type { Artwork } from '@/domain/artworks/types';
 
-export const artworkCategories = ['Portrait', 'Corps', 'Matière', 'Mouvement'] as const;
 export const artworkCollections = ['Fragments intérieurs', 'Veilles nocturnes', 'Présences'] as const;
 
 export const artworks: Artwork[] = [
@@ -29,7 +28,7 @@ export const artworks: Artwork[] = [
         excerpt: 'Un rythme rouge et noir qui traverse l’espace.',
         story: 'Une œuvre pensée comme une respiration debout. Les lignes ne ferment rien : elles ouvrent un passage vers le mouvement.',
         image: '/images/oeuvres/oeuvre-2.jpg',
-        category: 'Mouvement',
+        category: 'Pop Art',
         collection: 'Veilles nocturnes',
         type: 'original',
         technique: 'Acrylique',
@@ -47,7 +46,7 @@ export const artworks: Artwork[] = [
         excerpt: 'Une présence douce, presque tactile.',
         story: 'Cette série aborde la mémoire du corps avec des couches fines et des retraits de matière.',
         image: '/images/oeuvres/oeuvre-3.jpg',
-        category: 'Corps',
+        category: 'Manga',
         collection: 'Présences',
         type: 'print',
         technique: 'Impression pigmentaire fine art',
@@ -64,7 +63,7 @@ export const artworks: Artwork[] = [
     //     excerpt: 'Le contraste entre douceur et griffure.',
     //     story: 'Une pièce sur la tension entre contrôle et abandon dans le geste.',
     //     image: '/images/oeuvres/oeuvre-4.jpg',
-    //     category: 'Matière',
+    //     category: 'Graphisme',
     //     collection: 'Fragments intérieurs',
     //     type: 'print',
     //     technique: 'Impression giclée signée',

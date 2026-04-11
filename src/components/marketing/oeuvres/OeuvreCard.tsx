@@ -27,8 +27,8 @@ function formatPrice(price: number) {
 export function OeuvreCard({ artwork }: OeuvreCardProps) {
     return (
         <article className="group relative">
-            <Link href={`/oeuvres/${artwork.slug}`} className="relative block overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.03]">
-                <div className="relative aspect-[4/5] overflow-hidden">
+            <Link href={`/oeuvres/${artwork.slug}`} className="relative block overflow-hidden rounded-3xl border border-white/10 bg-white/[3">
+                <div className="relative aspect-4/5 overflow-hidden">
                     <Image
                         src={artwork.image}
                         alt={artwork.title}
