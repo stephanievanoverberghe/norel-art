@@ -24,7 +24,7 @@ export function CategoriesSection({ className }: { className?: string }) {
 
                 <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
                     {artworkCategories.map((category) => (
-                        <Link key={category} href={`/oeuvres?categorie=${getCategorySlug(category)}`} className="group relative overflow-hidden rounded-3xl">
+                        <Link key={category} href={{ pathname: '/oeuvres', query: { category } }} className="group relative overflow-hidden rounded-3xl">
                             <SnakeBorder />
                             <div className="relative aspect-4/5 overflow-hidden">
                                 <Image

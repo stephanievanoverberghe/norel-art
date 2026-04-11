@@ -1,6 +1,7 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 import type { Artwork } from '@/domain/artworks/types';
 import type { ArtworkType } from '@/domain/artworks/types';
@@ -20,10 +21,40 @@ type CategoryFilterValue = ArtworkCategory | 'all';
 type CollectionFilterValue = string | 'all';
 type TypeFilterValue = ArtworkType | 'all';
 
+type InitialFilters = {
+    category: CategoryFilterValue;
+    collection: CollectionFilterValue;
+    type: TypeFilterValue;
+};
+
+function getInitialFiltersFromSearchParams(searchParams: Pick<URLSearchParams, 'get'>, categories: readonly ArtworkCategory[], collections: readonly string[]): InitialFilters {
+    const queryCategory = searchParams.get('category');
+    const queryCollection = searchParams.get('collection');
+    const queryType = searchParams.get('type');
+
+    const category = queryCategory !== null && categories.includes(queryCategory as ArtworkCategory) ? (queryCategory as ArtworkCategory) : 'all';
+
+    const collection = queryCollection !== null && collections.includes(queryCollection) ? queryCollection : 'all';
+
+    const type = queryType === 'original' || queryType === 'print' ? queryType : 'all';
+
+    return { category, collection, type };
+}
+
 export function OeuvresLayout({ artworks, categories, collections }: OeuvresLayoutProps) {
-    const [selectedCategory, setSelectedCategory] = useState<CategoryFilterValue>('all');
-    const [selectedCollection, setSelectedCollection] = useState<CollectionFilterValue>('all');
-    const [selectedType, setSelectedType] = useState<TypeFilterValue>('all');
+    const searchParams = useSearchParams();
+
+    const initialFilters = useMemo(() => getInitialFiltersFromSearchParams(searchParams, categories, collections), [searchParams, categories, collections]);
+
+    const [selectedCategory, setSelectedCategory] = useState<CategoryFilterValue>(initialFilters.category);
+    const [selectedCollection, setSelectedCollection] = useState<CollectionFilterValue>(initialFilters.collection);
+    const [selectedType, setSelectedType] = useState<TypeFilterValue>(initialFilters.type);
+
+    useEffect(() => {
+        setSelectedCategory(initialFilters.category);
+        setSelectedCollection(initialFilters.collection);
+        setSelectedType(initialFilters.type);
+    }, [initialFilters]);
 
     const filteredArtworks = useMemo(() => {
         return artworks.filter((artwork) => {
