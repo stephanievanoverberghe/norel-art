@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
-import { Heading } from '@/ui/Heading';
+import { SectionIntro } from '@/components/shared/SectionIntro';
 import { Text } from '@/ui/Text';
 
 interface TestimonialsSectionProps {
@@ -40,19 +40,19 @@ export function TestimonialsSection({ className }: TestimonialsSectionProps) {
             <div aria-hidden="true" className="pointer-events-none absolute -right-10 top-20 h-52 w-52 rounded-full bg-(--surface)/14 blur-3xl" />
 
             <Container className="relative z-10">
-                <div className="mx-auto max-w-2xl text-center">
-                    <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">Résonances</p>
-
-                    <Heading level={2} className="mt-4 text-white">
-                        Ils ont regardé.
-                        <br />
-                        Ils ont été regardés.
-                    </Heading>
-
-                    <Text variant="muted" className="mx-auto mt-5 max-w-xl text-white/70">
-                        Quelques traces laissées par celles et ceux qui ont accueilli une œuvre, confié un visage, ou ouvert un mur à l’émotion.
-                    </Text>
-                </div>
+                <SectionIntro
+                    centered
+                    className="mx-auto"
+                    eyebrow="Résonances"
+                    title={
+                        <>
+                            Ils ont regardé.
+                            <br />
+                            Ils ont été regardés.
+                        </>
+                    }
+                    description="Quelques traces laissées par celles et ceux qui ont accueilli une œuvre, confié un visage, ou ouvert un mur à l’émotion."
+                />
 
                 <div className="mt-12 grid gap-5 lg:mt-16 lg:grid-cols-3">
                     {testimonials.map((testimonial, index) => (

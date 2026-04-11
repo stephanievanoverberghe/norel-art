@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
+import { SectionIntro } from '@/components/shared/SectionIntro';
+import { SnakeBorder } from '@/components/shared/SnakeBorder';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
@@ -29,38 +31,23 @@ const customPaths = [
     },
 ];
 
-function SnakeBorder() {
-    return (
-        <span className="pointer-events-none absolute inset-0 z-20 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <span className="absolute left-0 top-0 h-px w-0 bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all duration-500 group-hover:w-full" />
-            <span className="absolute right-0 top-0 h-0 w-px bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all delay-100 duration-500 group-hover:h-full" />
-            <span className="absolute bottom-0 right-0 h-px w-0 bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all delay-200 duration-500 group-hover:w-full" />
-            <span className="absolute bottom-0 left-0 h-0 w-px bg-white/90 shadow-[0_0_6px_rgba(255,255,255,0.45)] transition-all delay-300 duration-500 group-hover:h-full" />
-        </span>
-    );
-}
-
 export function CustomPathsSection({ className }: CustomPathsSectionProps) {
     return (
         <section aria-label="Commandes et fresques" className={cn('relative overflow-hidden bg-(--bg-primary) py-20 sm:py-24 lg:py-28', className)}>
-            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,rgba(6,12,21,0.72)_0%,rgba(6,12,21,0)_100%)]" />
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-16 h-28 w-lg -translate-x-1/2 bg-(--accent)/8 blur-3xl" />
-
             <Container className="relative z-10">
-                {/* HEADER */}
-                <div className="mx-auto max-w-2xl text-center">
-                    <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">Prolonger le geste</p>
-
-                    <Heading level={2} className="mt-4 text-white">
-                        Deux chemins. Deux façons
-                        <br />
-                        d’ouvrir l’échange.
-                    </Heading>
-
-                    <Text variant="muted" className="mx-auto mt-5 max-w-xl text-white/70">
-                        Certaines présences se choisissent. D’autres se confient. D’autres encore prennent place directement dans l’espace.
-                    </Text>
-                </div>
+                <SectionIntro
+                    className="mx-auto"
+                    centered
+                    eyebrow="Prolonger le geste"
+                    title={
+                        <>
+                            Deux chemins. Deux façons
+                            <br />
+                            d’ouvrir l’échange.
+                        </>
+                    }
+                    description="Certaines présences se choisissent. D’autres se confient. D’autres encore prennent place directement dans l’espace."
+                />
 
                 {/* CARDS */}
                 <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:mt-16 lg:grid-cols-2">

@@ -17,7 +17,7 @@ export function UniverseSection({ className }: UniverseSectionProps) {
 
             <Container className="relative z-10">
                 <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
-                    <div className="relative lg:col-span-5">
+                    <div className="relative order-2 lg:order-1 lg:col-span-5">
                         <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none lg:-translate-y-6">
                             <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/2 p-2">
                                 <div className="group relative overflow-hidden rounded-3xl">
@@ -43,7 +43,7 @@ export function UniverseSection({ className }: UniverseSectionProps) {
                         </div>
                     </div>
 
-                    <div className="lg:col-span-7">
+                    <div className="order-1 lg:order-2 lg:col-span-7">
                         <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">L’univers</p>
 
                         <Heading level={2} className="mt-4 text-white">
