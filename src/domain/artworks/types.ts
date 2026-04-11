@@ -10,6 +10,7 @@ export interface Artwork {
     excerpt: string;
     story: string;
     image: string;
+    gallery?: string[];
     category: ArtworkCategory;
     collection: string;
     type: ArtworkType;
