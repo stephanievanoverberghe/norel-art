@@ -1,25 +1,60 @@
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 import type { ArtworkCategory } from '@/domain/artworks/categories';
+import type { ArtworkType } from '@/domain/artworks/types';
+import { cn } from '@/lib/utils/cn';
 
 interface OeuvresFiltersAsideProps {
     categories: readonly ArtworkCategory[];
     collections: readonly string[];
+    selectedCategory: ArtworkCategory | 'all';
+    selectedCollection: string | 'all';
+    selectedType: ArtworkType | 'all';
+    onCategoryChange: (category: ArtworkCategory | 'all') => void;
+    onCollectionChange: (collection: string | 'all') => void;
+    onTypeChange: (type: ArtworkType | 'all') => void;
 }
 
-function FilterPill({ label }: { label: string }) {
+interface FilterPillProps {
+    label: string;
+    isActive: boolean;
+    onClick: () => void;
+}
+
+function FilterPill({ label, isActive, onClick }: FilterPillProps) {
     return (
         <button
             type="button"
-            className="inline-flex items-center rounded-full border border-white/10 bg-white/3 px-4 py-2 text-sm text-white/76 transition-colors duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:text-white"
+            onClick={onClick}
+            aria-pressed={isActive}
+            className={cn(
+                'inline-flex items-center rounded-full border px-4 py-2 text-sm transition-colors duration-300',
+                isActive ? 'border-white/45 bg-white/18 text-white' : 'border-white/10 bg-white/3 text-white/76 hover:border-white/20 hover:bg-white/[0.07] hover:text-white',
+            )}
         >
             {label}
         </button>
     );
 }
 
-export function OeuvresFiltersAside({ categories, collections }: OeuvresFiltersAsideProps) {
-    const categoryFilters = ['Toutes', ...categories];
+const TYPE_FILTERS: ReadonlyArray<{ label: string; value: ArtworkType | 'all' }> = [
+    { label: 'Toutes', value: 'all' },
+    { label: 'Originaux', value: 'original' },
+    { label: 'Impressions', value: 'print' },
+];
+
+export function OeuvresFiltersAside({
+    categories,
+    collections,
+    selectedCategory,
+    selectedCollection,
+    selectedType,
+    onCategoryChange,
+    onCollectionChange,
+    onTypeChange,
+}: OeuvresFiltersAsideProps) {
+    const categoryFilters: ReadonlyArray<ArtworkCategory | 'all'> = ['all', ...categories];
+    const collectionFilters: ReadonlyArray<string | 'all'> = ['all', ...collections];
 
     return (
         <aside className="lg:sticky lg:top-28 lg:self-start">
@@ -42,7 +77,12 @@ export function OeuvresFiltersAside({ categories, collections }: OeuvresFiltersA
 
                         <div className="mt-3 flex flex-wrap gap-2">
                             {categoryFilters.map((category) => (
-                                <FilterPill key={category} label={category} />
+                                <FilterPill
+                                    key={category}
+                                    label={category === 'all' ? 'Toutes' : category}
+                                    isActive={selectedCategory === category}
+                                    onClick={() => onCategoryChange(category)}
+                                />
                             ))}
                         </div>
                     </div>
@@ -53,9 +93,13 @@ export function OeuvresFiltersAside({ categories, collections }: OeuvresFiltersA
                         <p className="text-[10px] uppercase tracking-[0.22em] text-white/42">Collections</p>
 
                         <div className="mt-3 flex flex-wrap gap-2">
-                            <FilterPill label="Toutes" />
-                            {collections.map((collection) => (
-                                <FilterPill key={collection} label={collection} />
+                            {collectionFilters.map((collection) => (
+                                <FilterPill
+                                    key={collection}
+                                    label={collection === 'all' ? 'Toutes' : collection}
+                                    isActive={selectedCollection === collection}
+                                    onClick={() => onCollectionChange(collection)}
+                                />
                             ))}
                         </div>
                     </div>
@@ -66,8 +110,14 @@ export function OeuvresFiltersAside({ categories, collections }: OeuvresFiltersA
                         <p className="text-[10px] uppercase tracking-[0.22em] text-white/42">Type</p>
 
                         <div className="mt-3 flex flex-wrap gap-2">
-                            <FilterPill label="Originaux" />
-                            <FilterPill label="Impressions" />
+                            {TYPE_FILTERS.map((typeFilter) => (
+                                <FilterPill
+                                    key={typeFilter.value}
+                                    label={typeFilter.label}
+                                    isActive={selectedType === typeFilter.value}
+                                    onClick={() => onTypeChange(typeFilter.value)}
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>
