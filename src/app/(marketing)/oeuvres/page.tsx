@@ -1,33 +1,18 @@
 import type { Metadata } from 'next';
-import { filterArtworks } from '@/application/artworks';
-import { ArtworkFilters } from '@/components/marketing/ArtworkFilters';
-import { ArtworkGrid } from '@/components/marketing/ArtworkGrid';
-import { PageIntro } from '@/components/marketing/PageIntro';
-
-interface OeuvresPageProps {
-    searchParams: Promise<{ category?: string; type?: 'original' | 'print' }>;
-}
+import { artworks, artworkCategories, artworkCollections } from '@/domain/artworks/data';
+import { OeuvresLayout } from '@/components/marketing/oeuvres/OeuvresLayout';
+import { OeuvresHero } from '@/components/marketing/oeuvres/OeuvresHero';
 
 export const metadata: Metadata = {
     title: 'Œuvres',
-    description: 'Découvrez les œuvres originales et impressions signées de Norel Art.',
+    description: 'Explorez la galerie Norel Art entre portraits, matières et mouvements.',
 };
 
-export default async function OeuvresPage({ searchParams }: OeuvresPageProps) {
-    const params = await searchParams;
-    const artworks = filterArtworks({ category: params.category, type: params.type });
-
+export default function OeuvresPage() {
     return (
         <>
-            <PageIntro
-                eyebrow="Exploration"
-                title="Œuvres originales et impressions"
-                description="Parcourez les pièces disponibles, filtrez par univers et laissez une œuvre vous choisir."
-            />
-            <ArtworkFilters selectedCategory={params.category} selectedType={params.type} />
-            <section className="py-10">
-                <ArtworkGrid artworks={artworks} />
-            </section>
+            <OeuvresHero />
+            <OeuvresLayout artworks={artworks} categories={artworkCategories} collections={artworkCollections} />
         </>
     );
 }
