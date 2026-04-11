@@ -13,6 +13,7 @@ interface OeuvresFiltersAsideProps {
     onCategoryChange: (category: ArtworkCategory | 'all') => void;
     onCollectionChange: (collection: string | 'all') => void;
     onTypeChange: (type: ArtworkType | 'all') => void;
+    onReset: () => void;
 }
 
 interface FilterPillProps {
@@ -52,6 +53,7 @@ export function OeuvresFiltersAside({
     onCategoryChange,
     onCollectionChange,
     onTypeChange,
+    onReset,
 }: OeuvresFiltersAsideProps) {
     const categoryFilters: ReadonlyArray<ArtworkCategory | 'all'> = ['all', ...categories];
     const collectionFilters: ReadonlyArray<string | 'all'> = ['all', ...collections];
@@ -119,6 +121,14 @@ export function OeuvresFiltersAside({
                                 />
                             ))}
                         </div>
+                    </div>
+
+                    <div className="h-px bg-white/10" />
+
+                    <div>
+                        <button type="button" onClick={onReset} className="text-sm text-white/62 transition-colors duration-300 hover:text-white">
+                            Réinitialiser les filtres
+                        </button>
                     </div>
                 </div>
             </div>

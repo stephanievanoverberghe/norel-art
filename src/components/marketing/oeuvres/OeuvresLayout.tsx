@@ -35,6 +35,12 @@ export function OeuvresLayout({ artworks, categories, collections }: OeuvresLayo
         });
     }, [artworks, selectedCategory, selectedCollection, selectedType]);
 
+    const resetFilters = () => {
+        setSelectedCategory('all');
+        setSelectedCollection('all');
+        setSelectedType('all');
+    };
+
     return (
         <section className="relative bg-(--bg-primary) py-12 sm:py-14 lg:py-16">
             <Container>
@@ -48,6 +54,7 @@ export function OeuvresLayout({ artworks, categories, collections }: OeuvresLayo
                         onCategoryChange={setSelectedCategory}
                         onCollectionChange={setSelectedCollection}
                         onTypeChange={setSelectedType}
+                        onReset={resetFilters}
                     />
 
                     <OeuvresGrid artworks={filteredArtworks} />

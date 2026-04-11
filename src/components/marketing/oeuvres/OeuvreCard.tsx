@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import type { Artwork } from '@/domain/artworks/types';
 import { cn } from '@/lib/utils/cn';
+import { SnakeBorder } from '@/components/shared/SnakeBorder';
 
 interface OeuvreCardProps {
     artwork: Artwork;
@@ -15,9 +16,9 @@ const availabilityLabel: Record<Artwork['availability'], string> = {
 };
 
 const availabilityTone: Record<Artwork['availability'], string> = {
-    available: 'bg-white/[0.12] text-white/88',
-    reserved: 'bg-[color:var(--accent)]/24 text-white',
-    sold: 'bg-white/[0.08] text-white/58',
+    available: 'bg-white/20 text-white',
+    reserved: 'bg-[color:var(--accent)]/40 text-white',
+    sold: 'bg-black/40 text-white/70',
 };
 
 function formatPrice(price: number) {
@@ -27,35 +28,47 @@ function formatPrice(price: number) {
 export function OeuvreCard({ artwork }: OeuvreCardProps) {
     return (
         <article className="group relative">
-            <Link href={`/oeuvres/${artwork.slug}`} className="relative block overflow-hidden rounded-3xl border border-white/10 bg-white/[3">
+            <Link href={`/oeuvres/${artwork.slug}`} className="relative block overflow-hidden rounded-[1.75rem] border border-white/10">
+                <SnakeBorder />
                 <div className="relative aspect-4/5 overflow-hidden">
                     <Image
                         src={artwork.image}
                         alt={artwork.title}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                        className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.05]"
                     />
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,10,18,0.02)_0%,rgba(4,10,18,0.16)_42%,rgba(4,10,18,0.86)_100%)]" />
-                </div>
-
-                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-                    <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/55">
-                        <span>{artwork.collection}</span>
-                        <span className="h-1 w-1 rounded-full bg-white/30" />
-                        <span>{artwork.technique}</span>
-                    </div>
-
-                    <h3 className="mt-3 text-xl text-white">{artwork.title}</h3>
-
-                    <p className="mt-2 line-clamp-2 text-sm leading-6 text-white/72">{artwork.excerpt}</p>
-
-                    <div className="mt-4 flex flex-wrap items-center gap-2 text-xs sm:text-sm">
-                        <span className="text-white/88">{formatPrice(artwork.priceEur)}</span>
-
-                        <span className={cn('rounded-full px-2.5 py-1 text-[10px] tracking-[0.08em] sm:px-3 sm:text-xs', availabilityTone[artwork.availability])}>
+                    {artwork.availability === 'sold' && <div className="absolute inset-0 bg-black/70 grayscale-[0.5]" />}
+                    <div className="absolute right-3 top-3 z-20">
+                        <span className={cn('rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.08em] backdrop-blur-md', availabilityTone[artwork.availability])}>
                             {availabilityLabel[artwork.availability]}
                         </span>
+                    </div>
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_55%,rgba(0,0,0,0.8)_100%)]" />
+                    <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/70" />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 p-4 sm:hidden">
+                    <h3 className="text-base text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.6)]">{artwork.title}</h3>
+
+                    <div className="mt-1 text-sm text-white/90">{formatPrice(artwork.priceEur)}</div>
+                </div>
+                <div className="absolute inset-x-0 bottom-0 hidden p-5 sm:block">
+                    <h3 className="text-xl text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.5)] transition-opacity duration-300 group-hover:opacity-0">{artwork.title}</h3>
+                </div>
+                <div className="absolute inset-0 hidden flex-col justify-end p-5 opacity-0 transition-all duration-500 group-hover:opacity-100 sm:flex">
+                    <div className="max-w-[90%] translate-y-6 transition-transform duration-500 group-hover:translate-y-0">
+                        <div className="text-[10px] uppercase tracking-[0.2em] text-white/80">
+                            {artwork.collection} · {artwork.technique}
+                        </div>
+                        <h3 className="mt-3 text-xl text-white">{artwork.title}</h3>
+                        <p className="mt-2 line-clamp-2 text-sm text-white/80">{artwork.excerpt}</p>
+                        <div className="mt-4 flex items-center gap-2">
+                            <span className="text-sm text-white">{formatPrice(artwork.priceEur)}</span>
+                        </div>
+                        <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/80">
+                            <span>Voir l’œuvre</span>
+                            <span className="h-px w-6 bg-white/50 transition-all duration-300 group-hover:w-10" />
+                        </div>
                     </div>
                 </div>
             </Link>
