@@ -1,4 +1,4 @@
-import type { AboutPageContent } from '@/types//about';
+import type { AboutPageContent } from '@/types/about';
 
 export const aboutPageContent: AboutPageContent = {
     hero: {
@@ -6,16 +6,16 @@ export const aboutPageContent: AboutPageContent = {
         heading: {
             lines: ['Il y a un jour', 'où j’ai repris', 'le trait.'],
         },
-        leadLines: ['Longtemps, j’ai tenu ça en silence. Puis j’ai recommencé à tracer.', 'Des regards. Des tensions. Des absences.'],
+        leadLines: ['Longtemps, j’ai tenu ça en silence.', 'Puis j’ai recommencé à tracer.', 'Des regards. Des tensions. Des absences.'],
         supportingText: 'Ce que je peins n’explique pas. Ça apparaît.',
         badge: 'Portraitiste de l’émotion',
         image: {
             src: '/images/norel/norel.jpg',
             alt: 'Portrait de Norel Art',
-            sizes: '(max-width: 1024px) 100vw, 34rem',
+            sizes: '(max-width: 1024px) 100vw, 35rem',
         },
         floatingNote: {
-            eyebrow: 'Trace',
+            eyebrow: 'Note',
             lines: ['Le regard avant le mot.', 'La présence avant l’explication.'],
         },
     },
@@ -35,13 +35,13 @@ export const aboutPageContent: AboutPageContent = {
                 step: '02',
                 label: 'Bascule',
                 text: 'Après l’épuisement, quelque chose est revenu. Pas comme un passe-temps. Comme une nécessité. Une manière de reprendre souffle autrement.',
-                offsetClassName: 'lg:ml-10',
+                offsetClassName: 'lg:ml-12',
             },
             {
                 step: '03',
                 label: 'Depuis',
                 text: 'J’ai repris un pinceau. Puis un autre. Depuis, je trace des regards, des silences, des absences. Et parfois, des fragments de lumière.',
-                offsetClassName: 'lg:ml-4',
+                offsetClassName: 'lg:ml-5',
             },
         ],
     },
