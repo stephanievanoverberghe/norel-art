@@ -32,7 +32,7 @@ export function RelatedOeuvresSection({ artwork, artworks, className }: RelatedO
     if (relatedArtworks.length === 0) return null;
 
     return (
-        <section aria-label="Œuvres liées" className={cn('relative overflow-hidden bg(--bg-primary)] py-16 sm:py-20 lg:py-24', className)}>
+         <section aria-label="Œuvres liées" className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-10 h-24 w-[20rem] -translate-x-1/2 bg-(--accent)/6 blur-3xl" />
 
             <Container className="relative z-10">

@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import type { Artwork } from '@/domain/artworks/types';
 import { formatArtworkPrice, getAvailabilityLabel, getArtworkTypeLabel } from '@/domain/artworks/presentation';
+import { marketingPageSpacing } from '@/layout/marketing/page-spacing';
 import { cn } from '@/lib/utils/cn';
 import { Button } from '@/ui/Button';
 import { Container } from '@/ui/Container';
@@ -16,7 +17,7 @@ interface OeuvreDetailHeroProps {
 
 const availabilityTone: Record<Artwork['availability'], string> = {
     available: 'bg-white/15 text-white',
-    reserved: 'bg-[color:var(--accent)]/35 text-white',
+     reserved: 'bg-(--accent)/35 text-white',
     sold: 'bg-black/35 text-white/70',
 };
 
@@ -26,7 +27,7 @@ export function OeuvreDetailHero({ artwork, className }: OeuvreDetailHeroProps) 
     return (
         <section
             aria-label={`Présentation de l’œuvre ${artwork.title}`}
-            className={cn('relative overflow-hidden bg-(--bg-primary) pb-12 pt-24 sm:pb-14 sm:pt-28 lg:pb-16 lg:pt-32', className)}
+             className={cn(`relative overflow-hidden bg-(--bg-primary) pb-12 sm:pb-14 lg:pb-16 ${marketingPageSpacing.immersiveOffset}`, className)}
         >
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(180deg,rgba(6,12,21,0.72)_0%,rgba(6,12,21,0)_100%)]" />
             <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-6 h-24 w-88 -translate-x-1/2 bg-(--accent)/8 blur-3xl" />

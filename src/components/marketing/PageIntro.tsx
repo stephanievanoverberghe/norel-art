@@ -1,3 +1,5 @@
+import { marketingPageSpacing } from '@/layout/marketing/page-spacing';
+import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
@@ -6,11 +8,12 @@ interface PageIntroProps {
     eyebrow: string;
     title: string;
     description: string;
+     withHeaderOffset?: boolean;
 }
 
-export function PageIntro({ eyebrow, title, description }: PageIntroProps) {
+export function PageIntro({ eyebrow, title, description, withHeaderOffset = true }: PageIntroProps) {
     return (
-        <section className="py-12 sm:py-16">
+         <section className={cn('py-12 sm:py-16', withHeaderOffset && marketingPageSpacing.editorialOffset)}>
             <Container>
                 <p className="text-xs uppercase tracking-[0.24em] text-white/55">{eyebrow}</p>
                 <Heading level={2} className="mt-4">

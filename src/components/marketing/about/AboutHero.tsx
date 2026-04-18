@@ -7,7 +7,9 @@ import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
 import { SplitLines } from './shared/SplitLines';
-import { aboutSectionStyles, marketingPageHeaderOffsetClassName } from './shared/about-styles';
+import { marketingPageSpacing } from '@/layout/marketing/page-spacing';
+
+import { aboutSectionStyles } from './shared/about-styles';
 
 interface AboutHeroProps {
     content: AboutHeroContent;
@@ -18,7 +20,7 @@ export function AboutHero({ content, className }: AboutHeroProps) {
     return (
         <section
             aria-label="À propos de Norel Art"
-            className={cn('relative overflow-hidden pb-16 sm:pb-20 lg:pb-24', aboutSectionStyles.pageBackground, marketingPageHeaderOffsetClassName, className)}
+           className={cn('relative overflow-hidden pb-16 sm:pb-20 lg:pb-24', aboutSectionStyles.pageBackground, marketingPageSpacing.editorialOffset, className)}
         >
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,18,0.58)_0%,rgba(5,10,18,0.2)_28%,rgba(5,10,18,0)_60%)]" />
             <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-white/4 blur-3xl" />
@@ -81,7 +83,7 @@ export function AboutHero({ content, className }: AboutHeroProps) {
                                 </p>
                             </div>
 
-                            <div className="absolute -right-4 top-10 hidden rounded-full border border-(--accent)/10 bg-(--accent)/4 px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-(--accent)/42 backdrop-blur-sm lg:inline-flex">
+                            <div className="absolute -right-4 top-10 hidden rounded-full border border-(--accent)/50 bg-(--accent)/4 px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-(--text-primary) backdrop-blur-sm lg:inline-flex">
                                 Depuis 2019
                             </div>
                         </div>

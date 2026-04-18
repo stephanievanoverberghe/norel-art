@@ -20,6 +20,9 @@
 
   /* 🌫️ Shadows */
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.25);
+
+  --marketing-header-offset: 7.5rem;
+  --marketing-header-offset-immersive: 6.5rem;
 }
 
 html {
@@ -50,5 +53,19 @@ body {
   100% {
     transform: translateY(32px);
     opacity: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --marketing-header-offset: 8.5rem;
+    --marketing-header-offset-immersive: 7.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --marketing-header-offset: 9.5rem;
+    --marketing-header-offset-immersive: 8rem;
   }
 }

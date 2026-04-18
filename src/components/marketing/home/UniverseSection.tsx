@@ -2,15 +2,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils/cn';
+import type { UniverseContent } from '@/types/home';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
 interface UniverseSectionProps {
+     content: UniverseContent;
     className?: string;
 }
 
-export function UniverseSection({ className }: UniverseSectionProps) {
+export function UniverseSection({ content, className }: UniverseSectionProps) {
     return (
         <section aria-label="Univers de l’artiste" className={cn('relative overflow-hidden bg-(--bg-primary) py-20 sm:py-24 lg:py-32', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-20 h-40 w-160 -translate-x-1/2 bg-(--accent)/10 blur-3xl" />
@@ -23,10 +25,10 @@ export function UniverseSection({ className }: UniverseSectionProps) {
                                 <div className="group relative overflow-hidden rounded-3xl">
                                     <div className="relative aspect-4/5 overflow-hidden">
                                         <Image
-                                            src="/images/norel/norel.jpg"
-                                            alt="Norel Art dans son atelier"
+                                            src={content.image.src}
+                                            alt={content.image.alt}
                                             fill
-                                            sizes="(max-width: 1024px) 100vw, 40vw"
+                                             sizes={content.image.sizes}
                                             className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                                         />
 
@@ -44,27 +46,21 @@ export function UniverseSection({ className }: UniverseSectionProps) {
                     </div>
 
                     <div className="order-1 lg:order-2 lg:col-span-7">
-                        <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">L’univers</p>
+                         <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">{content.eyebrow}</p>
 
                         <Heading level={2} className="mt-4 text-white">
-                            Peindre ce qui ne se dit pas.
+                            {content.title}
                         </Heading>
 
-                        <Text variant="muted" className="mt-6 max-w-xl text-white/70">
-                            Chaque visage est une présence. Chaque trace, une tentative de retenir quelque chose qui disparaît.
-                        </Text>
-
-                        <Text variant="muted" className="mt-4 max-w-xl text-white/70">
-                            Il ne s’agit pas de représenter. Il s’agit de faire émerger.
-                        </Text>
-
-                        <Text variant="muted" className="mt-4 max-w-xl text-white/70">
-                            Laisser apparaître ce qui était déjà là, mais que personne ne regardait vraiment.
-                        </Text>
+                         {content.paragraphs.map((paragraph, index) => (
+                            <Text key={paragraph} variant="muted" className={cn('max-w-xl text-white/70', index === 0 ? 'mt-6' : 'mt-4')}>
+                                {paragraph}
+                            </Text>
+                        ))}
 
                         <div className="mt-8">
-                            <Link href="/a-propos" className="inline-flex items-center gap-2 text-sm text-white/70 transition-colors duration-300 hover:text-white">
-                                Découvrir la démarche
+                            <Link href={content.ctaHref} className="inline-flex items-center gap-2 text-sm text-white/70 transition-colors duration-300 hover:text-white">
+                                {content.ctaLabel}
                                 <span className="h-px w-6 bg-white/40 transition-all duration-300 hover:w-10" />
                             </Link>
                         </div>

@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 
+import { marketingPageSpacing } from '@/layout/marketing/page-spacing';
 import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
@@ -13,8 +14,7 @@ interface OeuvresHeroProps {
 
 export function OeuvresHero({ className }: OeuvresHeroProps) {
     return (
-        <section aria-label="Galerie des œuvres" className={cn('relative overflow-hidden pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-36 lg:pb-24', className)}>
-            {/* IMAGE */}
+         <section aria-label="Galerie des œuvres" className={cn(`relative overflow-hidden pb-16 sm:pb-20 lg:pb-24 ${marketingPageSpacing.editorialOffset}`, className)}>
             <div className="absolute inset-0">
                 <Image src="/images/oeuvres/oeuvres-hero.jpg" alt="Galerie d'œuvres Norel Art" fill priority sizes="100vw" className="object-cover object-center" />
             </div>
@@ -25,7 +25,6 @@ export function OeuvresHero({ className }: OeuvresHeroProps) {
             <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(180deg,rgba(4,10,18,0)_0%,rgba(4,10,18,0.55)_60%,#060C15_100%)]" />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[radial-gradient(70%_120%_at_50%_100%,rgba(130,15,56,0.16),transparent_70%)]" />
 
-            {/* CONTENU */}
             <Container className="relative z-10">
                 <div className="max-w-2xl">
                     <p className="text-[11px] uppercase tracking-[0.32em] text-white/50">Galerie</p>

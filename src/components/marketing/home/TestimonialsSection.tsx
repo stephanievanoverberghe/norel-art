@@ -1,37 +1,15 @@
+import type { TestimonialsContent } from '@/types/home';
 import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
 import { SectionIntro } from '@/components/shared/SectionIntro';
 import { Text } from '@/ui/Text';
 
 interface TestimonialsSectionProps {
+    content: TestimonialsContent;
     className?: string;
 }
 
-interface Testimonial {
-    quote: string;
-    name: string;
-    context: string;
-}
-
-const testimonials: Testimonial[] = [
-    {
-        quote: 'Quand j’ai découvert l’œuvre, j’ai eu l’impression qu’elle savait déjà quelque chose de moi. Je ne l’ai pas choisie tout de suite. C’est elle qui est restée.',
-        name: 'Claire',
-        context: 'Aquarelle originale',
-    },
-    {
-        quote: 'Le portrait commandé n’était pas une simple ressemblance. Il y avait une présence, une tension douce, quelque chose de très juste.',
-        name: 'Sophie',
-        context: 'Commande sur mesure',
-    },
-    {
-        quote: 'La fresque a transformé le lieu. Ce n’était plus seulement un mur. Il y avait une respiration, un regard, une vraie émotion dans l’espace.',
-        name: 'Élodie',
-        context: 'Projet mural',
-    },
-];
-
-export function TestimonialsSection({ className }: TestimonialsSectionProps) {
+export function TestimonialsSection({ content, className }: TestimonialsSectionProps) {
     return (
         <section aria-label="Témoignages" className={cn('relative overflow-hidden bg-(--bg-primary) py-20 sm:py-24 lg:py-28', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,rgba(6,12,21,0.72)_0%,rgba(6,12,21,0)_100%)]" />
@@ -43,19 +21,13 @@ export function TestimonialsSection({ className }: TestimonialsSectionProps) {
                 <SectionIntro
                     centered
                     className="mx-auto"
-                    eyebrow="Résonances"
-                    title={
-                        <>
-                            Ils ont regardé.
-                            <br />
-                            Ils ont été regardés.
-                        </>
-                    }
-                    description="Quelques traces laissées par celles et ceux qui ont accueilli une œuvre, confié un visage, ou ouvert un mur à l’émotion."
+                    eyebrow={content.intro.eyebrow}
+                    title={content.intro.title}
+                    description={content.intro.description}
                 />
 
                 <div className="mt-12 grid gap-5 lg:mt-16 lg:grid-cols-3">
-                    {testimonials.map((testimonial, index) => (
+                    {content.items.map((testimonial, index) => (
                         <article
                             key={`${testimonial.name}-${index}`}
                             className={cn('relative overflow-hidden rounded-3xl border border-white/10 bg-white/3 p-6 sm:p-7', index === 1 && 'lg:translate-y-8')}

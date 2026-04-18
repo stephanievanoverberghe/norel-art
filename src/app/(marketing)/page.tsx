@@ -6,6 +6,7 @@ import { FinalCtaSection } from '@/components/marketing/home/FinalCtaSection';
 import { Hero } from '@/components/marketing/home/Hero';
 import { TestimonialsSection } from '@/components/marketing/home/TestimonialsSection';
 import { UniverseSection } from '@/components/marketing/home/UniverseSection';
+import { homeCustomPathsContent, homeTestimonialsContent, homeUniverseContent } from '@/content/home/home-content';
 
 export default function HomePage() {
     const revealArtworks = getHomeRevealArtworks();
@@ -15,9 +16,9 @@ export default function HomePage() {
             <Hero />
             <FeaturedReveal artworks={revealArtworks} />
             <CategoriesSection />
-            <UniverseSection />
-            <CustomPathsSection />
-            <TestimonialsSection />
+            <UniverseSection content={homeUniverseContent} />
+            <CustomPathsSection content={homeCustomPathsContent} />
+            <TestimonialsSection content={homeTestimonialsContent} />
             <FinalCtaSection />
         </>
     );

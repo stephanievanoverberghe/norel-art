@@ -12,7 +12,7 @@ interface OeuvreCardProps {
 
 const availabilityTone: Record<Artwork['availability'], string> = {
     available: 'bg-white/20 text-white',
-    reserved: 'bg-[color:var(--accent)]/40 text-white',
+    reserved: 'bg-(--accent)/40 text-white',
     sold: 'bg-black/40 text-white/70',
 };
 

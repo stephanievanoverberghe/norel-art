@@ -22,7 +22,7 @@ const availabilityLabel: Record<Artwork['availability'], string> = {
 
 const availabilityTone: Record<Artwork['availability'], string> = {
     available: 'bg-white/[0.12] text-white/86',
-    reserved: 'bg-[color:var(--accent)]/24 text-white',
+     reserved: 'bg-(--accent)/24 text-white',
     sold: 'bg-white/[0.08] text-white/55',
 };
 
