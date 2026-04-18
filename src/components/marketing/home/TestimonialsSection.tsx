@@ -1,4 +1,4 @@
-import type { TestimonialsContent } from '@/types/home';
+import type { TestimonialsContent } from '@/domain/home/types';
 import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
 import { SectionIntro } from '@/components/shared/SectionIntro';
@@ -18,13 +18,7 @@ export function TestimonialsSection({ content, className }: TestimonialsSectionP
             <div aria-hidden="true" className="pointer-events-none absolute -right-10 top-20 h-52 w-52 rounded-full bg-(--surface)/14 blur-3xl" />
 
             <Container className="relative z-10">
-                <SectionIntro
-                    centered
-                    className="mx-auto"
-                    eyebrow={content.intro.eyebrow}
-                    title={content.intro.title}
-                    description={content.intro.description}
-                />
+                <SectionIntro centered className="mx-auto" eyebrow={content.intro.eyebrow} title={content.intro.title} description={content.intro.description} />
 
                 <div className="mt-12 grid gap-5 lg:mt-16 lg:grid-cols-3">
                     {content.items.map((testimonial, index) => (

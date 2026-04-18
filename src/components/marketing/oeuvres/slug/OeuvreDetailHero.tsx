@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import type { Artwork } from '@/domain/artworks/types';
+import { MarketingSecondaryLink } from '@/components/marketing/shared/MarketingSecondaryLink';
 import { formatArtworkPrice, getAvailabilityLabel, getArtworkTypeLabel } from '@/domain/artworks/presentation';
+import type { Artwork } from '@/domain/artworks/types';
 import { marketingPageSpacing } from '@/layout/marketing/page-spacing';
 import { cn } from '@/lib/utils/cn';
 import { Button } from '@/ui/Button';
@@ -17,7 +18,7 @@ interface OeuvreDetailHeroProps {
 
 const availabilityTone: Record<Artwork['availability'], string> = {
     available: 'bg-white/15 text-white',
-     reserved: 'bg-(--accent)/35 text-white',
+    reserved: 'bg-(--accent)/35 text-white',
     sold: 'bg-black/35 text-white/70',
 };
 
@@ -27,7 +28,7 @@ export function OeuvreDetailHero({ artwork, className }: OeuvreDetailHeroProps) 
     return (
         <section
             aria-label={`Présentation de l’œuvre ${artwork.title}`}
-             className={cn(`relative overflow-hidden bg-(--bg-primary) pb-12 sm:pb-14 lg:pb-16 ${marketingPageSpacing.immersiveOffset}`, className)}
+            className={cn(`relative overflow-hidden bg-(--bg-primary) pb-12 sm:pb-14 lg:pb-16 ${marketingPageSpacing.immersiveOffset}`, className)}
         >
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(180deg,rgba(6,12,21,0.72)_0%,rgba(6,12,21,0)_100%)]" />
             <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-6 h-24 w-88 -translate-x-1/2 bg-(--accent)/8 blur-3xl" />
@@ -94,20 +95,14 @@ export function OeuvreDetailHero({ artwork, className }: OeuvreDetailHeroProps) 
                                     <Button className="min-h-12 w-full rounded-full px-6">Je la choisis</Button>
                                 </Link>
                             ) : (
-                                <Link
-                                    href="/contact"
-                                    className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/3 px-6 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
-                                >
+                                <MarketingSecondaryLink href="/contact" className="w-full">
                                     Ce regard m’appelle
-                                </Link>
+                                </MarketingSecondaryLink>
                             )}
 
-                            <Link
-                                href="/commandes"
-                                className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/3 px-6 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
-                            >
+                            <MarketingSecondaryLink href="/commandes" className="w-full">
                                 Me confier un visage
-                            </Link>
+                            </MarketingSecondaryLink>
                         </div>
 
                         <div className="mt-8 grid gap-4 border-t border-white/10 pt-5 sm:grid-cols-2">

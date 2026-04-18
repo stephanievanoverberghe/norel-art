@@ -1,4 +1,4 @@
-import type { AboutPageContent } from '@/types/about';
+import type { AboutPageContent } from '@/domain/about/types';
 
 import { AboutFinalSection } from './AboutFinalSection';
 import { AboutHero } from './AboutHero';

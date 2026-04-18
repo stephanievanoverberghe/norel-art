@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { MarketingSecondaryLink } from '@/components/marketing/shared/MarketingSecondaryLink';
 import { cn } from '@/lib/utils/cn';
 import { Button } from '@/ui/Button';
 import { Container } from '@/ui/Container';
@@ -30,12 +31,9 @@ export function FinalCtaSection({ className }: FinalCtaSectionProps) {
                             <Button className="min-h-12 w-full rounded-full px-6">Voir les œuvres</Button>
                         </Link>
 
-                        <Link
-                            href="/contact"
-                            className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/3 px-6 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
-                        >
+                        <MarketingSecondaryLink href="/contact" className="w-full">
                             M’écrire un mot
-                        </Link>
+                        </MarketingSecondaryLink>
                     </div>
                 </div>
             </Container>

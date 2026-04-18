@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
-import type { Artwork } from '@/domain/artworks/types';
+import { MarketingSecondaryLink } from '@/components/marketing/shared/MarketingSecondaryLink';
 import { getAvailabilityLabel } from '@/domain/artworks/presentation';
+import type { Artwork } from '@/domain/artworks/types';
 import { cn } from '@/lib/utils/cn';
 import { Button } from '@/ui/Button';
 import { Container } from '@/ui/Container';
@@ -39,12 +40,9 @@ export function OeuvreFinalCtaSection({ artwork, className }: OeuvreFinalCtaSect
                             <Button className="min-h-12 w-full rounded-full px-6">{isAvailable ? 'Je la choisis' : 'Ce regard m’appelle'}</Button>
                         </Link>
 
-                        <Link
-                            href="/commandes"
-                            className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/3 px-6 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
-                        >
+                        <MarketingSecondaryLink href="/commandes" className="w-full">
                             Me confier un visage
-                        </Link>
+                        </MarketingSecondaryLink>
                     </div>
                 </div>
             </Container>

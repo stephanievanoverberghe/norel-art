@@ -1,4 +1,4 @@
-import type { AboutPageContent } from '@/types/about';
+import type { AboutPageContent } from '@/domain/about/types';
 
 export const aboutPageContent: AboutPageContent = {
     hero: {

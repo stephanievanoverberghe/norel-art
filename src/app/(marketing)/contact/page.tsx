@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import { ContactForm } from '@/components/marketing/ContactForm';
-import { PageIntro } from '@/components/marketing/PageIntro';
-import { Container } from '@/ui/Container';
+
+import { LeadCapturePage } from '@/components/marketing/LeadCapturePage';
+import { leadCapturePages } from '@/content/marketing/pages';
 
 export const metadata: Metadata = {
     title: 'Contact',
@@ -10,17 +10,11 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <>
-            <PageIntro
-                eyebrow="Contact"
-                title="Parlons de votre projet artistique"
-                description="Achat d’œuvre, demande de commande, projet mural ou simple question : chaque message reçoit une réponse personnalisée."
-            />
-            <section className="pb-16">
-                <Container className="max-w-3xl">
-                    <ContactForm />
-                </Container>
-            </section>
-        </>
+        <LeadCapturePage
+            eyebrow={leadCapturePages.contact.eyebrow}
+            title={leadCapturePages.contact.title}
+            description={leadCapturePages.contact.description}
+            aside={<div className="hidden lg:block" aria-hidden="true" />}
+        />
     );
 }

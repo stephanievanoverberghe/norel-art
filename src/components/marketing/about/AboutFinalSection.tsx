@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
+import type { AboutFinalCtaContent } from '@/domain/about/types';
+import { MarketingSecondaryLink } from '@/components/marketing/shared/MarketingSecondaryLink';
 import { cn } from '@/lib/utils/cn';
-import type { AboutFinalCtaContent } from '@/types/about';
 import { Button } from '@/ui/Button';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
@@ -37,12 +38,9 @@ export function AboutFinalSection({ content, className }: AboutFinalSectionProps
                             <Button className="min-h-12 w-full rounded-full px-6">{content.primaryAction.label}</Button>
                         </Link>
 
-                        <Link
-                            href={content.secondaryAction.href}
-                            className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/16 bg-white/4 px-6 text-sm font-medium text-white transition-all duration-300 hover:border-white/24 hover:bg-white/8"
-                        >
+                        <MarketingSecondaryLink href={content.secondaryAction.href} className="w-full border-white/16 bg-white/4 hover:border-white/24 hover:bg-white/8">
                             {content.secondaryAction.label}
-                        </Link>
+                        </MarketingSecondaryLink>
                     </div>
                 </div>
             </Container>

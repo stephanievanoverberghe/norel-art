@@ -1,4 +1,4 @@
-import type { CustomPathsContent, TestimonialsContent, UniverseContent } from '@/types/home';
+import type { CustomPathsContent, TestimonialsContent, UniverseContent } from '@/domain/home/types';
 
 export const homeUniverseContent: UniverseContent = {
     eyebrow: 'L’univers',

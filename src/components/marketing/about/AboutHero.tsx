@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { cn } from '@/lib/utils/cn';
-import type { AboutHeroContent } from '@/types/about';
+import type { AboutHeroContent } from '@/domain/about/types';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
@@ -20,7 +20,7 @@ export function AboutHero({ content, className }: AboutHeroProps) {
     return (
         <section
             aria-label="À propos de Norel Art"
-           className={cn('relative overflow-hidden pb-16 sm:pb-20 lg:pb-24', aboutSectionStyles.pageBackground, marketingPageSpacing.editorialOffset, className)}
+            className={cn('relative overflow-hidden pb-16 sm:pb-20 lg:pb-24', aboutSectionStyles.pageBackground, marketingPageSpacing.editorialOffset, className)}
         >
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,18,0.58)_0%,rgba(5,10,18,0.2)_28%,rgba(5,10,18,0)_60%)]" />
             <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-white/4 blur-3xl" />

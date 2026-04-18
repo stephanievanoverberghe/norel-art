@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+import { MarketingSecondaryLink } from '@/components/marketing/shared/MarketingSecondaryLink';
 
 import { cn } from '@/lib/utils/cn';
 import { Button } from '@/ui/Button';
@@ -58,12 +58,9 @@ export function Hero({ className }: HeroProps) {
                             Ouvrir la sélection
                         </Button>
 
-                        <Link
-                            href="/commandes"
-                            className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10"
-                        >
+                        <MarketingSecondaryLink href="/commandes" className="bg-white/5 px-7">
                             Parler d&apos;une commande
-                        </Link>
+                        </MarketingSecondaryLink>
                     </div>
                 </div>
             </Container>

@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils/cn';
-import type { AboutPageContent } from '@/types/about';
+import type { AboutPageContent } from '@/domain/about/types';
 import { Container } from '@/ui/Container';
 import { Text } from '@/ui/Text';
 

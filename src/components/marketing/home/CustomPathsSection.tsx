@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import type { CustomPathsContent } from '@/types/home';
+import type { CustomPathsContent } from '@/domain/home/types';
 import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
 import { SectionIntro } from '@/components/shared/SectionIntro';
@@ -18,16 +18,10 @@ export function CustomPathsSection({ content, className }: CustomPathsSectionPro
     return (
         <section aria-label="Commandes et fresques" className={cn('relative overflow-hidden bg-(--bg-primary) py-20 sm:py-24 lg:py-28', className)}>
             <Container className="relative z-10">
-                <SectionIntro
-                    className="mx-auto"
-                    centered
-                    eyebrow={content.intro.eyebrow}
-                    title={content.intro.title}
-                    description={content.intro.description}
-                />
+                <SectionIntro className="mx-auto" centered eyebrow={content.intro.eyebrow} title={content.intro.title} description={content.intro.description} />
 
                 <div className="mx-auto mt-12 grid max-w-5xl gap-6 lg:mt-16 lg:grid-cols-2">
-                     {content.items.map((path) => (
+                    {content.items.map((path) => (
                         <article key={path.href} className="group relative">
                             <Link href={path.href} className="relative block overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/3">
                                 <SnakeBorder />

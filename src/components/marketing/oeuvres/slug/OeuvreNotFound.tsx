@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { MarketingSecondaryLink } from '@/components/marketing/shared/MarketingSecondaryLink';
 import { cn } from '@/lib/utils/cn';
 import { Button } from '@/ui/Button';
 import { Container } from '@/ui/Container';
@@ -12,15 +13,7 @@ interface OeuvreNotFoundProps {
 
 export function OeuvreNotFound({ className }: OeuvreNotFoundProps) {
     return (
-        <section
-            aria-label="Œuvre introuvable"
-            className={cn(
-                // 💥 FULL HEIGHT + CENTER
-                'relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-(--bg-primary)',
-                className,
-            )}
-        >
-            {/* ambiance */}
+        <section aria-label="Œuvre introuvable" className={cn('relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-(--bg-primary)', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-40 w-md -translate-x-1/2 -translate-y-1/2 bg-(--accent)/10 blur-3xl" />
 
             <Container className="relative z-10">
@@ -41,18 +34,14 @@ export function OeuvreNotFound({ className }: OeuvreNotFoundProps) {
                         D’autres présences attendent.
                     </Text>
 
-                    {/* CTA */}
                     <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
                         <Link href="/oeuvres" className="block">
                             <Button className="min-h-12 w-full rounded-full px-6 sm:w-auto">Retour à la galerie</Button>
                         </Link>
 
-                        <Link
-                            href="/"
-                            className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/20 bg-white/3 px-6 text-sm font-medium text-white transition-colors duration-300 hover:bg-white/10 sm:w-auto"
-                        >
+                        <MarketingSecondaryLink href="/" className="sm:w-auto">
                             Revenir à l’accueil
-                        </Link>
+                        </MarketingSecondaryLink>
                     </div>
                 </div>
             </Container>

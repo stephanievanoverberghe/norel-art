@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils/cn';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
-import type { AboutSectionIntroContent } from '@/types/about';
+import type { AboutSectionIntroContent } from '@/domain/about/types';
 
 import { aboutSectionStyles } from './about-styles';
 import { SplitLines } from './SplitLines';

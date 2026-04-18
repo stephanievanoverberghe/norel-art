@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { cn } from '@/lib/utils/cn';
-import type { UniverseContent } from '@/types/home';
+import type { UniverseContent } from '@/domain/home/types';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
 interface UniverseSectionProps {
-     content: UniverseContent;
+    content: UniverseContent;
     className?: string;
 }
 
@@ -28,7 +28,7 @@ export function UniverseSection({ content, className }: UniverseSectionProps) {
                                             src={content.image.src}
                                             alt={content.image.alt}
                                             fill
-                                             sizes={content.image.sizes}
+                                            sizes={content.image.sizes}
                                             className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                                         />
 
@@ -46,13 +46,13 @@ export function UniverseSection({ content, className }: UniverseSectionProps) {
                     </div>
 
                     <div className="order-1 lg:order-2 lg:col-span-7">
-                         <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">{content.eyebrow}</p>
+                        <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">{content.eyebrow}</p>
 
                         <Heading level={2} className="mt-4 text-white">
                             {content.title}
                         </Heading>
 
-                         {content.paragraphs.map((paragraph, index) => (
+                        {content.paragraphs.map((paragraph, index) => (
                             <Text key={paragraph} variant="muted" className={cn('max-w-xl text-white/70', index === 0 ? 'mt-6' : 'mt-4')}>
                                 {paragraph}
                             </Text>
