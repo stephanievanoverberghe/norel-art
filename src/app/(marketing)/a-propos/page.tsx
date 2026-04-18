@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { AboutFinalSection } from '@/components/marketing/about/AboutFinalSection';
 import { AboutHero } from '@/components/marketing/about/AboutHero';
 import { AboutJourneySection } from '@/components/marketing/about/AboutJourneySection';
-import { AboutVisionSection } from '@/components/marketing/about//AboutVisionSection';
+import { AboutVisionSection } from '@/components/marketing/about/AboutVisionSection';
 
 export const metadata: Metadata = {
     title: 'À propos',
