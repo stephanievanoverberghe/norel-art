@@ -22,7 +22,7 @@ export function AboutHero({ content, className }: AboutHeroProps) {
         >
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,18,0.58)_0%,rgba(5,10,18,0.2)_28%,rgba(5,10,18,0)_60%)]" />
             <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-white/4 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute right-24 top-16 h-80 w-80 rounded-full bg-[color:var(--accent)]/12 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute right-24 top-16 h-80 w-80 rounded-full bg-(--accent)/12 blur-3xl" />
             <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-20 h-28 w-md -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
 
             <Container className="relative z-10">
@@ -50,7 +50,7 @@ export function AboutHero({ content, className }: AboutHeroProps) {
 
                         <div className="mt-10 flex flex-wrap items-center gap-4">
                             <div className="inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/4 px-4 py-2 backdrop-blur-md">
-                                <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)]" />
+                                <span className="h-1.5 w-1.5 rounded-full bg-(--accent)" />
                                 <span className="text-[10px] uppercase tracking-[0.24em] text-white/48">{content.badge}</span>
                             </div>
 
@@ -81,7 +81,7 @@ export function AboutHero({ content, className }: AboutHeroProps) {
                                 </p>
                             </div>
 
-                            <div className="absolute -right-4 top-10 hidden rounded-full border border-[color:var(--accent)]/10 bg-[color:var(--accent)]/4 px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-[color:var(--accent)]/42 backdrop-blur-sm lg:inline-flex">
+                            <div className="absolute -right-4 top-10 hidden rounded-full border border-(--accent)/10 bg-(--accent)/4 px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-(--accent)/42 backdrop-blur-sm lg:inline-flex">
                                 Depuis 2019
                             </div>
                         </div>

@@ -15,7 +15,7 @@ export function AboutVisionSection({ content, className }: AboutVisionSectionPro
     return (
         <section aria-label="Vision artistique" className={cn(aboutSectionStyles.section, aboutSectionStyles.pageBackground, className)}>
             <div aria-hidden="true" className="pointer-events-none absolute -left-20 top-20 h-72 w-72 rounded-full bg-white/4 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute right-0 top-16 h-80 w-80 rounded-full bg-[color:var(--accent)]/10 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute right-0 top-16 h-80 w-80 rounded-full bg-(--accent)/10 blur-3xl" />
 
             <Container className="relative z-10">
                 <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">
