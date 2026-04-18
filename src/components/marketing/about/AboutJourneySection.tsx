@@ -43,7 +43,7 @@ export function AboutJourneySection({ content, className }: AboutJourneySectionP
                                         <span className="text-[10px] uppercase tracking-[0.24em] text-white/42">{fragment.label}</span>
                                     </div>
 
-                                    <Text variant="muted" className="mt-5 text-white/78">
+                                    <Text variant="muted" className="mt-5 text-white/80">
                                         {fragment.text}
                                     </Text>
                                 </article>
