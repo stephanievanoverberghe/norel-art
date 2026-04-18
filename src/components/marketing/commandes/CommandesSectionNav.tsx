@@ -11,6 +11,8 @@ interface CommandesSectionNavProps {
     className?: string;
 }
 
+const NAV_OFFSET = 170;
+
 export function CommandesSectionNav({ items, className }: CommandesSectionNavProps) {
     const [activeId, setActiveId] = useState<string>(items[0]?.id ?? '');
     const railRef = useRef<HTMLDivElement | null>(null);
@@ -18,31 +20,34 @@ export function CommandesSectionNav({ items, className }: CommandesSectionNavPro
     const itemIds = useMemo(() => items.map((item) => item.id), [items]);
 
     useEffect(() => {
-        const sectionElements = itemIds.map((id) => document.getElementById(id)).filter((element): element is HTMLElement => element instanceof HTMLElement);
+        const sections = itemIds.map((id) => document.getElementById(id)).filter((element): element is HTMLElement => element instanceof HTMLElement);
 
-        if (sectionElements.length === 0) {
+        if (sections.length === 0) {
             return;
         }
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const visibleEntries = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        const updateActiveSection = () => {
+            const scrollPosition = window.scrollY + NAV_OFFSET;
 
-                if (visibleEntries.length > 0) {
-                    setActiveId(visibleEntries[0].target.id);
+            let currentSectionId = sections[0]?.id ?? '';
+
+            for (const section of sections) {
+                if (scrollPosition >= section.offsetTop) {
+                    currentSectionId = section.id;
                 }
-            },
-            {
-                rootMargin: '-18% 0px -58% 0px',
-                threshold: [0.12, 0.25, 0.4, 0.6],
-            },
-        );
+            }
 
-        sectionElements.forEach((element) => observer.observe(element));
+            setActiveId(currentSectionId);
+        };
+
+        updateActiveSection();
+
+        window.addEventListener('scroll', updateActiveSection, { passive: true });
+        window.addEventListener('resize', updateActiveSection);
 
         return () => {
-            sectionElements.forEach((element) => observer.unobserve(element));
-            observer.disconnect();
+            window.removeEventListener('scroll', updateActiveSection);
+            window.removeEventListener('resize', updateActiveSection);
         };
     }, [itemIds]);
 
@@ -56,10 +61,29 @@ export function CommandesSectionNav({ items, className }: CommandesSectionNavPro
         });
     }, [activeId]);
 
+    const handleNavigate = (id: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault();
+
+        const section = document.getElementById(id);
+
+        if (!section) {
+            return;
+        }
+
+        const top = section.getBoundingClientRect().top + window.scrollY - NAV_OFFSET + 8;
+
+        window.scrollTo({
+            top,
+            behavior: 'smooth',
+        });
+
+        setActiveId(id);
+    };
+
     return (
         <div className={cn('sticky top-22 z-40 pb-4 pt-3', 'bg-[linear-gradient(180deg,rgba(13,27,42,0.96)_0%,rgba(13,27,42,0.82)_64%,rgba(13,27,42,0)_100%)]', className)}>
             <Container>
-                <nav aria-label="Navigation des sections de la page commandes" className="relative">
+                <nav aria-label="Navigation interne de la page commandes" className="relative">
                     <div
                         ref={railRef}
                         className={cn(
@@ -67,12 +91,7 @@ export function CommandesSectionNav({ items, className }: CommandesSectionNavPro
                             'mask-[linear-gradient(to_right,transparent,black_1rem,black_calc(100%-1rem),transparent)]',
                         )}
                     >
-                        <div
-                            className={cn(
-                                'mx-auto flex min-w-max items-center gap-2 rounded-[1.4rem] border border-white/10 bg-[rgba(255,255,255,0.035)] p-1.5 shadow-[0_18px_48px_rgba(0,0,0,0.28)] backdrop-blur-2xl',
-                                'sm:gap-2.5 sm:rounded-full',
-                            )}
-                        >
+                        <div className="mx-auto flex min-w-max items-center gap-2 rounded-[1.35rem] border border-white/10 bg-[rgba(255,255,255,0.04)] p-1.5 shadow-[0_16px_48px_rgba(0,0,0,0.24)] backdrop-blur-2xl sm:rounded-full sm:gap-2.5">
                             {items.map((item, index) => {
                                 const isActive = activeId === item.id;
 
@@ -81,17 +100,19 @@ export function CommandesSectionNav({ items, className }: CommandesSectionNavPro
                                         key={item.id}
                                         href={`#${item.id}`}
                                         data-section-id={item.id}
+                                        onClick={handleNavigate(item.id)}
+                                        aria-current={isActive ? 'true' : undefined}
                                         className={cn(
-                                            'group relative inline-flex min-h-11 shrink-0 items-center rounded-2xl px-3.5 transition-all duration-300 sm:min-h-11 sm:rounded-full sm:px-4.5',
-                                            isActive ? 'text-white' : 'text-white/42 hover:text-white/74',
+                                            'group relative inline-flex min-h-11 shrink-0 items-center rounded-2xl px-3.5 transition-all duration-300 sm:rounded-full sm:px-4.5',
+                                            isActive ? 'text-white' : 'text-white/44 hover:text-white/76',
                                         )}
                                     >
                                         <span
                                             aria-hidden="true"
                                             className={cn(
-                                                'absolute inset-0 rounded-[2xl border transition-all duration-300 sm:rounded-full',
+                                                'absolute inset-0 rounded-2xl border transition-all duration-300 sm:rounded-full',
                                                 isActive
-                                                    ? 'border-white/12 bg-white/9 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]'
+                                                    ? 'border-white/12 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]'
                                                     : 'border-transparent bg-transparent group-hover:border-white/10 group-hover:bg-white/4.5',
                                             )}
                                         />

@@ -3,6 +3,8 @@ export interface CommandesHeroContent {
     title: string;
     description: string;
     note: string;
+    primaryCtaLabel: string;
+    primaryCtaHref: string;
 }
 
 export interface CommandesSectionNavItem {
@@ -10,7 +12,7 @@ export interface CommandesSectionNavItem {
     label: string;
 }
 
-export interface CommandesTypeItem {
+export interface CommandesOfferingItem {
     title: string;
     text: string;
 }
@@ -28,11 +30,27 @@ export interface CommandesProcessItem {
     aside?: string;
 }
 
+export interface CommandesSelectOption {
+    value: string;
+    label: string;
+    description?: string;
+}
+
 export interface CommandesPricingItem {
     format: string;
     dimensions: string;
     basePrice: string;
     extraFacePrice: string;
+}
+export interface CommandesFormContent {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    hints: string[];
+    submitLabel: string;
+    requestTypeOptions: CommandesSelectOption[];
+    formatOptions: CommandesSelectOption[];
+    techniqueOptions: CommandesSelectOption[];
 }
 
 export interface CommandesFinalContent {
@@ -44,13 +62,22 @@ export interface CommandesFinalContent {
 
 export interface CommandesPageContent {
     hero: CommandesHeroContent;
-    types: CommandesTypeItem[];
+    sectionNav: CommandesSectionNavItem[];
+    offeringsTitle: string;
+    offeringsIntro: string;
+    offerings: CommandesOfferingItem[];
+    usageTags: string[];
+    techniquesLabel: string;
+    examplesTitle: string;
+    examplesIntro: string;
     examples: CommandesExampleItem[];
+    processTitle: string;
+    processIntro: string;
     process: CommandesProcessItem[];
+    pricingTitle: string;
     pricingIntro: string;
     pricing: CommandesPricingItem[];
-    pricingNotes: string[];
-    infos: string[];
-    formIntro: string;
+    practicalInfos: string[];
+    form: CommandesFormContent;
     final: CommandesFinalContent;
 }
