@@ -41,32 +41,32 @@ Une émotion, une sensation.
 
     examples: [
         {
-            src: '/images/commandes/co001.jpg',
+            src: '/images/commandes/co-001.jpg',
             alt: 'Exemple de commande personnalisée 1',
             label: 'Portrait sur mesure',
         },
         {
-            src: '/images/commandes/co002.jpg',
+            src: '/images/commandes/co-002.jpg',
             alt: 'Exemple de commande personnalisée 2',
             label: 'Visage offert',
         },
         {
-            src: '/images/commandes/co003.jpg',
+            src: '/images/commandes/co-003.jpg',
             alt: 'Exemple de commande personnalisée 3',
             label: 'Fragment de mémoire',
         },
         {
-            src: '/images/commandes/co004.jpg',
+            src: '/images/commandes/co-004.jpg',
             alt: 'Exemple de commande personnalisée 4',
             label: 'Présence réinventée',
         },
         {
-            src: '/images/commandes/co005.jpg',
+            src: '/images/commandes/co-005.jpg',
             alt: 'Exemple de commande personnalisée 5',
             label: 'Regard confié',
         },
         {
-            src: '/images/commandes/co006.jpg',
+            src: '/images/commandes/co-006.jpg',
             alt: 'Exemple de commande personnalisée 6',
             label: 'Commande intime',
         },

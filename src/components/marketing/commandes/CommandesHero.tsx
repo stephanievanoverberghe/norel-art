@@ -65,7 +65,7 @@ export function CommandesHero({ content, className }: CommandesHeroProps) {
                             <div className="relative overflow-hidden rounded-[1.9rem] border border-white/10 bg-white/4 p-2 sm:p-3 backdrop-blur-sm">
                                 <div className="relative aspect-4/5 overflow-hidden rounded-[1.4rem]">
                                     <Image
-                                        src="/images/commandes/co001.jpg"
+                                        src="/images/commandes/co-001.jpg"
                                         alt="Exemple de commande personnalisée"
                                         fill
                                         priority
@@ -93,7 +93,7 @@ export function CommandesHero({ content, className }: CommandesHeroProps) {
                             <div className="absolute -right-8 bottom-10 hidden w-32 overflow-hidden rounded-[1.15rem] border border-white/10 bg-white/4 p-1 backdrop-blur-xl xl:block">
                                 <div className="relative aspect-3/4 overflow-hidden rounded-[0.9rem]">
                                     <Image
-                                        src="/images/commandes/co002.jpg"
+                                        src="/images/commandes/co-002.jpg"
                                         alt="Détail d'une autre commande personnalisée"
                                         fill
                                         sizes="10rem"
