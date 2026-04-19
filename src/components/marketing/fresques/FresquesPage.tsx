@@ -20,7 +20,16 @@ export function FresquesPage({ content }: FresquesPageProps) {
 
             <FresquesIntentionsSection id="intentions" title={content.intentionsTitle} intro={content.intentionsIntro} items={content.intentions} usageTags={content.usageTags} />
             <FresquesExamplesSection id="fragments" title={content.examplesTitle} intro={content.examplesIntro} items={content.examples} />
-            <FresquesProcessSection id="processus" title={content.processTitle} intro={content.processIntro} items={content.process} />
+            <FresquesProcessSection
+                id="processus"
+                eyebrow={content.processEyebrow}
+                title={content.processTitle}
+                intro={content.processIntro}
+                items={content.process}
+                frameEyebrow={content.processFrameEyebrow}
+                frameTitle={content.processFrameTitle}
+                frameText={content.processFrameText}
+            />
             <FresquesPricingSection id="reperes" title={content.pricingTitle} intro={content.pricingIntro} practicalInfos={content.practicalInfos} />
             <FresquesFormSection id="formulaire" content={content.form} />
         </>

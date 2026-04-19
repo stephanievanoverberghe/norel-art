@@ -57,9 +57,13 @@ export interface FresquesPageContent {
     examplesTitle: string;
     examplesIntro: string;
     examples: FresquesExampleItem[];
+    processEyebrow: string;
     processTitle: string;
     processIntro: string;
     process: FresquesProcessItem[];
+    processFrameEyebrow: string;
+    processFrameTitle: string;
+    processFrameText: string;
     pricingTitle: string;
     pricingIntro: string;
     practicalInfos: string[];

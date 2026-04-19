@@ -17,7 +17,7 @@ interface FresquesProcessSectionProps {
     frameText: string;
 }
 
-export function FresquesProcessSection({ id, eyebrow, title, intro, items }: FresquesProcessSectionProps) {
+export function FresquesProcessSection({ id, eyebrow, title, intro, items, frameEyebrow, frameTitle, frameText }: FresquesProcessSectionProps) {
     return (
         <FresquesSection id={id}>
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.045]">
@@ -65,6 +65,20 @@ export function FresquesProcessSection({ id, eyebrow, title, intro, items }: Fre
                                 </div>
                             );
                         })}
+                    </div>
+                </div>
+
+                <div className="mx-auto mt-20 max-w-3xl text-center">
+                    <div className="rounded-3xl border border-white/10 bg-white/3 px-6 py-6 backdrop-blur-sm sm:px-8 sm:py-7">
+                        <p className="text-[11px] uppercase tracking-[0.28em] text-white/34">{frameEyebrow}</p>
+
+                        <Heading level={3} className="mt-3 text-white">
+                            {frameTitle}
+                        </Heading>
+
+                        <Text variant="muted" className="mt-4 text-white/60">
+                            {frameText}
+                        </Text>
                     </div>
                 </div>
             </div>

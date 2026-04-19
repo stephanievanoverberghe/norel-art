@@ -57,6 +57,7 @@ pour transformer un lieu sans le figer.`,
         { src: '/images/fresques/fr-008.jpg', alt: 'Inspiration de fresque murale 8', label: 'Tension graphique' },
     ],
 
+    processEyebrow: 'Processus',
     processTitle: 'Une fresque se construit avec le lieu.',
     processIntro: 'Chaque projet commence par un échange, puis une lecture de l’espace, avant la proposition visuelle et la réalisation.',
 
@@ -86,6 +87,10 @@ pour transformer un lieu sans le figer.`,
             aside: 'Le lieu devient partie prenante de l’œuvre.',
         },
     ],
+    processFrameEyebrow: 'Cadre',
+    processFrameTitle: 'Une structure claire, au service du lieu.',
+    processFrameText:
+        'Le support, la surface, la technique, le calendrier et les conditions d’intervention se précisent ensemble. Le cadre sert le projet ; il ne fige jamais ce qui doit rester vivant.',
 
     pricingTitle: 'Repères pour un projet sur mesure',
     pricingIntro:
