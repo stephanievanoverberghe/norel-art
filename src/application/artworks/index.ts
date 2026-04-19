@@ -1,5 +1,6 @@
 import { artworks } from '@/content/artworks/artworks';
-import type { Artwork, ArtworkType } from '@/domain/artworks/types';
+import type { Artwork } from '@/domain/artworks/types';
+import type { OeuvresCategoryFilter, OeuvresCollectionFilter, OeuvresTypeFilter } from '@/domain/oeuvres/types';
 
 export function getFeaturedArtworks(): Artwork[] {
     return artworks.filter((artwork) => artwork.highlighted);
@@ -21,20 +22,28 @@ export function getArtworkBySlug(slug: string): Artwork | undefined {
     return artworks.find((artwork) => artwork.slug === slug);
 }
 
-export function getRelatedArtworks(currentArtwork: Artwork, limit = 3): Artwork[] {
-    return artworks.filter((artwork) => artwork.id !== currentArtwork.id && artwork.category === currentArtwork.category).slice(0, limit);
+export function getRelatedArtworks(currentArtwork: Artwork, pool: Artwork[] = artworks, limit = 3): Artwork[] {
+    const sameCategory = pool.filter((item) => item.id !== currentArtwork.id && item.category === currentArtwork.category);
+
+    const sameCollection = pool.filter((item) => item.id !== currentArtwork.id && item.collection === currentArtwork.collection && item.category !== currentArtwork.category);
+
+    const fallback = pool.filter((item) => item.id !== currentArtwork.id);
+
+    return [...sameCategory, ...sameCollection, ...fallback].filter((item, index, array) => array.findIndex((artwork) => artwork.id === item.id) === index).slice(0, limit);
 }
 
-export interface ArtworkFilters {
-    category?: string;
-    type?: ArtworkType;
+interface ArtworkFilters {
+    category?: OeuvresCategoryFilter;
+    collection?: OeuvresCollectionFilter;
+    type?: OeuvresTypeFilter;
 }
 
-export function filterArtworks(filters: ArtworkFilters): Artwork[] {
-    return artworks.filter((artwork) => {
-        const categoryMatches = filters.category ? artwork.category === filters.category : true;
-        const typeMatches = filters.type ? artwork.type === filters.type : true;
+export function filterArtworks(pool: Artwork[], filters: ArtworkFilters): Artwork[] {
+    return pool.filter((artwork) => {
+        const categoryMatches = !filters.category || filters.category === 'all' || artwork.category === filters.category;
+        const collectionMatches = !filters.collection || filters.collection === 'all' || artwork.collection === filters.collection;
+        const typeMatches = !filters.type || filters.type === 'all' || artwork.type === filters.type;
 
-        return categoryMatches && typeMatches;
+        return categoryMatches && collectionMatches && typeMatches;
     });
 }

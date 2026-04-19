@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { getArtworkBySlug } from '@/application/artworks';
 import { artworks } from '@/domain/artworks/data';
 import { OeuvreDetailHero } from '@/components/marketing/oeuvres/slug/OeuvreDetailHero';
 import { OeuvreStorySection } from '@/components/marketing/oeuvres/slug/OeuvreStorySection';
@@ -12,10 +13,6 @@ interface OeuvrePageProps {
     params: Promise<{
         slug: string;
     }>;
-}
-
-function getArtworkBySlug(slug: string) {
-    return artworks.find((artwork) => artwork.slug === slug);
 }
 
 export async function generateMetadata({ params }: OeuvrePageProps): Promise<Metadata> {

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
-import { OeuvresHero } from '@/components/marketing/oeuvres/OeuvresHero';
-import { OeuvresLayout } from '@/components/marketing/oeuvres/OeuvresLayout';
+import { OeuvresPage } from '@/components/marketing/oeuvres/OeuvresPage';
+import { oeuvresContent } from '@/content/oeuvres/oeuvres-content';
 import { artworks, artworkCategories, artworkCollections } from '@/domain/artworks/data';
 
 export const metadata: Metadata = {
@@ -21,16 +21,14 @@ export default async function OeuvresRoutePage({ searchParams }: OeuvresPageProp
     const params = await searchParams;
 
     return (
-        <>
-            <OeuvresHero />
-            <OeuvresLayout
-                artworks={artworks}
-                categories={artworkCategories}
-                collections={artworkCollections}
-                initialCategory={params.category}
-                initialCollection={params.collection}
-                initialType={params.type}
-            />
-        </>
+        <OeuvresPage
+            artworks={artworks}
+            categories={artworkCategories}
+            collections={artworkCollections}
+            content={oeuvresContent}
+            initialCategory={params.category}
+            initialCollection={params.collection}
+            initialType={params.type}
+        />
     );
 }

@@ -1,12 +1,13 @@
 import Link from 'next/link';
 
+import { getRelatedArtworks } from '@/application/artworks';
 import type { Artwork } from '@/domain/artworks/types';
 import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
-import { OeuvreCard } from '../OeuvreCard';
+import { OeuvresArtworkCard } from '../OeuvresArtworkCard';
 
 interface RelatedOeuvresSectionProps {
     artwork: Artwork;
@@ -14,25 +15,13 @@ interface RelatedOeuvresSectionProps {
     className?: string;
 }
 
-function getRelatedArtworks(currentArtwork: Artwork, artworks: Artwork[]) {
-    const sameCategory = artworks.filter((item) => item.id !== currentArtwork.id && item.category === currentArtwork.category);
-
-    const sameCollection = artworks.filter((item) => item.id !== currentArtwork.id && item.collection === currentArtwork.collection && item.category !== currentArtwork.category);
-
-    const fallback = artworks.filter((item) => item.id !== currentArtwork.id);
-
-    const uniqueArtworks = [...sameCategory, ...sameCollection, ...fallback].filter((item, index, array) => array.findIndex((artwork) => artwork.id === item.id) === index);
-
-    return uniqueArtworks.slice(0, 4);
-}
-
 export function RelatedOeuvresSection({ artwork, artworks, className }: RelatedOeuvresSectionProps) {
-    const relatedArtworks = getRelatedArtworks(artwork, artworks);
+    const relatedArtworks = getRelatedArtworks(artwork, artworks, 4);
 
     if (relatedArtworks.length === 0) return null;
 
     return (
-         <section aria-label="Œuvres liées" className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
+        <section aria-label="Œuvres liées" className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-10 h-24 w-[20rem] -translate-x-1/2 bg-(--accent)/6 blur-3xl" />
 
             <Container className="relative z-10">
@@ -57,7 +46,7 @@ export function RelatedOeuvresSection({ artwork, artworks, className }: RelatedO
 
                 <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 xl:grid-cols-4">
                     {relatedArtworks.map((relatedArtwork) => (
-                        <OeuvreCard key={relatedArtwork.id} artwork={relatedArtwork} />
+                        <OeuvresArtworkCard key={relatedArtwork.id} artwork={relatedArtwork} />
                     ))}
                 </div>
             </Container>

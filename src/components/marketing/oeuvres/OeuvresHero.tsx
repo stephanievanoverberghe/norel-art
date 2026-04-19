@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 
+import type { OeuvresHeroContent } from '@/domain/oeuvres/types';
 import { marketingPageSpacing } from '@/layout/marketing/page-spacing';
 import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
@@ -9,12 +10,13 @@ import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
 interface OeuvresHeroProps {
+    content: OeuvresHeroContent;
     className?: string;
 }
 
-export function OeuvresHero({ className }: OeuvresHeroProps) {
+export function OeuvresHero({ content, className }: OeuvresHeroProps) {
     return (
-         <section aria-label="Galerie des œuvres" className={cn(`relative overflow-hidden pb-16 sm:pb-20 lg:pb-24 ${marketingPageSpacing.editorialOffset}`, className)}>
+        <section aria-label="Galerie des œuvres" className={cn(`relative overflow-hidden pb-16 sm:pb-20 lg:pb-24 ${marketingPageSpacing.editorialOffset}`, className)}>
             <div className="absolute inset-0">
                 <Image src="/images/oeuvres/oeuvres-hero.jpg" alt="Galerie d'œuvres Norel Art" fill priority sizes="100vw" className="object-cover object-center" />
             </div>
@@ -27,15 +29,14 @@ export function OeuvresHero({ className }: OeuvresHeroProps) {
 
             <Container className="relative z-10">
                 <div className="max-w-2xl">
-                    <p className="text-[11px] uppercase tracking-[0.32em] text-white/50">Galerie</p>
+                    <p className="text-[11px] uppercase tracking-[0.32em] text-white/50">{content.eyebrow}</p>
 
-                    <Heading level={1} className="mt-4 text-white">
-                        Des présences.
-                        <br />À laisser venir.
+                    <Heading level={1} className="mt-4 text-white whitespace-pre-line">
+                        {content.title}
                     </Heading>
 
                     <Text variant="muted" className="mt-5 max-w-lg text-white/75 sm:text-lg">
-                        Originaux, impressions, fragments. Chaque œuvre ne se comprend pas immédiatement. Elle se laisse approcher.
+                        {content.description}
                     </Text>
                 </div>
             </Container>

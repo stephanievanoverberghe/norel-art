@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import type { Artwork } from '@/domain/artworks/types';
-import { formatArtworkPrice, getAvailabilityLabel } from '@/domain/artworks/presentation';
-import { cn } from '@/lib/utils/cn';
 import { SnakeBorder } from '@/components/shared/SnakeBorder';
+import { formatArtworkPrice, getAvailabilityLabel } from '@/domain/artworks/presentation';
+import type { Artwork } from '@/domain/artworks/types';
+import { cn } from '@/lib/utils/cn';
 
-interface OeuvreCardProps {
+interface OeuvresArtworkCardProps {
     artwork: Artwork;
 }
 
@@ -16,7 +16,7 @@ const availabilityTone: Record<Artwork['availability'], string> = {
     sold: 'bg-black/40 text-white/70',
 };
 
-export function OeuvreCard({ artwork }: OeuvreCardProps) {
+export function OeuvresArtworkCard({ artwork }: OeuvresArtworkCardProps) {
     return (
         <article className="group relative">
             <Link href={`/oeuvres/${artwork.slug}`} className="relative block overflow-hidden rounded-[1.75rem] border border-white/10">

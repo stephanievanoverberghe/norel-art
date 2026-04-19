@@ -1,28 +1,29 @@
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 import type { ArtworkCategory } from '@/domain/artworks/categories';
-import type { ArtworkType } from '@/domain/artworks/types';
+import type { OeuvresCategoryFilter, OeuvresCollectionFilter, OeuvresFiltersContent, OeuvresTypeFilter } from '@/domain/oeuvres/types';
 import { cn } from '@/lib/utils/cn';
 
-interface OeuvresFiltersAsideProps {
+interface OeuvresFiltersPanelProps {
     categories: readonly ArtworkCategory[];
     collections: readonly string[];
-    selectedCategory: ArtworkCategory | 'all';
-    selectedCollection: string | 'all';
-    selectedType: ArtworkType | 'all';
-    onCategoryChange: (category: ArtworkCategory | 'all') => void;
-    onCollectionChange: (collection: string | 'all') => void;
-    onTypeChange: (type: ArtworkType | 'all') => void;
+    content: OeuvresFiltersContent;
+    selectedCategory: OeuvresCategoryFilter;
+    selectedCollection: OeuvresCollectionFilter;
+    selectedType: OeuvresTypeFilter;
+    onCategoryChange: (category: OeuvresCategoryFilter) => void;
+    onCollectionChange: (collection: OeuvresCollectionFilter) => void;
+    onTypeChange: (type: OeuvresTypeFilter) => void;
     onReset: () => void;
 }
 
-interface FilterPillProps {
+interface OeuvresFilterPillProps {
     label: string;
     isActive: boolean;
     onClick: () => void;
 }
 
-function FilterPill({ label, isActive, onClick }: FilterPillProps) {
+function OeuvresFilterPill({ label, isActive, onClick }: OeuvresFilterPillProps) {
     return (
         <button
             type="button"
@@ -38,15 +39,10 @@ function FilterPill({ label, isActive, onClick }: FilterPillProps) {
     );
 }
 
-const TYPE_FILTERS: ReadonlyArray<{ label: string; value: ArtworkType | 'all' }> = [
-    { label: 'Toutes', value: 'all' },
-    { label: 'Originaux', value: 'original' },
-    { label: 'Impressions', value: 'print' },
-];
-
-export function OeuvresFiltersAside({
+export function OeuvresFiltersPanel({
     categories,
     collections,
+    content,
     selectedCategory,
     selectedCollection,
     selectedType,
@@ -54,34 +50,34 @@ export function OeuvresFiltersAside({
     onCollectionChange,
     onTypeChange,
     onReset,
-}: OeuvresFiltersAsideProps) {
-    const categoryFilters: ReadonlyArray<ArtworkCategory | 'all'> = ['all', ...categories];
-    const collectionFilters: ReadonlyArray<string | 'all'> = ['all', ...collections];
+}: OeuvresFiltersPanelProps) {
+    const categoryFilters: ReadonlyArray<OeuvresCategoryFilter> = ['all', ...categories];
+    const collectionFilters: ReadonlyArray<OeuvresCollectionFilter> = ['all', ...collections];
 
     return (
         <aside className="lg:sticky lg:top-28 lg:self-start">
             <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/3">
                 <div className="border-b border-white/10 px-5 py-5 sm:px-6">
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-white/38">Explorer</p>
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-white/38">{content.eyebrow}</p>
 
                     <Heading level={3} className="mt-3 text-white">
-                        La galerie
+                        {content.title}
                     </Heading>
 
                     <Text variant="muted" className="mt-3 text-sm text-white/66">
-                        Approcher les œuvres par leur nature, leur série ou leur présence.
+                        {content.description}
                     </Text>
                 </div>
 
                 <div className="space-y-6 px-5 py-5 sm:px-6">
                     <div>
-                        <p className="text-[10px] uppercase tracking-[0.22em] text-white/42">Catégories</p>
+                        <p className="text-[10px] uppercase tracking-[0.22em] text-white/42">{content.categoriesLabel}</p>
 
                         <div className="mt-3 flex flex-wrap gap-2">
                             {categoryFilters.map((category) => (
-                                <FilterPill
+                                <OeuvresFilterPill
                                     key={category}
-                                    label={category === 'all' ? 'Toutes' : category}
+                                    label={category === 'all' ? content.allLabel : category}
                                     isActive={selectedCategory === category}
                                     onClick={() => onCategoryChange(category)}
                                 />
@@ -92,13 +88,13 @@ export function OeuvresFiltersAside({
                     <div className="h-px bg-white/10" />
 
                     <div>
-                        <p className="text-[10px] uppercase tracking-[0.22em] text-white/42">Collections</p>
+                        <p className="text-[10px] uppercase tracking-[0.22em] text-white/42">{content.collectionsLabel}</p>
 
                         <div className="mt-3 flex flex-wrap gap-2">
                             {collectionFilters.map((collection) => (
-                                <FilterPill
+                                <OeuvresFilterPill
                                     key={collection}
-                                    label={collection === 'all' ? 'Toutes' : collection}
+                                    label={collection === 'all' ? content.allLabel : collection}
                                     isActive={selectedCollection === collection}
                                     onClick={() => onCollectionChange(collection)}
                                 />
@@ -109,15 +105,15 @@ export function OeuvresFiltersAside({
                     <div className="h-px bg-white/10" />
 
                     <div>
-                        <p className="text-[10px] uppercase tracking-[0.22em] text-white/42">Type</p>
+                        <p className="text-[10px] uppercase tracking-[0.22em] text-white/42">{content.typesLabel}</p>
 
                         <div className="mt-3 flex flex-wrap gap-2">
-                            {TYPE_FILTERS.map((typeFilter) => (
-                                <FilterPill
-                                    key={typeFilter.value}
-                                    label={typeFilter.label}
-                                    isActive={selectedType === typeFilter.value}
-                                    onClick={() => onTypeChange(typeFilter.value)}
+                            {content.typeOptions.map((typeOption) => (
+                                <OeuvresFilterPill
+                                    key={typeOption.value}
+                                    label={typeOption.label}
+                                    isActive={selectedType === typeOption.value}
+                                    onClick={() => onTypeChange(typeOption.value)}
                                 />
                             ))}
                         </div>
@@ -127,7 +123,7 @@ export function OeuvresFiltersAside({
 
                     <div>
                         <button type="button" onClick={onReset} className="text-sm text-white/62 transition-colors duration-300 hover:text-white">
-                            Réinitialiser les filtres
+                            {content.resetLabel}
                         </button>
                     </div>
                 </div>
