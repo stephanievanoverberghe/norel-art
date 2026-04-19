@@ -21,7 +21,7 @@ export function OeuvresGalleryGrid({ artworks, content }: OeuvresGalleryGridProp
                 <div>
                     <p className="text-[11px] uppercase tracking-[0.28em] text-white/38">{content.eyebrow}</p>
                     <Text variant="muted" className="mt-2 text-sm text-white/66">
-                        {content.countLabel(artworks.length)}
+                        {artworks.length} {content.countLabel}
                     </Text>
                 </div>
             </div>

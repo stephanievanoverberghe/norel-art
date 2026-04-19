@@ -24,7 +24,7 @@ export interface OeuvresFiltersContent {
 
 export interface OeuvresGridContent {
     eyebrow: string;
-    countLabel: (count: number) => string;
+    countLabel: string;
     emptyEyebrow: string;
     emptyDescription: string;
 }

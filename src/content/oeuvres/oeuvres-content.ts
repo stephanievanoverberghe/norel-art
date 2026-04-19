@@ -24,7 +24,7 @@ export const oeuvresContent: OeuvresPageContent = {
     },
     grid: {
         eyebrow: 'Sélection',
-        countLabel: (count: number) => `${count} présences à approcher`,
+        countLabel: 'présences à approcher',
         emptyEyebrow: 'Aucune œuvre affichée',
         emptyDescription: 'Ajustez les filtres pour explorer une autre sélection.',
     },
