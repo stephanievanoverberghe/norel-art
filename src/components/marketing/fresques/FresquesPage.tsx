@@ -1,7 +1,12 @@
-import { ContactForm } from '@/components/marketing/ContactForm';
-import { MarketingPageIntro } from '@/components/marketing/shared/MarketingPageIntro';
 import type { FresquesPageContent } from '@/domain/fresques/types';
-import { Container } from '@/ui/Container';
+
+import { FresquesExamplesSection } from './FresquesExamplesSection';
+import { FresquesFormSection } from './FresquesFormSection';
+import { FresquesHero } from './FresquesHero';
+import { FresquesIntentionsSection } from './FresquesIntentionsSection';
+import { FresquesPricingSection } from './FresquesPricingSection';
+import { FresquesProcessSection } from './FresquesProcessSection';
+import { FresquesSectionNav } from './FresquesSectionNav';
 
 interface FresquesPageProps {
     content: FresquesPageContent;
@@ -10,17 +15,14 @@ interface FresquesPageProps {
 export function FresquesPage({ content }: FresquesPageProps) {
     return (
         <>
-            <MarketingPageIntro eyebrow={content.intro.eyebrow} title={content.intro.title} description={content.intro.description} />
-            <section className="pb-16">
-                <Container className="grid gap-8 lg:grid-cols-2">
-                    <div className="space-y-4 text-sm text-white/75">
-                        {content.asideParagraphs.map((paragraph) => (
-                            <p key={paragraph}>{paragraph}</p>
-                        ))}
-                    </div>
-                    <ContactForm content={content.form} />
-                </Container>
-            </section>
+            <FresquesHero content={content.hero} />
+            <FresquesSectionNav items={content.sectionNav} />
+
+            <FresquesIntentionsSection id="intentions" title={content.intentionsTitle} intro={content.intentionsIntro} items={content.intentions} usageTags={content.usageTags} />
+            <FresquesExamplesSection id="fragments" title={content.examplesTitle} intro={content.examplesIntro} items={content.examples} />
+            <FresquesProcessSection id="processus" title={content.processTitle} intro={content.processIntro} items={content.process} />
+            <FresquesPricingSection id="reperes" title={content.pricingTitle} intro={content.pricingIntro} practicalInfos={content.practicalInfos} />
+            <FresquesFormSection id="formulaire" content={content.form} />
         </>
     );
 }

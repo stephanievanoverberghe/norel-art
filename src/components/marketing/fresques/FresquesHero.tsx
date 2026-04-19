@@ -1,0 +1,82 @@
+import Image from 'next/image';
+import Link from 'next/link';
+
+import type { FresquesHeroContent } from '@/domain/fresques/types';
+import { Button } from '@/ui/Button';
+import { Container } from '@/ui/Container';
+import { Heading } from '@/ui/Heading';
+import { Text } from '@/ui/Text';
+
+interface FresquesHeroProps {
+    content: FresquesHeroContent;
+}
+
+export function FresquesHero({ content }: FresquesHeroProps) {
+    return (
+        <section aria-label="Fresques murales" className="relative overflow-hidden bg-(--bg-primary) pt-40 pb-20 sm:pt-44 sm:pb-24 lg:pt-48 lg:pb-28">
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.075]">
+                <div className="h-[120%] w-[120%] bg-[url('/images/patterns/spirale.png')] bg-center bg-no-repeat" style={{ backgroundSize: '600px' }} />
+            </div>
+            <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,18,0.86)_0%,rgba(5,10,18,0.45)_42%,rgba(5,10,18,0)_100%)]"
+            />
+
+            <Container className="relative z-10">
+                <p
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -top-10 left-0 hidden text-[clamp(4.5rem,10vw,8rem)] font-semibold uppercase tracking-[-0.06em] text-white/3 lg:block"
+                >
+                    fresques
+                </p>
+                <div className="grid gap-12 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center lg:gap-16 xl:gap-20">
+                    <div>
+                        <p className="text-[11px] uppercase tracking-[0.34em] text-white/42">{content.eyebrow}</p>
+
+                        <Heading level={1} className="mt-5 max-w-[11ch] whitespace-pre-line text-[clamp(3rem,8vw,6rem)] leading-[0.9] tracking-[-0.05em] text-white">
+                            {content.title}
+                        </Heading>
+
+                        <div className="mt-8 flex items-start gap-4 sm:gap-5">
+                            <div className="mt-1 h-24 w-px shrink-0 bg-[linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,0.48),rgba(255,255,255,0))]" />
+
+                            <Text variant="muted" className="max-w-xl whitespace-pre-line text-base leading-7 text-white/74 sm:text-lg sm:leading-8">
+                                {content.description}
+                            </Text>
+                        </div>
+
+                        <div className="mt-10 flex flex-wrap items-center gap-4">
+                            <Link href={content.primaryCtaHref}>
+                                <Button className="min-h-12 rounded-full px-6">{content.primaryCtaLabel}</Button>
+                            </Link>
+
+                            <p className="text-xs uppercase tracking-[0.2em] text-white/44">Projet sur devis</p>
+                        </div>
+                    </div>
+
+                    <div className="relative mx-auto max-w-[24rem] sm:max-w-120 lg:ml-auto lg:mr-0 lg:max-w-140">
+                        <article className="relative overflow-hidden rounded-[1.9rem] border border-white/10 bg-white/4 p-2 sm:p-3 backdrop-blur-sm">
+                            <div className="relative aspect-4/5 overflow-hidden rounded-[1.4rem]">
+                                <Image
+                                    src="/images/fresques/fr-008.jpg"
+                                    alt="Portrait sur commande"
+                                    fill
+                                    priority
+                                    sizes="(max-width: 1024px) 100vw, 36rem"
+                                    className="object-cover"
+                                />
+                                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.12)_50%,rgba(0,0,0,0.55)_100%)]" />
+                                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.14),transparent_38%)]" />
+                            </div>
+                        </article>
+
+                        <div className="absolute -left-4 bottom-8 hidden max-w-64 rounded-[1.2rem] border border-white/10 bg-[rgba(8,14,24,0.72)] px-4 py-4 backdrop-blur-xl lg:block">
+                            <p className="text-[10px] uppercase tracking-[0.24em] text-white/42">Note</p>
+                            <p className="mt-3 text-sm leading-6 text-white/64">{content.note}</p>
+                        </div>
+                    </div>
+                </div>
+            </Container>
+        </section>
+    );
+}

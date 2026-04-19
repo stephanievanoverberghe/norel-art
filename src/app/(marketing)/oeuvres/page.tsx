@@ -17,7 +17,7 @@ interface OeuvresPageProps {
     }>;
 }
 
-export default async function OeuvresPage({ searchParams }: OeuvresPageProps) {
+export default async function OeuvresRoutePage({ searchParams }: OeuvresPageProps) {
     const params = await searchParams;
 
     return (

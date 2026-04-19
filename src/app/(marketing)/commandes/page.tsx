@@ -8,6 +8,6 @@ export const metadata: Metadata = {
     description: 'Confier un visage, une histoire, une présence à faire apparaître.',
 };
 
-export default function Page() {
+export default function CommandeRoutePage() {
     return <CommandesPage content={commandesContent} />;
 }

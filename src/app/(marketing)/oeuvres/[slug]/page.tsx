@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: OeuvrePageProps): Promise<Met
     };
 }
 
-export default async function OeuvrePage({ params }: OeuvrePageProps) {
+export default async function OeuvreSlugRoutePage({ params }: OeuvrePageProps) {
     const { slug } = await params;
     const artwork = getArtworkBySlug(slug);
 

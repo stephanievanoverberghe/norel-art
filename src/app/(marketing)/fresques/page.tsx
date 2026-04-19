@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 
 import { FresquesPage } from '@/components/marketing/fresques/FresquesPage';
-import { fresquesPageContent } from '@/content/fresques/fresques-content';
+import { fresquesContent } from '@/content/fresques/fresques-content';
 
 export const metadata: Metadata = {
-    title: 'Fresques murales',
-    description: 'Concevez une fresque murale artistique pour transformer un espace professionnel ou privé.',
+    title: 'Fresques',
+    description: 'Faire entrer une présence dans un lieu, avec une fresque sensible et sur mesure.',
 };
 
 export default function FresquesRoutePage() {
-    return <FresquesPage content={fresquesPageContent} />;
+    return <FresquesPage content={fresquesContent} />;
 }

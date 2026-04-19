@@ -37,7 +37,7 @@ export function AboutHero({ content, className }: AboutHeroProps) {
                             aria-hidden="true"
                             className="pointer-events-none absolute -top-10 left-0 hidden text-[clamp(4.5rem,10vw,8rem)] font-semibold uppercase tracking-[-0.06em] text-white/3 lg:block"
                         >
-                            A propos
+                            À propos
                         </p>
                         <p className="text-[11px] uppercase tracking-[0.34em] text-white/42">À propos</p>
 

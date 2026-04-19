@@ -1,0 +1,56 @@
+import { SectionIntro } from '@/components/shared/SectionIntro';
+import type { FresquesProcessItem, FresquesPageContent } from '@/domain/fresques/types';
+import { cn } from '@/lib/utils/cn';
+import { Heading } from '@/ui/Heading';
+import { Text } from '@/ui/Text';
+
+import { FresquesSection } from './FresquesSection';
+
+interface FresquesProcessSectionProps {
+    id: string;
+    title: FresquesPageContent['processTitle'];
+    intro: FresquesPageContent['processIntro'];
+    items: FresquesProcessItem[];
+}
+
+export function FresquesProcessSection({ id, title, intro, items }: FresquesProcessSectionProps) {
+    return (
+        <FresquesSection id={id}>
+            <SectionIntro eyebrow="Processus" title={title} description={intro} centered className="mx-auto max-w-3xl" />
+
+            <div className="relative mx-auto mt-16 max-w-4xl">
+                <div className="pointer-events-none absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[linear-gradient(180deg,transparent,rgba(255,255,255,0.2),transparent)]" />
+
+                <div className="flex flex-col gap-16">
+                    {items.map((item, index) => {
+                        const isRight = index % 2 === 1;
+
+                        return (
+                            <div key={item.step} className={cn('relative flex flex-col md:flex-row md:items-center md:gap-10', isRight && 'md:flex-row-reverse')}>
+                                <div className="absolute left-1/2 top-0 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2">
+                                    <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-(--bg-primary) text-[10px] uppercase tracking-[0.2em] text-white/50">
+                                        {item.step}
+                                    </div>
+                                </div>
+
+                                <div className={cn('mt-12 w-full md:mt-0 md:w-1/2', isRight ? 'md:pl-10' : 'md:pr-10')}>
+                                    <p className="text-[10px] uppercase tracking-[0.24em] text-white/30">Étape {item.step}</p>
+
+                                    <Heading level={3} className="mt-3 max-w-[16ch] text-white">
+                                        {item.title}
+                                    </Heading>
+
+                                    <Text variant="muted" className="mt-4 text-white/68">
+                                        {item.text}
+                                    </Text>
+
+                                    {item.aside ? <p className="mt-5 text-sm italic text-white/45">{item.aside}</p> : null}
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </FresquesSection>
+    );
+}
