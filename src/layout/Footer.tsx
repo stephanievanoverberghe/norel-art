@@ -50,14 +50,14 @@ export function Footer() {
                         <div className="mt-8 flex flex-col md:flex-row lg:flex-col gap-3 xl:flex-row">
                             <Link
                                 href="/contact"
-                                className="inline-flex min-h-12 items-center justify-center rounded-full bg-(--accent) px-6 text-sm font-medium text-white transition-all duration-300 hover:opacity-90"
+                                className="inline-flex min-h-12 items-center justify-center rounded-full bg-(--accent) px-6 text-sm font-medium text-white transition-all duration-300 hover:opacity-90 hover:scale-[0.98]"
                             >
                                 Me contacter
                             </Link>
 
                             <Link
                                 href="/oeuvres"
-                                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 bg-white/3 px-6 text-sm font-medium text-white transition-all duration-300 hover:bg-white/6"
+                                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 bg-white/3 px-6 text-sm font-medium text-white transition-all duration-300 hover:bg-white/6 hover:scale-[0.98]"
                             >
                                 Voir les œuvres
                             </Link>

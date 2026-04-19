@@ -11,6 +11,7 @@ export interface SelectOption {
 }
 
 export interface SelectProps {
+    id?: string;
     options: SelectOption[];
     value?: string;
     onChange?: (value: string) => void;
@@ -20,7 +21,10 @@ export interface SelectProps {
     name?: string;
 }
 
-export const Select = forwardRef<HTMLButtonElement, SelectProps>(function Select({ options, value, onChange, placeholder = 'Choisir', className, disabled = false, name }, ref) {
+export const Select = forwardRef<HTMLButtonElement, SelectProps>(function Select(
+    { id, options, value, onChange, placeholder = 'Choisir', className, disabled = false, name },
+    ref,
+) {
     const [isOpen, setIsOpen] = useState(false);
     const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
 
@@ -151,6 +155,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(function Select
                     }
                 }}
                 type="button"
+                id={id}
                 disabled={disabled}
                 aria-haspopup="listbox"
                 aria-expanded={isOpen}
@@ -164,7 +169,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(function Select
                 }}
                 onKeyDown={handleTriggerKeyDown}
                 className={cn(
-                    'group relative flex min-h-12 w-full items-center justify-between rounded-[1.1rem] border border-white/10 bg-white/4 px-4 py-3 text-left text-white outline-none transition-all duration-300',
+                    'group relative cursor-pointer flex min-h-12 w-full items-center justify-between rounded-[1.1rem] border border-white/10 bg-white/4 px-4 py-3 text-left text-white outline-none transition-all duration-300',
                     'focus-visible:border-white/22 focus-visible:bg-white/5.5 focus-visible:ring-2 focus-visible:ring-white/8',
                     'hover:border-white/14 hover:bg-white/5.5',
                     'disabled:cursor-not-allowed disabled:opacity-50',
@@ -219,7 +224,7 @@ export const Select = forwardRef<HTMLButtonElement, SelectProps>(function Select
                                     onMouseEnter={() => setHighlightedIndex(index)}
                                     onClick={() => commitSelection(option.value)}
                                     className={cn(
-                                        'flex w-full items-start justify-between gap-3 rounded-2xl px-4 py-3 text-left transition-all duration-200',
+                                        'flex w-full cursor-pointer items-start justify-between gap-3 rounded-2xl px-4 py-3 text-left transition-all duration-200',
                                         isHighlighted ? 'bg-white/8' : 'bg-transparent hover:bg-white/6',
                                     )}
                                 >

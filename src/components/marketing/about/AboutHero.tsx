@@ -29,8 +29,14 @@ export function AboutHero({ content, className }: AboutHeroProps) {
 
             <Container className="relative z-10">
                 <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-14 xl:gap-20">
-                    <div className="order-2 lg:order-1">
-                        <p className="text-[11px] uppercase tracking-[0.34em] text-white/36">À propos</p>
+                    <div className="relative order-2 lg:order-1">
+                        <p
+                            aria-hidden="true"
+                            className="pointer-events-none absolute -top-10 left-0 hidden text-[clamp(4.5rem,10vw,8rem)] font-semibold uppercase tracking-[-0.06em] text-white/3 lg:block"
+                        >
+                            A propos
+                        </p>
+                        <p className="text-[11px] uppercase tracking-[0.34em] text-white/42">À propos</p>
 
                         <Heading level={1} className="mt-5 max-w-[10ch] text-[clamp(3.2rem,8vw,6.5rem)] leading-[0.88] tracking-[-0.04em] text-white">
                             <SplitLines lines={content.heading.lines} />

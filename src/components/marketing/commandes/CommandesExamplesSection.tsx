@@ -1,35 +1,22 @@
 import Image from 'next/image';
 
+import { SectionIntro } from '@/components/shared/SectionIntro';
+import type { CommandesExampleItem, CommandesExamplesSectionContent } from '@/domain/commandes/types';
 import { cn } from '@/lib/utils/cn';
-import type { CommandesExampleItem } from '@/domain/commandes/types';
-import { Heading } from '@/ui/Heading';
-import { Text } from '@/ui/Text';
 
 import { CommandesSection } from './CommandesSection';
 
 interface CommandesExamplesSectionProps {
     id: string;
-    title: string;
-    intro: string;
-    items: CommandesExampleItem[];
+    content: CommandesExamplesSectionContent;
 }
 
-export function CommandesExamplesSection({ id, title, intro, items }: CommandesExamplesSectionProps) {
-    const [featured, second, third, fourth, fifth, sixth] = items;
+export function CommandesExamplesSection({ id, content }: CommandesExamplesSectionProps) {
+    const [featured, second, third, fourth, fifth, sixth] = content.items;
 
     return (
         <CommandesSection id={id}>
-            <div className="mx-auto max-w-3xl text-center">
-                <p className="text-[11px] uppercase tracking-[0.32em] text-white/38">Fragments</p>
-
-                <Heading level={2} className="mt-4 text-white">
-                    {title}
-                </Heading>
-
-                <Text variant="muted" className="mx-auto mt-5 max-w-2xl text-white/66">
-                    {intro}
-                </Text>
-            </div>
+            <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.intro} centered className="mx-auto max-w-3xl" />
 
             <div className="mt-12 grid gap-4 lg:grid-cols-12 lg:auto-rows-[8.5rem]">
                 {featured ? <FeaturedExampleCard item={featured} className="lg:col-span-7 lg:row-span-4" /> : null}
@@ -40,9 +27,7 @@ export function CommandesExamplesSection({ id, title, intro, items }: CommandesE
                 </div>
 
                 {fourth ? <WideExampleCard item={fourth} className="lg:col-span-5 lg:row-span-2" /> : null}
-
                 {fifth ? <WideExampleCard item={fifth} className="lg:col-span-3 lg:row-span-2" /> : null}
-
                 {sixth ? <WideExampleCard item={sixth} className="lg:col-span-4 lg:row-span-2" /> : null}
             </div>
         </CommandesSection>
@@ -66,7 +51,6 @@ function FeaturedExampleCard({ item, className }: ExampleCardProps) {
                     sizes="(max-width: 1024px) 100vw, 55vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.035]"
                 />
-
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.08)_45%,rgba(0,0,0,0.62)_100%)]" />
             </div>
 
@@ -89,7 +73,6 @@ function ExampleCard({ item, className }: ExampleCardProps) {
                     sizes="(max-width: 1024px) 100vw, 33vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
-
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.1)_45%,rgba(0,0,0,0.58)_100%)]" />
             </div>
 
@@ -101,7 +84,7 @@ function ExampleCard({ item, className }: ExampleCardProps) {
 function WideExampleCard({ item, className }: ExampleCardProps) {
     return (
         <article className={cn('group overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/3 p-2', className)}>
-            <div className="relative h-full min-h-56 overflow-hidden rounded-[2xl">
+            <div className="relative h-full min-h-56 overflow-hidden rounded-2xl">
                 <Image
                     src={item.src}
                     alt={item.alt}
@@ -109,7 +92,6 @@ function WideExampleCard({ item, className }: ExampleCardProps) {
                     sizes="(max-width: 1024px) 100vw, 30vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
-
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.08)_42%,rgba(0,0,0,0.58)_100%)]" />
             </div>
 

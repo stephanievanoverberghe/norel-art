@@ -1,4 +1,5 @@
-import type { CommandesPricingItem } from '@/domain/commandes/types';
+import { SectionIntro } from '@/components/shared/SectionIntro';
+import type { CommandesPricingItem, CommandesPricingSectionContent } from '@/domain/commandes/types';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
@@ -6,26 +7,13 @@ import { CommandesSection } from './CommandesSection';
 
 interface CommandesPricingSectionProps {
     id: string;
-    title: string;
-    intro: string;
-    items: CommandesPricingItem[];
-    practicalInfos: string[];
+    content: CommandesPricingSectionContent;
 }
 
-export function CommandesPricingSection({ id, title, intro, items, practicalInfos }: CommandesPricingSectionProps) {
+export function CommandesPricingSection({ id, content }: CommandesPricingSectionProps) {
     return (
         <CommandesSection id={id}>
-            <div className="mx-auto max-w-3xl text-center">
-                <p className="text-[11px] uppercase tracking-[0.32em] text-white/38">Repères</p>
-
-                <Heading level={2} className="mt-4 text-white">
-                    {title}
-                </Heading>
-
-                <Text variant="muted" className="mx-auto mt-5 max-w-2xl text-white/66">
-                    {intro}
-                </Text>
-            </div>
+            <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.intro} centered className="mx-auto max-w-3xl" />
 
             <div className="mt-12 rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.045),rgba(255,255,255,0.02))] p-3 backdrop-blur-sm sm:p-4 lg:p-5">
                 <div className="rounded-[1.45rem] border border-white/8 bg-white/2.5">
@@ -34,30 +22,30 @@ export function CommandesPricingSection({ id, title, intro, items, practicalInfo
                             <p className="text-[10px] uppercase tracking-[0.24em] text-white/30">Portraits</p>
 
                             <Heading level={3} className="mt-4 max-w-[12ch] text-white">
-                                Fusain & graphite
+                                {content.tableTitle}
                             </Heading>
 
                             <Text variant="muted" className="mt-4 text-white/62">
-                                Des repères pour un premier visage, puis un supplément par visage ajouté.
+                                {content.tableSubtitle}
                             </Text>
                         </div>
 
-                        {items.map((item, index) => (
-                            <PricingColumn key={item.format} item={item} isLast={index === items.length - 1} />
+                        {content.items.map((item, index) => (
+                            <PricingColumn key={item.format} item={item} isLast={index === content.items.length - 1} />
                         ))}
                     </div>
 
                     <div className="hidden border-t border-white/8 lg:block">
                         <div className="grid lg:grid-cols-[minmax(0,0.95fr)_repeat(3,minmax(0,1fr))]">
-                            <PricingLabelCell label="1 visage" />
-                            {items.map((item) => (
+                            <PricingLabelCell label={content.baseRowLabel} />
+                            {content.items.map((item) => (
                                 <PricingValueCell key={`${item.format}-base`} value={item.basePrice} />
                             ))}
                         </div>
 
                         <div className="grid border-t border-white/8 lg:grid-cols-[minmax(0,0.95fr)_repeat(3,minmax(0,1fr))]">
-                            <PricingLabelCell label="Visage supplémentaire" />
-                            {items.map((item) => (
+                            <PricingLabelCell label={content.extraRowLabel} />
+                            {content.items.map((item) => (
                                 <PricingValueCell key={`${item.format}-extra`} value={item.extraFacePrice} />
                             ))}
                         </div>
@@ -66,7 +54,7 @@ export function CommandesPricingSection({ id, title, intro, items, practicalInfo
             </div>
 
             <div className="mt-6 grid gap-4 lg:hidden">
-                {items.map((item) => (
+                {content.items.map((item) => (
                     <article key={`mobile-${item.format}`} className="rounded-[1.45rem] border border-white/10 bg-white/3 px-5 py-5 backdrop-blur-sm">
                         <div className="flex items-center gap-3">
                             <span className="text-[10px] uppercase tracking-[0.24em] text-white/30">{item.format}</span>
@@ -82,12 +70,12 @@ export function CommandesPricingSection({ id, title, intro, items, practicalInfo
                         </Text>
 
                         <div className="mt-6">
-                            <p className="text-[10px] uppercase tracking-[0.24em] text-white/34">1 visage</p>
+                            <p className="text-[10px] uppercase tracking-[0.24em] text-white/34">{content.baseRowLabel}</p>
                             <p className="mt-2 text-3xl font-semibold tracking-[-0.04em] text-white">{item.basePrice}</p>
                         </div>
 
                         <div className="mt-5 rounded-2xl border border-white/8 bg-white/3 px-4 py-4">
-                            <p className="text-[10px] uppercase tracking-[0.24em] text-white/34">Visage supplémentaire</p>
+                            <p className="text-[10px] uppercase tracking-[0.24em] text-white/34">{content.extraRowLabel}</p>
                             <p className="mt-2 text-sm leading-6 text-white/72">{item.extraFacePrice}</p>
                         </div>
                     </article>
@@ -97,15 +85,15 @@ export function CommandesPricingSection({ id, title, intro, items, practicalInfo
             <div className="mt-8 rounded-[1.6rem] border border-white/10 bg-white/3 px-6 py-6 backdrop-blur-sm sm:px-8 sm:py-8">
                 <div className="grid gap-4 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-8">
                     <div>
-                        <p className="text-[11px] uppercase tracking-[0.28em] text-white/34">À savoir</p>
+                        <p className="text-[11px] uppercase tracking-[0.28em] text-white/34">{content.practicalEyebrow}</p>
 
                         <Heading level={3} className="mt-3 max-w-[12ch] text-white">
-                            Le reste se construit au plus juste.
+                            {content.practicalTitle}
                         </Heading>
                     </div>
 
                     <div className="grid gap-3 sm:grid-cols-2">
-                        {practicalInfos.map((info) => (
+                        {content.practicalInfos.map((info) => (
                             <p key={info} className="rounded-[1.1rem] border border-white/8 bg-white/3 px-4 py-4 text-sm leading-6 text-white/66">
                                 {info}
                             </p>
@@ -144,11 +132,7 @@ function PricingColumn({ item, isLast }: PricingColumnProps) {
     );
 }
 
-interface PricingLabelCellProps {
-    label: string;
-}
-
-function PricingLabelCell({ label }: PricingLabelCellProps) {
+function PricingLabelCell({ label }: { label: string }) {
     return (
         <div className="border-r border-white/8 px-6 py-5">
             <p className="text-[10px] uppercase tracking-[0.24em] text-white/34">{label}</p>
@@ -156,11 +140,7 @@ function PricingLabelCell({ label }: PricingLabelCellProps) {
     );
 }
 
-interface PricingValueCellProps {
-    value: string;
-}
-
-function PricingValueCell({ value }: PricingValueCellProps) {
+function PricingValueCell({ value }: { value: string }) {
     return (
         <div className="px-6 py-5">
             <p className="text-base text-white/78">{value}</p>

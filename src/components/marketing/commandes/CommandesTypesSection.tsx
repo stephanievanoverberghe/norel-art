@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
-import type { CommandesExampleItem, CommandesOfferingItem } from '@/domain/commandes/types';
+import { SectionIntro } from '@/components/shared/SectionIntro';
+import type { CommandesExampleItem, CommandesTypesSectionContent } from '@/domain/commandes/types';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
@@ -8,43 +9,31 @@ import { CommandesSection } from './CommandesSection';
 
 interface CommandesTypesSectionProps {
     id: string;
-    title: string;
-    intro: string;
-    offerings: CommandesOfferingItem[];
-    usageTags: string[];
-    techniquesLabel: string;
+    content: CommandesTypesSectionContent;
     previewExamples: CommandesExampleItem[];
 }
 
-export function CommandesTypesSection({ id, title, intro, offerings, usageTags, techniquesLabel, previewExamples }: CommandesTypesSectionProps) {
+export function CommandesTypesSection({ id, content, previewExamples }: CommandesTypesSectionProps) {
     const [featured, second, third] = previewExamples;
 
     return (
         <CommandesSection id={id}>
             <div className="grid gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start lg:gap-14">
                 <div>
-                    <p className="text-[11px] uppercase tracking-[0.32em] text-white/38">Possibles</p>
-
-                    <Heading level={2} className="mt-4 max-w-[14ch] text-white">
-                        {title}
-                    </Heading>
-
-                    <Text variant="muted" className="mt-5 max-w-xl text-white/68">
-                        {intro}
-                    </Text>
+                    <SectionIntro eyebrow={content.eyebrow} title={content.title} description={content.intro} />
 
                     <div className="mt-7 flex flex-wrap gap-2.5">
-                        {usageTags.map((tag) => (
+                        {content.usageTags.map((tag) => (
                             <span key={tag} className="rounded-full border border-white/10 bg-white/4 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-white/52">
                                 {tag}
                             </span>
                         ))}
                     </div>
 
-                    <p className="mt-6 max-w-lg text-sm leading-6 text-white/58">{techniquesLabel}</p>
+                    <p className="mt-6 max-w-lg text-sm leading-6 text-white/58">{content.techniquesLabel}</p>
 
                     <div className="mt-8 grid gap-4">
-                        {offerings.map((item, index) => (
+                        {content.offerings.map((item, index) => (
                             <article key={item.title} className="rounded-[1.35rem] border border-white/10 bg-white/4 px-5 py-5 backdrop-blur-sm">
                                 <p className="text-[10px] uppercase tracking-[0.24em] text-white/34">{String(index + 1).padStart(2, '0')}</p>
 
