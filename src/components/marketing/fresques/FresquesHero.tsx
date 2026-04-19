@@ -56,7 +56,7 @@ export function FresquesHero({ content }: FresquesHeroProps) {
 
                     <div className="relative mx-auto max-w-[24rem] sm:max-w-120 lg:ml-auto lg:mr-0 lg:max-w-140">
                         <article className="relative overflow-hidden rounded-[1.9rem] border border-white/10 bg-white/4 p-2 sm:p-3 backdrop-blur-sm">
-                            <div className="relative aspect-4/5 overflow-hidden rounded-[1.4rem]">
+                            <div className="relative aspect-4/5 min-h-[20rem] overflow-hidden rounded-[1.4rem] sm:min-h-[28rem]">
                                 <Image
                                     src="/images/fresques/fr-008.jpg"
                                     alt="Portrait sur commande"
