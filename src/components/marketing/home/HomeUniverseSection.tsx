@@ -1,20 +1,23 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { cn } from '@/lib/utils/cn';
 import type { UniverseContent } from '@/domain/home/types';
+import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
-interface UniverseSectionProps {
+interface HomeUniverseSectionProps {
     content: UniverseContent;
     className?: string;
 }
 
-export function UniverseSection({ content, className }: UniverseSectionProps) {
+export function HomeUniverseSection({ content, className }: HomeUniverseSectionProps) {
     return (
         <section aria-label="Univers de l’artiste" className={cn('relative overflow-hidden bg-(--bg-primary) py-20 sm:py-24 lg:py-32', className)}>
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.075]">
+                <div className="h-[120%] w-[120%] bg-[url('/images/patterns/spirale.png')] bg-center bg-no-repeat" style={{ backgroundSize: '600px' }} />
+            </div>
             <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-20 h-40 w-160 -translate-x-1/2 bg-(--accent)/10 blur-3xl" />
 
             <Container className="relative z-10">

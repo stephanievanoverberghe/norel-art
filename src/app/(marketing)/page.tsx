@@ -1,25 +1,9 @@
 import { getHomeRevealArtworks } from '@/application/artworks';
-import { CategoriesSection } from '@/components/marketing/home/CategoriesSection';
-import { CustomPathsSection } from '@/components/marketing/home/CustomPathsSection';
-import { FeaturedReveal } from '@/components/marketing/home/FeaturedReveal';
-import { FinalCtaSection } from '@/components/marketing/home/FinalCtaSection';
-import { Hero } from '@/components/marketing/home/Hero';
-import { TestimonialsSection } from '@/components/marketing/home/TestimonialsSection';
-import { UniverseSection } from '@/components/marketing/home/UniverseSection';
-import { homeCustomPathsContent, homeTestimonialsContent, homeUniverseContent } from '@/content/home/home-content';
+import { HomePage } from '@/components/marketing/home/HomePage';
+import { homePageContent } from '@/content/home/home-content';
 
-export default function HomePage() {
+export default function HomeRoutePage() {
     const revealArtworks = getHomeRevealArtworks();
 
-    return (
-        <>
-            <Hero />
-            <FeaturedReveal artworks={revealArtworks} />
-            <CategoriesSection />
-            <UniverseSection content={homeUniverseContent} />
-            <CustomPathsSection content={homeCustomPathsContent} />
-            <TestimonialsSection content={homeTestimonialsContent} />
-            <FinalCtaSection />
-        </>
-    );
+    return <HomePage content={homePageContent} revealArtworks={revealArtworks} />;
 }

@@ -9,7 +9,10 @@ import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
-interface FeaturedRevealProps {
+import type { HomeFeaturedRevealContent } from '@/domain/home/types';
+
+interface HomeFeaturedRevealSectionProps {
+    content: HomeFeaturedRevealContent;
     artworks: Artwork[];
     className?: string;
 }
@@ -22,7 +25,7 @@ const availabilityLabel: Record<Artwork['availability'], string> = {
 
 const availabilityTone: Record<Artwork['availability'], string> = {
     available: 'bg-white/[0.12] text-white/86',
-     reserved: 'bg-(--accent)/24 text-white',
+    reserved: 'bg-(--accent)/24 text-white',
     sold: 'bg-white/[0.08] text-white/55',
 };
 
@@ -41,13 +44,13 @@ function ArtworkMeta({ price, availability }: { price: number; availability: Art
     );
 }
 
-export function FeaturedReveal({ artworks, className }: FeaturedRevealProps) {
+export function HomeFeaturedRevealSection({ content, artworks, className }: HomeFeaturedRevealSectionProps) {
     const [mainArtwork, firstSatellite, secondSatellite] = artworks;
 
     if (!mainArtwork) return null;
 
     return (
-        <section id="selection-oeuvres" aria-label="Premières œuvres révélées" className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
+        <section id={content.id} aria-label="Premières œuvres révélées" className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,#060C15_0%,rgba(6,12,21,0)_100%)]" />
             <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-10 h-24 w-md -translate-x-1/2 bg-(--accent)/8 blur-3xl" />
             <div aria-hidden="true" className="pointer-events-none absolute -left-20 top-32 h-60 w-60 rounded-full bg-white/2 blur-3xl" />
@@ -56,21 +59,21 @@ export function FeaturedReveal({ artworks, className }: FeaturedRevealProps) {
             <Container className="relative z-10">
                 <div className="grid gap-12 xl:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] xl:gap-16">
                     <div className="xl:pt-8">
-                        <p className="text-[11px] uppercase tracking-[0.32em] text-white/42">Première apparition</p>
+                        <p className="text-[11px] uppercase tracking-[0.32em] text-white/42">{content.eyebrow}</p>
 
                         <Heading level={2} className="mt-4 max-w-sm text-white">
-                            Le regard surgit avant le mot.
+                            {content.title}
                         </Heading>
 
                         <Text variant="muted" className="mt-5 max-w-md text-white/70">
-                            Une présence centrale. Deux échos autour. L’exploration commence sans bruit.
+                            {content.description}
                         </Text>
 
                         <div className="mt-8 h-px w-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.26)_0%,rgba(255,255,255,0)_100%)]" />
 
                         <div className="mt-8 space-y-3">
-                            <Link href="/oeuvres" className="block w-full sm:inline-flex sm:w-auto">
-                                <Button className="min-h-12 w-full rounded-full px-6 sm:w-auto">Explorer les œuvres</Button>
+                            <Link href={content.ctaHref} className="block w-full sm:inline-flex sm:w-auto">
+                                <Button className="min-h-12 w-full rounded-full px-6 sm:w-auto">{content.ctaLabel}</Button>
                             </Link>
                         </div>
                     </div>
@@ -184,7 +187,7 @@ export function FeaturedReveal({ artworks, className }: FeaturedRevealProps) {
 
                         <div className="mt-8 border-t border-white/10 pt-6">
                             <Text variant="small" className="text-white/58">
-                                Originaux, impressions signées, pièces disponibles ou en réserve : chaque présence ouvre un dialogue différent.
+                                {content.footerNote}
                             </Text>
                         </div>
                     </div>

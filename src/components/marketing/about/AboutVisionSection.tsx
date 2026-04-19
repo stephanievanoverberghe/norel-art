@@ -14,8 +14,10 @@ interface AboutVisionSectionProps {
 export function AboutVisionSection({ content, className }: AboutVisionSectionProps) {
     return (
         <section aria-label="Vision artistique" className={cn(aboutSectionStyles.section, aboutSectionStyles.pageBackground, className)}>
-            <div aria-hidden="true" className="pointer-events-none absolute -left-20 top-20 h-72 w-72 rounded-full bg-white/4 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute right-0 top-16 h-80 w-80 rounded-full bg-(--accent)/10 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,rgba(6,12,21,0.72)_0%,rgba(6,12,21,0)_100%)]" />
+            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-14 h-24 w-md -translate-x-1/2 bg-(--accent)/8 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute -left-16 bottom-10 h-56 w-56 rounded-full bg-white/2 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute -right-10 top-20 h-52 w-52 rounded-full bg-(--surface)/14 blur-3xl" />
 
             <Container className="relative z-10">
                 <div className="grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">

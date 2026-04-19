@@ -22,6 +22,9 @@ export function AboutHero({ content, className }: AboutHeroProps) {
             aria-label="À propos de Norel Art"
             className={cn('relative overflow-hidden pb-16 sm:pb-20 lg:pb-24', aboutSectionStyles.pageBackground, marketingPageSpacing.editorialOffset, className)}
         >
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.075]">
+                <div className="h-[120%] w-[120%] bg-[url('/images/patterns/spirale.png')] bg-center bg-no-repeat" style={{ backgroundSize: '600px' }} />
+            </div>
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,18,0.58)_0%,rgba(5,10,18,0.2)_28%,rgba(5,10,18,0)_60%)]" />
             <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-white/4 blur-3xl" />
             <div aria-hidden="true" className="pointer-events-none absolute right-24 top-16 h-80 w-80 rounded-full bg-(--accent)/12 blur-3xl" />

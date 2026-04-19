@@ -96,7 +96,7 @@ le regard d’abord, puis la matière, puis ce qui affleure en silence.`,
     pricing: {
         eyebrow: 'Repères',
         title: 'Repères tarifaires',
-        intro: 'Ces repères concernent les portraits au fusain et au graphite. Pour les autres techniques, les groupes, les caricatures plus poussées ou les demandes particulières, le devis se construit ensuite sur mesure.',
+        intro: 'Ces repères concernent les portraits au fusain et au graphite. Pour les autres techniques, les groupes ou les demandes particulières, le devis se construit ensuite sur mesure.',
         items: [
             { format: 'A4', dimensions: '21 × 29,7 cm', basePrice: '80 €', extraFacePrice: '+ 60 € / visage supplémentaire' },
             { format: 'A3', dimensions: '29,7 × 42 cm', basePrice: '100 €', extraFacePrice: '+ 80 € / visage supplémentaire' },

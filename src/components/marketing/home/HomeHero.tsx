@@ -1,34 +1,33 @@
 'use client';
 
 import Image from 'next/image';
-import { MarketingSecondaryLink } from '@/components/marketing/shared/MarketingSecondaryLink';
 
+import { MarketingSecondaryLink } from '@/components/marketing/shared/MarketingSecondaryLink';
+import type { HomeHeroContent } from '@/domain/home/types';
 import { cn } from '@/lib/utils/cn';
 import { Button } from '@/ui/Button';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
-interface HeroProps {
+interface HomeHeroProps {
+    content: HomeHeroContent;
     className?: string;
 }
 
-export function Hero({ className }: HeroProps) {
+export function HomeHero({ content, className }: HomeHeroProps) {
     const handleScrollToReveal = () => {
-        const target = document.getElementById('selection-oeuvres');
+        const target = document.getElementById(content.scrollTargetId);
 
         if (!target) return;
 
-        target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-        });
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     return (
         <section className={cn('relative min-h-screen overflow-hidden', className)} aria-label="Entrée dans l'univers Norel Art">
             <div className="absolute inset-0">
-                <Image src="/images/hero/norel-hero.jpg" alt="Regard intense dans une atmosphère sombre" fill priority className="object-cover object-center" sizes="100vw" />
+                <Image src={content.image.src} alt={content.image.alt} fill priority className="object-cover object-center" sizes={content.image.sizes} />
             </div>
 
             <div className="absolute inset-0 bg-[linear-gradient(106deg,rgba(3,9,17,0.72)_4%,rgba(3,9,17,0.42)_40%,rgba(3,9,17,0.62)_100%)]" />
@@ -39,27 +38,27 @@ export function Hero({ className }: HeroProps) {
 
             <Container className="relative z-10 flex min-h-screen items-end pb-28 pt-32 sm:pt-40 lg:pb-32 lg:pt-48">
                 <div className="max-w-2xl pb-4 sm:pb-6">
-                    <p className="mb-6 text-[11px] uppercase tracking-[0.32em] text-white/58 sm:mb-8">Norel Art · Peinture et illustration</p>
+                    <p className="mb-6 text-[11px] uppercase tracking-[0.32em] text-white/58 sm:mb-8">{content.eyebrow}</p>
 
                     <Heading level={1} className="text-(--text-primary) drop-shadow-[0_12px_34px_rgba(0,0,0,0.44)]">
-                        Un regard.
-                        <br />
-                        Un silence.
-                        <br />
-                        Tu entres.
+                        {content.titleLines.map((line) => (
+                            <span key={line} className="block">
+                                {line}
+                            </span>
+                        ))}
                     </Heading>
 
                     <Text variant="muted" className="mt-6 max-w-lg text-base text-white/78 sm:mt-8 sm:text-lg">
-                        Œuvres originales, impressions signées, commandes et fresques murales. Ici, on ressent d&apos;abord. On choisit ensuite.
+                        {content.description}
                     </Text>
 
                     <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:items-center">
                         <Button onClick={handleScrollToReveal} className="min-h-12 rounded-full px-7">
-                            Ouvrir la sélection
+                            {content.primaryCtaLabel}
                         </Button>
 
-                        <MarketingSecondaryLink href="/commandes" className="bg-white/5 px-7">
-                            Parler d&apos;une commande
+                        <MarketingSecondaryLink href={content.secondaryCtaHref} className="bg-white/5 px-7">
+                            {content.secondaryCtaLabel}
                         </MarketingSecondaryLink>
                     </div>
                 </div>

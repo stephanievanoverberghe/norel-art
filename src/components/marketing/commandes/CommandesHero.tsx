@@ -14,6 +14,9 @@ interface CommandesHeroProps {
 export function CommandesHero({ content }: CommandesHeroProps) {
     return (
         <section aria-label="Portraits sur commande" className="relative overflow-hidden bg-(--bg-primary) pt-40 pb-20 sm:pt-44 sm:pb-24 lg:pt-48 lg:pb-28">
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.075]">
+                <div className="h-[120%] w-[120%] bg-[url('/images/patterns/spirale.png')] bg-center bg-no-repeat" style={{ backgroundSize: '600px' }} />
+            </div>
             <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,18,0.8)_0%,rgba(5,10,18,0.42)_40%,rgba(5,10,18,0)_100%)]"

@@ -1,20 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { SectionIntro } from '@/components/shared/SectionIntro';
+import { SnakeBorder } from '@/components/shared/SnakeBorder';
 import type { CustomPathsContent } from '@/domain/home/types';
 import { cn } from '@/lib/utils/cn';
 import { Container } from '@/ui/Container';
-import { SectionIntro } from '@/components/shared/SectionIntro';
-import { SnakeBorder } from '@/components/shared/SnakeBorder';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
 
-interface CustomPathsSectionProps {
+interface HomeCustomPathsSectionProps {
     content: CustomPathsContent;
     className?: string;
 }
 
-export function CustomPathsSection({ content, className }: CustomPathsSectionProps) {
+export function HomeCustomPathsSection({ content, className }: HomeCustomPathsSectionProps) {
     return (
         <section aria-label="Commandes et fresques" className={cn('relative overflow-hidden bg-(--bg-primary) py-20 sm:py-24 lg:py-28', className)}>
             <Container className="relative z-10">
