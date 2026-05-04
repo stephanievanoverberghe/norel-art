@@ -12,10 +12,11 @@ import { OeuvresArtworkCard } from '../OeuvresArtworkCard';
 interface RelatedOeuvresSectionProps {
     artwork: Artwork;
     artworks: Artwork[];
+    favoriteArtworkIds?: string[];
     className?: string;
 }
 
-export function RelatedOeuvresSection({ artwork, artworks, className }: RelatedOeuvresSectionProps) {
+export function RelatedOeuvresSection({ artwork, artworks, favoriteArtworkIds = [], className }: RelatedOeuvresSectionProps) {
     const relatedArtworks = getRelatedArtworks(artwork, artworks, 4);
 
     if (relatedArtworks.length === 0) return null;
@@ -46,7 +47,7 @@ export function RelatedOeuvresSection({ artwork, artworks, className }: RelatedO
 
                 <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 xl:grid-cols-4">
                     {relatedArtworks.map((relatedArtwork) => (
-                        <OeuvresArtworkCard key={relatedArtwork.id} artwork={relatedArtwork} />
+                        <OeuvresArtworkCard key={relatedArtwork.id} artwork={relatedArtwork} isFavorite={favoriteArtworkIds.includes(relatedArtwork.id)} />
                     ))}
                 </div>
             </Container>

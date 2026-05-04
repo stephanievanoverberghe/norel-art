@@ -15,9 +15,10 @@ interface OeuvresPageProps {
     initialCategory?: string;
     initialCollection?: string;
     initialType?: string;
+    favoriteArtworkIds?: string[];
 }
 
-export function OeuvresPage({ artworks, categories, collections, content, initialCategory, initialCollection, initialType }: OeuvresPageProps) {
+export function OeuvresPage({ artworks, categories, collections, content, initialCategory, initialCollection, initialType, favoriteArtworkIds = [] }: OeuvresPageProps) {
     return (
         <>
             <OeuvresHero content={content.hero} />
@@ -29,6 +30,7 @@ export function OeuvresPage({ artworks, categories, collections, content, initia
                 initialCategory={initialCategory}
                 initialCollection={initialCollection}
                 initialType={initialType}
+                favoriteArtworkIds={favoriteArtworkIds}
             />
         </>
     );

@@ -6,7 +6,9 @@ import { OeuvreGallerySection } from '@/components/marketing/oeuvres/slug/Oeuvre
 import { RelatedOeuvresSection } from '@/components/marketing/oeuvres/slug/RelatedOeuvresSection';
 import { OeuvreFinalCtaSection } from '@/components/marketing/oeuvres/slug/OeuvreFinalCtaSection';
 import { OeuvreNotFound } from '@/components/marketing/oeuvres/slug/OeuvreNotFound';
+import { getCurrentSession } from '@/server/auth/session';
 import { getPublishedArtworkDetail } from '@/server/catalog/artworks';
+import { getFavoriteArtworkIds } from '@/server/favorites/favorites';
 
 interface OeuvrePageProps {
     params: Promise<{
@@ -34,7 +36,9 @@ export async function generateMetadata({ params }: OeuvrePageProps): Promise<Met
 
 export default async function OeuvreSlugRoutePage({ params }: OeuvrePageProps) {
     const { slug } = await params;
+    const session = await getCurrentSession();
     const { artwork, artworks } = await getPublishedArtworkDetail(slug);
+    const favoriteArtworkIds = session?.user?.id ? await getFavoriteArtworkIds(session.user.id) : [];
 
     if (!artwork) {
         return <OeuvreNotFound />;
@@ -42,10 +46,10 @@ export default async function OeuvreSlugRoutePage({ params }: OeuvrePageProps) {
 
     return (
         <>
-            <OeuvreDetailHero artwork={artwork} />
+            <OeuvreDetailHero artwork={artwork} isFavorite={favoriteArtworkIds.includes(artwork.id)} />
             <OeuvreStorySection artwork={artwork} />
             <OeuvreGallerySection artwork={artwork} />
-            <RelatedOeuvresSection artwork={artwork} artworks={artworks} />
+            <RelatedOeuvresSection artwork={artwork} artworks={artworks} favoriteArtworkIds={favoriteArtworkIds} />
             <OeuvreFinalCtaSection artwork={artwork} />
         </>
     );

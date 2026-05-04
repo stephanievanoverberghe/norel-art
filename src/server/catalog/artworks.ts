@@ -7,7 +7,7 @@ import type { ArtworkCategory } from '@/domain/artworks/categories';
 import type { Artwork, ArtworkAvailability, ArtworkType } from '@/domain/artworks/types';
 import { prisma } from '@/server/db/prisma';
 
-const artworkInclude = {
+export const artworkRecordInclude = {
     category: true,
     collection: true,
     images: {
@@ -22,8 +22,8 @@ const artworkInclude = {
     },
 } satisfies Prisma.ArtworkInclude;
 
-type ArtworkRecord = Prisma.ArtworkGetPayload<{
-    include: typeof artworkInclude;
+export type ArtworkRecord = Prisma.ArtworkGetPayload<{
+    include: typeof artworkRecordInclude;
 }>;
 
 interface ArtworkCatalog {
@@ -58,7 +58,7 @@ function uniqueValues<T extends string>(values: T[]): T[] {
     return [...new Set(values)].filter(Boolean);
 }
 
-function mapArtwork(record: ArtworkRecord): Artwork {
+export function mapArtworkRecord(record: ArtworkRecord): Artwork {
     const activeVariant = record.variants.find((variant) => variant.isActive) ?? record.variants[0];
     const mainImage = record.images.find((image) => image.kind === 'MAIN') ?? record.images[0];
     const imageUrl = mainImage?.url ?? '/images/oeuvres/oeuvres-hero.jpg';
@@ -101,7 +101,7 @@ async function getPublishedArtworkRecords(): Promise<ArtworkRecord[]> {
         where: {
             status: 'PUBLISHED',
         },
-        include: artworkInclude,
+        include: artworkRecordInclude,
         orderBy: [
             {
                 publishedAt: 'desc',
@@ -116,7 +116,7 @@ async function getPublishedArtworkRecords(): Promise<ArtworkRecord[]> {
 export async function getPublishedArtworkCatalog(): Promise<ArtworkCatalog> {
     try {
         const records = await getPublishedArtworkRecords();
-        return createCatalog(records.map(mapArtwork));
+        return createCatalog(records.map(mapArtworkRecord));
     } catch (error) {
         console.warn('Unable to load artwork catalog from database. Falling back to static content.', error);
         return fallbackCatalog;
@@ -126,7 +126,7 @@ export async function getPublishedArtworkCatalog(): Promise<ArtworkCatalog> {
 export async function getPublishedArtworkDetail(slug: string): Promise<ArtworkDetail> {
     try {
         const records = await getPublishedArtworkRecords();
-        const artworks = records.map(mapArtwork);
+        const artworks = records.map(mapArtworkRecord);
 
         if (artworks.length === 0) {
             return {

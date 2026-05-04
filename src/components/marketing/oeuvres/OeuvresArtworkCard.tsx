@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { FavoriteToggle } from '@/components/favorites/FavoriteToggle';
 import { SnakeBorder } from '@/components/shared/SnakeBorder';
 import { formatArtworkPrice, getAvailabilityLabel } from '@/domain/artworks/presentation';
 import type { Artwork } from '@/domain/artworks/types';
@@ -8,6 +9,7 @@ import { cn } from '@/lib/utils/cn';
 
 interface OeuvresArtworkCardProps {
     artwork: Artwork;
+    isFavorite?: boolean;
 }
 
 const availabilityTone: Record<Artwork['availability'], string> = {
@@ -16,7 +18,7 @@ const availabilityTone: Record<Artwork['availability'], string> = {
     sold: 'bg-black/40 text-white/70',
 };
 
-export function OeuvresArtworkCard({ artwork }: OeuvresArtworkCardProps) {
+export function OeuvresArtworkCard({ artwork, isFavorite = false }: OeuvresArtworkCardProps) {
     return (
         <article className="group relative">
             <Link href={`/oeuvres/${artwork.slug}`} className="relative block overflow-hidden rounded-[1.75rem] border border-white/10">
@@ -63,6 +65,9 @@ export function OeuvresArtworkCard({ artwork }: OeuvresArtworkCardProps) {
                     </div>
                 </div>
             </Link>
+            <div className="absolute left-3 top-3 z-30">
+                <FavoriteToggle artworkId={artwork.id} initialIsFavorite={isFavorite} label="" className="h-10 min-h-10 w-10 px-0" />
+            </div>
         </article>
     );
 }

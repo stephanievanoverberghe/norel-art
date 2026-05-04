@@ -8,9 +8,10 @@ import { OeuvresEmptyState } from './OeuvresEmptyState';
 interface OeuvresGalleryGridProps {
     artworks: Artwork[];
     content: OeuvresGridContent;
+    favoriteArtworkIds?: string[];
 }
 
-export function OeuvresGalleryGrid({ artworks, content }: OeuvresGalleryGridProps) {
+export function OeuvresGalleryGrid({ artworks, content, favoriteArtworkIds = [] }: OeuvresGalleryGridProps) {
     if (artworks.length === 0) {
         return <OeuvresEmptyState content={content} />;
     }
@@ -28,7 +29,7 @@ export function OeuvresGalleryGrid({ artworks, content }: OeuvresGalleryGridProp
 
             <div className="grid grid-cols-2 gap-5 md:grid-cols-3">
                 {artworks.map((artwork) => (
-                    <OeuvresArtworkCard key={artwork.id} artwork={artwork} />
+                    <OeuvresArtworkCard key={artwork.id} artwork={artwork} isFavorite={favoriteArtworkIds.includes(artwork.id)} />
                 ))}
             </div>
         </div>

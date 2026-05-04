@@ -19,6 +19,7 @@ interface OeuvresGallerySectionProps {
     initialCategory?: string;
     initialCollection?: string;
     initialType?: string;
+    favoriteArtworkIds?: string[];
 }
 
 function isArtworkCategory(value: string | undefined, categories: readonly ArtworkCategory[]): value is ArtworkCategory {
@@ -29,7 +30,16 @@ function isArtworkType(value: string | undefined): value is Artwork['type'] {
     return value === 'original' || value === 'print';
 }
 
-export function OeuvresGallerySection({ artworks, categories, collections, content, initialCategory, initialCollection, initialType }: OeuvresGallerySectionProps) {
+export function OeuvresGallerySection({
+    artworks,
+    categories,
+    collections,
+    content,
+    initialCategory,
+    initialCollection,
+    initialType,
+    favoriteArtworkIds = [],
+}: OeuvresGallerySectionProps) {
     const [selectedCategory, setSelectedCategory] = useState<OeuvresCategoryFilter>(isArtworkCategory(initialCategory, categories) ? initialCategory : 'all');
     const [selectedCollection, setSelectedCollection] = useState<OeuvresCollectionFilter>(initialCollection && collections.includes(initialCollection) ? initialCollection : 'all');
     const [selectedType, setSelectedType] = useState<OeuvresTypeFilter>(isArtworkType(initialType) ? initialType : 'all');
@@ -67,7 +77,7 @@ export function OeuvresGallerySection({ artworks, categories, collections, conte
                         onReset={resetFilters}
                     />
 
-                    <OeuvresGalleryGrid artworks={filteredArtworks} content={content.grid} />
+                    <OeuvresGalleryGrid artworks={filteredArtworks} content={content.grid} favoriteArtworkIds={favoriteArtworkIds} />
                 </div>
             </Container>
         </section>

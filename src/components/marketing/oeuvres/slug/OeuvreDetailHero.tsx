@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { FavoriteToggle } from '@/components/favorites/FavoriteToggle';
 import { MarketingSecondaryLink } from '@/components/marketing/shared/MarketingSecondaryLink';
 import { formatArtworkPrice, getAvailabilityLabel, getArtworkTypeLabel } from '@/domain/artworks/presentation';
 import type { Artwork } from '@/domain/artworks/types';
@@ -13,6 +14,7 @@ import { Text } from '@/ui/Text';
 
 interface OeuvreDetailHeroProps {
     artwork: Artwork;
+    isFavorite?: boolean;
     className?: string;
 }
 
@@ -22,7 +24,7 @@ const availabilityTone: Record<Artwork['availability'], string> = {
     sold: 'bg-black/35 text-white/70',
 };
 
-export function OeuvreDetailHero({ artwork, className }: OeuvreDetailHeroProps) {
+export function OeuvreDetailHero({ artwork, isFavorite = false, className }: OeuvreDetailHeroProps) {
     const isAvailable = artwork.availability === 'available';
 
     return (
@@ -103,6 +105,8 @@ export function OeuvreDetailHero({ artwork, className }: OeuvreDetailHeroProps) 
                             <MarketingSecondaryLink href="/commandes" className="w-full">
                                 Me confier un visage
                             </MarketingSecondaryLink>
+
+                            <FavoriteToggle artworkId={artwork.id} initialIsFavorite={isFavorite} className="w-full" />
                         </div>
 
                         <div className="mt-8 grid gap-4 border-t border-white/10 pt-5 sm:grid-cols-2">
