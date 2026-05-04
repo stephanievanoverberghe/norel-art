@@ -1,0 +1,597 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum ArtworkStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ArtworkAvailability {
+  AVAILABLE
+  RESERVED
+  SOLD
+}
+
+enum VariantType {
+  ORIGINAL
+  PRINT
+}
+
+enum ImageKind {
+  MAIN
+  DETAIL
+  FRAME
+  CONTEXT
+}
+
+enum VideoProvider {
+  YOUTUBE
+}
+
+enum CartStatus {
+  ACTIVE
+  CONVERTED
+  ABANDONED
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  PREPARING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  REFUNDED
+}
+
+enum AddressType {
+  SHIPPING
+  BILLING
+}
+
+enum CustomRequestType {
+  CUSTOM_ARTWORK
+  MURAL
+  CONTACT
+}
+
+enum CustomRequestStatus {
+  NEW
+  IN_REVIEW
+  QUOTE_SENT
+  ACCEPTED
+  CLOSED
+}
+
+enum DropStatus {
+  DRAFT
+  SCHEDULED
+  LIVE
+  ENDED
+}
+
+enum WaitlistReason {
+  SOLD_ARTWORK
+  OUT_OF_STOCK_PRINT
+  DROP_ACCESS
+  SIMILAR_WORK
+}
+
+enum WaitlistStatus {
+  ACTIVE
+  NOTIFIED
+  CONVERTED
+  CANCELLED
+}
+
+enum ArtworkEventType {
+  VIEW
+  FAVORITE
+  ADD_TO_CART
+  WAITLIST
+  PURCHASE
+}
+
+enum TestimonialStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  passwordHash  String?
+  role          UserRole  @default(USER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  accounts        Account[]
+  sessions        Session[]
+  profile         CustomerProfile?
+  addresses       Address[]
+  favorites       Favorite[]
+  carts           Cart[]
+  orders          Order[]
+  requests        CustomRequest[]
+  waitlistEntries WaitlistEntry[]
+  certificates    Certificate[]
+  artworkEvents   ArtworkEvent[]
+  auditLogs       AuditLog[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model CustomerProfile {
+  id             String   @id @default(cuid())
+  userId         String   @unique
+  firstName      String?
+  lastName       String?
+  phone          String?
+  marketingOptIn Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Address {
+  id         String      @id @default(cuid())
+  userId     String
+  type       AddressType @default(SHIPPING)
+  fullName   String
+  line1      String
+  line2      String?
+  postalCode String
+  city       String
+  country    String      @default("FR")
+  phone      String?
+  isDefault  Boolean     @default(false)
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name        String
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  artworks Artwork[]
+}
+
+model Collection {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  name         String
+  description  String?
+  heroImageUrl String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  artworks        Artwork[]
+  waitlistEntries WaitlistEntry[]
+}
+
+model Artwork {
+  id           String              @id @default(cuid())
+  slug         String              @unique
+  title        String
+  excerpt      String
+  story        String
+  technique    String?
+  support      String?
+  dimensions   String?
+  tags         String[]            @default([])
+  status       ArtworkStatus       @default(DRAFT)
+  availability ArtworkAvailability @default(AVAILABLE)
+  categoryId   String
+  collectionId String?
+  publishedAt  DateTime?
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+
+  category        Category         @relation(fields: [categoryId], references: [id])
+  collection      Collection?      @relation(fields: [collectionId], references: [id])
+  images          ArtworkImage[]
+  videos          ArtworkVideo[]
+  variants        ProductVariant[]
+  favorites       Favorite[]
+  cartEvents      ArtworkEvent[]
+  orderItems      OrderItem[]
+  certificates    Certificate[]
+  waitlistEntries WaitlistEntry[]
+  drops           DropArtwork[]
+
+  @@index([categoryId])
+  @@index([collectionId])
+  @@index([status, availability])
+}
+
+model ProductVariant {
+  id           String      @id @default(cuid())
+  artworkId    String
+  type         VariantType
+  title        String
+  sku          String      @unique
+  priceCents   Int
+  currency     String      @default("EUR")
+  stock        Int         @default(0)
+  maxPerOrder  Int?
+  editionSize  Int?
+  editionLabel String?
+  isActive     Boolean     @default(true)
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  artwork    Artwork     @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+  cartItems  CartItem[]
+  orderItems OrderItem[]
+
+  @@index([artworkId])
+  @@index([type, isActive])
+}
+
+model ArtworkImage {
+  id        String    @id @default(cuid())
+  artworkId String
+  url       String
+  alt       String
+  position  Int       @default(0)
+  kind      ImageKind @default(MAIN)
+  createdAt DateTime  @default(now())
+
+  artwork Artwork @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+
+  @@index([artworkId, position])
+}
+
+model ArtworkVideo {
+  id           String        @id @default(cuid())
+  artworkId    String
+  provider     VideoProvider @default(YOUTUBE)
+  videoId      String
+  title        String
+  thumbnailUrl String?
+  position     Int           @default(0)
+  isFeatured   Boolean       @default(false)
+  createdAt    DateTime      @default(now())
+
+  artwork Artwork @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+
+  @@index([artworkId, position])
+}
+
+model Favorite {
+  id        String   @id @default(cuid())
+  userId    String
+  artworkId String
+  createdAt DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  artwork Artwork @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, artworkId])
+  @@index([artworkId])
+}
+
+model Cart {
+  id        String     @id @default(cuid())
+  userId    String?
+  sessionId String?
+  status    CartStatus @default(ACTIVE)
+  currency  String     @default("EUR")
+  expiresAt DateTime?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  user  User?      @relation(fields: [userId], references: [id], onDelete: SetNull)
+  items CartItem[]
+
+  @@index([userId])
+  @@index([sessionId])
+  @@index([status])
+}
+
+model CartItem {
+  id        String   @id @default(cuid())
+  cartId    String
+  variantId String
+  quantity  Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  cart    Cart           @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  variant ProductVariant @relation(fields: [variantId], references: [id])
+
+  @@unique([cartId, variantId])
+  @@index([variantId])
+}
+
+model Order {
+  id                      String      @id @default(cuid())
+  orderNumber             String      @unique
+  userId                  String?
+  email                   String
+  status                  OrderStatus @default(PENDING)
+  subtotalCents           Int
+  shippingCents           Int         @default(0)
+  totalCents              Int
+  currency                String      @default("EUR")
+  stripeCheckoutSessionId String?     @unique
+  stripePaymentIntentId   String?
+  customerName            String?
+  shippingName            String?
+  shippingLine1           String?
+  shippingLine2           String?
+  shippingPostalCode      String?
+  shippingCity            String?
+  shippingCountry         String?
+  paidAt                  DateTime?
+  shippedAt               DateTime?
+  createdAt               DateTime    @default(now())
+  updatedAt               DateTime    @updatedAt
+
+  user     User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  items    OrderItem[]
+  payments Payment[]
+
+  @@index([userId])
+  @@index([email])
+  @@index([status])
+}
+
+model OrderItem {
+  id              String   @id @default(cuid())
+  orderId         String
+  artworkId       String?
+  variantId       String?
+  title           String
+  variantTitle    String?
+  quantity        Int      @default(1)
+  unitPriceCents  Int
+  totalPriceCents Int
+  editionNumber   Int?
+  createdAt       DateTime @default(now())
+
+  order       Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  artwork     Artwork?        @relation(fields: [artworkId], references: [id], onDelete: SetNull)
+  variant     ProductVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
+  certificate Certificate?
+
+  @@index([orderId])
+  @@index([artworkId])
+  @@index([variantId])
+}
+
+model Payment {
+  id                      String        @id @default(cuid())
+  orderId                 String
+  provider                String        @default("STRIPE")
+  status                  PaymentStatus @default(PENDING)
+  amountCents             Int
+  currency                String        @default("EUR")
+  providerPaymentIntentId String?       @unique
+  rawEventId              String?
+  createdAt               DateTime      @default(now())
+  updatedAt               DateTime      @updatedAt
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([orderId])
+  @@index([status])
+}
+
+model CustomRequest {
+  id        String              @id @default(cuid())
+  userId    String?
+  type      CustomRequestType
+  status    CustomRequestStatus @default(NEW)
+  email     String
+  name      String
+  phone     String?
+  budget    String?
+  location  String?
+  message   String
+  metadata  Json?
+  createdAt DateTime            @default(now())
+  updatedAt DateTime            @updatedAt
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([type, status])
+  @@index([email])
+}
+
+model Drop {
+  id           String     @id @default(cuid())
+  slug         String     @unique
+  title        String
+  description  String
+  heroImageUrl String?
+  startsAt     DateTime
+  endsAt       DateTime?
+  status       DropStatus @default(DRAFT)
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  artworks        DropArtwork[]
+  waitlistEntries WaitlistEntry[]
+
+  @@index([status, startsAt])
+}
+
+model DropArtwork {
+  id        String @id @default(cuid())
+  dropId    String
+  artworkId String
+  position  Int    @default(0)
+
+  drop    Drop    @relation(fields: [dropId], references: [id], onDelete: Cascade)
+  artwork Artwork @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+
+  @@unique([dropId, artworkId])
+  @@index([artworkId])
+}
+
+model WaitlistEntry {
+  id           String         @id @default(cuid())
+  artworkId    String?
+  collectionId String?
+  dropId       String?
+  userId       String?
+  email        String
+  reason       WaitlistReason
+  status       WaitlistStatus @default(ACTIVE)
+  message      String?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+
+  artwork    Artwork?    @relation(fields: [artworkId], references: [id], onDelete: SetNull)
+  collection Collection? @relation(fields: [collectionId], references: [id], onDelete: SetNull)
+  drop       Drop?       @relation(fields: [dropId], references: [id], onDelete: SetNull)
+  user       User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([email])
+  @@index([artworkId])
+  @@index([collectionId])
+  @@index([dropId])
+  @@index([status])
+}
+
+model Certificate {
+  id                String   @id @default(cuid())
+  orderItemId       String   @unique
+  artworkId         String
+  userId            String
+  certificateNumber String   @unique
+  editionNumber     Int?
+  pdfUrl            String?
+  issuedAt          DateTime @default(now())
+
+  orderItem OrderItem @relation(fields: [orderItemId], references: [id], onDelete: Cascade)
+  artwork   Artwork   @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([artworkId])
+  @@index([userId])
+}
+
+model ArtworkEvent {
+  id        String           @id @default(cuid())
+  artworkId String
+  userId    String?
+  sessionId String?
+  type      ArtworkEventType
+  metadata  Json?
+  createdAt DateTime         @default(now())
+
+  artwork Artwork @relation(fields: [artworkId], references: [id], onDelete: Cascade)
+  user    User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([artworkId, type])
+  @@index([userId])
+  @@index([sessionId])
+  @@index([createdAt])
+}
+
+model Testimonial {
+  id          String            @id @default(cuid())
+  clientName  String
+  context     String
+  quote       String
+  status      TestimonialStatus @default(DRAFT)
+  publishedAt DateTime?
+  createdAt   DateTime          @default(now())
+  updatedAt   DateTime          @updatedAt
+}
+
+model SiteSettings {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  action     String
+  entityType String
+  entityId   String?
+  details    Json?
+  createdAt  DateTime @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([actorId])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
