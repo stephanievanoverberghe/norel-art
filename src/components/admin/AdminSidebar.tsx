@@ -2,10 +2,11 @@ import Link from 'next/link';
 
 const links = [
     { href: '/admin', label: 'Dashboard' },
-    { href: '/admin/oeuvres', label: 'Œuvres' },
+    { href: '/admin/oeuvres', label: 'Oeuvres' },
+    { href: '/admin/commandes', label: 'Commandes' },
     { href: '/admin/demandes', label: 'Demandes' },
-    { href: '/admin/temoignages', label: 'Témoignages' },
-    { href: '/admin/settings', label: 'Paramètres' },
+    { href: '/admin/temoignages', label: 'Temoignages' },
+    { href: '/admin/settings', label: 'Parametres' },
 ];
 
 export function AdminSidebar() {
