@@ -4,7 +4,7 @@ import { RequestList } from '@/components/admin/RequestList';
 export default function AdminDemandesPage() {
     return (
         <>
-            <AdminPageHeader title="Demandes" description="Suivi des commandes, fresques et formulaires de contact." />
+            <AdminPageHeader title="Demandes" description="Qualifier les contacts entrants, commandes personnalisees et projets fresques avec une lecture claire des priorites." />
             <RequestList />
         </>
     );

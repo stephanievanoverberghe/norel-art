@@ -12,7 +12,7 @@ export default async function AdminEditArtworkPage({ params }: AdminEditArtworkP
 
     return (
         <>
-            <AdminPageHeader title="Édition d’une œuvre" description={`Modification de la fiche ${artwork.title}.`} />
+            <AdminPageHeader title="Edition oeuvre" description={`Ajuster la fiche "${artwork.title}" avant publication ou mise a jour du catalogue.`} />
             <ArtworkForm mode="edit" defaultTitle={artwork.title} />
         </>
     );
