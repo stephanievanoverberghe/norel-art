@@ -1,13 +1,19 @@
 import { Euro, ImagePlus, Layers, Palette, Save, Video } from 'lucide-react';
 
+import type { AdminCategory } from '@/server/categories/admin-categories';
+
 import { AdminPanel, adminInputClass, adminLabelClass, adminPrimaryButtonClass } from './AdminPrimitives';
 
 interface ArtworkFormProps {
+    categories?: Pick<AdminCategory, 'id' | 'name' | 'slug'>[];
+    defaultCategoryId?: string;
     mode: 'create' | 'edit';
     defaultTitle?: string;
 }
 
-export function ArtworkForm({ mode, defaultTitle = '' }: ArtworkFormProps) {
+export function ArtworkForm({ categories = [], defaultCategoryId, mode, defaultTitle = '' }: ArtworkFormProps) {
+    const selectedCategoryId = defaultCategoryId ?? categories[0]?.id ?? '';
+
     return (
         <form className="grid gap-5" aria-label="Formulaire oeuvre admin">
             <AdminPanel className="p-5">
@@ -25,6 +31,17 @@ export function ArtworkForm({ mode, defaultTitle = '' }: ArtworkFormProps) {
                     <label className={adminLabelClass}>
                         Titre
                         <input defaultValue={defaultTitle} className={adminInputClass} />
+                    </label>
+                    <label className={adminLabelClass}>
+                        Categorie
+                        <select name="categoryId" className={adminInputClass} defaultValue={selectedCategoryId}>
+                            {categories.length === 0 ? <option value="">Creer une categorie d&apos;abord</option> : null}
+                            {categories.map((category) => (
+                                <option key={category.id} value={category.id}>
+                                    {category.name}
+                                </option>
+                            ))}
+                        </select>
                     </label>
                     <label className={adminLabelClass}>
                         Type

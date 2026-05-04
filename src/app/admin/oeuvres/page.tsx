@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, ImageIcon, Plus, Search, SlidersHorizontal } from 'lucide-react';
+import { ArrowUpRight, ImageIcon, Plus, Search, SlidersHorizontal, Tags } from 'lucide-react';
 
 import { AdminPageHeader } from '@/components/admin/AdminPageHeader';
-import { AdminBadge, AdminPanel, adminInputClass, adminPrimaryButtonClass } from '@/components/admin/AdminPrimitives';
+import { AdminBadge, AdminPanel, adminInputClass, adminPrimaryButtonClass, adminSecondaryButtonClass } from '@/components/admin/AdminPrimitives';
 import { artworks } from '@/content/artworks/artworks';
 import { formatArtworkPrice, getArtworkTypeLabel, getAvailabilityLabel } from '@/domain/artworks/presentation';
+import { getAdminCategories } from '@/server/categories/admin-categories';
 
 const availabilityTone = {
     available: 'success',
@@ -13,26 +14,42 @@ const availabilityTone = {
     sold: 'muted',
 } as const;
 
-export default function AdminOeuvresPage() {
+export default async function AdminOeuvresPage() {
+    const categories = await getAdminCategories();
+
     return (
         <>
             <AdminPageHeader
                 title="Oeuvres"
                 description="Piloter le catalogue comme une galerie : statut, prix, collection, stock et qualite des visuels."
                 action={
-                    <Link href="/admin/oeuvres/nouvelle" className={adminPrimaryButtonClass}>
-                        <Plus size={16} />
-                        Nouvelle oeuvre
-                    </Link>
+                    <>
+                        <Link href="/admin/categories" className={adminSecondaryButtonClass}>
+                            <Tags size={16} />
+                            Categories
+                        </Link>
+                        <Link href="/admin/oeuvres/nouvelle" className={adminPrimaryButtonClass}>
+                            <Plus size={16} />
+                            Nouvelle oeuvre
+                        </Link>
+                    </>
                 }
             />
 
             <AdminPanel className="mb-5 p-4">
-                <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_14rem_12rem]">
+                <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_14rem_14rem_12rem]">
                     <label className="relative">
                         <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-white/34" />
                         <input placeholder="Rechercher une oeuvre, une collection, une technique..." className={`${adminInputClass} pl-9`} />
                     </label>
+                    <select className={adminInputClass} defaultValue="all">
+                        <option value="all">Toutes les categories</option>
+                        {categories.map((category) => (
+                            <option key={category.id} value={category.id}>
+                                {category.name}
+                            </option>
+                        ))}
+                    </select>
                     <select className={adminInputClass} defaultValue="all">
                         <option value="all">Tous les statuts</option>
                         <option value="available">Disponible</option>
