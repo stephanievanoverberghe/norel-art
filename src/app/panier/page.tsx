@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ArrowLeft, ShoppingBag } from 'lucide-react';
 
 import { CartItemControls } from '@/components/cart/CartItemControls';
+import { CheckoutButton } from '@/components/checkout/CheckoutButton';
 import { getCurrentSession } from '@/server/auth/session';
 import { CART_SESSION_COOKIE, getActiveCart } from '@/server/cart/cart';
 
@@ -105,13 +106,7 @@ export default async function CartPage() {
                                 <span>{formatPrice(cart?.subtotalCents ?? 0)}</span>
                             </div>
 
-                            <button
-                                type="button"
-                                disabled
-                                className="mt-6 inline-flex min-h-12 w-full cursor-not-allowed items-center justify-center rounded-full bg-white/14 px-5 text-sm font-medium text-white/45"
-                            >
-                                Checkout Stripe a venir
-                            </button>
+                            <CheckoutButton />
                         </aside>
                     </div>
                 ) : (

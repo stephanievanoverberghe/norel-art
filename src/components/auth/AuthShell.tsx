@@ -12,7 +12,7 @@ export function AuthShell({ eyebrow, title, description, children }: AuthShellPr
     return (
         <main className="relative min-h-screen overflow-hidden bg-(--bg-primary) text-white">
             <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(13,27,42,0.94)_0%,rgba(13,27,42,0.74)_48%,rgba(91,30,51,0.62)_100%),url('/images/hero/norel-hero.jpg')] bg-cover bg-center" />
-            <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/35 to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-black/35 to-transparent" />
 
             <div className="relative z-10 mx-auto grid min-h-screen w-full max-w-6xl items-center gap-10 px-5 py-8 sm:px-8 lg:grid-cols-[1fr_420px]">
                 <section className="max-w-2xl">
@@ -24,9 +24,7 @@ export function AuthShell({ eyebrow, title, description, children }: AuthShellPr
                     <p className="mt-6 max-w-lg text-base leading-7 text-white/68 sm:text-lg">{description}</p>
                 </section>
 
-                <section className="rounded-lg border border-white/14 bg-[#08131f]/88 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:p-7">
-                    {children}
-                </section>
+                <section className="rounded-lg border border-white/14 bg-[#08131f]/88 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.42)] backdrop-blur-xl sm:p-7">{children}</section>
             </div>
         </main>
     );
