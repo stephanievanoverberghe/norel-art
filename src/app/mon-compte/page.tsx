@@ -72,7 +72,7 @@ export default async function AccountPage() {
 
                 <section className="grid gap-3 py-8 sm:grid-cols-3">
                     {stats.map((stat) => (
-                        <div key={stat.label} className="rounded-md border border-white/10 bg-white/[0.06] p-5">
+                        <div key={stat.label} className="rounded-md border border-white/10 bg-white/6 p-5">
                             <p className="text-sm text-white/48">{stat.label}</p>
                             <p className="mt-3 text-3xl font-semibold">{stat.value}</p>
                         </div>

@@ -3,6 +3,18 @@ import type { ArtworkCategory } from '@/domain/artworks/categories';
 export type ArtworkType = 'original' | 'print';
 export type ArtworkAvailability = 'available' | 'reserved' | 'sold';
 
+export interface ArtworkPurchasableVariant {
+    id: string;
+    title: string;
+    sku: string;
+    type: ArtworkType;
+    priceCents: number;
+    currency: 'EUR';
+    stock: number;
+    maxPerOrder?: number | null;
+    isActive: boolean;
+}
+
 export interface Artwork {
     id: string;
     slug: string;
@@ -19,6 +31,7 @@ export interface Artwork {
     dimensions: string;
     priceEur: number;
     availability: ArtworkAvailability;
+    purchasableVariant?: ArtworkPurchasableVariant;
     highlighted?: boolean;
     tags: string[];
 }

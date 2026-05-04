@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { AddToCartButton } from '@/components/cart/AddToCartButton';
 import { FavoriteToggle } from '@/components/favorites/FavoriteToggle';
 import { MarketingSecondaryLink } from '@/components/marketing/shared/MarketingSecondaryLink';
 import { formatArtworkPrice, getAvailabilityLabel, getArtworkTypeLabel } from '@/domain/artworks/presentation';
 import type { Artwork } from '@/domain/artworks/types';
 import { marketingPageSpacing } from '@/layout/marketing/page-spacing';
 import { cn } from '@/lib/utils/cn';
-import { Button } from '@/ui/Button';
 import { Container } from '@/ui/Container';
 import { Heading } from '@/ui/Heading';
 import { Text } from '@/ui/Text';
@@ -92,10 +92,8 @@ export function OeuvreDetailHero({ artwork, isFavorite = false, className }: Oeu
                         </div>
 
                         <div className="mt-8 flex flex-col gap-3 sm:max-w-sm">
-                            {isAvailable ? (
-                                <Link href="/contact" className="block">
-                                    <Button className="min-h-12 w-full rounded-full px-6">Je la choisis</Button>
-                                </Link>
+                            {isAvailable && artwork.purchasableVariant ? (
+                                <AddToCartButton variantId={artwork.purchasableVariant.id} />
                             ) : (
                                 <MarketingSecondaryLink href="/contact" className="w-full">
                                     Ce regard m’appelle

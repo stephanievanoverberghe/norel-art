@@ -80,6 +80,19 @@ export function mapArtworkRecord(record: ArtworkRecord): Artwork {
         dimensions: record.dimensions ?? 'Dimensions sur demande',
         priceEur: activeVariant ? activeVariant.priceCents / 100 : 0,
         availability: availabilityMap[record.availability],
+        purchasableVariant: activeVariant
+            ? {
+                  id: activeVariant.id,
+                  title: activeVariant.title,
+                  sku: activeVariant.sku,
+                  type: typeMap[activeVariant.type],
+                  priceCents: activeVariant.priceCents,
+                  currency: activeVariant.currency as 'EUR',
+                  stock: activeVariant.stock,
+                  maxPerOrder: activeVariant.maxPerOrder,
+                  isActive: activeVariant.isActive,
+              }
+            : undefined,
         tags: record.tags,
     };
 }
