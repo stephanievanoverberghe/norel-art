@@ -6,9 +6,8 @@ import { OeuvreGallerySection } from '@/components/marketing/oeuvres/slug/Oeuvre
 import { RelatedOeuvresSection } from '@/components/marketing/oeuvres/slug/RelatedOeuvresSection';
 import { OeuvreFinalCtaSection } from '@/components/marketing/oeuvres/slug/OeuvreFinalCtaSection';
 import { OeuvreNotFound } from '@/components/marketing/oeuvres/slug/OeuvreNotFound';
-import { getCurrentSession } from '@/server/auth/session';
 import { getPublishedArtworkDetail } from '@/server/catalog/artworks';
-import { getFavoriteArtworkIds } from '@/server/favorites/favorites';
+import { getOptionalCurrentUserFavoriteArtworkIds } from '@/server/favorites/favorites';
 
 interface OeuvrePageProps {
     params: Promise<{
@@ -36,9 +35,8 @@ export async function generateMetadata({ params }: OeuvrePageProps): Promise<Met
 
 export default async function OeuvreSlugRoutePage({ params }: OeuvrePageProps) {
     const { slug } = await params;
-    const session = await getCurrentSession();
     const { artwork, artworks } = await getPublishedArtworkDetail(slug);
-    const favoriteArtworkIds = session?.user?.id ? await getFavoriteArtworkIds(session.user.id) : [];
+    const favoriteArtworkIds = await getOptionalCurrentUserFavoriteArtworkIds();
 
     if (!artwork) {
         return <OeuvreNotFound />;

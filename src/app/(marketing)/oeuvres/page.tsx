@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 
 import { OeuvresPage } from '@/components/marketing/oeuvres/OeuvresPage';
 import { oeuvresContent } from '@/content/oeuvres/oeuvres-content';
-import { getCurrentSession } from '@/server/auth/session';
 import { getPublishedArtworkCatalog } from '@/server/catalog/artworks';
-import { getFavoriteArtworkIds } from '@/server/favorites/favorites';
+import { getOptionalCurrentUserFavoriteArtworkIds } from '@/server/favorites/favorites';
 
 export const metadata: Metadata = {
     title: 'Œuvres',
@@ -23,9 +22,8 @@ interface OeuvresPageProps {
 
 export default async function OeuvresRoutePage({ searchParams }: OeuvresPageProps) {
     const params = await searchParams;
-    const session = await getCurrentSession();
     const catalog = await getPublishedArtworkCatalog();
-    const favoriteArtworkIds = session?.user?.id ? await getFavoriteArtworkIds(session.user.id) : [];
+    const favoriteArtworkIds = await getOptionalCurrentUserFavoriteArtworkIds();
 
     return (
         <OeuvresPage
