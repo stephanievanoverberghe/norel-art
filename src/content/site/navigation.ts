@@ -17,23 +17,33 @@ export const mainNavigationLinks: NavigationItem[] = [
 
 export const footerNavigationGroups: FooterNavGroup[] = [
     {
-        title: 'Navigation',
+        title: 'Explorer',
         links: [...mainNavigationLinks, { label: 'Contact', href: '/contact' }],
     },
     {
-        title: 'Collection',
+        title: 'Boutique',
         links: [
             { label: 'Originaux', href: '/oeuvres?type=original' },
             { label: 'Impressions', href: '/oeuvres?type=print' },
-            { label: 'Commandes sur mesure', href: '/commandes' },
-            { label: 'Fresques murales', href: '/fresques' },
+            { label: 'Panier', href: '/panier' },
             { label: 'Mon compte', href: '/mon-compte' },
+        ],
+    },
+    {
+        title: 'Aide',
+        links: [
+            { label: 'Livraison et retours', href: '/livraison-retours' },
+            { label: 'Conditions de vente', href: '/conditions-generales-vente' },
+            { label: 'Confidentialite', href: '/politique-de-confidentialite' },
+            { label: 'Cookies', href: '/politique-cookies' },
         ],
     },
 ];
 
 export const legalLinks: NavigationItem[] = [
     { label: 'Mentions legales', href: '/mentions-legales' },
+    { label: 'CGV', href: '/conditions-generales-vente' },
+    { label: 'Livraison et retours', href: '/livraison-retours' },
     { label: 'Confidentialite', href: '/politique-de-confidentialite' },
-    { label: 'Contact', href: '/contact' },
+    { label: 'Cookies', href: '/politique-cookies' },
 ];

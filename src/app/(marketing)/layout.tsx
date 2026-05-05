@@ -6,8 +6,10 @@ import { Header } from '@/layout/Header';
 
 export const metadata: Metadata = {
     title: 'Norel Art',
-    description: 'Œuvres originales, impressions et créations artistiques sur mesure.',
+    description: 'Oeuvres originales, impressions et creations artistiques sur mesure.',
 };
+
+export const dynamic = 'force-dynamic';
 
 interface MarketingLayoutProps {
     children: ReactNode;
