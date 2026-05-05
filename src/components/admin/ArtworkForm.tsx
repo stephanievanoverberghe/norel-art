@@ -1,9 +1,9 @@
-import Image from 'next/image';
 import { Euro, ImagePlus, Layers, Link2, Palette, Save, Video } from 'lucide-react';
 
 import type { AdminArtwork } from '@/server/artworks/admin-artworks';
 import type { AdminCategory } from '@/server/categories/admin-categories';
 
+import { AdminMediaUploadField } from './AdminMediaUploadField';
 import { AdminPanel, adminInputClass, adminLabelClass, adminPrimaryButtonClass } from './AdminPrimitives';
 
 interface ArtworkFormProps {
@@ -19,6 +19,10 @@ function getImageUrl(artwork: AdminArtwork | undefined, kind: 'CONTEXT' | 'DETAI
 
 function getMainImageAlt(artwork: AdminArtwork | undefined) {
     return artwork?.images.find((image) => image.kind === 'MAIN')?.alt ?? artwork?.title ?? '';
+}
+
+function getImagePublicId(artwork: AdminArtwork | undefined, kind: 'CONTEXT' | 'DETAIL' | 'FRAME' | 'MAIN') {
+    return artwork?.images.find((image) => image.kind === kind)?.publicId ?? '';
 }
 
 export function ArtworkForm({ action, artwork, categories, mode }: ArtworkFormProps) {
@@ -188,35 +192,48 @@ export function ArtworkForm({ action, artwork, categories, mode }: ArtworkFormPr
                     </div>
                 </div>
 
-                <div className="mt-5 grid gap-5 xl:grid-cols-[18rem_minmax(0,1fr)]">
-                    <div className="relative aspect-4/5 overflow-hidden rounded-md border border-white/10 bg-white/5">
-                        {getImageUrl(artwork, 'MAIN') ? (
-                            <Image src={getImageUrl(artwork, 'MAIN')} alt={getMainImageAlt(artwork)} fill sizes="18rem" className="object-cover" />
-                        ) : (
-                            <div className="flex h-full items-center justify-center px-6 text-center text-sm text-white/38">Apercu apres enregistrement</div>
-                        )}
-                    </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
-                        <label className={adminLabelClass}>
-                            Image principale
-                            <input name="mainImageUrl" defaultValue={getImageUrl(artwork, 'MAIN')} placeholder="/images/oeuvres/oeuvre.jpg" className={adminInputClass} />
-                        </label>
-                        <label className={adminLabelClass}>
-                            Alt image principale
-                            <input name="mainImageAlt" defaultValue={getMainImageAlt(artwork)} placeholder={artwork?.title ?? 'Titre de l oeuvre'} className={adminInputClass} />
-                        </label>
-                        <label className={adminLabelClass}>
-                            Image detail
-                            <input name="detailImageUrl" defaultValue={getImageUrl(artwork, 'DETAIL')} className={adminInputClass} />
-                        </label>
-                        <label className={adminLabelClass}>
-                            Image encadree
-                            <input name="frameImageUrl" defaultValue={getImageUrl(artwork, 'FRAME')} className={adminInputClass} />
-                        </label>
-                        <label className={`${adminLabelClass} sm:col-span-2`}>
-                            Image contexte
-                            <input name="contextImageUrl" defaultValue={getImageUrl(artwork, 'CONTEXT')} className={adminInputClass} />
-                        </label>
+                <div className="mt-5 grid gap-4 lg:grid-cols-2 xl:grid-cols-4">
+                    <AdminMediaUploadField
+                        altName="mainImageAlt"
+                        description="Visuel hero, vignette boutique et image principale."
+                        folder="artworks"
+                        initialAlt={getMainImageAlt(artwork)}
+                        initialPublicId={getImagePublicId(artwork, 'MAIN')}
+                        initialUrl={getImageUrl(artwork, 'MAIN')}
+                        label="Image principale"
+                        publicIdName="mainImagePublicId"
+                        urlName="mainImageUrl"
+                    />
+                    <AdminMediaUploadField
+                        description="Zoom matiere ou detail de la piece."
+                        folder="artworks"
+                        initialPublicId={getImagePublicId(artwork, 'DETAIL')}
+                        initialUrl={getImageUrl(artwork, 'DETAIL')}
+                        label="Image detail"
+                        publicIdName="detailImagePublicId"
+                        urlName="detailImageUrl"
+                    />
+                    <AdminMediaUploadField
+                        description="Vue encadree, murale ou presentation."
+                        folder="artworks"
+                        initialPublicId={getImagePublicId(artwork, 'FRAME')}
+                        initialUrl={getImageUrl(artwork, 'FRAME')}
+                        label="Image encadree"
+                        publicIdName="frameImagePublicId"
+                        urlName="frameImageUrl"
+                    />
+                    <AdminMediaUploadField
+                        description="Ambiance atelier, interieur ou contexte."
+                        folder="artworks"
+                        initialPublicId={getImagePublicId(artwork, 'CONTEXT')}
+                        initialUrl={getImageUrl(artwork, 'CONTEXT')}
+                        label="Image contexte"
+                        publicIdName="contextImagePublicId"
+                        urlName="contextImageUrl"
+                    />
+                </div>
+
+                <div className="mt-5 grid gap-4 sm:grid-cols-2">
                         <label className={adminLabelClass}>
                             Video YouTube
                             <span className="relative">
@@ -232,7 +249,6 @@ export function ArtworkForm({ action, artwork, categories, mode }: ArtworkFormPr
                             Miniature video
                             <input name="videoThumbnailUrl" defaultValue={video?.thumbnailUrl ?? ''} placeholder="Optionnel" className={adminInputClass} />
                         </label>
-                    </div>
                 </div>
             </AdminPanel>
 

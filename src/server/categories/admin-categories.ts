@@ -23,6 +23,7 @@ export interface AdminCategoryInput {
     description?: string | null;
     imageUrl?: string | null;
     imageAlt?: string | null;
+    imagePublicId?: string | null;
 }
 
 function cleanCategoryInput(input: AdminCategoryInput) {
@@ -30,6 +31,7 @@ function cleanCategoryInput(input: AdminCategoryInput) {
     const description = input.description?.trim() || null;
     const imageUrl = input.imageUrl?.trim() || null;
     const imageAlt = input.imageAlt?.trim() || null;
+    const imagePublicId = input.imagePublicId?.trim() || null;
 
     if (!name) {
         throw new Error('Category name is required');
@@ -39,6 +41,7 @@ function cleanCategoryInput(input: AdminCategoryInput) {
         name,
         description,
         imageAlt,
+        imagePublicId,
         imageUrl,
         requestedSlug: input.slug?.trim(),
     };
@@ -122,6 +125,7 @@ export async function createAdminCategory(input: AdminCategoryInput): Promise<Ad
             description: cleaned.description,
             imageUrl: cleaned.imageUrl,
             imageAlt: cleaned.imageAlt,
+            imagePublicId: cleaned.imagePublicId,
         },
         include: adminCategoryInclude,
     });
@@ -141,6 +145,7 @@ export async function updateAdminCategory(categoryId: string, input: AdminCatego
             description: cleaned.description,
             imageUrl: cleaned.imageUrl,
             imageAlt: cleaned.imageAlt,
+            imagePublicId: cleaned.imagePublicId,
         },
         include: adminCategoryInclude,
     });

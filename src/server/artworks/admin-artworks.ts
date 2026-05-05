@@ -39,14 +39,18 @@ export interface AdminArtworkInput {
     availability: ArtworkAvailability;
     categoryId: string;
     collectionName?: string | null;
+    contextImagePublicId?: string | null;
     contextImageUrl?: string | null;
+    detailImagePublicId?: string | null;
     detailImageUrl?: string | null;
     dimensions?: string | null;
     editionLabel?: string | null;
     editionSize?: number | null;
     excerpt: string;
+    frameImagePublicId?: string | null;
     frameImageUrl?: string | null;
     mainImageAlt?: string | null;
+    mainImagePublicId?: string | null;
     mainImageUrl?: string | null;
     maxPerOrder?: number | null;
     priceCents: number;
@@ -87,13 +91,17 @@ function cleanArtworkInput(input: AdminArtworkInput) {
     return {
         ...input,
         collectionName: cleanNullable(input.collectionName),
+        contextImagePublicId: cleanNullable(input.contextImagePublicId),
         contextImageUrl: cleanNullable(input.contextImageUrl),
+        detailImagePublicId: cleanNullable(input.detailImagePublicId),
         detailImageUrl: cleanNullable(input.detailImageUrl),
         dimensions: cleanNullable(input.dimensions),
         editionLabel: cleanNullable(input.editionLabel),
         excerpt,
+        frameImagePublicId: cleanNullable(input.frameImagePublicId),
         frameImageUrl: cleanNullable(input.frameImageUrl),
         mainImageAlt: cleanNullable(input.mainImageAlt),
+        mainImagePublicId: cleanNullable(input.mainImagePublicId),
         mainImageUrl: cleanNullable(input.mainImageUrl),
         sku: cleanNullable(input.sku),
         slug: cleanNullable(input.slug),
@@ -181,13 +189,13 @@ async function resolveCollectionId(name?: string | null) {
 }
 
 function getImageInputs(input: ReturnType<typeof cleanArtworkInput>) {
-    const images: Array<{ kind: ImageKind; url: string; alt: string; position: number }> = [];
+    const images: Array<{ kind: ImageKind; publicId: string | null; url: string; alt: string; position: number }> = [];
     const mainAlt = input.mainImageAlt || input.title;
 
-    if (input.mainImageUrl) images.push({ kind: 'MAIN', url: input.mainImageUrl, alt: mainAlt, position: 0 });
-    if (input.detailImageUrl) images.push({ kind: 'DETAIL', url: input.detailImageUrl, alt: `${input.title} detail`, position: 1 });
-    if (input.frameImageUrl) images.push({ kind: 'FRAME', url: input.frameImageUrl, alt: `${input.title} encadree`, position: 2 });
-    if (input.contextImageUrl) images.push({ kind: 'CONTEXT', url: input.contextImageUrl, alt: `${input.title} en situation`, position: 3 });
+    if (input.mainImageUrl) images.push({ kind: 'MAIN', url: input.mainImageUrl, publicId: input.mainImagePublicId, alt: mainAlt, position: 0 });
+    if (input.detailImageUrl) images.push({ kind: 'DETAIL', url: input.detailImageUrl, publicId: input.detailImagePublicId, alt: `${input.title} detail`, position: 1 });
+    if (input.frameImageUrl) images.push({ kind: 'FRAME', url: input.frameImageUrl, publicId: input.frameImagePublicId, alt: `${input.title} encadree`, position: 2 });
+    if (input.contextImageUrl) images.push({ kind: 'CONTEXT', url: input.contextImageUrl, publicId: input.contextImagePublicId, alt: `${input.title} en situation`, position: 3 });
 
     return images;
 }

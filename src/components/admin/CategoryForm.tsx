@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import { FileText, ImagePlus, Link2, Plus, Save, Tags } from 'lucide-react';
 
 import type { AdminCategory } from '@/server/categories/admin-categories';
 
+import { AdminMediaUploadField } from './AdminMediaUploadField';
 import { AdminPanel, adminInputClass, adminLabelClass, adminPrimaryButtonClass } from './AdminPrimitives';
 
 interface CategoryFormProps {
@@ -62,23 +62,18 @@ export function CategoryForm({ action, category, mode }: CategoryFormProps) {
                         </div>
                     </div>
 
-                    <div className="mt-5 grid gap-4">
-                        <div className="relative aspect-4/5 overflow-hidden rounded-md border border-white/10 bg-white/5">
-                            {category?.imageUrl ? (
-                                <Image src={category.imageUrl} alt={category.imageAlt ?? category.name} fill sizes="22rem" className="object-cover" />
-                            ) : (
-                                <div className="flex h-full items-center justify-center px-6 text-center text-sm text-white/38">Apercu visible apres enregistrement</div>
-                            )}
-                        </div>
-                        <label className={adminLabelClass}>
-                            URL image
-                            <input name="imageUrl" defaultValue={category?.imageUrl ?? ''} placeholder="/images/categories/portrait.jpg" className={adminInputClass} />
-                        </label>
-                        <label className={adminLabelClass}>
-                            Texte alternatif
-                            <input name="imageAlt" defaultValue={category?.imageAlt ?? ''} placeholder="Portrait artistique Norel Art" className={adminInputClass} />
-                        </label>
-                    </div>
+                    <AdminMediaUploadField
+                        altName="imageAlt"
+                        className="mt-5"
+                        description="Utilisee dans les filtres, les mises en avant et les futures pages categories."
+                        folder="categories"
+                        initialAlt={category?.imageAlt}
+                        initialPublicId={category?.imagePublicId}
+                        initialUrl={category?.imageUrl}
+                        label="Image categorie"
+                        publicIdName="imagePublicId"
+                        urlName="imageUrl"
+                    />
                 </AdminPanel>
             </div>
 

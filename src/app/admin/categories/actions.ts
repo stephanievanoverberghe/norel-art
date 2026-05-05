@@ -14,6 +14,7 @@ function getCategoryInput(formData: FormData) {
         description: String(formData.get('description') ?? ''),
         imageUrl: String(formData.get('imageUrl') ?? ''),
         imageAlt: String(formData.get('imageAlt') ?? ''),
+        imagePublicId: String(formData.get('imagePublicId') ?? ''),
     };
 }
 

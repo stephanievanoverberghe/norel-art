@@ -221,6 +221,7 @@ model Category {
   description String?
   imageUrl    String?
   imageAlt    String?
+  imagePublicId String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
@@ -303,6 +304,7 @@ model ArtworkImage {
   id        String    @id @default(cuid())
   artworkId String
   url       String
+  publicId  String?
   alt       String
   position  Int       @default(0)
   kind      ImageKind @default(MAIN)
