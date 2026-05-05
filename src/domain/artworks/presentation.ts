@@ -2,7 +2,7 @@ import type { ArtworkAvailability, ArtworkType } from '@/domain/artworks/types';
 
 const availabilityLabelMap: Record<ArtworkAvailability, string> = {
     available: 'Disponible',
-    reserved: 'Réservée',
+    reserved: 'Reservee',
     sold: 'Vendue',
 };
 
@@ -20,5 +20,9 @@ export function getArtworkTypeLabel(type: ArtworkType): string {
 }
 
 export function formatArtworkPrice(priceEur: number): string {
-    return `${priceEur.toLocaleString('fr-FR')} €`;
+    return new Intl.NumberFormat('fr-FR', {
+        currency: 'EUR',
+        maximumFractionDigits: 0,
+        style: 'currency',
+    }).format(priceEur);
 }

@@ -9,10 +9,10 @@ export interface FooterNavGroup {
 }
 
 export const mainNavigationLinks: NavigationItem[] = [
-    { label: 'Œuvres', href: '/oeuvres' },
-    { label: 'À propos', href: '/a-propos' },
+    { label: 'Oeuvres', href: '/oeuvres' },
     { label: 'Commandes', href: '/commandes' },
     { label: 'Fresques', href: '/fresques' },
+    { label: 'A propos', href: '/a-propos' },
 ];
 
 export const footerNavigationGroups: FooterNavGroup[] = [
@@ -27,12 +27,13 @@ export const footerNavigationGroups: FooterNavGroup[] = [
             { label: 'Impressions', href: '/oeuvres?type=print' },
             { label: 'Commandes sur mesure', href: '/commandes' },
             { label: 'Fresques murales', href: '/fresques' },
+            { label: 'Mon compte', href: '/mon-compte' },
         ],
     },
 ];
 
 export const legalLinks: NavigationItem[] = [
-    { label: 'Mentions légales', href: '/mentions-legales' },
-    { label: 'Confidentialité', href: '/politique-de-confidentialite' },
+    { label: 'Mentions legales', href: '/mentions-legales' },
+    { label: 'Confidentialite', href: '/politique-de-confidentialite' },
     { label: 'Contact', href: '/contact' },
 ];

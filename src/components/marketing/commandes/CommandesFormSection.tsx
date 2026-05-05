@@ -45,6 +45,7 @@ export function CommandesFormSection({ id, content }: CommandesFormSectionProps)
         try {
             const response = await fetch('/api/requests', {
                 body: JSON.stringify({
+                    budget: String(formData.get('budget') ?? ''),
                     email: String(formData.get('email') ?? ''),
                     message: String(formData.get('message') ?? ''),
                     metadata: {
@@ -52,8 +53,10 @@ export function CommandesFormSection({ id, content }: CommandesFormSectionProps)
                         format: String(formData.get('format') ?? ''),
                         requestType: selectedRequestType,
                         technique: String(formData.get('technique') ?? ''),
+                        timeline: String(formData.get('timeline') ?? ''),
                     },
                     name: String(formData.get('firstName') ?? ''),
+                    phone: String(formData.get('phone') ?? ''),
                     source: 'custom-artwork',
                 }),
                 headers: {
@@ -107,7 +110,7 @@ export function CommandesFormSection({ id, content }: CommandesFormSectionProps)
 
                 <form onSubmit={handleSubmit} className="rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.022))] p-3 backdrop-blur-sm sm:p-4">
                     <div className="rounded-[1.4rem] border border-white/8 bg-white/2 px-5 py-5 sm:px-6 sm:py-6">
-                        <div className="grid gap-4 sm:grid-cols-2">
+                        <div className="grid gap-4 sm:grid-cols-3">
                             <FormField label={content.fields.firstNameLabel} htmlFor="firstName" required>
                                 <Input id="firstName" name="firstName" placeholder={content.fields.firstNamePlaceholder} autoComplete="given-name" required />
                             </FormField>
@@ -115,9 +118,13 @@ export function CommandesFormSection({ id, content }: CommandesFormSectionProps)
                             <FormField label={content.fields.emailLabel} htmlFor="email" required>
                                 <Input id="email" name="email" type="email" placeholder={content.fields.emailPlaceholder} autoComplete="email" required />
                             </FormField>
+
+                            <FormField label="Telephone" htmlFor="phone">
+                                <Input id="phone" name="phone" type="tel" placeholder="Optionnel" autoComplete="tel" />
+                            </FormField>
                         </div>
 
-                        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                        <div className="mt-4 grid gap-4 sm:grid-cols-3">
                             <FormField label={content.fields.requestTypeLabel} htmlFor="request-type" required>
                                 <Select
                                     id="request-type"
@@ -139,9 +146,13 @@ export function CommandesFormSection({ id, content }: CommandesFormSectionProps)
                                     placeholder={content.fields.formatPlaceholder}
                                 />
                             </FormField>
+
+                            <FormField label="Budget" htmlFor="budget">
+                                <Input id="budget" name="budget" placeholder="Ex. 120 EUR, 300 EUR, a definir" />
+                            </FormField>
                         </div>
 
-                        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                        <div className="mt-4 grid gap-4 sm:grid-cols-3">
                             <FormField label={content.fields.facesCountLabel} htmlFor="facesCount">
                                 <Input id="facesCount" name="facesCount" inputMode="numeric" placeholder={content.fields.facesCountPlaceholder} />
                             </FormField>
@@ -155,6 +166,10 @@ export function CommandesFormSection({ id, content }: CommandesFormSectionProps)
                                     options={content.techniqueOptions}
                                     placeholder={content.fields.techniquePlaceholder}
                                 />
+                            </FormField>
+
+                            <FormField label="Delai" htmlFor="timeline">
+                                <Input id="timeline" name="timeline" placeholder="Cadeau, date, pas presse" />
                             </FormField>
                         </div>
 

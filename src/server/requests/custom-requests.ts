@@ -82,6 +82,17 @@ export async function getAdminCustomRequests(): Promise<AdminCustomRequest[]> {
     });
 }
 
+export async function getCustomerCustomRequests(userId: string) {
+    return prisma.customRequest.findMany({
+        where: {
+            userId,
+        },
+        orderBy: {
+            createdAt: 'desc',
+        },
+    });
+}
+
 export async function getAdminCustomRequestStats() {
     const [total, fresh, inReview, quoteSent, accepted, closed, mural, customArtwork, contact] = await prisma.$transaction([
         prisma.customRequest.count(),

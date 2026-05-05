@@ -1,3 +1,4 @@
+import { ArrowLeft, CheckCircle2, PackageCheck, ShieldCheck, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,116 +20,132 @@ interface OeuvreDetailHeroProps {
 }
 
 const availabilityTone: Record<Artwork['availability'], string> = {
-    available: 'bg-white/15 text-white',
-    reserved: 'bg-(--accent)/35 text-white',
-    sold: 'bg-black/35 text-white/70',
+    available: 'border-emerald-200/20 bg-emerald-300/12 text-emerald-50',
+    reserved: 'border-(--premium)/24 bg-(--premium)/12 text-white',
+    sold: 'border-white/10 bg-black/42 text-white/58',
 };
+
+const reassurance = [
+    { label: 'Paiement securise', icon: ShieldCheck },
+    { label: 'Suivi dans le compte', icon: PackageCheck },
+    { label: 'Piece signee', icon: CheckCircle2 },
+] as const;
 
 export function OeuvreDetailHero({ artwork, isFavorite = false, className }: OeuvreDetailHeroProps) {
     const isAvailable = artwork.availability === 'available';
 
     return (
         <section
-            aria-label={`Présentation de l’œuvre ${artwork.title}`}
-            className={cn(`relative overflow-hidden bg-(--bg-primary) pb-12 sm:pb-14 lg:pb-16 ${marketingPageSpacing.immersiveOffset}`, className)}
+            aria-label={`Presentation de l'oeuvre ${artwork.title}`}
+            className={cn(`relative overflow-hidden bg-(--bg-deep) pb-12 sm:pb-14 lg:pb-18 ${marketingPageSpacing.immersiveOffset}`, className)}
         >
-            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(180deg,rgba(6,12,21,0.72)_0%,rgba(6,12,21,0)_100%)]" />
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-6 h-24 w-88 -translate-x-1/2 bg-(--accent)/8 blur-3xl" />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-[linear-gradient(180deg,rgba(5,10,18,0.82)_0%,rgba(5,10,18,0)_100%)]" />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-[radial-gradient(70%_90%_at_50%_100%,rgba(158,0,49,0.12),transparent_72%)]" />
 
             <Container className="relative z-10">
-                <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,0.8fr)] lg:items-center lg:gap-10 xl:gap-14">
-                    <div>
-                        <div className="relative mx-auto max-w-lg overflow-hidden rounded-3xl border border-white/10 bg-white/3 p-2 sm:p-3 lg:mx-0">
-                            <div className="relative overflow-hidden rounded-[1.1rem]">
-                                <div className="relative aspect-4/5 overflow-hidden sm:aspect-5/6">
-                                    <Image src={artwork.image} alt={artwork.title} fill priority sizes="(max-width: 1024px) 100vw, 48vw" className="object-cover object-center" />
+                <Link href="/oeuvres" className="mb-7 inline-flex items-center gap-2 text-sm text-white/62 transition hover:text-white">
+                    <ArrowLeft size={16} />
+                    Retour a la galerie
+                </Link>
 
-                                    {artwork.availability === 'sold' && <div className="absolute inset-0 bg-black/15 grayscale-[0.15]" />}
+                <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(23rem,0.7fr)] lg:items-start lg:gap-10 xl:gap-14">
+                    <div className="relative">
+                        <div className="relative overflow-hidden rounded-md border border-white/10 bg-white/[0.035] p-2 sm:p-3">
+                            <div className="relative aspect-4/5 overflow-hidden rounded-[0.45rem] sm:aspect-[5/6]">
+                                <Image src={artwork.image} alt={artwork.title} fill priority sizes="(max-width: 1024px) 100vw, 54vw" className="object-cover object-center" />
+                                {artwork.availability === 'sold' ? <div className="absolute inset-0 bg-black/18 grayscale-[0.16]" /> : null}
+                                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_68%,rgba(0,0,0,0.32)_100%)]" />
+                            </div>
+                        </div>
 
-                                    <div className="absolute right-3 top-3 z-10 sm:right-4 sm:top-4">
-                                        <span
-                                            className={cn(
-                                                'rounded-full px-3 py-1 text-[10px] uppercase tracking-[0.08em] backdrop-blur-md',
-                                                availabilityTone[artwork.availability],
-                                            )}
-                                        >
-                                            {getAvailabilityLabel(artwork.availability)}
-                                        </span>
+                        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                            {reassurance.map((item) => {
+                                const Icon = item.icon;
+
+                                return (
+                                    <div key={item.label} className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.035] px-4 py-3 text-sm text-white/62">
+                                        <Icon size={16} className="text-(--premium)" />
+                                        {item.label}
                                     </div>
+                                );
+                            })}
+                        </div>
+                    </div>
 
-                                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_72%,rgba(0,0,0,0.12)_100%)]" />
+                    <aside className="lg:sticky lg:top-32">
+                        <div className="rounded-md border border-white/10 bg-[#08131f]/84 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:p-6">
+                            <div className="flex flex-wrap items-center gap-2">
+                                <span className={cn('rounded-full border px-3 py-1 text-[10px] uppercase tracking-[0.12em]', availabilityTone[artwork.availability])}>
+                                    {getAvailabilityLabel(artwork.availability)}
+                                </span>
+                                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.12em] text-white/54">
+                                    {getArtworkTypeLabel(artwork.type)}
+                                </span>
+                            </div>
+
+                            <div className="mt-5 flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-white/42">
+                                <span>{artwork.collection}</span>
+                                <span className="h-1 w-1 rounded-full bg-white/24" />
+                                <span>{artwork.category}</span>
+                            </div>
+
+                            <Heading level={1} className="mt-4 text-white sm:text-5xl lg:text-[3.25rem]">
+                                {artwork.title}
+                            </Heading>
+
+                            <Text variant="muted" className="mt-4 text-white/72">
+                                {artwork.excerpt}
+                            </Text>
+
+                            <div className="mt-6 border-y border-white/10 py-5">
+                                <p className="text-[11px] uppercase tracking-[0.24em] text-white/38">Prix</p>
+                                <p className="mt-2 text-3xl font-semibold text-white">{formatArtworkPrice(artwork.priceEur)}</p>
+                                <p className="mt-2 text-sm text-white/48">{artwork.dimensions} - {artwork.technique}</p>
+                            </div>
+
+                            <div className="mt-5 grid gap-3">
+                                {isAvailable && artwork.purchasableVariant ? (
+                                    <AddToCartButton variantId={artwork.purchasableVariant.id} />
+                                ) : (
+                                    <MarketingSecondaryLink href="/contact" className="w-full">
+                                        Ce regard m&apos;appelle
+                                    </MarketingSecondaryLink>
+                                )}
+
+                                <FavoriteToggle artworkId={artwork.id} initialIsFavorite={isFavorite} className="w-full" />
+
+                                <MarketingSecondaryLink href="/commandes" className="w-full">
+                                    Commander une piece proche
+                                </MarketingSecondaryLink>
+                            </div>
+
+                            <div className="mt-6 grid gap-4 border-t border-white/10 pt-5 sm:grid-cols-2">
+                                <div>
+                                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/36">Support</p>
+                                    <p className="mt-2 text-sm text-white/78">{artwork.support}</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/36">Dimensions</p>
+                                    <p className="mt-2 text-sm text-white/78">{artwork.dimensions}</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/36">Technique</p>
+                                    <p className="mt-2 text-sm text-white/78">{artwork.technique}</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/36">Collection</p>
+                                    <p className="mt-2 text-sm text-white/78">{artwork.collection}</p>
                                 </div>
                             </div>
+
+                            {artwork.videos?.length ? (
+                                <div className="mt-5 flex items-center gap-3 rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/62">
+                                    <Sparkles size={16} className="text-(--premium)" />
+                                    Video disponible plus bas dans la fiche.
+                                </div>
+                            ) : null}
                         </div>
-                    </div>
-
-                    <div className="mx-auto flex w-full max-w-136 flex-col justify-center lg:mx-0">
-                        <div className="mb-5">
-                            <Link href="/oeuvres" className="inline-flex items-center gap-2 text-sm text-white/70 transition-colors duration-300 hover:text-white">
-                                Retour à la galerie
-                                <span className="h-px w-6 bg-white/40 transition-all duration-300 hover:w-10" />
-                            </Link>
-                        </div>
-
-                        <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.22em] text-white/48">
-                            <span>{artwork.collection}</span>
-                            <span className="h-1 w-1 rounded-full bg-white/26" />
-                            <span>{artwork.category}</span>
-                            <span className="h-1 w-1 rounded-full bg-white/26" />
-                            <span>{artwork.technique}</span>
-                        </div>
-
-                        <Heading level={1} className="mt-4 text-white sm:text-5xl lg:text-[3rem]">
-                            {artwork.title}
-                        </Heading>
-
-                        <Text variant="muted" className="mt-4 max-w-xl text-white/74">
-                            {artwork.excerpt}
-                        </Text>
-
-                        <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-2">
-                            <span className="text-lg text-white">{formatArtworkPrice(artwork.priceEur)}</span>
-                            <span className="text-sm text-white/55">{artwork.dimensions}</span>
-                        </div>
-
-                        <div className="mt-8 flex flex-col gap-3 sm:max-w-sm">
-                            {isAvailable && artwork.purchasableVariant ? (
-                                <AddToCartButton variantId={artwork.purchasableVariant.id} />
-                            ) : (
-                                <MarketingSecondaryLink href="/contact" className="w-full">
-                                    Ce regard m’appelle
-                                </MarketingSecondaryLink>
-                            )}
-
-                            <MarketingSecondaryLink href="/commandes" className="w-full">
-                                Me confier un visage
-                            </MarketingSecondaryLink>
-
-                            <FavoriteToggle artworkId={artwork.id} initialIsFavorite={isFavorite} className="w-full" />
-                        </div>
-
-                        <div className="mt-8 grid gap-4 border-t border-white/10 pt-5 sm:grid-cols-2">
-                            <div>
-                                <p className="text-[10px] uppercase tracking-[0.2em] text-white/42">Support</p>
-                                <p className="mt-2 text-sm text-white/84">{artwork.support}</p>
-                            </div>
-
-                            <div>
-                                <p className="text-[10px] uppercase tracking-[0.2em] text-white/42">Dimensions</p>
-                                <p className="mt-2 text-sm text-white/84">{artwork.dimensions}</p>
-                            </div>
-
-                            <div>
-                                <p className="text-[10px] uppercase tracking-[0.2em] text-white/42">Type</p>
-                                <p className="mt-2 text-sm text-white/84">{getArtworkTypeLabel(artwork.type)}</p>
-                            </div>
-
-                            <div>
-                                <p className="text-[10px] uppercase tracking-[0.2em] text-white/42">Technique</p>
-                                <p className="mt-2 text-sm text-white/84">{artwork.technique}</p>
-                            </div>
-                        </div>
-                    </div>
+                    </aside>
                 </div>
             </Container>
         </section>

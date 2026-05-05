@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { redirect } from 'next/navigation';
 
+import { AccountShell } from '@/components/account/AccountShell';
 import { getCurrentSession } from '@/server/auth/session';
 
 interface AccountLayoutProps {
@@ -13,8 +13,8 @@ export default async function AccountLayout({ children }: AccountLayoutProps) {
     const session = await getCurrentSession();
 
     if (!session?.user?.id) {
-        redirect('/connexion?callbackUrl=/mon-compte');
+        return children;
     }
 
-    return children;
+    return <AccountShell user={session.user}>{children}</AccountShell>;
 }

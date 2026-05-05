@@ -6,6 +6,8 @@ import { ArrowLeft, ShoppingBag } from 'lucide-react';
 
 import { CartItemControls } from '@/components/cart/CartItemControls';
 import { CheckoutButton } from '@/components/checkout/CheckoutButton';
+import { Footer } from '@/layout/Footer';
+import { Header } from '@/layout/Header';
 import { getCurrentSession } from '@/server/auth/session';
 import { CART_SESSION_COOKIE, getActiveCart } from '@/server/cart/cart';
 
@@ -31,8 +33,10 @@ export default async function CartPage() {
     const items = cart?.items ?? [];
 
     return (
-        <main className="min-h-screen bg-(--bg-primary) px-5 py-8 text-white sm:px-8">
-            <div className="mx-auto max-w-6xl">
+        <>
+            <Header />
+            <main className="min-h-screen bg-(--bg-deep) px-5 pb-14 pt-32 text-white sm:px-8 lg:pt-36">
+                <div className="mx-auto max-w-6xl">
                 <Link href="/oeuvres" className="inline-flex items-center gap-2 text-sm text-white/56 transition hover:text-white">
                     <ArrowLeft size={16} />
                     Continuer la galerie
@@ -72,7 +76,7 @@ export default async function CartPage() {
                                                     {item.artwork.title}
                                                 </Link>
                                                 <p className="mt-2 text-sm leading-6 text-white/52">
-                                                    {item.artwork.collection} · {item.artwork.dimensions}
+                                                    {item.artwork.collection} - {item.artwork.dimensions}
                                                 </p>
                                                 <div className="mt-4">
                                                     <CartItemControls cartItemId={item.id} quantity={item.quantity} maxQuantity={maxQuantity} />
@@ -126,7 +130,9 @@ export default async function CartPage() {
                         </div>
                     </section>
                 )}
-            </div>
-        </main>
+                </div>
+            </main>
+            <Footer />
+        </>
     );
 }

@@ -1,5 +1,6 @@
 'use client';
 
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import Image from 'next/image';
 import { useMemo, useState } from 'react';
 
@@ -32,7 +33,7 @@ function OeuvreLightbox({ activeIndex, images, isOpen, onClose, onNext, onPrev, 
         <div className="fixed inset-0 z-100 bg-[rgba(3,8,16,0.94)] backdrop-blur-md" role="dialog" aria-modal="true" aria-label={`Agrandissement de ${title}`}>
             <div className="absolute right-4 top-4 z-10">
                 <button type="button" onClick={onClose} className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/6 text-white transition-colors duration-300 hover:bg-white/12" aria-label="Fermer">
-                    X
+                    <X size={18} />
                 </button>
             </div>
 
@@ -50,7 +51,7 @@ function OeuvreLightbox({ activeIndex, images, isOpen, onClose, onNext, onPrev, 
                                 className="absolute left-3 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-[rgba(6,12,21,0.7)] text-white transition-colors duration-300 hover:bg-[rgba(6,12,21,0.9)]"
                                 aria-label="Image precedente"
                             >
-                                {'<'}
+                                <ChevronLeft size={20} />
                             </button>
 
                             <button
@@ -59,7 +60,7 @@ function OeuvreLightbox({ activeIndex, images, isOpen, onClose, onNext, onPrev, 
                                 className="absolute right-3 top-1/2 inline-flex h-11 w-11 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-[rgba(6,12,21,0.7)] text-white transition-colors duration-300 hover:bg-[rgba(6,12,21,0.9)]"
                                 aria-label="Image suivante"
                             >
-                                {'>'}
+                                <ChevronRight size={20} />
                             </button>
                         </>
                     ) : null}
