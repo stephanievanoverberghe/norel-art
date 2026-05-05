@@ -20,6 +20,11 @@ export const artworkRecordInclude = {
             createdAt: 'asc',
         },
     },
+    videos: {
+        orderBy: {
+            position: 'asc',
+        },
+    },
 } satisfies Prisma.ArtworkInclude;
 
 export type ArtworkRecord = Prisma.ArtworkGetPayload<{
@@ -93,6 +98,14 @@ export function mapArtworkRecord(record: ArtworkRecord): Artwork {
                   isActive: activeVariant.isActive,
               }
             : undefined,
+        videos: record.videos.map((video) => ({
+            id: video.id,
+            provider: video.provider,
+            videoId: video.videoId,
+            title: video.title,
+            thumbnailUrl: video.thumbnailUrl,
+            isFeatured: video.isFeatured,
+        })),
         tags: record.tags,
     };
 }

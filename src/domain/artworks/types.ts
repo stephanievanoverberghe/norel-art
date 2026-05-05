@@ -15,6 +15,15 @@ export interface ArtworkPurchasableVariant {
     isActive: boolean;
 }
 
+export interface ArtworkVideo {
+    id: string;
+    isFeatured?: boolean;
+    provider: 'YOUTUBE';
+    thumbnailUrl?: string | null;
+    title: string;
+    videoId: string;
+}
+
 export interface Artwork {
     id: string;
     slug: string;
@@ -32,6 +41,7 @@ export interface Artwork {
     priceEur: number;
     availability: ArtworkAvailability;
     purchasableVariant?: ArtworkPurchasableVariant;
+    videos?: ArtworkVideo[];
     highlighted?: boolean;
     tags: string[];
 }

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, FolderOpen, Layers3, Plus, Tags } from 'lucide-react';
 
@@ -56,6 +57,7 @@ export default async function AdminCategoriesPage() {
                         <thead className="bg-white/5">
                             <tr>
                                 <th className="px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/38">Categorie</th>
+                                <th className="px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/38">Image</th>
                                 <th className="px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/38">Slug</th>
                                 <th className="px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/38">Description</th>
                                 <th className="px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/38">Oeuvres</th>
@@ -68,6 +70,11 @@ export default async function AdminCategoriesPage() {
                                     <td className="px-4 py-4">
                                         <p className="font-semibold text-white">{category.name}</p>
                                         <p className="mt-1 text-xs text-white/38">Creee le {category.createdAt.toLocaleDateString('fr-FR')}</p>
+                                    </td>
+                                    <td className="px-4 py-4">
+                                        <div className="relative h-16 w-12 overflow-hidden rounded-md border border-white/10 bg-white/5">
+                                            {category.imageUrl ? <Image src={category.imageUrl} alt={category.imageAlt ?? category.name} fill sizes="48px" className="object-cover" /> : null}
+                                        </div>
                                     </td>
                                     <td className="px-4 py-4 text-white/62">/{category.slug}</td>
                                     <td className="max-w-md px-4 py-4 text-white/52">{category.description || 'Aucune description.'}</td>
@@ -85,7 +92,7 @@ export default async function AdminCategoriesPage() {
 
                             {categories.length === 0 ? (
                                 <tr>
-                                    <td colSpan={5} className="px-4 py-12 text-center text-white/44">
+                                    <td colSpan={6} className="px-4 py-12 text-center text-white/44">
                                         Aucune categorie pour le moment.
                                     </td>
                                 </tr>

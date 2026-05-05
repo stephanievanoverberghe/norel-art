@@ -219,6 +219,8 @@ model Category {
   slug        String   @unique
   name        String
   description String?
+  imageUrl    String?
+  imageAlt    String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 

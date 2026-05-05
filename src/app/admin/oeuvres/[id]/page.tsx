@@ -1,7 +1,11 @@
-import { artworks } from '@/content/artworks/artworks';
+import { notFound } from 'next/navigation';
+
 import { AdminPageHeader } from '@/components/admin/AdminPageHeader';
 import { ArtworkForm } from '@/components/admin/ArtworkForm';
+import { getAdminArtworkById } from '@/server/artworks/admin-artworks';
 import { getAdminCategories } from '@/server/categories/admin-categories';
+
+import { updateArtworkAction } from '../actions';
 
 interface AdminEditArtworkPageProps {
     params: Promise<{ id: string }>;
@@ -9,14 +13,18 @@ interface AdminEditArtworkPageProps {
 
 export default async function AdminEditArtworkPage({ params }: AdminEditArtworkPageProps) {
     const { id } = await params;
-    const artwork = artworks.find((item) => item.id === id) ?? artworks[0];
-    const categories = await getAdminCategories();
-    const defaultCategory = categories.find((category) => category.name === artwork.category);
+    const [artwork, categories] = await Promise.all([getAdminArtworkById(id), getAdminCategories()]);
+
+    if (!artwork) {
+        notFound();
+    }
+
+    const updateAction = updateArtworkAction.bind(null, artwork.id, artwork.slug);
 
     return (
         <>
-            <AdminPageHeader title="Edition oeuvre" description={`Ajuster la fiche "${artwork.title}" avant publication ou mise a jour du catalogue.`} />
-            <ArtworkForm mode="edit" defaultTitle={artwork.title} categories={categories} defaultCategoryId={defaultCategory?.id} />
+            <AdminPageHeader title="Edition oeuvre" description={`Ajuster la fiche "${artwork.title}" : contenu, categorie, commerce, stock, medias et publication.`} />
+            <ArtworkForm mode="edit" artwork={artwork} categories={categories} action={updateAction} />
         </>
     );
 }

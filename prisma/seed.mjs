@@ -21,7 +21,33 @@ function slugify(value) {
         .replace(/(^-|-$)/g, '');
 }
 
-const categories = ['Portrait', 'Pop Art', 'Manga', 'Graphisme', 'Street Art'];
+const categories = [
+    {
+        name: 'Portrait',
+        imageUrl: '/images/categories/portrait.jpg',
+        imageAlt: 'Portrait artistique Norel Art',
+    },
+    {
+        name: 'Pop Art',
+        imageUrl: '/images/categories/pop-art.jpg',
+        imageAlt: 'Categorie Pop Art Norel Art',
+    },
+    {
+        name: 'Manga',
+        imageUrl: '/images/categories/manga.jpg',
+        imageAlt: 'Categorie Manga Norel Art',
+    },
+    {
+        name: 'Graphisme',
+        imageUrl: '/images/categories/graphisme.jpg',
+        imageAlt: 'Categorie Graphisme Norel Art',
+    },
+    {
+        name: 'Street Art',
+        imageUrl: '/images/categories/street-art.jpg',
+        imageAlt: 'Categorie Street Art Norel Art',
+    },
+];
 const collections = ['Fragments interieurs', 'Veilles nocturnes', 'Presences'];
 
 const artworks = [
@@ -129,15 +155,21 @@ async function main() {
     const categoryByName = new Map();
     for (const category of categories) {
         const record = await prisma.category.upsert({
-            where: { slug: slugify(category) },
-            update: { name: category },
+            where: { slug: slugify(category.name) },
+            update: {
+                name: category.name,
+                imageUrl: category.imageUrl,
+                imageAlt: category.imageAlt,
+            },
             create: {
-                slug: slugify(category),
-                name: category,
+                slug: slugify(category.name),
+                name: category.name,
+                imageUrl: category.imageUrl,
+                imageAlt: category.imageAlt,
             },
         });
 
-        categoryByName.set(category, record);
+        categoryByName.set(category.name, record);
     }
 
     const collectionByName = new Map();
