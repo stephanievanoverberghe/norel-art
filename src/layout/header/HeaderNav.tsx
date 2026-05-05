@@ -13,7 +13,7 @@ interface HeaderNavProps {
 
 export function HeaderNav({ links, pathname, className }: HeaderNavProps) {
     return (
-        <nav aria-label="Navigation principale" className={cn('hidden items-center gap-2 lg:flex', className)}>
+        <nav aria-label="Navigation principale" className={cn('hidden min-w-0 items-center justify-center gap-0.5 lg:flex', className)}>
             {links.map((item) => {
                 const active = isActivePath(pathname, item.href);
 
@@ -22,7 +22,7 @@ export function HeaderNav({ links, pathname, className }: HeaderNavProps) {
                         key={item.href}
                         href={item.href}
                         className={cn(
-                            'group relative inline-flex items-center rounded-full px-4 py-2.5 text-sm font-medium tracking-[0.02em] transition-all duration-300',
+                            'group relative inline-flex h-9 items-center whitespace-nowrap rounded-full px-2.5 text-[13px] font-medium tracking-[0.01em] transition-all duration-300 xl:px-3.5 xl:text-sm',
                             active ? 'text-white' : 'text-white/68 hover:text-white',
                         )}
                     >
@@ -40,8 +40,8 @@ export function HeaderNav({ links, pathname, className }: HeaderNavProps) {
                         <span
                             aria-hidden="true"
                             className={cn(
-                                'absolute bottom-1.75 left-1/2 h-px -translate-x-1/2 bg-(--accent) transition-all duration-300',
-                                active ? 'w-8 opacity-100' : 'w-0 opacity-0 group-hover:w-6 group-hover:opacity-100',
+                                'absolute bottom-1 left-1/2 h-px -translate-x-1/2 bg-(--accent) transition-all duration-300',
+                                active ? 'w-7 opacity-100' : 'w-0 opacity-0 group-hover:w-5 group-hover:opacity-100',
                             )}
                         />
                     </Link>

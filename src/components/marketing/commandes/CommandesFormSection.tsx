@@ -119,7 +119,7 @@ export function CommandesFormSection({ id, content }: CommandesFormSectionProps)
                                 <Input id="email" name="email" type="email" placeholder={content.fields.emailPlaceholder} autoComplete="email" required />
                             </FormField>
 
-                            <FormField label="Telephone" htmlFor="phone">
+                            <FormField label="Téléphone" htmlFor="phone">
                                 <Input id="phone" name="phone" type="tel" placeholder="Optionnel" autoComplete="tel" />
                             </FormField>
                         </div>
@@ -148,7 +148,7 @@ export function CommandesFormSection({ id, content }: CommandesFormSectionProps)
                             </FormField>
 
                             <FormField label="Budget" htmlFor="budget">
-                                <Input id="budget" name="budget" placeholder="Ex. 120 EUR, 300 EUR, a definir" />
+                                <Input id="budget" name="budget" placeholder="Ex. 120 EUR, 300 EUR, à définir" />
                             </FormField>
                         </div>
 
@@ -168,7 +168,7 @@ export function CommandesFormSection({ id, content }: CommandesFormSectionProps)
                                 />
                             </FormField>
 
-                            <FormField label="Delai" htmlFor="timeline">
+                            <FormField label="Délai" htmlFor="timeline">
                                 <Input id="timeline" name="timeline" placeholder="Cadeau, date, pas presse" />
                             </FormField>
                         </div>

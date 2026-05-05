@@ -4,7 +4,7 @@ export const homePageContent: HomePageContent = {
     hero: {
         eyebrow: 'Norel Art · Peinture et illustration',
         titleLines: ['Un regard.', 'Un silence.', 'Tu entres.'],
-        description: "Œuvres originales, impressions signées, commandes et fresques murales. Ici, on ressent d'abord. On choisit ensuite.",
+        description: "Œuvres originales, affiches signées, commandes et fresques murales. Ici, on ressent d’abord. On choisit ensuite.",
         primaryCtaLabel: 'Ouvrir la sélection',
         secondaryCtaLabel: "Parler d'une commande",
         secondaryCtaHref: '/commandes',
@@ -22,7 +22,7 @@ export const homePageContent: HomePageContent = {
         description: 'Une présence centrale. Deux échos autour. L’exploration commence sans bruit.',
         ctaLabel: 'Explorer les œuvres',
         ctaHref: '/oeuvres',
-        footerNote: 'Originaux, impressions signées, pièces disponibles ou en réserve : chaque présence ouvre un dialogue différent.',
+        footerNote: 'Originaux, affiches signées, pièces disponibles ou en réserve : chaque présence ouvre un dialogue différent.',
     },
     categories: {
         eyebrow: 'Explorer autrement',

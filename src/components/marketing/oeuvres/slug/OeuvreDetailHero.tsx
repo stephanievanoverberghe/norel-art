@@ -26,9 +26,9 @@ const availabilityTone: Record<Artwork['availability'], string> = {
 };
 
 const reassurance = [
-    { label: 'Paiement securise', icon: ShieldCheck },
+    { label: 'Paiement sécurisé', icon: ShieldCheck },
     { label: 'Suivi dans le compte', icon: PackageCheck },
-    { label: 'Piece signee', icon: CheckCircle2 },
+    { label: 'Pièce signée', icon: CheckCircle2 },
 ] as const;
 
 export function OeuvreDetailHero({ artwork, isFavorite = false, className }: OeuvreDetailHeroProps) {
@@ -36,7 +36,7 @@ export function OeuvreDetailHero({ artwork, isFavorite = false, className }: Oeu
 
     return (
         <section
-            aria-label={`Presentation de l'oeuvre ${artwork.title}`}
+            aria-label={`Présentation de l’œuvre ${artwork.title}`}
             className={cn(`relative overflow-hidden bg-(--bg-deep) pb-12 sm:pb-14 lg:pb-18 ${marketingPageSpacing.immersiveOffset}`, className)}
         >
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-[linear-gradient(180deg,rgba(5,10,18,0.82)_0%,rgba(5,10,18,0)_100%)]" />
@@ -45,7 +45,7 @@ export function OeuvreDetailHero({ artwork, isFavorite = false, className }: Oeu
             <Container className="relative z-10">
                 <Link href="/oeuvres" className="mb-7 inline-flex items-center gap-2 text-sm text-white/62 transition hover:text-white">
                     <ArrowLeft size={16} />
-                    Retour a la galerie
+                    Retour à la galerie
                 </Link>
 
                 <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(23rem,0.7fr)] lg:items-start lg:gap-10 xl:gap-14">
@@ -115,7 +115,7 @@ export function OeuvreDetailHero({ artwork, isFavorite = false, className }: Oeu
                                 <FavoriteToggle artworkId={artwork.id} initialIsFavorite={isFavorite} className="w-full" />
 
                                 <MarketingSecondaryLink href="/commandes" className="w-full">
-                                    Commander une piece proche
+                                    Commander une pièce proche
                                 </MarketingSecondaryLink>
                             </div>
 
@@ -141,7 +141,7 @@ export function OeuvreDetailHero({ artwork, isFavorite = false, className }: Oeu
                             {artwork.videos?.length ? (
                                 <div className="mt-5 flex items-center gap-3 rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/62">
                                     <Sparkles size={16} className="text-(--premium)" />
-                                    Video disponible plus bas dans la fiche.
+                                    Vidéo disponible plus bas dans la fiche.
                                 </div>
                             ) : null}
                         </div>

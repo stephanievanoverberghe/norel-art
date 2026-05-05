@@ -2,47 +2,47 @@ import type { LegalPageContent } from '@/domain/legal/types';
 
 export const legalNoticePageContent: LegalPageContent = {
     intro: {
-        eyebrow: 'Legal',
-        title: 'Mentions legales',
-        description: 'Informations relatives a l edition, a l hebergement et a la propriete intellectuelle du site Norel Art.',
+        eyebrow: 'Légal',
+        title: 'Mentions légales',
+        description: 'Informations relatives à l’édition, à l’hébergement et à la propriété intellectuelle du site Norel Art.',
     },
     paragraphs: [
-        'Editeur du site : Norel Art. Les informations administratives definitives de l entreprise devront etre completees avant mise en production publique : denomination exacte, forme juridique, adresse, numero SIRET, TVA si applicable.',
-        'Contact : atelier@norel-art.fr. Ce contact est utilise pour les demandes clients, les demandes relatives aux commandes et les demandes liees aux donnees personnelles.',
-        'Hebergement : Vercel Inc. ou hebergeur definitif a confirmer selon le deploiement de production.',
-        'Propriete intellectuelle : les oeuvres, images, textes, logos, photographies, videos et elements graphiques presentes sur le site sont proteges. Toute reproduction, diffusion, modification ou utilisation sans autorisation ecrite est interdite.',
-        'Responsabilite : Norel Art s efforce de maintenir les informations du site exactes et accessibles, sans pouvoir garantir l absence d erreur, d interruption ou de maintenance ponctuelle.',
+        'Éditeur du site : Norel Art. Les informations administratives définitives de l’entreprise devront être complétées avant mise en production publique : dénomination exacte, forme juridique, adresse, numéro SIRET, TVA si applicable.',
+        'Contact : atelier@norel-art.fr. Ce contact est utilisé pour les demandes clients, les demandes relatives aux commandes et les demandes liées aux données personnelles.',
+        'Hébergement : Vercel Inc. ou hébergeur définitif à confirmer selon le déploiement de production.',
+        'Propriété intellectuelle : les œuvres, images, textes, logos, photographies, vidéos et éléments graphiques présentés sur le site sont protégés. Toute reproduction, diffusion, modification ou utilisation sans autorisation écrite est interdite.',
+        'Responsabilité : Norel Art s’efforce de maintenir les informations du site exactes et accessibles, sans pouvoir garantir l’absence d’erreur, d’interruption ou de maintenance ponctuelle.',
     ],
 };
 
 export const privacyPageContent: LegalPageContent = {
     intro: {
-        eyebrow: 'Donnees',
-        title: 'Politique de confidentialite',
-        description: 'Traitement des donnees personnelles collectees via le compte client, les commandes, les favoris et les formulaires.',
+        eyebrow: 'Données',
+        title: 'Politique de confidentialité',
+        description: 'Traitement des données personnelles collectées via le compte client, les commandes, les favoris et les formulaires.',
     },
     paragraphs: [
-        'Les donnees collectees servent a gerer les comptes, les commandes, les favoris, les demandes personnalisees, les projets fresques, le service client et les obligations legales.',
-        'Les donnees peuvent inclure : nom, email, telephone, adresses, historique de commande, favoris, messages envoyes, informations de paiement traitees par Stripe et donnees techniques necessaires au fonctionnement du site.',
-        'Les paiements sont traites par Stripe. Norel Art ne stocke pas les numeros complets de carte bancaire.',
-        'Les donnees ne sont pas revendues. Elles peuvent etre transmises uniquement aux prestataires necessaires au fonctionnement du service : hebergement, paiement, email, livraison ou outils techniques.',
-        'Vous pouvez demander l acces, la rectification ou la suppression de vos donnees via atelier@norel-art.fr, sous reserve des obligations legales de conservation.',
+        'Les données collectées servent à gérer les comptes, les commandes, les favoris, les demandes personnalisées, les projets fresques, le service client et les obligations légales.',
+        'Les données peuvent inclure : nom, email, téléphone, adresses, historique de commande, favoris, messages envoyés, informations de paiement traitées par Stripe et données techniques nécessaires au fonctionnement du site.',
+        'Les paiements sont traités par Stripe. Norel Art ne stocke pas les numéros complets de carte bancaire.',
+        'Les données ne sont pas revendues. Elles peuvent être transmises uniquement aux prestataires nécessaires au fonctionnement du service : hébergement, paiement, email, livraison ou outils techniques.',
+        'Vous pouvez demander l’accès, la rectification ou la suppression de vos données via atelier@norel-art.fr, sous réserve des obligations légales de conservation.',
     ],
 };
 
 export const termsPageContent: LegalPageContent = {
     intro: {
         eyebrow: 'Vente',
-        title: 'Conditions generales de vente',
-        description: 'Cadre de vente des oeuvres originales, impressions, commandes personnalisees et prestations artistiques.',
+        title: 'Conditions générales de vente',
+        description: 'Cadre de vente des œuvres originales, affiches, commandes personnalisées et prestations artistiques.',
     },
     paragraphs: [
-        'Les presentes conditions encadrent les ventes realisees sur le site Norel Art. Elles devront etre relues et validees juridiquement avant ouverture commerciale complete.',
-        'Les produits peuvent inclure des oeuvres originales, impressions, editions limitees, commandes personnalisees et prestations de fresque. Les caracteristiques essentielles sont indiquees sur les fiches ou devis.',
-        'Les prix sont indiques en euros. Les frais de livraison, taxes et conditions particulieres sont precises avant validation du paiement ou dans le devis.',
-        'Le paiement en ligne est realise via Stripe. Une commande est consideree comme confirmee apres validation du paiement et traitement technique de la commande.',
-        'Les commandes personnalisees et fresques peuvent faire l objet d un devis, d un acompte, d un calendrier specifique et de conditions adaptees au projet.',
-        'Pour les oeuvres personnalisees, le droit de retractation peut etre exclu lorsque la creation est realisee selon les specifications du client, conformement au droit applicable.',
+        'Les présentes conditions encadrent les ventes réalisées sur le site Norel Art. Elles devront être relues et validées juridiquement avant ouverture commerciale complète.',
+        'Les produits peuvent inclure des œuvres originales, affiches, éditions limitées, commandes personnalisées et prestations de fresque. Les caractéristiques essentielles sont indiquées sur les fiches ou devis.',
+        'Les prix sont indiqués en euros. Les frais de livraison, taxes et conditions particulières sont précisés avant validation du paiement ou dans le devis.',
+        'Le paiement en ligne est réalisé via Stripe. Une commande est considérée comme confirmée après validation du paiement et traitement technique de la commande.',
+        'Les commandes personnalisées et fresques peuvent faire l’objet d’un devis, d’un acompte, d’un calendrier spécifique et de conditions adaptées au projet.',
+        'Pour les œuvres personnalisées, le droit de rétractation peut être exclu lorsque la création est réalisée selon les spécifications du client, conformément au droit applicable.',
     ],
 };
 
@@ -50,14 +50,14 @@ export const shippingReturnsPageContent: LegalPageContent = {
     intro: {
         eyebrow: 'Commandes',
         title: 'Livraison et retours',
-        description: 'Reperes pour l expedition, le suivi, les retours et les cas d oeuvres personnalisees.',
+        description: 'Repères pour l’expédition, le suivi, les retours et les cas d’œuvres personnalisées.',
     },
     paragraphs: [
-        'Les delais de preparation varient selon le type de piece : oeuvre disponible, impression, commande personnalisee ou fresque. Les informations definitives sont precisees sur la fiche, la commande ou le devis.',
-        'Les oeuvres sont emballees avec soin. Les frais et modes de livraison sont indiques avant paiement lorsque la vente est realisee en ligne.',
-        'En cas de colis abime, il est recommande de prendre des photos du colis et de l oeuvre, puis de contacter Norel Art rapidement avec le numero de commande.',
-        'Les retours des oeuvres non personnalisees suivent les conditions legales applicables. Les frais, delais et modalites devront etre confirmes dans les CGV finales.',
-        'Les commandes personnalisees, portraits sur mesure et fresques peuvent ne pas etre retournables lorsqu elles sont realisees selon les indications du client.',
+        'Les délais de préparation varient selon le type de pièce : œuvre disponible, affiche, commande personnalisée ou fresque. Les informations définitives sont précisées sur la fiche, la commande ou le devis.',
+        'Les œuvres sont emballées avec soin. Les frais et modes de livraison sont indiqués avant paiement lorsque la vente est réalisée en ligne.',
+        'En cas de colis abîmé, il est recommandé de prendre des photos du colis et de l’œuvre, puis de contacter Norel Art rapidement avec le numéro de commande.',
+        'Les retours des œuvres non personnalisées suivent les conditions légales applicables. Les frais, délais et modalités devront être confirmés dans les CGV finales.',
+        'Les commandes personnalisées, portraits sur mesure et fresques peuvent ne pas être retournables lorsqu’elles sont réalisées selon les indications du client.',
     ],
 };
 
@@ -65,12 +65,12 @@ export const cookiesPageContent: LegalPageContent = {
     intro: {
         eyebrow: 'Cookies',
         title: 'Politique cookies',
-        description: 'Informations sur les cookies et technologies necessaires au fonctionnement du site.',
+        description: 'Informations sur les cookies et technologies nécessaires au fonctionnement du site.',
     },
     paragraphs: [
-        'Le site peut utiliser des cookies strictement necessaires au fonctionnement : session, panier, authentification, securite et preferences techniques.',
-        'Des services tiers peuvent deposer des cookies ou technologies similaires lorsque certaines fonctionnalites sont utilisees : Stripe pour le paiement, YouTube pour les videos integrees, outils de mesure si ajoutes plus tard.',
-        'Les cookies non essentiels devront faire l objet d un consentement lorsque des outils analytiques, marketing ou videos non strictement necessaires seront actives.',
-        'Vous pouvez gerer les cookies depuis les parametres de votre navigateur. Le blocage de certains cookies peut limiter le panier, la connexion ou le paiement.',
+        'Le site peut utiliser des cookies strictement nécessaires au fonctionnement : session, panier, authentification, sécurité et préférences techniques.',
+        'Des services tiers peuvent déposer des cookies ou technologies similaires lorsque certaines fonctionnalités sont utilisées : Stripe pour le paiement, YouTube pour les vidéos intégrées, outils de mesure si ajoutés plus tard.',
+        'Les cookies non essentiels devront faire l’objet d’un consentement lorsque des outils analytiques, marketing ou vidéos non strictement nécessaires seront activés.',
+        'Vous pouvez gérer les cookies depuis les paramètres de votre navigateur. Le blocage de certains cookies peut limiter le panier, la connexion ou le paiement.',
     ],
 };

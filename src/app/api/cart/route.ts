@@ -95,7 +95,7 @@ export async function POST(request: Request) {
         const cart = await addCartItem(owner, parsed.data.variantId, parsed.data.quantity);
         return withCartCookie({ cart }, sessionId, shouldSetCookie, 201);
     } catch {
-        return NextResponse.json({ message: "Cette oeuvre n'est pas disponible a l'achat." }, { status: 409 });
+        return NextResponse.json({ message: 'Cette œuvre n’est pas disponible à l’achat.' }, { status: 409 });
     }
 }
 

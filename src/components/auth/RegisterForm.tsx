@@ -14,10 +14,6 @@ interface RegisterFormProps {
     callbackUrl: string;
 }
 
-interface RegisterResponse {
-    message?: string;
-}
-
 export function RegisterForm({ callbackUrl }: RegisterFormProps) {
     const router = useRouter();
     const [error, setError] = useState<string | null>(null);
@@ -42,8 +38,7 @@ export function RegisterForm({ callbackUrl }: RegisterFormProps) {
         });
 
         if (!response.ok) {
-            const payload = (await response.json().catch(() => null)) as RegisterResponse | null;
-            setError(payload?.message ?? "Impossible de creer le compte pour l'instant.");
+            setError('Impossible de créer le compte pour l’instant.');
             setIsPending(false);
             return;
         }
@@ -69,7 +64,7 @@ export function RegisterForm({ callbackUrl }: RegisterFormProps) {
         <form className="grid gap-5" onSubmit={handleSubmit}>
             <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-white/42">Inscription</p>
-                <h2 className="mt-2 text-2xl font-semibold text-white">Creer votre espace</h2>
+                <h2 className="mt-2 text-2xl font-semibold text-white">Créer votre espace</h2>
             </div>
 
             {error ? <p className="rounded-md border border-red-300/20 bg-red-300/10 px-4 py-3 text-sm text-red-100">{error}</p> : null}
@@ -82,17 +77,17 @@ export function RegisterForm({ callbackUrl }: RegisterFormProps) {
                 <Input id="email" name="email" type="email" autoComplete="email" required />
             </FormField>
 
-            <FormField label="Mot de passe" htmlFor="password" hint="8 caracteres minimum." required>
+            <FormField label="Mot de passe" htmlFor="password" hint="8 caractères minimum." required>
                 <Input id="password" name="password" type="password" autoComplete="new-password" minLength={8} required />
             </FormField>
 
             <Button type="submit" className="w-full gap-2" disabled={isPending}>
                 {isPending ? <Loader2 size={18} className="animate-spin" /> : <UserPlus size={18} />}
-                Creer le compte
+                Créer le compte
             </Button>
 
             <p className="text-sm text-white/56">
-                Deja inscrit ?{' '}
+                Déjà inscrit ?{' '}
                 <Link href={`/connexion?callbackUrl=${encodeURIComponent(callbackUrl)}`} className="text-white transition hover:text-white/72">
                     Se connecter
                 </Link>

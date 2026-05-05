@@ -2,13 +2,13 @@ import type { ArtworkAvailability, ArtworkType } from '@/domain/artworks/types';
 
 const availabilityLabelMap: Record<ArtworkAvailability, string> = {
     available: 'Disponible',
-    reserved: 'Reservee',
+    reserved: 'Réservée',
     sold: 'Vendue',
 };
 
 const artworkTypeLabelMap: Record<ArtworkType, string> = {
     original: 'Original',
-    print: 'Impression',
+    print: 'Affiche',
 };
 
 export function getAvailabilityLabel(availability: ArtworkAvailability): string {

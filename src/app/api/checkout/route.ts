@@ -18,7 +18,7 @@ export async function POST() {
         const checkoutSession = await createStripeCheckoutSession(cart, session?.user?.email);
 
         if (!checkoutSession.url) {
-            return NextResponse.json({ message: 'Impossible de creer la session Stripe.' }, { status: 502 });
+            return NextResponse.json({ message: 'Impossible de créer la session Stripe.' }, { status: 502 });
         }
 
         return NextResponse.json({ url: checkoutSession.url });

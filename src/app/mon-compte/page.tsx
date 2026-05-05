@@ -16,13 +16,13 @@ const accountLinks = [
     {
         href: '/mon-compte/commandes',
         label: 'Commandes',
-        description: 'Suivre les achats, statuts, paiements et details.',
+        description: 'Suivre les achats, statuts, paiements et détails.',
         icon: Package,
     },
     {
         href: '/mon-compte/favoris',
         label: 'Favoris',
-        description: 'Revenir aux oeuvres mises de cote.',
+        description: 'Revenir aux œuvres mises de côté.',
         icon: Heart,
     },
     {
@@ -34,7 +34,7 @@ const accountLinks = [
     {
         href: '/mon-compte/certificats',
         label: 'Certificats',
-        description: 'Consulter les certificats lies aux pieces.',
+        description: 'Consulter les certificats liés aux pièces.',
         icon: FileBadge,
     },
 ] as const;
@@ -140,7 +140,7 @@ export default async function AccountPage() {
                     </section>
 
                     <section className="rounded-md border border-white/10 bg-[#08131f]/78 p-5">
-                        <p className="text-[11px] uppercase tracking-[0.24em] text-white/38">Derniere demande</p>
+                        <p className="text-[11px] uppercase tracking-[0.24em] text-white/38">Dernière demande</p>
                         {latestRequest ? (
                             <div className="mt-4">
                                 <p className="font-semibold text-white">{latestRequest.type}</p>
@@ -150,7 +150,7 @@ export default async function AccountPage() {
                                 </Link>
                             </div>
                         ) : (
-                            <p className="mt-4 text-sm leading-6 text-white/54">Les messages envoyes depuis le site apparaitront ici.</p>
+                            <p className="mt-4 text-sm leading-6 text-white/54">Les messages envoyés depuis le site apparaîtront ici.</p>
                         )}
                     </section>
                 </aside>

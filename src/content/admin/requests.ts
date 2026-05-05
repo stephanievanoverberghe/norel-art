@@ -32,6 +32,6 @@ export const clientRequests: ClientRequest[] = [
         budget: 'Non défini',
         location: 'Paris',
         createdAt: '2026-03-24',
-        message: 'Question sur les délais de livraison des impressions.',
+        message: 'Question sur les délais de livraison des affiches.',
     },
 ];

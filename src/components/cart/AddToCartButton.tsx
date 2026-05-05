@@ -37,7 +37,7 @@ export function AddToCartButton({ variantId, disabled = false, className }: AddT
         });
 
         if (!response.ok) {
-            setError("Impossible d'ajouter cette oeuvre au panier.");
+            setError('Impossible d’ajouter cette œuvre au panier.');
             setIsPending(false);
             return;
         }

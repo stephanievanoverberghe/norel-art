@@ -5,7 +5,7 @@ export const oeuvresContent: OeuvresPageContent = {
         eyebrow: 'Galerie',
         title: `Des présences.
 À laisser venir.`,
-        description: 'Originaux, impressions, fragments. Chaque œuvre ne se comprend pas immédiatement. Elle se laisse approcher.',
+        description: 'Originaux, affiches, fragments. Chaque œuvre ne se comprend pas immédiatement. Elle se laisse approcher.',
     },
     filters: {
         eyebrow: 'Explorer',
@@ -19,7 +19,7 @@ export const oeuvresContent: OeuvresPageContent = {
         typeOptions: [
             { label: 'Toutes', value: 'all' },
             { label: 'Originaux', value: 'original' },
-            { label: 'Impressions', value: 'print' },
+            { label: 'Affiches', value: 'print' },
         ],
     },
     grid: {

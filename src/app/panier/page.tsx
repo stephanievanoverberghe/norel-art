@@ -44,10 +44,10 @@ export default async function CartPage() {
 
                 <header className="mt-10 flex flex-col gap-6 border-b border-white/12 pb-8 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/42">Selection</p>
+                        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/42">Sélection</p>
                         <h1 className="mt-4 font-(family-name:--font-heading) text-5xl leading-none sm:text-7xl">Panier</h1>
                         <p className="mt-4 max-w-2xl text-base leading-7 text-white/62">
-                            Les oeuvres que vous souhaitez reserver ou acheter.
+                            Les œuvres que vous souhaitez réserver ou acheter.
                         </p>
                     </div>
 
@@ -94,7 +94,7 @@ export default async function CartPage() {
                         </section>
 
                         <aside className="h-fit rounded-md border border-white/10 bg-[#08131f]/88 p-5">
-                            <h2 className="text-xl font-semibold text-white">Recapitulatif</h2>
+                            <h2 className="text-xl font-semibold text-white">Récapitulatif</h2>
                             <div className="mt-5 space-y-3 border-b border-white/10 pb-5 text-sm">
                                 <div className="flex items-center justify-between gap-4 text-white/62">
                                     <span>Sous-total</span>
@@ -102,7 +102,7 @@ export default async function CartPage() {
                                 </div>
                                 <div className="flex items-center justify-between gap-4 text-white/62">
                                     <span>Livraison</span>
-                                    <span>A definir</span>
+                                    <span>À définir</span>
                                 </div>
                             </div>
                             <div className="mt-5 flex items-center justify-between gap-4 text-lg font-semibold text-white">
@@ -117,9 +117,9 @@ export default async function CartPage() {
                     <section className="py-12">
                         <div className="max-w-xl rounded-md border border-white/10 bg-[#08131f]/78 p-6">
                             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/42">Panier vide</p>
-                            <h2 className="mt-4 text-2xl font-semibold text-white">Aucune oeuvre selectionnee.</h2>
+                            <h2 className="mt-4 text-2xl font-semibold text-white">Aucune œuvre sélectionnée.</h2>
                             <p className="mt-3 text-sm leading-6 text-white/56">
-                                Parcourez la galerie et ajoutez une oeuvre disponible pour commencer votre commande.
+                                Parcourez la galerie et ajoutez une œuvre disponible pour commencer votre commande.
                             </p>
                             <Link
                                 href="/oeuvres"

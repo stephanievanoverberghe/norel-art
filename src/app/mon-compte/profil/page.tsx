@@ -76,7 +76,7 @@ export default async function AccountProfilePage() {
                             <dd className="mt-1 text-white">{user?.profile?.lastName ?? 'A completer'}</dd>
                         </div>
                         <div>
-                            <dt className="text-sm text-white/42">Telephone</dt>
+                            <dt className="text-sm text-white/42">Téléphone</dt>
                             <dd className="mt-1 text-white">{user?.profile?.phone ?? 'A completer'}</dd>
                         </div>
                     </dl>

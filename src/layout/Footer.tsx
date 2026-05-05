@@ -12,10 +12,10 @@ import { FooterNavGroup } from './footer/FooterNavGroup';
 import { SocialLinks } from './footer/SocialLinks';
 
 const reassuranceItems = [
-    { label: 'Paiement securise', icon: CreditCard },
-    { label: 'Pieces signees', icon: ShieldCheck },
+    { label: 'Paiement sécurisé', icon: CreditCard },
+    { label: 'Pièces signées', icon: ShieldCheck },
     { label: 'Suivi de commande', icon: PackageCheck },
-    { label: 'Favoris conserves', icon: Heart },
+    { label: 'Favoris conservés', icon: Heart },
 ] as const;
 
 export function Footer() {
@@ -27,16 +27,16 @@ export function Footer() {
             <Container className="relative py-14 sm:py-18 lg:py-20">
                 <section className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(22rem,0.8fr)] lg:gap-14">
                     <div>
-                        <Link href="/" aria-label="Norel Art - Retour a l'accueil" className="inline-flex items-center">
+                        <Link href="/" aria-label="Norel Art - Retour à l’accueil" className="inline-flex items-center">
                             <Image src="/images/logo/logo-white.png" alt="Logo Norel Art" width={170} height={64} className="h-auto w-32 sm:w-37" />
                         </Link>
 
-                        <p className="mt-8 text-[11px] uppercase tracking-[0.28em] text-white/48">L&apos;art du regard, le trait de l&apos;ame</p>
+                        <p className="mt-8 text-[11px] uppercase tracking-[0.28em] text-white/48">L’art du regard, le trait de l’âme</p>
                         <Heading level={3} className="mt-4 max-w-xl text-white">
-                            Une galerie a explorer, une boutique pour choisir, un espace pour revenir.
+                            Une galerie à explorer, une boutique pour choisir, un espace pour revenir.
                         </Heading>
                         <Text variant="muted" className="mt-4 max-w-2xl text-white/66">
-                            Originaux, impressions limitees, commandes sur mesure et fresques. Chaque achat reste relie a votre compte, vos favoris et vos pieces de collection.
+                            Originaux, affiches limitées, commandes sur mesure et fresques. Chaque achat reste relié à votre compte, vos favoris et vos pièces de collection.
                         </Text>
                     </div>
 
@@ -63,13 +63,13 @@ export function Footer() {
                         <p className="mb-5 text-[11px] uppercase tracking-[0.24em] text-white/50">Boutique</p>
                         <div className="space-y-3">
                             <Text variant="small" className="text-white/68">
-                                Originaux et impressions signees.
+                                Originaux et affiches signées.
                             </Text>
                             <Text variant="small" className="text-white/68">
-                                Paiement Stripe, commandes retrouvees dans l&apos;espace client.
+                                Paiement Stripe, commandes retrouvées dans l’espace client.
                             </Text>
                             <Text variant="small" className="text-white/68">
-                                Demandes personnalisees et projets muraux via formulaire.
+                                Demandes personnalisées et projets muraux via formulaire.
                             </Text>
                         </div>
                     </div>
@@ -78,13 +78,13 @@ export function Footer() {
                         <p className="mb-5 text-[11px] uppercase tracking-[0.24em] text-white/50">Suivre</p>
                         <SocialLinks links={socialLinks} />
                         <Text variant="small" className="mt-4 max-w-xs text-white/55">
-                            Instagram, Facebook et TikTok pour les nouvelles pieces, les coulisses et les gestes d&apos;atelier.
+                            Instagram, Facebook et TikTok pour les nouvelles pièces, les coulisses et les gestes d’atelier.
                         </Text>
                     </div>
                 </section>
 
                 <div className="flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
-                    <p>© {new Date().getFullYear()} Norel Art. Tous droits reserves.</p>
+                    <p>© {new Date().getFullYear()} Norel Art. Tous droits réservés.</p>
 
                     <div className="flex flex-wrap items-center gap-4">
                         {legalLinks.map((link) => (

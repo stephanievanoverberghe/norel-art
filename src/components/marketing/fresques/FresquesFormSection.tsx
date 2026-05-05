@@ -118,7 +118,7 @@ export function FresquesFormSection({ id, content }: FresquesFormSectionProps) {
                                 <Input id="email" name="email" type="email" placeholder="votre@email.com" autoComplete="email" required />
                             </FormField>
 
-                            <FormField label="Telephone" htmlFor="phone">
+                            <FormField label="Téléphone" htmlFor="phone">
                                 <Input id="phone" name="phone" type="tel" placeholder="Optionnel" autoComplete="tel" />
                             </FormField>
                         </div>
@@ -133,7 +133,7 @@ export function FresquesFormSection({ id, content }: FresquesFormSectionProps) {
                             </FormField>
 
                             <FormField label="Budget" htmlFor="budget">
-                                <Input id="budget" name="budget" placeholder="Enveloppe ou a definir" />
+                                <Input id="budget" name="budget" placeholder="Enveloppe ou à définir" />
                             </FormField>
                         </div>
 
@@ -146,7 +146,7 @@ export function FresquesFormSection({ id, content }: FresquesFormSectionProps) {
                                 <Select id="styleDirection" name="styleDirection" value={styleDirection} onChange={setStyleDirection} options={content.styleOptions} placeholder="Choisir" />
                             </FormField>
 
-                            <FormField label="Delai" htmlFor="timeline">
+                            <FormField label="Délai" htmlFor="timeline">
                                 <Input id="timeline" name="timeline" placeholder="Date, saison, pas presse" />
                             </FormField>
                         </div>
@@ -159,7 +159,7 @@ export function FresquesFormSection({ id, content }: FresquesFormSectionProps) {
                             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                                 <div className="max-w-md">
                                     <Text variant="muted" className="text-sm leading-6 text-white/54">
-                                        Je reviendrai vers vous pour proposer un cadre de travail, une premiere direction et les reperes adaptes a votre lieu.
+                                        Je reviendrai vers vous pour proposer un cadre de travail, une première direction et les repères adaptés à votre lieu.
                                     </Text>
                                     {error ? <p className="mt-3 text-sm leading-6 text-rose-100/82" role="alert">{error}</p> : null}
                                     {success ? <p className="mt-3 text-sm leading-6 text-emerald-100/82" role="status">{success}</p> : null}

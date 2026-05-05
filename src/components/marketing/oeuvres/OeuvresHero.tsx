@@ -24,9 +24,9 @@ const galleryPromises = [
 
 export function OeuvresHero({ content, className }: OeuvresHeroProps) {
     return (
-        <section aria-label="Galerie des oeuvres" className={cn(`relative overflow-hidden bg-(--bg-deep) pb-14 sm:pb-18 lg:pb-22 ${marketingPageSpacing.editorialOffset}`, className)}>
+        <section aria-label="Galerie des œuvres" className={cn(`relative overflow-hidden bg-(--bg-deep) pb-14 sm:pb-18 lg:pb-22 ${marketingPageSpacing.editorialOffset}`, className)}>
             <div className="absolute inset-0">
-                <Image src="/images/oeuvres/oeuvres-hero.jpg" alt="Galerie d'oeuvres Norel Art" fill priority sizes="100vw" className="object-cover object-center" />
+                <Image src="/images/oeuvres/oeuvres-hero.jpg" alt="Galerie d’œuvres Norel Art" fill priority sizes="100vw" className="object-cover object-center" />
             </div>
 
             <div className="absolute inset-0 bg-[linear-gradient(102deg,rgba(3,8,16,0.9)_0%,rgba(3,8,16,0.66)_48%,rgba(3,8,16,0.34)_100%)]" />

@@ -5,7 +5,7 @@ import { RegisterForm } from '@/components/auth/RegisterForm';
 
 export const metadata: Metadata = {
     title: 'Inscription',
-    description: 'Creation de compte Norel Art.',
+    description: 'Création de compte Norel Art.',
 };
 
 interface InscriptionPageProps {
@@ -28,9 +28,9 @@ export default async function InscriptionPage({ searchParams }: InscriptionPageP
 
     return (
         <AuthShell
-            eyebrow="Premier acces"
+            eyebrow="Premier accès"
             title="Ouvrir votre espace collectionneur."
-            description="Un compte simple, mais pret pour les favoris, les commandes, les certificats et les demandes sur mesure."
+            description="Un compte simple, mais prêt pour les favoris, les commandes, les certificats et les demandes sur mesure."
         >
             <RegisterForm callbackUrl={callbackUrl} />
         </AuthShell>

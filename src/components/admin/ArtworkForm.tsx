@@ -132,12 +132,12 @@ export function ArtworkForm({ action, artwork, categories, collections, mode }: 
                             Type de variante
                             <select name="variantType" className={adminInputClass} defaultValue={variant?.type ?? 'ORIGINAL'}>
                                 <option value="ORIGINAL">Original</option>
-                                <option value="PRINT">Impression</option>
+                                <option value="PRINT">Affiche</option>
                             </select>
                         </label>
                         <label className={adminLabelClass}>
                             Variante principale
-                            <input name="variantTitle" required defaultValue={variant?.title ?? 'Original'} placeholder="Original signe, impression A3..." className={adminInputClass} />
+                            <input name="variantTitle" required defaultValue={variant?.title ?? 'Original'} placeholder="Original signé, affiche A3..." className={adminInputClass} />
                         </label>
                         <label className={adminLabelClass}>
                             Prix EUR

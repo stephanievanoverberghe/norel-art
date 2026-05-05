@@ -11,9 +11,9 @@ interface ContactPageProps {
 }
 
 const contactSignals = [
-    { label: 'Projet', value: 'Oeuvre, commande ou fresque', icon: Mail },
+    { label: 'Projet', value: 'Œuvre, commande ou fresque', icon: Mail },
     { label: 'Lieu', value: 'Ville et contexte utiles', icon: MapPin },
-    { label: 'Delai', value: 'Urgence ou rythme souple', icon: Timer },
+    { label: 'Délai', value: 'Urgence ou rythme souple', icon: Timer },
 ] as const;
 
 export function ContactPage({ content }: ContactPageProps) {

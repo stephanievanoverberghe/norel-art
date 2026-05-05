@@ -9,15 +9,15 @@ import { getCustomerCustomRequests } from '@/server/requests/custom-requests';
 
 export const metadata: Metadata = {
     title: 'Mes demandes',
-    description: 'Demandes envoyees a Norel Art.',
+    description: 'Demandes envoyées à Norel Art.',
 };
 
 const statusLabel: Record<CustomRequestStatus, string> = {
-    ACCEPTED: 'Acceptee',
-    CLOSED: 'Fermee',
+    ACCEPTED: 'Acceptée',
+    CLOSED: 'Fermée',
     IN_REVIEW: 'En qualification',
     NEW: 'Nouvelle',
-    QUOTE_SENT: 'Devis envoye',
+    QUOTE_SENT: 'Devis envoyé',
 };
 
 const typeLabel: Record<CustomRequestType, string> = {
@@ -53,7 +53,7 @@ export default async function AccountRequestsPage() {
                 <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/42">Relation artiste</p>
                     <h1 className="mt-4 font-(family-name:--font-heading) text-5xl leading-none text-white sm:text-7xl">Mes demandes</h1>
-                    <p className="mt-4 max-w-2xl text-base leading-7 text-white/62">Les messages envoyes depuis le contact, les commandes personnalisees ou les fresques.</p>
+                    <p className="mt-4 max-w-2xl text-base leading-7 text-white/62">Les messages envoyés depuis le contact, les commandes personnalisées ou les fresques.</p>
                 </div>
 
                 <div className="inline-flex h-14 min-w-14 items-center justify-center gap-2 rounded-md border border-white/12 bg-white/8 px-4">
@@ -75,7 +75,7 @@ export default async function AccountRequestsPage() {
                                     <h2 className="mt-4 text-xl font-semibold text-white">{request.name}</h2>
                                     <p className="mt-2 text-sm text-white/48">{formatDate(request.createdAt)}</p>
                                 </div>
-                                <p className="text-sm font-medium text-white/70">{request.budget ?? 'Budget a definir'}</p>
+                                <p className="text-sm font-medium text-white/70">{request.budget ?? 'Budget à définir'}</p>
                             </div>
                             <p className="mt-4 max-w-3xl text-sm leading-6 text-white/58">{request.message}</p>
                         </article>
@@ -84,8 +84,8 @@ export default async function AccountRequestsPage() {
             ) : (
                 <section className="max-w-xl rounded-md border border-white/10 bg-[#08131f]/78 p-6">
                     <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/42">Aucune demande</p>
-                    <h2 className="mt-4 text-2xl font-semibold text-white">Aucun message rattache a votre compte.</h2>
-                    <p className="mt-3 text-sm leading-6 text-white/56">Les prochaines demandes envoyees en etant connectee apparaitront ici.</p>
+                    <h2 className="mt-4 text-2xl font-semibold text-white">Aucun message rattaché à votre compte.</h2>
+                    <p className="mt-3 text-sm leading-6 text-white/56">Les prochaines demandes envoyées en étant connectée apparaîtront ici.</p>
                     <Link href="/contact" className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-(--accent) px-5 text-sm font-medium text-white transition hover:opacity-90">
                         Envoyer une demande
                     </Link>

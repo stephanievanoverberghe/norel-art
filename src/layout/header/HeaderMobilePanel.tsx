@@ -40,7 +40,7 @@ export function HeaderMobilePanel({ isOpen, pathname, links, onClose, onNavigate
             >
                 <div className="mb-5 border-b border-white/10 pb-4">
                     <p className="text-[11px] uppercase tracking-[0.28em] text-white/35">Norel Art</p>
-                    <p className="mt-2 max-w-xs text-sm leading-6 text-white/72">Oeuvres, favoris, panier et espace collectionneur.</p>
+                    <p className="mt-2 max-w-xs text-sm leading-6 text-white/72">Œuvres, favoris, panier et espace collectionneur.</p>
                 </div>
 
                 <nav aria-label="Navigation mobile" className="space-y-2">

@@ -5,7 +5,7 @@ import { LoginForm } from '@/components/auth/LoginForm';
 
 export const metadata: Metadata = {
     title: 'Connexion',
-    description: 'Connexion a votre espace Norel Art.',
+    description: 'Connexion à votre espace Norel Art.',
 };
 
 interface ConnexionPageProps {
@@ -29,9 +29,9 @@ export default async function ConnexionPage({ searchParams }: ConnexionPageProps
 
     return (
         <AuthShell
-            eyebrow="Espace prive"
-            title="Retrouver les pieces qui vous suivent."
-            description="Connexion client, suivi des achats, favoris et certificats : le socle de l'experience collectionneur commence ici."
+            eyebrow="Espace privé"
+            title="Retrouver les pièces qui vous suivent."
+            description="Connexion client, suivi des achats, favoris et certificats : le socle de l’expérience collectionneur commence ici."
         >
             <LoginForm callbackUrl={callbackUrl} registered={params.registered === '1'} />
         </AuthShell>

@@ -9,7 +9,7 @@ import { getFavoriteArtworks } from '@/server/favorites/favorites';
 
 export const metadata: Metadata = {
     title: 'Mes favoris',
-    description: 'Oeuvres sauvegardees dans votre espace Norel Art.',
+    description: 'Œuvres sauvegardées dans votre espace Norel Art.',
 };
 
 export default async function AccountFavoritesPage() {
@@ -32,7 +32,7 @@ export default async function AccountFavoritesPage() {
                 <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/42">Collection personnelle</p>
                     <h1 className="mt-4 font-(family-name:--font-heading) text-5xl leading-none text-white sm:text-7xl">Mes favoris</h1>
-                    <p className="mt-4 max-w-2xl text-base leading-7 text-white/62">Les oeuvres que vous gardez de cote pour revenir, comparer ou preparer un achat.</p>
+                    <p className="mt-4 max-w-2xl text-base leading-7 text-white/62">Les œuvres que vous gardez de côté pour revenir, comparer ou préparer un achat.</p>
                 </div>
 
                 <div className="inline-flex h-14 w-14 items-center justify-center rounded-md border border-white/12 bg-white/8">
@@ -49,8 +49,8 @@ export default async function AccountFavoritesPage() {
             ) : (
                 <section className="max-w-xl rounded-md border border-white/10 bg-[#08131f]/78 p-6">
                     <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/42">Aucun favori</p>
-                    <h2 className="mt-4 text-2xl font-semibold text-white">Votre selection est encore vide.</h2>
-                    <p className="mt-3 text-sm leading-6 text-white/56">Parcourez la galerie et utilisez le coeur sur une oeuvre pour la retrouver ici.</p>
+                    <h2 className="mt-4 text-2xl font-semibold text-white">Votre sélection est encore vide.</h2>
+                    <p className="mt-3 text-sm leading-6 text-white/56">Parcourez la galerie et utilisez le cœur sur une œuvre pour la retrouver ici.</p>
                     <Link href="/oeuvres" className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full bg-(--accent) px-5 text-sm font-medium text-white transition hover:opacity-90">
                         Explorer la galerie
                     </Link>

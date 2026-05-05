@@ -55,7 +55,7 @@ export function LoginForm({ callbackUrl, registered = false }: LoginFormProps) {
 
             {registered ? (
                 <p className="rounded-md border border-emerald-300/20 bg-emerald-300/10 px-4 py-3 text-sm text-emerald-100">
-                    Votre compte est pret. Vous pouvez vous connecter.
+                    Votre compte est prêt. Vous pouvez vous connecter.
                 </p>
             ) : null}
 
@@ -76,7 +76,7 @@ export function LoginForm({ callbackUrl, registered = false }: LoginFormProps) {
 
             <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-white/56">
                 <Link href={`/inscription?callbackUrl=${encodeURIComponent(callbackUrl)}`} className="transition hover:text-white">
-                    Creer un compte
+                    Créer un compte
                 </Link>
             </div>
         </form>

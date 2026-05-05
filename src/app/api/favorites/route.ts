@@ -22,7 +22,7 @@ async function getValidatedFavoriteRequest(request: Request) {
 
     if (!parsed.success) {
         return {
-            error: NextResponse.json({ message: 'Oeuvre invalide.' }, { status: 400 }),
+            error: NextResponse.json({ message: 'Œuvre invalide.' }, { status: 400 }),
         };
     }
 
@@ -45,7 +45,7 @@ export async function POST(request: Request) {
     });
 
     if (!artwork) {
-        return NextResponse.json({ message: 'Oeuvre introuvable.' }, { status: 404 });
+        return NextResponse.json({ message: 'Œuvre introuvable.' }, { status: 404 });
     }
 
     await prisma.favorite.upsert({

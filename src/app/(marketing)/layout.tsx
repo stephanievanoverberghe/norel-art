@@ -6,7 +6,7 @@ import { Header } from '@/layout/Header';
 
 export const metadata: Metadata = {
     title: 'Norel Art',
-    description: 'Oeuvres originales, impressions et creations artistiques sur mesure.',
+    description: 'Œuvres originales, affiches et créations artistiques sur mesure.',
 };
 
 export const dynamic = 'force-dynamic';

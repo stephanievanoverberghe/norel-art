@@ -73,7 +73,7 @@ export default async function AccountOrderDetailPage({ params }: AccountOrderDet
 
                                 <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_auto]">
                                     <div>
-                                        <p className="text-xs uppercase tracking-[0.22em] text-white/40">{item.variantTitle ?? 'Oeuvre'}</p>
+                                        <p className="text-xs uppercase tracking-[0.22em] text-white/40">{item.variantTitle ?? 'Œuvre'}</p>
                                         {slug ? (
                                             <Link href={`/oeuvres/${slug}`} className="mt-2 block text-xl font-semibold text-white transition hover:text-white/78">
                                                 {item.title}
