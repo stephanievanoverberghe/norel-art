@@ -492,21 +492,30 @@ model CustomRequest {
 }
 
 model Drop {
-  id           String     @id @default(cuid())
-  slug         String     @unique
-  title        String
-  description  String
-  heroImageUrl String?
-  startsAt     DateTime
-  endsAt       DateTime?
-  status       DropStatus @default(DRAFT)
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
+  id                String     @id @default(cuid())
+  slug              String     @unique
+  title             String
+  eyebrow           String?
+  description       String
+  heroImageUrl      String?
+  heroImageAlt      String?
+  heroImagePublicId String?
+  startsAt          DateTime
+  endsAt            DateTime?
+  status            DropStatus @default(DRAFT)
+  isFeatured        Boolean    @default(false)
+  waitlistEnabled   Boolean    @default(true)
+  accessLabel       String?
+  seoTitle          String?
+  seoDescription    String?
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
 
   artworks        DropArtwork[]
   waitlistEntries WaitlistEntry[]
 
   @@index([status, startsAt])
+  @@index([isFeatured, status])
 }
 
 model DropArtwork {

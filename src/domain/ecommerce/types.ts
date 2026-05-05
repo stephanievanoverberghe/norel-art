@@ -142,3 +142,20 @@ export interface WaitlistEntrySummary {
     status: WaitlistStatus;
     createdAt: string;
 }
+
+export interface ShopDrop {
+    id: string;
+    slug: string;
+    title: string;
+    eyebrow?: string | null;
+    description: string;
+    heroImageUrl?: string | null;
+    heroImageAlt?: string | null;
+    status: DropStatus;
+    startsAt: string;
+    endsAt?: string | null;
+    isFeatured: boolean;
+    waitlistEnabled: boolean;
+    accessLabel?: string | null;
+    artworks: ShopArtwork[];
+}

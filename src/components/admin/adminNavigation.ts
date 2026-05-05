@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { Activity, Inbox, Layers3, LayoutDashboard, MessageSquareText, Palette, Settings, ShoppingBag, Tags, Users } from 'lucide-react';
+import { Activity, Inbox, Layers3, LayoutDashboard, MessageSquareText, Palette, Rocket, Settings, ShoppingBag, Tags, Users } from 'lucide-react';
 
 export interface AdminNavigationItem {
     href: string;
@@ -32,6 +32,12 @@ export const adminNavigation: AdminNavigationItem[] = [
         label: 'Collections',
         description: 'Series et mises en avant',
         icon: Layers3,
+    },
+    {
+        href: '/admin/drops',
+        label: 'Drops',
+        description: 'Lancements et waitlist',
+        icon: Rocket,
     },
     {
         href: '/admin/commandes',

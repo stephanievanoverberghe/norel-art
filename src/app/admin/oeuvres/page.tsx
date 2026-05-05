@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, Film, ImageIcon, Layers3, Plus, Search, SlidersHorizontal, Tags } from 'lucide-react';
+import { ArrowUpRight, Film, ImageIcon, Layers3, Plus, Rocket, Search, SlidersHorizontal, Tags } from 'lucide-react';
 
 import { AdminPageHeader } from '@/components/admin/AdminPageHeader';
 import { AdminBadge, AdminPanel, adminInputClass, adminPrimaryButtonClass, adminSecondaryButtonClass } from '@/components/admin/AdminPrimitives';
@@ -50,6 +50,10 @@ export default async function AdminOeuvresPage() {
                         <Link href="/admin/collections" className={adminSecondaryButtonClass}>
                             <Layers3 size={16} />
                             Collections
+                        </Link>
+                        <Link href="/admin/drops" className={adminSecondaryButtonClass}>
+                            <Rocket size={16} />
+                            Drops
                         </Link>
                         <Link href="/admin/oeuvres/nouvelle" className={adminPrimaryButtonClass}>
                             <Plus size={16} />

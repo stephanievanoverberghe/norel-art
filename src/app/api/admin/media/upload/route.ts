@@ -13,6 +13,7 @@ function getAllowedFolder(value: FormDataEntryValue | null) {
 
     if (folder === 'categories') return 'norel-art/categories';
     if (folder === 'collections') return 'norel-art/collections';
+    if (folder === 'drops') return 'norel-art/drops';
     if (folder === 'artworks') return 'norel-art/artworks';
 
     return 'norel-art/admin';
