@@ -68,6 +68,7 @@ export function mapArtworkRecord(record: ArtworkRecord): Artwork {
     const mainImage = record.images.find((image) => image.kind === 'MAIN') ?? record.images[0];
     const imageUrl = mainImage?.url ?? '/images/oeuvres/oeuvres-hero.jpg';
     const gallery = record.images.map((image) => image.url).filter((url) => url !== imageUrl);
+    const publicCollectionName = record.collection?.status === 'PUBLISHED' ? record.collection.name : 'Collection libre';
 
     return {
         id: record.id,
@@ -78,7 +79,7 @@ export function mapArtworkRecord(record: ArtworkRecord): Artwork {
         image: imageUrl,
         gallery,
         category: record.category.name as ArtworkCategory,
-        collection: record.collection?.name ?? 'Collection libre',
+        collection: publicCollectionName,
         type: activeVariant ? typeMap[activeVariant.type] : 'original',
         technique: record.technique ?? 'Technique mixte',
         support: record.support ?? 'Support sur demande',
@@ -129,6 +130,16 @@ async function getPublishedArtworkRecords(): Promise<ArtworkRecord[]> {
         },
         include: artworkRecordInclude,
         orderBy: [
+            {
+                collection: {
+                    isFeatured: 'desc',
+                },
+            },
+            {
+                collection: {
+                    position: 'asc',
+                },
+            },
             {
                 publishedAt: 'desc',
             },

@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, Film, ImageIcon, Plus, Search, SlidersHorizontal, Tags } from 'lucide-react';
+import { ArrowUpRight, Film, ImageIcon, Layers3, Plus, Search, SlidersHorizontal, Tags } from 'lucide-react';
 
 import { AdminPageHeader } from '@/components/admin/AdminPageHeader';
 import { AdminBadge, AdminPanel, adminInputClass, adminPrimaryButtonClass, adminSecondaryButtonClass } from '@/components/admin/AdminPrimitives';
 import { formatOrderPrice } from '@/domain/orders/presentation';
 import { getAdminArtworks } from '@/server/artworks/admin-artworks';
 import { getAdminCategories } from '@/server/categories/admin-categories';
+import { getAdminCollectionOptions } from '@/server/collections/admin-collections';
 
 const availabilityLabel = {
     AVAILABLE: 'Disponible',
@@ -33,7 +34,7 @@ const statusTone = {
 } as const;
 
 export default async function AdminOeuvresPage() {
-    const [artworks, categories] = await Promise.all([getAdminArtworks(), getAdminCategories()]);
+    const [artworks, categories, collections] = await Promise.all([getAdminArtworks(), getAdminCategories(), getAdminCollectionOptions()]);
 
     return (
         <>
@@ -46,6 +47,10 @@ export default async function AdminOeuvresPage() {
                             <Tags size={16} />
                             Categories
                         </Link>
+                        <Link href="/admin/collections" className={adminSecondaryButtonClass}>
+                            <Layers3 size={16} />
+                            Collections
+                        </Link>
                         <Link href="/admin/oeuvres/nouvelle" className={adminPrimaryButtonClass}>
                             <Plus size={16} />
                             Nouvelle oeuvre
@@ -55,7 +60,7 @@ export default async function AdminOeuvresPage() {
             />
 
             <AdminPanel className="mb-5 p-4">
-                <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_14rem_14rem_12rem]">
+                <div className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_14rem_14rem_14rem_12rem]">
                     <label className="relative">
                         <Search size={16} className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-white/34" />
                         <input placeholder="Rechercher une oeuvre, une collection, une technique..." className={`${adminInputClass} pl-9`} />
@@ -65,6 +70,14 @@ export default async function AdminOeuvresPage() {
                         {categories.map((category) => (
                             <option key={category.id} value={category.id}>
                                 {category.name}
+                            </option>
+                        ))}
+                    </select>
+                    <select className={adminInputClass} defaultValue="all">
+                        <option value="all">Toutes les collections</option>
+                        {collections.map((collection) => (
+                            <option key={collection.id} value={collection.id}>
+                                {collection.name}
                             </option>
                         ))}
                     </select>

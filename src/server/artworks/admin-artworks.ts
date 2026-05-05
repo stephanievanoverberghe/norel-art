@@ -38,7 +38,7 @@ export type AdminArtwork = Prisma.ArtworkGetPayload<{
 export interface AdminArtworkInput {
     availability: ArtworkAvailability;
     categoryId: string;
-    collectionName?: string | null;
+    collectionId?: string | null;
     contextImagePublicId?: string | null;
     contextImageUrl?: string | null;
     detailImagePublicId?: string | null;
@@ -90,7 +90,7 @@ function cleanArtworkInput(input: AdminArtworkInput) {
 
     return {
         ...input,
-        collectionName: cleanNullable(input.collectionName),
+        collectionId: cleanNullable(input.collectionId),
         contextImagePublicId: cleanNullable(input.contextImagePublicId),
         contextImageUrl: cleanNullable(input.contextImageUrl),
         detailImagePublicId: cleanNullable(input.detailImagePublicId),
@@ -166,26 +166,6 @@ async function getUniqueSku(slug: string, requestedSku?: string | null, ignoredV
         candidate = `${baseSku}-${suffix}`;
         suffix += 1;
     }
-}
-
-async function resolveCollectionId(name?: string | null) {
-    if (!name) return null;
-
-    const slug = slugify(name);
-    const collection = await prisma.collection.upsert({
-        where: {
-            slug,
-        },
-        update: {
-            name,
-        },
-        create: {
-            name,
-            slug,
-        },
-    });
-
-    return collection.id;
 }
 
 function getImageInputs(input: ReturnType<typeof cleanArtworkInput>) {
@@ -283,7 +263,6 @@ export async function createAdminArtwork(input: AdminArtworkInput): Promise<Admi
     const cleaned = cleanArtworkInput(input);
     const slug = await getUniqueArtworkSlug(cleaned.title, cleaned.slug);
     const sku = await getUniqueSku(slug, cleaned.sku);
-    const collectionId = await resolveCollectionId(cleaned.collectionName);
 
     return prisma.$transaction(async (tx) => {
         const artwork = await tx.artwork.create({
@@ -299,7 +278,7 @@ export async function createAdminArtwork(input: AdminArtworkInput): Promise<Admi
                 status: cleaned.status,
                 availability: cleaned.availability,
                 categoryId: cleaned.categoryId,
-                collectionId,
+                collectionId: cleaned.collectionId,
                 publishedAt: cleaned.status === 'PUBLISHED' ? new Date() : null,
                 variants: {
                     create: {
@@ -338,7 +317,6 @@ export async function updateAdminArtwork(artworkId: string, input: AdminArtworkI
     const slug = await getUniqueArtworkSlug(cleaned.title, cleaned.slug, artworkId);
     const variant = existing.variants[0];
     const sku = await getUniqueSku(slug, cleaned.sku, variant?.id);
-    const collectionId = await resolveCollectionId(cleaned.collectionName);
 
     return prisma.$transaction(async (tx) => {
         const artwork = await tx.artwork.update({
@@ -357,7 +335,7 @@ export async function updateAdminArtwork(artworkId: string, input: AdminArtworkI
                 status: cleaned.status,
                 availability: cleaned.availability,
                 categoryId: cleaned.categoryId,
-                collectionId,
+                collectionId: cleaned.collectionId,
                 publishedAt: cleaned.status === 'PUBLISHED' ? existing.publishedAt ?? new Date() : null,
             },
         });

@@ -4,6 +4,7 @@ import { AdminPageHeader } from '@/components/admin/AdminPageHeader';
 import { ArtworkForm } from '@/components/admin/ArtworkForm';
 import { getAdminArtworkById } from '@/server/artworks/admin-artworks';
 import { getAdminCategories } from '@/server/categories/admin-categories';
+import { getAdminCollectionOptions } from '@/server/collections/admin-collections';
 
 import { updateArtworkAction } from '../actions';
 
@@ -13,7 +14,7 @@ interface AdminEditArtworkPageProps {
 
 export default async function AdminEditArtworkPage({ params }: AdminEditArtworkPageProps) {
     const { id } = await params;
-    const [artwork, categories] = await Promise.all([getAdminArtworkById(id), getAdminCategories()]);
+    const [artwork, categories, collections] = await Promise.all([getAdminArtworkById(id), getAdminCategories(), getAdminCollectionOptions()]);
 
     if (!artwork) {
         notFound();
@@ -24,7 +25,7 @@ export default async function AdminEditArtworkPage({ params }: AdminEditArtworkP
     return (
         <>
             <AdminPageHeader title="Edition oeuvre" description={`Ajuster la fiche "${artwork.title}" : contenu, categorie, commerce, stock, medias et publication.`} />
-            <ArtworkForm mode="edit" artwork={artwork} categories={categories} action={updateAction} />
+            <ArtworkForm mode="edit" artwork={artwork} categories={categories} collections={collections} action={updateAction} />
         </>
     );
 }

@@ -12,7 +12,7 @@ interface AdminMediaUploadFieldProps {
     altName?: string;
     className?: string;
     description?: string;
-    folder: 'artworks' | 'categories';
+    folder: 'artworks' | 'categories' | 'collections';
     initialAlt?: string | null;
     initialPublicId?: string | null;
     initialUrl?: string | null;

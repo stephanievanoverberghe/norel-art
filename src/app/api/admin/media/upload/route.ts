@@ -12,6 +12,7 @@ function getAllowedFolder(value: FormDataEntryValue | null) {
     const folder = String(value ?? 'artworks').trim();
 
     if (folder === 'categories') return 'norel-art/categories';
+    if (folder === 'collections') return 'norel-art/collections';
     if (folder === 'artworks') return 'norel-art/artworks';
 
     return 'norel-art/admin';

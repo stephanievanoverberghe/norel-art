@@ -59,7 +59,7 @@ function getArtworkInput(formData: FormData): AdminArtworkInput {
     return {
         availability,
         categoryId: getString(formData, 'categoryId'),
-        collectionName: getString(formData, 'collectionName'),
+        collectionId: getString(formData, 'collectionId'),
         contextImagePublicId: getString(formData, 'contextImagePublicId'),
         contextImageUrl: getString(formData, 'contextImageUrl'),
         detailImagePublicId: getString(formData, 'detailImagePublicId'),

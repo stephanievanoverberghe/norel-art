@@ -5,6 +5,7 @@ export type ArtworkAvailability = 'AVAILABLE' | 'RESERVED' | 'SOLD';
 export type VariantType = 'ORIGINAL' | 'PRINT';
 export type ImageKind = 'MAIN' | 'DETAIL' | 'FRAME' | 'CONTEXT';
 export type VideoProvider = 'YOUTUBE';
+export type CollectionStatus = 'DRAFT' | 'PUBLISHED' | 'ARCHIVED';
 
 export type CartStatus = 'ACTIVE' | 'CONVERTED' | 'ABANDONED';
 export type OrderStatus = 'PENDING' | 'PAID' | 'PREPARING' | 'SHIPPED' | 'DELIVERED' | 'CANCELLED' | 'REFUNDED';
@@ -36,8 +37,13 @@ export interface ArtworkCollection {
     id: string;
     slug: string;
     name: string;
+    eyebrow?: string | null;
     description?: string | null;
     heroImageUrl?: string | null;
+    heroImageAlt?: string | null;
+    isFeatured?: boolean;
+    position?: number;
+    status?: CollectionStatus;
 }
 
 export interface ArtworkImage {

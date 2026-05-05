@@ -48,7 +48,29 @@ const categories = [
         imageAlt: 'Categorie Street Art Norel Art',
     },
 ];
-const collections = ['Fragments interieurs', 'Veilles nocturnes', 'Presences'];
+const collections = [
+    {
+        name: 'Fragments interieurs',
+        eyebrow: 'Serie intime',
+        description: 'Pieces sensibles autour du visage, du silence et des zones cachees.',
+        position: 0,
+        isFeatured: true,
+    },
+    {
+        name: 'Veilles nocturnes',
+        eyebrow: 'Tension graphique',
+        description: 'Compositions plus frontales, rythmees par le noir, le rouge et le mouvement.',
+        position: 1,
+        isFeatured: false,
+    },
+    {
+        name: 'Presences',
+        eyebrow: 'Corps et memoire',
+        description: 'Oeuvres plus tactiles, pensees comme des traces, des peaux et des apparitions.',
+        position: 2,
+        isFeatured: false,
+    },
+];
 
 const artworks = [
     {
@@ -175,15 +197,29 @@ async function main() {
     const collectionByName = new Map();
     for (const collection of collections) {
         const record = await prisma.collection.upsert({
-            where: { slug: slugify(collection) },
-            update: { name: collection },
+            where: { slug: slugify(collection.name) },
+            update: {
+                name: collection.name,
+                eyebrow: collection.eyebrow,
+                description: collection.description,
+                position: collection.position,
+                isFeatured: collection.isFeatured,
+                status: 'PUBLISHED',
+                publishedAt: new Date(),
+            },
             create: {
-                slug: slugify(collection),
-                name: collection,
+                slug: slugify(collection.name),
+                name: collection.name,
+                eyebrow: collection.eyebrow,
+                description: collection.description,
+                position: collection.position,
+                isFeatured: collection.isFeatured,
+                status: 'PUBLISHED',
+                publishedAt: new Date(),
             },
         });
 
-        collectionByName.set(collection, record);
+        collectionByName.set(collection.name, record);
     }
 
     for (const artworkSeed of artworks) {

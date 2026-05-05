@@ -40,6 +40,12 @@ enum VideoProvider {
   YOUTUBE
 }
 
+enum CollectionStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
 enum CartStatus {
   ACTIVE
   CONVERTED
@@ -229,16 +235,28 @@ model Category {
 }
 
 model Collection {
-  id           String   @id @default(cuid())
-  slug         String   @unique
-  name         String
-  description  String?
-  heroImageUrl String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id                String           @id @default(cuid())
+  slug              String           @unique
+  name              String
+  eyebrow           String?
+  description       String?
+  heroImageUrl      String?
+  heroImageAlt      String?
+  heroImagePublicId String?
+  status            CollectionStatus @default(DRAFT)
+  isFeatured        Boolean          @default(false)
+  position          Int              @default(0)
+  publishedAt       DateTime?
+  seoTitle          String?
+  seoDescription    String?
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
 
   artworks        Artwork[]
   waitlistEntries WaitlistEntry[]
+
+  @@index([status, position])
+  @@index([isFeatured, status])
 }
 
 model Artwork {

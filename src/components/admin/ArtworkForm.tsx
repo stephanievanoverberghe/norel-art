@@ -2,6 +2,7 @@ import { Euro, ImagePlus, Layers, Link2, Palette, Save, Video } from 'lucide-rea
 
 import type { AdminArtwork } from '@/server/artworks/admin-artworks';
 import type { AdminCategory } from '@/server/categories/admin-categories';
+import type { AdminCollection } from '@/server/collections/admin-collections';
 
 import { AdminMediaUploadField } from './AdminMediaUploadField';
 import { AdminPanel, adminInputClass, adminLabelClass, adminPrimaryButtonClass } from './AdminPrimitives';
@@ -10,6 +11,7 @@ interface ArtworkFormProps {
     action: (formData: FormData) => void | Promise<void>;
     artwork?: AdminArtwork;
     categories: Pick<AdminCategory, 'id' | 'name' | 'slug'>[];
+    collections: Pick<AdminCollection, 'id' | 'name' | 'slug' | 'status'>[];
     mode: 'create' | 'edit';
 }
 
@@ -25,10 +27,17 @@ function getImagePublicId(artwork: AdminArtwork | undefined, kind: 'CONTEXT' | '
     return artwork?.images.find((image) => image.kind === kind)?.publicId ?? '';
 }
 
-export function ArtworkForm({ action, artwork, categories, mode }: ArtworkFormProps) {
+const collectionStatusLabel = {
+    ARCHIVED: 'archivee',
+    DRAFT: 'brouillon',
+    PUBLISHED: 'publiee',
+} as const;
+
+export function ArtworkForm({ action, artwork, categories, collections, mode }: ArtworkFormProps) {
     const variant = artwork?.variants[0];
     const video = artwork?.videos[0];
     const selectedCategoryId = artwork?.categoryId ?? categories[0]?.id ?? '';
+    const selectedCollectionId = artwork?.collectionId ?? '';
     const tags = artwork?.tags.join(', ') ?? '';
     const priceEur = variant ? variant.priceCents / 100 : '';
     const videoUrl = video ? `https://www.youtube.com/watch?v=${video.videoId}` : '';
@@ -71,7 +80,14 @@ export function ArtworkForm({ action, artwork, categories, mode }: ArtworkFormPr
                     </label>
                     <label className={adminLabelClass}>
                         Collection
-                        <input name="collectionName" defaultValue={artwork?.collection?.name ?? ''} placeholder="Ex: Regards intimes" className={adminInputClass} />
+                        <select name="collectionId" className={adminInputClass} defaultValue={selectedCollectionId}>
+                            <option value="">Aucune collection</option>
+                            {collections.map((collection) => (
+                                <option key={collection.id} value={collection.id}>
+                                    {collection.name}{collection.status !== 'PUBLISHED' ? ` (${collectionStatusLabel[collection.status]})` : ''}
+                                </option>
+                            ))}
+                        </select>
                     </label>
                     <label className={adminLabelClass}>
                         Statut publication

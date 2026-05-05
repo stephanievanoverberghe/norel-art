@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { ComponentType } from 'react';
-import { Activity, AlertTriangle, ArrowUpRight, Heart, Inbox, Palette, PackageCheck, ShoppingBag, Tags, UserRound, Users, WalletCards } from 'lucide-react';
+import { Activity, AlertTriangle, ArrowUpRight, Heart, Inbox, Layers3, Palette, PackageCheck, ShoppingBag, Tags, UserRound, Users, WalletCards } from 'lucide-react';
 
 import { AdminPageHeader } from '@/components/admin/AdminPageHeader';
 import { AdminBadge, AdminPanel } from '@/components/admin/AdminPrimitives';
@@ -66,6 +66,7 @@ export default async function AdminDashboardPage() {
         { href: '/admin/commandes', label: 'Commandes', description: 'Paiements, preparation, livraison.', icon: ShoppingBag },
         { href: '/admin/oeuvres', label: 'Catalogue', description: 'Oeuvres, stock, medias, publication.', icon: Palette },
         { href: '/admin/categories', label: 'Categories', description: 'Structure de la galerie et filtres.', icon: Tags },
+        { href: '/admin/collections', label: 'Collections', description: 'Series, ordre, SEO et mises en avant.', icon: Layers3 },
         { href: '/admin/utilisateurs', label: 'Utilisateurs', description: 'Clients, admins, achats, favoris.', icon: Users },
         { href: '/admin/analytics', label: 'Analytics', description: 'Performance, conversion, categories.', icon: Activity },
         { href: '/admin/demandes', label: 'Demandes', description: 'Contacts et projets sur mesure.', icon: Inbox },
