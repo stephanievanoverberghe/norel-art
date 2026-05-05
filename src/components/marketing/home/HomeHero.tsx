@@ -20,7 +20,7 @@ interface HomeHeroProps {
 const heroSignals = [
     { label: 'Favoris', value: 'Sauvegarder', icon: Heart },
     { label: 'Achat', value: 'Stripe', icon: ShoppingBag },
-    { label: 'Pieces', value: 'Signees', icon: ShieldCheck },
+    { label: 'Pièces', value: 'Signées', icon: ShieldCheck },
 ] as const;
 
 export function HomeHero({ content, className }: HomeHeroProps) {
@@ -33,13 +33,13 @@ export function HomeHero({ content, className }: HomeHeroProps) {
     };
 
     return (
-        <section className={cn('relative min-h-screen overflow-hidden bg-(--bg-deep)', className)} aria-label="Entree dans l'univers Norel Art">
+        <section className={cn('marketing-section marketing-bg-night min-h-screen', className)} aria-label="Entrée dans l’univers Norel Art">
             <div className="absolute inset-0">
                 <Image src={content.image.src} alt={content.image.alt} fill priority className="object-cover object-center" sizes={content.image.sizes} />
             </div>
 
             <div className="absolute inset-0 bg-[linear-gradient(102deg,rgba(3,8,16,0.88)_0%,rgba(3,8,16,0.58)_46%,rgba(3,8,16,0.26)_100%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(60%_80%_at_78%_18%,rgba(158,0,49,0.24),transparent_68%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(72deg,rgba(158,0,49,0.16)_0%,rgba(158,0,49,0)_44%),linear-gradient(142deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.055)_68%,rgba(255,255,255,0)_100%)]" />
             <div className="absolute inset-x-0 top-0 h-44 bg-[linear-gradient(180deg,rgba(5,10,18,0.74)_0%,rgba(5,10,18,0)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 h-72 bg-[linear-gradient(180deg,rgba(5,10,18,0)_0%,rgba(5,10,18,0.76)_68%,#050A12_100%)]" />
 
@@ -81,7 +81,7 @@ export function HomeHero({ content, className }: HomeHeroProps) {
                                     return (
                                         <div key={signal.label} className="flex items-center justify-between gap-4 border-b border-white/8 pb-3">
                                             <span className="inline-flex items-center gap-3 text-sm text-white/68">
-                                                <Icon size={16} className="text-(--premium)" />
+                                                <Icon size={16} className="text-(--accent)" />
                                                 {signal.label}
                                             </span>
                                             <span className="text-sm font-medium text-white">{signal.value}</span>

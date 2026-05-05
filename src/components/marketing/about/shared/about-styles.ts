@@ -1,6 +1,6 @@
 export const aboutSectionStyles = {
-    pageBackground: 'bg-(--bg-primary)',
-    section: 'relative overflow-hidden py-18 sm:py-24 lg:py-28',
+    pageBackground: 'marketing-bg-atelier',
+    section: 'marketing-section py-18 sm:py-24 lg:py-28',
     stickyIntro: 'lg:sticky lg:top-28 lg:self-start',
     eyebrow: 'text-[11px] uppercase tracking-[0.32em] text-white/38',
     dividerHorizontal: 'bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.14),rgba(255,255,255,0))]',

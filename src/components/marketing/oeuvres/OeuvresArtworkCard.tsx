@@ -14,7 +14,7 @@ interface OeuvresArtworkCardProps {
 
 const availabilityTone: Record<Artwork['availability'], string> = {
     available: 'border-emerald-200/20 bg-emerald-300/12 text-emerald-50',
-    reserved: 'border-(--premium)/24 bg-(--premium)/12 text-white',
+    reserved: 'border-(--surface)/45 bg-(--surface)/28 text-white',
     sold: 'border-white/10 bg-black/42 text-white/58',
 };
 

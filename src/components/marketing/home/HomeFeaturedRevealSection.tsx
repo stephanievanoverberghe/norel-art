@@ -50,12 +50,8 @@ export function HomeFeaturedRevealSection({ content, artworks, className }: Home
     if (!mainArtwork) return null;
 
     return (
-        <section id={content.id} aria-label="Premières œuvres révélées" className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
+        <section id={content.id} aria-label="Premières œuvres révélées" className={cn('marketing-section marketing-bg-gallery py-16 sm:py-20 lg:py-24', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,#060C15_0%,rgba(6,12,21,0)_100%)]" />
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-10 h-24 w-md -translate-x-1/2 bg-(--accent)/8 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute -left-20 top-32 h-60 w-60 rounded-full bg-white/2 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute -right-16 bottom-0 h-52 w-52 rounded-full bg-(--surface)/16 blur-3xl" />
-
             <Container className="relative z-10">
                 <div className="grid gap-12 xl:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] xl:gap-16">
                     <div className="xl:pt-8">

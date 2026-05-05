@@ -18,9 +18,7 @@ export function OeuvreFinalCtaSection({ artwork, className }: OeuvreFinalCtaSect
     const isAvailable = artwork.availability === 'available';
 
     return (
-        <section aria-label="Dernière invitation" className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-8 h-24 w-88 -translate-x-1/2 bg-(--accent)/8 blur-3xl" />
-
+        <section aria-label="Dernière invitation" className={cn('marketing-section marketing-bg-signature py-16 sm:py-20 lg:py-24', className)}>
             <Container className="relative z-10">
                 <div className="mx-auto max-w-3xl rounded-[1.75rem] border border-white/10 bg-white/3 px-6 py-10 text-center sm:px-8 sm:py-12 lg:px-12">
                     <p className="text-[11px] uppercase tracking-[0.28em] text-white/40">Dernier mouvement</p>

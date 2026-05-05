@@ -13,7 +13,7 @@ interface FresquesHeroProps {
 
 export function FresquesHero({ content }: FresquesHeroProps) {
     return (
-        <section className="relative overflow-hidden bg-(--bg-primary) pt-40 pb-20 sm:pt-44 sm:pb-24 lg:pt-48">
+        <section className="marketing-section marketing-bg-atelier pt-40 pb-20 sm:pt-44 sm:pb-24 lg:pt-48">
             {/* BACKGROUND */}
             <div
                 aria-hidden="true"
@@ -24,7 +24,6 @@ export function FresquesHero({ content }: FresquesHeroProps) {
                 className="pointer-events-none absolute inset-0 opacity-[0.04] bg-[url('/images/patterns/spirale.png')] bg-center bg-no-repeat"
                 style={{ backgroundSize: '700px' }}
             />
-            <div className="pointer-events-none absolute left-1/2 top-20 h-40 w-lg -translate-x-1/2 rounded-full bg-(--accent)/10 blur-3xl" />
 
             <Container className="relative z-10">
                 <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16 xl:gap-20">
@@ -70,7 +69,6 @@ export function FresquesHero({ content }: FresquesHeroProps) {
                                 <div className="relative aspect-4/5 overflow-hidden rounded-[1.4rem]">
                                     <Image src="/images/fresques/fr-008.jpg" alt="Fresque" fill priority sizes="(max-width: 1024px) 100vw, 36rem" className="object-cover" />
                                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.12)_50%,rgba(0,0,0,0.55)_100%)]" />
-                                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.14),transparent_38%)]" />
                                 </div>
                             </article>
 

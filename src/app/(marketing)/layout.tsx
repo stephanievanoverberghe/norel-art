@@ -17,9 +17,9 @@ interface MarketingLayoutProps {
 
 export default function MarketingLayout({ children }: MarketingLayoutProps) {
     return (
-        <div className="min-h-screen bg-(--bg-primary) text-(--text-primary)">
+        <div className="marketing-site-shell text-(--text-primary)">
             <Header />
-            <main>{children}</main>
+            <main className="marketing-site-main">{children}</main>
             <Footer />
         </div>
     );

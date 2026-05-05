@@ -22,9 +22,7 @@ export function RelatedOeuvresSection({ artwork, artworks, favoriteArtworkIds = 
     if (relatedArtworks.length === 0) return null;
 
     return (
-        <section aria-label="Œuvres liées" className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-10 h-24 w-[20rem] -translate-x-1/2 bg-(--accent)/6 blur-3xl" />
-
+        <section aria-label="Œuvres liées" className={cn('marketing-section marketing-bg-ash py-16 sm:py-20 lg:py-24', className)}>
             <Container className="relative z-10">
                 <div className="mb-10 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
                     <div className="max-w-2xl">

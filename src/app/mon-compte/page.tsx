@@ -92,7 +92,7 @@ export default async function AccountPage() {
                     </p>
                 </div>
                 <div className="rounded-md border border-white/10 bg-white/5 p-5">
-                    <UserRound size={22} className="text-(--premium)" />
+                    <UserRound size={22} className="text-(--accent)" />
                     <p className="mt-4 text-sm text-white/50">Profil</p>
                     <p className="mt-1 truncate text-sm font-semibold text-white">{session.user.email}</p>
                 </div>
@@ -115,7 +115,7 @@ export default async function AccountPage() {
                         return (
                             <Link key={item.href} href={item.href} className="group rounded-md border border-white/10 bg-[#08131f]/72 p-5 transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-[#0d1b2a]/88">
                                 <div className="flex items-center justify-between gap-3">
-                                    <Icon size={22} className="text-(--premium)" />
+                                    <Icon size={22} className="text-(--accent)" />
                                     <ArrowUpRight size={16} className="text-white/34 transition group-hover:text-white" />
                                 </div>
                                 <h2 className="mt-5 text-lg font-semibold text-white">{item.label}</h2>

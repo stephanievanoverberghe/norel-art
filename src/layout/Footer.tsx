@@ -20,9 +20,8 @@ const reassuranceItems = [
 
 export function Footer() {
     return (
-        <footer className="relative overflow-hidden border-t border-white/10 bg-(--bg-deep)">
+        <footer className="marketing-section marketing-bg-footer border-t border-white/10">
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
-            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(70%_90%_at_50%_0%,rgba(158,0,49,0.16),transparent_68%)]" />
 
             <Container className="relative py-14 sm:py-18 lg:py-20">
                 <section className="grid gap-10 border-b border-white/10 pb-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(22rem,0.8fr)] lg:gap-14">
@@ -46,7 +45,7 @@ export function Footer() {
 
                             return (
                                 <div key={item.label} className="rounded-md border border-white/10 bg-white/4 px-4 py-4">
-                                    <Icon size={18} className="text-(--premium)" />
+                                    <Icon size={18} className="text-(--accent)" />
                                     <p className="mt-3 text-sm font-medium text-white/78">{item.label}</p>
                                 </div>
                             );

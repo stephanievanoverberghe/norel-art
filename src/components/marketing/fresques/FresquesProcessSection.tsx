@@ -40,7 +40,7 @@ export function FresquesProcessSection({ id, eyebrow, title, intro, items, frame
                             return (
                                 <div key={item.step} className={cn('relative flex flex-col md:flex-row md:items-center md:gap-10', isRight && 'md:flex-row-reverse')}>
                                     <div className="absolute left-1/2 top-0 -translate-x-1/2 md:top-1/2 md:-translate-y-1/2">
-                                        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-(--bg-primary) text-[10px] uppercase tracking-[0.2em] text-white/50">
+                                        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-[#07111d] text-[10px] uppercase tracking-[0.2em] text-white/50">
                                             {item.step}
                                         </div>
                                     </div>

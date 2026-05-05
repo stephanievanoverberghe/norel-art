@@ -24,13 +24,13 @@ const galleryPromises = [
 
 export function OeuvresHero({ content, className }: OeuvresHeroProps) {
     return (
-        <section aria-label="Galerie des œuvres" className={cn(`relative overflow-hidden bg-(--bg-deep) pb-14 sm:pb-18 lg:pb-22 ${marketingPageSpacing.editorialOffset}`, className)}>
+        <section aria-label="Galerie des œuvres" className={cn(`marketing-section marketing-bg-night pb-14 sm:pb-18 lg:pb-22 ${marketingPageSpacing.editorialOffset}`, className)}>
             <div className="absolute inset-0">
                 <Image src="/images/oeuvres/oeuvres-hero.jpg" alt="Galerie d’œuvres Norel Art" fill priority sizes="100vw" className="object-cover object-center" />
             </div>
 
             <div className="absolute inset-0 bg-[linear-gradient(102deg,rgba(3,8,16,0.9)_0%,rgba(3,8,16,0.66)_48%,rgba(3,8,16,0.34)_100%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(65%_82%_at_78%_20%,rgba(158,0,49,0.22),transparent_70%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(72deg,rgba(158,0,49,0.16)_0%,rgba(158,0,49,0)_42%),linear-gradient(142deg,rgba(255,255,255,0)_0%,rgba(255,255,255,0.05)_68%,rgba(255,255,255,0)_100%)]" />
             <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,rgba(5,10,18,0.72)_0%,rgba(5,10,18,0)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(180deg,rgba(5,10,18,0)_0%,rgba(5,10,18,0.72)_70%,#050A12_100%)]" />
 
@@ -50,7 +50,7 @@ export function OeuvresHero({ content, className }: OeuvresHeroProps) {
 
                     <aside className="border-t border-white/12 pt-5 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
                         <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-white/42">
-                            <Sparkles size={15} className="text-(--premium)" />
+                            <Sparkles size={15} className="text-(--accent)" />
                             Boutique vivante
                         </div>
                         <div className="mt-5 grid gap-3">

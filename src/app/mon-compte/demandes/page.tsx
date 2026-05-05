@@ -70,7 +70,7 @@ export default async function AccountRequestsPage() {
                                 <div>
                                     <div className="flex flex-wrap items-center gap-2">
                                         <span className="rounded-full border border-white/10 bg-white/6 px-3 py-1 text-xs text-white/66">{typeLabel[request.type]}</span>
-                                        <span className="rounded-full border border-(--premium)/20 bg-(--premium)/10 px-3 py-1 text-xs text-white/72">{statusLabel[request.status]}</span>
+                                        <span className="rounded-full border border-(--accent)/24 bg-(--accent)/12 px-3 py-1 text-xs text-white/72">{statusLabel[request.status]}</span>
                                     </div>
                                     <h2 className="mt-4 text-xl font-semibold text-white">{request.name}</h2>
                                     <p className="mt-2 text-sm text-white/48">{formatDate(request.createdAt)}</p>

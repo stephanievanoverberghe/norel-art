@@ -19,8 +19,6 @@ interface AboutFinalSectionProps {
 export function AboutFinalSection({ content, className }: AboutFinalSectionProps) {
     return (
         <section aria-label="Continuer" className={cn(aboutSectionStyles.section, aboutSectionStyles.pageBackground, className)}>
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-44 w-120 -translate-x-1/2 -translate-y-1/2 rounded-full bg-(--accent)/10 blur-3xl" />
-
             <Container className="relative z-10">
                 <div className="mx-auto max-w-4xl overflow-hidden rounded-4xl border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))] px-6 py-12 text-center sm:px-8 sm:py-14 lg:px-14 lg:py-16">
                     <p className="text-[11px] uppercase tracking-[0.32em] text-white/36">{content.eyebrow}</p>

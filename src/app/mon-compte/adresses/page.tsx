@@ -50,7 +50,7 @@ export default async function AccountAddressesPage() {
                         <article key={address.id} className="rounded-md border border-white/10 bg-[#08131f]/78 p-5">
                             <div className="flex items-center justify-between gap-3">
                                 <p className="text-[11px] uppercase tracking-[0.24em] text-white/38">{address.type}</p>
-                                {address.isDefault ? <span className="rounded-full border border-(--premium)/20 bg-(--premium)/10 px-3 py-1 text-xs text-white/72">Defaut</span> : null}
+                                {address.isDefault ? <span className="rounded-full border border-(--accent)/24 bg-(--accent)/12 px-3 py-1 text-xs text-white/72">Défaut</span> : null}
                             </div>
                             <h2 className="mt-4 text-xl font-semibold text-white">{address.fullName}</h2>
                             <div className="mt-3 text-sm leading-6 text-white/58">

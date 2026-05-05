@@ -13,9 +13,7 @@ interface OeuvreStorySectionProps {
 
 export function OeuvreStorySection({ artwork, className }: OeuvreStorySectionProps) {
     return (
-        <section aria-label={`Histoire de l’œuvre ${artwork.title}`} className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-10 h-24 w-[20rem] -translate-x-1/2 bg-(--accent)/6 blur-3xl" />
-
+        <section aria-label={`Histoire de l’œuvre ${artwork.title}`} className={cn('marketing-section marketing-bg-atelier py-16 sm:py-20 lg:py-24', className)}>
             <Container className="relative z-10">
                 <div className="mx-auto max-w-3xl">
                     <p className="text-[11px] uppercase tracking-[0.28em] text-white/40">Fragment d’histoire</p>

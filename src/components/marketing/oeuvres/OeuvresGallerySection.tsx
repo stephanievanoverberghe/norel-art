@@ -61,7 +61,7 @@ export function OeuvresGallerySection({
     };
 
     return (
-        <section className="relative bg-(--bg-primary) py-12 sm:py-14 lg:py-16">
+        <section className="marketing-section marketing-bg-ash py-12 sm:py-14 lg:py-16">
             <Container>
                 <div className="grid gap-8 lg:grid-cols-[18rem_minmax(0,1fr)] lg:gap-10 xl:grid-cols-[19.5rem_minmax(0,1fr)]">
                     <OeuvresFiltersPanel

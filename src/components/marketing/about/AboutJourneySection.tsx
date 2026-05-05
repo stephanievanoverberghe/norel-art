@@ -15,7 +15,6 @@ export function AboutJourneySection({ content, className }: AboutJourneySectionP
     return (
         <section aria-label="Parcours de l’artiste" className={cn(aboutSectionStyles.section, aboutSectionStyles.pageBackground, className)}>
             <div aria-hidden="true" className={cn('pointer-events-none absolute inset-x-0 top-0 h-px', aboutSectionStyles.dividerHorizontal)} />
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-16 h-24 w-[20rem] -translate-x-1/2 rounded-full bg-(--accent)/8 blur-3xl" />
 
             <Container className="relative z-10">
                 <div className="grid gap-12 lg:grid-cols-[minmax(0,0.78fr)_minmax(0,1.22fr)] lg:gap-16">
@@ -33,7 +32,7 @@ export function AboutJourneySection({ content, className }: AboutJourneySectionP
                                         fragment.offsetClassName,
                                     )}
                                 >
-                                    <span className="absolute -left-[2.35rem] top-8 flex h-4 w-4 items-center justify-center rounded-full border border-white/14 bg-(--bg-primary)">
+                                    <span className="absolute -left-[2.35rem] top-8 flex h-4 w-4 items-center justify-center rounded-full border border-white/14 bg-[#07111d]">
                                         <span className="h-1.5 w-1.5 rounded-full bg-white/72" />
                                     </span>
 

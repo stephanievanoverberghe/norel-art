@@ -202,7 +202,6 @@ export function HeaderClient({ cartQuantity, className, favoriteCount, viewer }:
                     >
                         <Link href="/" aria-label="Norel Art - Retour à l’accueil" className="group inline-flex shrink-0 items-center">
                             <span className="relative inline-flex items-center">
-                                <span aria-hidden="true" className="absolute inset-0 rounded-full bg-(--accent)/18 opacity-0 blur-xl transition-opacity duration-300 group-hover:opacity-100" />
                                 <Image src="/images/logo/logo-white.png" alt="Logo Norel Art" width={152} height={56} priority className="relative z-10 h-auto w-24 sm:w-28 xl:w-32" />
                             </span>
                         </Link>
@@ -314,7 +313,7 @@ export function HeaderClient({ cartQuantity, className, favoriteCount, viewer }:
                 )}
 
                 <div className="mt-4 flex items-center gap-3 rounded-2xl border border-white/10 bg-white/4 px-4 py-3 text-sm text-white/58">
-                    <ShieldCheck size={16} className="text-(--premium)" />
+                    <ShieldCheck size={16} className="text-(--accent)" />
                     Paiement sécurisé, favoris conservés, suivi client.
                 </div>
             </div>

@@ -13,7 +13,7 @@ interface CommandesHeroProps {
 
 export function CommandesHero({ content }: CommandesHeroProps) {
     return (
-        <section aria-label="Portraits sur commande" className="relative overflow-hidden bg-(--bg-primary) pt-40 pb-20 sm:pt-44 sm:pb-24 lg:pt-48 lg:pb-28">
+        <section aria-label="Portraits sur commande" className="marketing-section marketing-bg-atelier pt-40 pb-20 sm:pt-44 sm:pb-24 lg:pt-48 lg:pb-28">
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.075]">
                 <div className="h-[120%] w-[120%] bg-[url('/images/patterns/spirale.png')] bg-center bg-no-repeat" style={{ backgroundSize: '600px' }} />
             </div>
@@ -21,9 +21,6 @@ export function CommandesHero({ content }: CommandesHeroProps) {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,18,0.8)_0%,rgba(5,10,18,0.42)_40%,rgba(5,10,18,0)_100%)]"
             />
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-18 h-36 w-120 -translate-x-1/2 rounded-full bg-(--accent)/12 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute -left-12 top-24 h-72 w-72 rounded-full bg-white/4 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute right-0 top-16 h-88 w-88 rounded-full bg-white/4 blur-3xl" />
 
             <Container className="relative z-10">
                 <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center lg:gap-16 xl:gap-20">
@@ -76,7 +73,6 @@ export function CommandesHero({ content }: CommandesHeroProps) {
                                         className="object-cover"
                                     />
                                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.12)_50%,rgba(0,0,0,0.55)_100%)]" />
-                                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.14),transparent_38%)]" />
                                 </div>
                             </article>
 

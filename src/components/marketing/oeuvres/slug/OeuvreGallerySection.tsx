@@ -101,7 +101,7 @@ export function OeuvreGallerySection({ artwork, className }: OeuvreGallerySectio
 
     return (
         <>
-            <section aria-label={`Autres vues de ${artwork.title}`} className={cn('relative overflow-hidden bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
+            <section aria-label={`Autres vues de ${artwork.title}`} className={cn('marketing-section marketing-bg-gallery py-16 sm:py-20 lg:py-24', className)}>
                 <Container>
                     <div className="mb-10 max-w-2xl">
                         <p className="text-[11px] uppercase tracking-[0.28em] text-white/40">S&apos;approcher</p>

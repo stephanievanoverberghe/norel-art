@@ -13,8 +13,8 @@ interface MarketingPageIntroProps {
 
 export function MarketingPageIntro({ eyebrow, title, description, withHeaderOffset = true }: MarketingPageIntroProps) {
     return (
-        <section className={cn('py-12 sm:py-16', withHeaderOffset && marketingPageSpacing.editorialOffset)}>
-            <Container>
+        <section className={cn('marketing-section marketing-bg-intro py-12 sm:py-16', withHeaderOffset && marketingPageSpacing.editorialOffset)}>
+            <Container className="relative z-10">
                 <p className="text-xs uppercase tracking-[0.24em] text-white/55">{eyebrow}</p>
                 <Heading level={2} className="mt-4">
                     {title}

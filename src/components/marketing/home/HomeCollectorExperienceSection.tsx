@@ -28,7 +28,7 @@ const accountMoments = [
 
 export function HomeCollectorExperienceSection() {
     return (
-        <section className="relative overflow-hidden bg-(--bg-deep) py-16 sm:py-20 lg:py-24" aria-label="Espace collectionneur Norel Art">
+        <section className="marketing-section marketing-bg-night py-16 sm:py-20 lg:py-24" aria-label="Espace collectionneur Norel Art">
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/16 to-transparent" />
 
             <Container className="relative z-10">
@@ -53,7 +53,7 @@ export function HomeCollectorExperienceSection() {
                             return (
                                 <Link key={item.href} href={item.href} className="group rounded-md border border-white/10 bg-white/[0.035] p-5 transition hover:-translate-y-0.5 hover:border-white/18 hover:bg-white/[0.055]">
                                     <div className="flex items-center justify-between gap-3">
-                                        <span className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/5 text-(--premium)">
+                                        <span className="flex h-10 w-10 items-center justify-center rounded-md border border-white/10 bg-white/5 text-(--accent)">
                                             <Icon size={18} />
                                         </span>
                                         <ArrowUpRight size={15} className="text-white/32 transition group-hover:text-white" />

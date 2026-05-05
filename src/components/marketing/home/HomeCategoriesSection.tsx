@@ -19,8 +19,8 @@ function getCategorySlug(category: string) {
 
 export function HomeCategoriesSection({ content, className }: HomeCategoriesSectionProps) {
     return (
-        <section aria-label="Explorer par catégories" className={cn('relative bg-(--bg-primary) py-16 sm:py-20 lg:py-24', className)}>
-            <Container>
+        <section aria-label="Explorer par catégories" className={cn('marketing-section marketing-bg-ash py-16 sm:py-20 lg:py-24', className)}>
+            <Container className="relative z-10">
                 <SectionIntro className="mb-12" eyebrow={content.eyebrow} title={content.title} description={content.description} />
 
                 <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">

@@ -26,9 +26,6 @@ export function AboutHero({ content, className }: AboutHeroProps) {
                 <div className="h-[120%] w-[120%] bg-[url('/images/patterns/spirale.png')] bg-center bg-no-repeat" style={{ backgroundSize: '600px' }} />
             </div>
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(5,10,18,0.58)_0%,rgba(5,10,18,0.2)_28%,rgba(5,10,18,0)_60%)]" />
-            <div aria-hidden="true" className="pointer-events-none absolute -left-24 top-20 h-72 w-72 rounded-full bg-white/4 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute right-24 top-16 h-80 w-80 rounded-full bg-(--accent)/12 blur-3xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-20 h-28 w-md -translate-x-1/2 rounded-full bg-white/5 blur-3xl" />
 
             <Container className="relative z-10">
                 <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:items-center lg:gap-14 xl:gap-20">
@@ -81,7 +78,6 @@ export function AboutHero({ content, className }: AboutHeroProps) {
                                     <Image src={content.image.src} alt={content.image.alt} fill priority sizes={content.image.sizes} className="object-cover object-center" />
 
                                     <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.08)_50%,rgba(0,0,0,0.48)_100%)]" />
-                                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(255,255,255,0.14),transparent_38%)]" />
                                 </div>
                             </div>
 

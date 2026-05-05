@@ -15,7 +15,7 @@ interface HomeFinalCtaSectionProps {
 
 export function HomeFinalCtaSection({ content, className }: HomeFinalCtaSectionProps) {
     return (
-        <section aria-label="Dernier appel à l’action" className={cn('relative overflow-hidden bg-(--bg-primary) py-20 sm:py-24 lg:py-28', className)}>
+        <section aria-label="Dernier appel à l’action" className={cn('marketing-section marketing-bg-signature py-20 sm:py-24 lg:py-28', className)}>
             <Container className="relative z-10">
                 <div className="mx-auto max-w-3xl rounded-4xl border border-white/10 bg-white/3 px-6 py-10 text-center sm:px-8 sm:py-12 lg:px-12 lg:py-14">
                     <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">{content.eyebrow}</p>

@@ -12,10 +12,10 @@ interface AboutPageProps {
 export function AboutPage({ content }: AboutPageProps) {
     return (
         <>
-            <AboutHero content={content.hero} />
-            <AboutJourneySection content={content.journey} />
-            <AboutVisionSection content={content.vision} />
-            <AboutFinalSection content={content.finalCta} />
+            <AboutHero content={content.hero} className="marketing-bg-intro" />
+            <AboutJourneySection content={content.journey} className="marketing-bg-ash" />
+            <AboutVisionSection content={content.vision} className="marketing-bg-vellum" />
+            <AboutFinalSection content={content.finalCta} className="marketing-bg-signature" />
         </>
     );
 }

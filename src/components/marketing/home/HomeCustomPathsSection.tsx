@@ -16,7 +16,7 @@ interface HomeCustomPathsSectionProps {
 
 export function HomeCustomPathsSection({ content, className }: HomeCustomPathsSectionProps) {
     return (
-        <section aria-label="Commandes et fresques" className={cn('relative overflow-hidden bg-(--bg-primary) py-20 sm:py-24 lg:py-28', className)}>
+        <section aria-label="Commandes et fresques" className={cn('marketing-section marketing-bg-ember py-20 sm:py-24 lg:py-28', className)}>
             <Container className="relative z-10">
                 <SectionIntro className="mx-auto" centered eyebrow={content.intro.eyebrow} title={content.intro.title} description={content.intro.description} />
 

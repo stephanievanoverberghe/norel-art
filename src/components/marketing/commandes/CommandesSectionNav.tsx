@@ -81,7 +81,7 @@ export function CommandesSectionNav({ items, className }: CommandesSectionNavPro
     };
 
     return (
-        <div className={cn('sticky top-22 z-40 pb-4 pt-3', 'bg-[linear-gradient(180deg,rgba(13,27,42,0.96)_0%,rgba(13,27,42,0.82)_64%,rgba(13,27,42,0)_100%)]', className)}>
+        <div className={cn('sticky top-22 z-40 pb-4 pt-3', 'bg-[linear-gradient(180deg,rgba(5,10,18,0.94)_0%,rgba(9,18,30,0.82)_64%,rgba(5,10,18,0)_100%)]', className)}>
             <Container>
                 <nav aria-label="Navigation interne de la page commandes" className="relative">
                     <div

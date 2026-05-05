@@ -14,11 +14,10 @@ interface HomeUniverseSectionProps {
 
 export function HomeUniverseSection({ content, className }: HomeUniverseSectionProps) {
     return (
-        <section aria-label="Univers de l’artiste" className={cn('relative overflow-hidden bg-(--bg-primary) py-20 sm:py-24 lg:py-32', className)}>
+        <section aria-label="Univers de l’artiste" className={cn('marketing-section marketing-bg-atelier py-20 sm:py-24 lg:py-32', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.075]">
                 <div className="h-[120%] w-[120%] bg-[url('/images/patterns/spirale.png')] bg-center bg-no-repeat" style={{ backgroundSize: '600px' }} />
             </div>
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-20 h-40 w-160 -translate-x-1/2 bg-(--accent)/10 blur-3xl" />
 
             <Container className="relative z-10">
                 <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
@@ -37,14 +36,10 @@ export function HomeUniverseSection({ content, className }: HomeUniverseSectionP
 
                                         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,10,18,0.02)_0%,rgba(4,10,18,0.5)_100%)]" />
                                     </div>
-
-                                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.08),transparent_60%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                                 </div>
                             </div>
 
-                            <div className="pointer-events-none absolute inset-0 -z-10 blur-2xl">
-                                <div className="h-full w-full bg-(--accent)/10" />
-                            </div>
+                            <div className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(140deg,rgba(158,0,49,0.12),rgba(91,30,51,0.12),transparent)] blur-2xl" />
                         </div>
                     </div>
 

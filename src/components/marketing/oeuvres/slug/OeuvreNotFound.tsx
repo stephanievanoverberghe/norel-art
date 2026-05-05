@@ -13,9 +13,7 @@ interface OeuvreNotFoundProps {
 
 export function OeuvreNotFound({ className }: OeuvreNotFoundProps) {
     return (
-        <section aria-label="Œuvre introuvable" className={cn('relative flex min-h-[calc(100vh-80px)] items-center justify-center overflow-hidden bg-(--bg-primary)', className)}>
-            <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-40 w-md -translate-x-1/2 -translate-y-1/2 bg-(--accent)/10 blur-3xl" />
-
+        <section aria-label="Œuvre introuvable" className={cn('marketing-section marketing-bg-ash flex min-h-[calc(100vh-80px)] items-center justify-center', className)}>
             <Container className="relative z-10">
                 <div className="mx-auto max-w-2xl text-center">
                     <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">Absence</p>

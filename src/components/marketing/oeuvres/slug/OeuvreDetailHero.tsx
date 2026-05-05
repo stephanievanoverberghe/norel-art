@@ -21,7 +21,7 @@ interface OeuvreDetailHeroProps {
 
 const availabilityTone: Record<Artwork['availability'], string> = {
     available: 'border-emerald-200/20 bg-emerald-300/12 text-emerald-50',
-    reserved: 'border-(--premium)/24 bg-(--premium)/12 text-white',
+    reserved: 'border-(--surface)/45 bg-(--surface)/28 text-white',
     sold: 'border-white/10 bg-black/42 text-white/58',
 };
 
@@ -37,10 +37,9 @@ export function OeuvreDetailHero({ artwork, isFavorite = false, className }: Oeu
     return (
         <section
             aria-label={`Présentation de l’œuvre ${artwork.title}`}
-            className={cn(`relative overflow-hidden bg-(--bg-deep) pb-12 sm:pb-14 lg:pb-18 ${marketingPageSpacing.immersiveOffset}`, className)}
+            className={cn(`marketing-section marketing-bg-night pb-12 sm:pb-14 lg:pb-18 ${marketingPageSpacing.immersiveOffset}`, className)}
         >
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-36 bg-[linear-gradient(180deg,rgba(5,10,18,0.82)_0%,rgba(5,10,18,0)_100%)]" />
-            <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-[radial-gradient(70%_90%_at_50%_100%,rgba(158,0,49,0.12),transparent_72%)]" />
 
             <Container className="relative z-10">
                 <Link href="/oeuvres" className="mb-7 inline-flex items-center gap-2 text-sm text-white/62 transition hover:text-white">
@@ -64,7 +63,7 @@ export function OeuvreDetailHero({ artwork, isFavorite = false, className }: Oeu
 
                                 return (
                                     <div key={item.label} className="flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.035] px-4 py-3 text-sm text-white/62">
-                                        <Icon size={16} className="text-(--premium)" />
+                                        <Icon size={16} className="text-(--accent)" />
                                         {item.label}
                                     </div>
                                 );
@@ -140,7 +139,7 @@ export function OeuvreDetailHero({ artwork, isFavorite = false, className }: Oeu
 
                             {artwork.videos?.length ? (
                                 <div className="mt-5 flex items-center gap-3 rounded-md border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/62">
-                                    <Sparkles size={16} className="text-(--premium)" />
+                                    <Sparkles size={16} className="text-(--accent)" />
                                     Vidéo disponible plus bas dans la fiche.
                                 </div>
                             ) : null}
