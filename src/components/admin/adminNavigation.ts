@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { Inbox, LayoutDashboard, MessageSquareText, Palette, Settings, ShoppingBag, Tags } from 'lucide-react';
+import { Activity, Inbox, LayoutDashboard, MessageSquareText, Palette, Settings, ShoppingBag, Tags, Users } from 'lucide-react';
 
 export interface AdminNavigationItem {
     href: string;
@@ -32,6 +32,18 @@ export const adminNavigation: AdminNavigationItem[] = [
         label: 'Commandes',
         description: 'Paiements et suivi',
         icon: ShoppingBag,
+    },
+    {
+        href: '/admin/utilisateurs',
+        label: 'Utilisateurs',
+        description: 'Clients et admins',
+        icon: Users,
+    },
+    {
+        href: '/admin/analytics',
+        label: 'Analytics',
+        description: 'Performance',
+        icon: Activity,
     },
     {
         href: '/admin/demandes',
