@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 
 import type { ContactFormContent } from '@/domain/contact/types';
 import { Button } from '@/ui/Button';
@@ -15,9 +15,60 @@ interface ContactFormProps {
 
 export function ContactForm({ content }: ContactFormProps) {
     const [requestType, setRequestType] = useState('');
+    const [error, setError] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [success, setSuccess] = useState('');
+
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setError('');
+        setSuccess('');
+
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        const selectedRequestType = String(formData.get('requestType') ?? '');
+
+        if (!selectedRequestType) {
+            setError('Choisissez un type de demande.');
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch('/api/requests', {
+                body: JSON.stringify({
+                    email: String(formData.get('email') ?? ''),
+                    message: String(formData.get('message') ?? ''),
+                    metadata: {
+                        requestType: selectedRequestType,
+                    },
+                    name: String(formData.get('fullName') ?? ''),
+                    source: 'contact',
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                method: 'POST',
+            });
+            const payload = (await response.json().catch(() => null)) as { message?: string } | null;
+
+            if (!response.ok) {
+                throw new Error(payload?.message ?? "La demande n'a pas pu etre envoyee.");
+            }
+
+            form.reset();
+            setRequestType('');
+            setSuccess('Votre demande a bien ete envoyee.');
+        } catch (submitError) {
+            setError(submitError instanceof Error ? submitError.message : "La demande n'a pas pu etre envoyee.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
-        <form className="grid gap-4 rounded-3xl border border-white/10 bg-white/3 p-6" aria-label="Formulaire de contact">
+        <form onSubmit={handleSubmit} className="grid gap-4 rounded-3xl border border-white/10 bg-white/3 p-6" aria-label="Formulaire de contact">
             <FormField label={content.fullNameLabel} htmlFor="fullName" required>
                 <Input id="fullName" name="fullName" placeholder={content.fullNamePlaceholder} required />
             </FormField>
@@ -41,8 +92,11 @@ export function ContactForm({ content }: ContactFormProps) {
                 <Textarea id="message" name="message" rows={5} placeholder={content.messagePlaceholder} required />
             </FormField>
 
-            <Button type="submit" className="rounded-full">
-                {content.submitLabel}
+            {error ? <p className="text-sm leading-6 text-rose-100/82" role="alert">{error}</p> : null}
+            {success ? <p className="text-sm leading-6 text-emerald-100/82" role="status">{success}</p> : null}
+
+            <Button type="submit" disabled={isSubmitting} className="rounded-full">
+                {isSubmitting ? 'Envoi en cours...' : content.submitLabel}
             </Button>
         </form>
     );

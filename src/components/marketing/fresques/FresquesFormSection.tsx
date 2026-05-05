@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 
 import { SectionIntro } from '@/components/shared/SectionIntro';
 import type { FresquesFormContent } from '@/domain/fresques/types';
@@ -22,6 +22,62 @@ export function FresquesFormSection({ id, content }: FresquesFormSectionProps) {
     const [placeType, setPlaceType] = useState('');
     const [surface, setSurface] = useState('');
     const [styleDirection, setStyleDirection] = useState('');
+    const [error, setError] = useState('');
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [success, setSuccess] = useState('');
+
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setError('');
+        setSuccess('');
+
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        const selectedPlaceType = String(formData.get('placeType') ?? '');
+
+        if (!selectedPlaceType) {
+            setError('Choisissez un type de lieu.');
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            const response = await fetch('/api/requests', {
+                body: JSON.stringify({
+                    email: String(formData.get('email') ?? ''),
+                    location: String(formData.get('city') ?? ''),
+                    message: String(formData.get('message') ?? ''),
+                    metadata: {
+                        placeType: selectedPlaceType,
+                        styleDirection: String(formData.get('styleDirection') ?? ''),
+                        surface: String(formData.get('surface') ?? ''),
+                    },
+                    name: String(formData.get('firstName') ?? ''),
+                    source: 'mural',
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                method: 'POST',
+            });
+            const payload = (await response.json().catch(() => null)) as { message?: string } | null;
+
+            if (!response.ok) {
+                throw new Error(payload?.message ?? "La demande n'a pas pu etre envoyee.");
+            }
+
+            form.reset();
+            setPlaceType('');
+            setStyleDirection('');
+            setSurface('');
+            setSuccess('Votre demande a bien ete envoyee.');
+        } catch (submitError) {
+            setError(submitError instanceof Error ? submitError.message : "La demande n'a pas pu etre envoyee.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
 
     return (
         <FresquesSection id={id} className="scroll-mt-36">
@@ -48,7 +104,7 @@ export function FresquesFormSection({ id, content }: FresquesFormSectionProps) {
                     </div>
                 </aside>
 
-                <form className="rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.022))] p-3 backdrop-blur-sm sm:p-4">
+                <form onSubmit={handleSubmit} className="rounded-[1.85rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.022))] p-3 backdrop-blur-sm sm:p-4">
                     <div className="rounded-[1.4rem] border border-white/8 bg-white/2 px-5 py-5 sm:px-6 sm:py-6">
                         <div className="grid gap-4 sm:grid-cols-2">
                             <FormField label="Prénom" htmlFor="firstName" required>
@@ -99,12 +155,16 @@ export function FresquesFormSection({ id, content }: FresquesFormSectionProps) {
 
                         <div className="mt-6 border-t border-white/10 pt-6">
                             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                                <Text variant="muted" className="max-w-md text-sm leading-6 text-white/54">
-                                    Je reviendrai vers vous pour proposer un cadre de travail, une première direction et les repères adaptés à votre lieu.
-                                </Text>
+                                <div className="max-w-md">
+                                    <Text variant="muted" className="text-sm leading-6 text-white/54">
+                                        Je reviendrai vers vous pour proposer un cadre de travail, une première direction et les repères adaptés à votre lieu.
+                                    </Text>
+                                    {error ? <p className="mt-3 text-sm leading-6 text-rose-100/82" role="alert">{error}</p> : null}
+                                    {success ? <p className="mt-3 text-sm leading-6 text-emerald-100/82" role="status">{success}</p> : null}
+                                </div>
 
-                                <Button type="submit" className="min-h-12 w-full rounded-full px-8 sm:w-auto">
-                                    {content.submitLabel}
+                                <Button type="submit" disabled={isSubmitting} className="min-h-12 w-full rounded-full px-8 sm:w-auto">
+                                    {isSubmitting ? 'Envoi en cours...' : content.submitLabel}
                                 </Button>
                             </div>
                         </div>
