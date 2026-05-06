@@ -79,7 +79,7 @@ export function DropForm({ action, artworks, drop, mode }: DropFormProps) {
                     </label>
                     <label className={adminLabelClass}>
                         Eyebrow
-                        <input name="eyebrow" defaultValue={drop?.eyebrow ?? ''} placeholder="Edition limitee, ouverture privee..." className={adminInputClass} />
+                        <input name="eyebrow" defaultValue={drop?.eyebrow ?? ''} placeholder="Édition limitée, ouverture privée..." className={adminInputClass} />
                     </label>
                     <label className={adminLabelClass}>
                         Libelle d&apos;acces

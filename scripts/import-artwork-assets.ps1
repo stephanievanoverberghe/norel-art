@@ -48,6 +48,10 @@ function Remove-Diacritics([string]$value) {
 
 function Get-Slug([string]$value) {
     $ascii = (Remove-Diacritics $value).ToLowerInvariant()
+    $ascii = $ascii -replace ([string][char]0x0153), 'oe'
+    $ascii = $ascii -replace ([string][char]0x0152), 'oe'
+    $ascii = $ascii -replace ([string][char]0x00E6), 'ae'
+    $ascii = $ascii -replace ([string][char]0x00C6), 'ae'
     $ascii = $ascii -replace '[^a-z0-9]+', '-'
     $ascii = $ascii.Trim('-')
 
@@ -261,10 +265,10 @@ function Build-Meta([string]$title, [string[]]$details, [string]$collection, [st
 
 function Guess-FallbackCollection([string]$slug) {
     if ($slug -match '^(duo|serie-7|série-7)') {
-        return 'Series et duos'
+        return "S$([char]0x00E9)ries et duos"
     }
 
-    return 'Oeuvres libres'
+    return "$([char]0x0152)uvres libres"
 }
 
 function Parse-PricedDocument([string]$path, [string]$collection, [string]$variantType) {
@@ -470,7 +474,7 @@ $docMap = New-Object System.Collections.Generic.List[object]
 [void]$docMap.Add(@{ File = Join-Path $SourceRoot 'Peinture.odt'; Collection = 'Peintures originales'; Type = 'original'; Kind = 'priced' })
 [void]$docMap.Add(@{ File = Join-Path $SourceRoot 'Fusain.odt'; Collection = 'Fusains et pastels'; Type = 'original'; Kind = 'priced' })
 if ($serieOdt) {
-    [void]$docMap.Add(@{ File = $serieOdt.FullName; Collection = 'Series et duos'; Type = 'original'; Kind = 'priced' })
+    [void]$docMap.Add(@{ File = $serieOdt.FullName; Collection = "S$([char]0x00E9)ries et duos"; Type = 'original'; Kind = 'priced' })
 }
 [void]$docMap.Add(@{ File = Join-Path (Join-Path $SourceRoot 'Image site') 'Categorie illustration.odt'; Collection = 'Illustrations'; Type = 'original'; Kind = 'priced' })
 [void]$docMap.Add(@{ File = Join-Path (Join-Path $SourceRoot 'Image site') 'Categorie affiche.odt'; Collection = 'Affiches graphiques'; Type = 'print'; Kind = 'affiche' })

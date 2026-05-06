@@ -161,7 +161,7 @@ export function ArtworkForm({ action, artwork, categories, collections, mode }: 
                         </label>
                         <label className={adminLabelClass}>
                             Label edition
-                            <input name="editionLabel" defaultValue={variant?.editionLabel ?? ''} placeholder="Edition limitee" className={adminInputClass} />
+                            <input name="editionLabel" defaultValue={variant?.editionLabel ?? ''} placeholder="Édition limitée" className={adminInputClass} />
                         </label>
                     </div>
                 </AdminPanel>

@@ -5,7 +5,7 @@ import { useMemo, useState } from 'react';
 import { filterArtworks } from '@/application/artworks';
 import type { ArtworkCategory } from '@/domain/artworks/categories';
 import type { Artwork } from '@/domain/artworks/types';
-import type { OeuvresCollectionFilter, OeuvresPageContent, OeuvresCategoryFilter, OeuvresTypeFilter } from '@/domain/oeuvres/types';
+import type { OeuvresAvailabilityFilter, OeuvresCollectionFilter, OeuvresPageContent, OeuvresCategoryFilter, OeuvresSortOption, OeuvresTypeFilter } from '@/domain/oeuvres/types';
 import { Container } from '@/ui/Container';
 
 import { OeuvresFiltersPanel } from './OeuvresFiltersPanel';
@@ -30,6 +30,19 @@ function isArtworkType(value: string | undefined): value is Artwork['type'] {
     return value === 'original' || value === 'print';
 }
 
+function sortArtworks(artworks: Artwork[], sort: OeuvresSortOption) {
+    return [...artworks].sort((a, b) => {
+        if (sort === 'price-asc') return a.priceEur - b.priceEur;
+        if (sort === 'price-desc') return b.priceEur - a.priceEur;
+        if (sort === 'title-asc') return a.title.localeCompare(b.title, 'fr-FR');
+
+        const featuredDelta = Number(Boolean(b.highlighted)) - Number(Boolean(a.highlighted));
+        if (featuredDelta !== 0) return featuredDelta;
+
+        return 0;
+    });
+}
+
 export function OeuvresGallerySection({
     artworks,
     categories,
@@ -43,21 +56,44 @@ export function OeuvresGallerySection({
     const [selectedCategory, setSelectedCategory] = useState<OeuvresCategoryFilter>(isArtworkCategory(initialCategory, categories) ? initialCategory : 'all');
     const [selectedCollection, setSelectedCollection] = useState<OeuvresCollectionFilter>(initialCollection && collections.includes(initialCollection) ? initialCollection : 'all');
     const [selectedType, setSelectedType] = useState<OeuvresTypeFilter>(isArtworkType(initialType) ? initialType : 'all');
+    const [selectedAvailability, setSelectedAvailability] = useState<OeuvresAvailabilityFilter>('all');
+    const [selectedSort, setSelectedSort] = useState<OeuvresSortOption>('featured');
+    const [query, setQuery] = useState('');
 
     const filteredArtworks = useMemo(
-        () =>
-            filterArtworks(artworks, {
+        () => {
+            const filtered = filterArtworks(artworks, {
                 category: selectedCategory,
                 collection: selectedCollection,
                 type: selectedType,
-            }),
-        [artworks, selectedCategory, selectedCollection, selectedType],
+                availability: selectedAvailability,
+                query,
+            });
+
+            return sortArtworks(filtered, selectedSort);
+        },
+        [artworks, selectedCategory, selectedCollection, selectedType, selectedAvailability, selectedSort, query],
     );
+
+    const stats = useMemo(
+        () => ({
+            available: artworks.filter((artwork) => artwork.availability === 'available').length,
+            originals: artworks.filter((artwork) => artwork.type === 'original').length,
+            prints: artworks.filter((artwork) => artwork.type === 'print').length,
+            total: artworks.length,
+        }),
+        [artworks],
+    );
+
+    const activeFiltersCount = [selectedCategory !== 'all', selectedCollection !== 'all', selectedType !== 'all', selectedAvailability !== 'all', query.trim().length > 0].filter(Boolean).length;
 
     const resetFilters = () => {
         setSelectedCategory('all');
         setSelectedCollection('all');
         setSelectedType('all');
+        setSelectedAvailability('all');
+        setSelectedSort('featured');
+        setQuery('');
     };
 
     return (
@@ -71,13 +107,21 @@ export function OeuvresGallerySection({
                         selectedCategory={selectedCategory}
                         selectedCollection={selectedCollection}
                         selectedType={selectedType}
+                        selectedAvailability={selectedAvailability}
+                        selectedSort={selectedSort}
+                        query={query}
+                        stats={stats}
+                        activeFiltersCount={activeFiltersCount}
                         onCategoryChange={setSelectedCategory}
                         onCollectionChange={setSelectedCollection}
                         onTypeChange={setSelectedType}
+                        onAvailabilityChange={setSelectedAvailability}
+                        onSortChange={setSelectedSort}
+                        onQueryChange={setQuery}
                         onReset={resetFilters}
                     />
 
-                    <OeuvresGalleryGrid artworks={filteredArtworks} content={content.grid} favoriteArtworkIds={favoriteArtworkIds} />
+                    <OeuvresGalleryGrid artworks={filteredArtworks} totalCount={artworks.length} activeFiltersCount={activeFiltersCount} content={content.grid} favoriteArtworkIds={favoriteArtworkIds} />
                 </div>
             </Container>
         </section>

@@ -16,6 +16,8 @@ function hashPassword(password) {
 
 function slugify(value) {
     return value
+        .replace(/[œŒ]/g, 'oe')
+        .replace(/[æÆ]/g, 'ae')
         .normalize('NFD')
         .replace(/[\u0300-\u036f]/g, '')
         .toLowerCase()
@@ -32,55 +34,55 @@ const categories = [
     {
         name: 'Pop Art',
         imageUrl: '/images/categories/pop-art.jpg',
-        imageAlt: 'Categorie Pop Art Norel Art',
+        imageAlt: 'Catégorie Pop Art Norel Art',
     },
     {
         name: 'Manga',
         imageUrl: '/images/categories/manga.jpg',
-        imageAlt: 'Categorie Manga Norel Art',
+        imageAlt: 'Catégorie Manga Norel Art',
     },
     {
         name: 'Graphisme',
         imageUrl: '/images/categories/graphisme.jpg',
-        imageAlt: 'Categorie Graphisme Norel Art',
+        imageAlt: 'Catégorie Graphisme Norel Art',
     },
     {
         name: 'Street Art',
         imageUrl: '/images/categories/street-art.jpg',
-        imageAlt: 'Categorie Street Art Norel Art',
+        imageAlt: 'Catégorie Street Art Norel Art',
     },
 ];
 const collectionDetails = {
     'Peintures originales': {
-        eyebrow: 'Pieces uniques',
-        description: 'Peintures et techniques mixtes disponibles a l achat.',
+        eyebrow: 'Pièces uniques',
+        description: 'Peintures et techniques mixtes disponibles à l’achat.',
     },
     'Fusains et pastels': {
         eyebrow: 'Dessins originaux',
         description: 'Portraits, fusains, pastels et formats papier.',
     },
-    'Series et duos': {
+    'Séries et duos': {
         eyebrow: 'Ensembles',
-        description: 'Duos, series et compositions pensees comme un ensemble.',
+        description: 'Duos, séries et compositions pensées comme un ensemble.',
     },
     Illustrations: {
         eyebrow: 'Illustrations',
-        description: 'Illustrations originales issues des documents d atelier.',
+        description: 'Illustrations originales issues des documents d’atelier.',
     },
     'Affiches graphiques': {
-        eyebrow: 'Editions signees',
+        eyebrow: 'Éditions signées',
         description: 'Affiches graphiques disponibles en formats papier.',
     },
-    'Oeuvres libres': {
+    'Œuvres libres': {
         eyebrow: 'Catalogue',
-        description: 'Pieces ajoutees depuis les fichiers sources, a completer dans l admin si besoin.',
+        description: 'Pièces ajoutées depuis les fichiers sources, à compléter dans l’admin si besoin.',
     },
 };
 
 const collections = Array.from(new Set(catalogueArtworks.map((artwork) => artwork.collection))).map((name, position) => ({
     name,
     eyebrow: collectionDetails[name]?.eyebrow ?? 'Catalogue',
-    description: collectionDetails[name]?.description ?? 'Selection d oeuvres Norel Art.',
+    description: collectionDetails[name]?.description ?? 'Sélection d’œuvres Norel Art.',
     position,
     isFeatured: position === 0,
 }));
@@ -226,7 +228,7 @@ async function main() {
             where: { sku: `NOREL-${artworkSeed.slug.toUpperCase()}` },
             update: {
                 type: artworkSeed.variantType,
-                title: artworkSeed.variantType === 'ORIGINAL' ? 'Peinture originale' : 'Affiche signee',
+                title: artworkSeed.variantType === 'ORIGINAL' ? 'Peinture originale' : 'Affiche signée',
                 priceCents: artworkSeed.priceCents,
                 stock: artworkSeed.stock,
                 isActive: artworkSeed.availability !== 'SOLD',
@@ -234,12 +236,12 @@ async function main() {
             create: {
                 artworkId: artwork.id,
                 type: artworkSeed.variantType,
-                title: artworkSeed.variantType === 'ORIGINAL' ? 'Peinture originale' : 'Affiche signee',
+                title: artworkSeed.variantType === 'ORIGINAL' ? 'Peinture originale' : 'Affiche signée',
                 sku: `NOREL-${artworkSeed.slug.toUpperCase()}`,
                 priceCents: artworkSeed.priceCents,
                 stock: artworkSeed.stock,
                 editionSize: artworkSeed.variantType === 'PRINT' ? 50 : null,
-                editionLabel: artworkSeed.variantType === 'PRINT' ? 'Edition limitee' : null,
+                editionLabel: artworkSeed.variantType === 'PRINT' ? 'Édition limitée' : null,
                 isActive: artworkSeed.availability !== 'SOLD',
             },
         });
