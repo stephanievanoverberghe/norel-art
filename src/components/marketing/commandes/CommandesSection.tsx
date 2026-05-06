@@ -14,7 +14,7 @@ const backgroundById: Record<string, string> = {
     formulaire: 'marketing-bg-ember',
     possibles: 'marketing-bg-gallery',
     processus: 'marketing-bg-atelier',
-    reperes: 'marketing-bg-vellum',
+    reperes: 'marketing-bg-slate',
 };
 
 export function CommandesSection({ id, children, className }: CommandesSectionProps) {

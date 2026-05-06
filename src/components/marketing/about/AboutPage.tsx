@@ -14,7 +14,7 @@ export function AboutPage({ content }: AboutPageProps) {
         <>
             <AboutHero content={content.hero} className="marketing-bg-intro" />
             <AboutJourneySection content={content.journey} className="marketing-bg-ash" />
-            <AboutVisionSection content={content.vision} className="marketing-bg-vellum" />
+            <AboutVisionSection content={content.vision} className="marketing-bg-slate" />
             <AboutFinalSection content={content.finalCta} className="marketing-bg-signature" />
         </>
     );

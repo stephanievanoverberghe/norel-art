@@ -25,9 +25,7 @@ const accountNavigation = [
 
 export function AccountShell({ children, user }: AccountShellProps) {
     return (
-        <div className="min-h-screen overflow-hidden bg-(--bg-deep) text-white">
-            <div aria-hidden="true" className="pointer-events-none fixed inset-0 bg-[radial-gradient(80%_72%_at_78%_0%,rgba(158,0,49,0.18),transparent_64%),linear-gradient(180deg,#050A12_0%,#0D1B2A_52%,#050A12_100%)]" />
-
+        <div className="norel-bg-shell norel-bg-commerce min-h-screen text-white">
             <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[92rem] flex-col px-4 py-5 sm:px-6 lg:px-8">
                 <header className="flex flex-col gap-4 border-b border-white/10 pb-5 lg:flex-row lg:items-center lg:justify-between">
                     <div className="flex items-center gap-4">

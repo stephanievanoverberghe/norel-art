@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function CheckoutCancelPage() {
     return (
-        <main className="min-h-screen bg-(--bg-primary) px-5 py-8 text-white sm:px-8">
-            <section className="mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-center">
+        <main className="norel-bg-shell norel-bg-commerce min-h-screen px-5 py-8 text-white sm:px-8">
+            <section className="relative z-10 mx-auto flex min-h-[70vh] max-w-3xl flex-col justify-center">
                 <div className="rounded-md border border-white/10 bg-[#08131f]/88 p-6 sm:p-8">
                     <CircleAlert size={34} className="text-white/64" />
                     <p className="mt-6 text-xs font-semibold uppercase tracking-[0.28em] text-white/42">Paiement interrompu</p>

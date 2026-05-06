@@ -14,7 +14,7 @@ const backgroundById: Record<string, string> = {
     fragments: 'marketing-bg-ash',
     intentions: 'marketing-bg-gallery',
     processus: 'marketing-bg-atelier',
-    reperes: 'marketing-bg-vellum',
+    reperes: 'marketing-bg-slate',
 };
 
 export function FresquesSection({ id, children, className }: FresquesSectionProps) {

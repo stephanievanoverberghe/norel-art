@@ -10,8 +10,7 @@ interface AuthShellProps {
 
 export function AuthShell({ eyebrow, title, description, children }: AuthShellProps) {
     return (
-        <main className="relative min-h-screen overflow-hidden bg-(--bg-primary) text-white">
-            <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(13,27,42,0.94)_0%,rgba(13,27,42,0.74)_48%,rgba(91,30,51,0.62)_100%),url('/images/hero/norel-hero.jpg')] bg-cover bg-center" />
+        <main className="norel-bg-shell norel-bg-auth min-h-screen text-white">
             <div className="absolute inset-x-0 top-0 h-24 bg-linear-to-b from-black/35 to-transparent" />
 
             <div className="relative z-10 mx-auto grid min-h-screen w-full max-w-6xl items-center gap-10 px-5 py-8 sm:px-8 lg:grid-cols-[1fr_420px]">

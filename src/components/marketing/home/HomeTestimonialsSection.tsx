@@ -11,7 +11,7 @@ interface HomeTestimonialsSectionProps {
 
 export function HomeTestimonialsSection({ content, className }: HomeTestimonialsSectionProps) {
     return (
-        <section aria-label="Témoignages" className={cn('marketing-section marketing-bg-vellum py-20 sm:py-24 lg:py-28', className)}>
+        <section aria-label="Témoignages" className={cn('marketing-section marketing-bg-slate py-20 sm:py-24 lg:py-28', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center opacity-[0.075]">
                 <div className="h-[120%] w-[120%] bg-[url('/images/patterns/spirale.png')] bg-center bg-no-repeat" style={{ backgroundSize: '600px' }} />
             </div>

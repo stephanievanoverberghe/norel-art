@@ -35,8 +35,8 @@ export default async function CartPage() {
     return (
         <>
             <Header />
-            <main className="min-h-screen bg-(--bg-deep) px-5 pb-14 pt-32 text-white sm:px-8 lg:pt-36">
-                <div className="mx-auto max-w-6xl">
+            <main className="norel-bg-shell norel-bg-commerce min-h-screen px-5 pb-14 pt-32 text-white sm:px-8 lg:pt-36">
+                <div className="relative z-10 mx-auto max-w-6xl">
                 <Link href="/oeuvres" className="inline-flex items-center gap-2 text-sm text-white/56 transition hover:text-white">
                     <ArrowLeft size={16} />
                     Continuer la galerie
