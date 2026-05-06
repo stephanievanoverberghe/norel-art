@@ -23,7 +23,7 @@ export const footerNavigationGroups: FooterNavGroup[] = [
     {
         title: 'Boutique',
         links: [
-            { label: 'Originaux', href: '/oeuvres?type=original' },
+            { label: 'Peintures', href: '/oeuvres?type=original' },
             { label: 'Affiches', href: '/oeuvres?type=print' },
             { label: 'Panier', href: '/panier' },
             { label: 'Mon compte', href: '/mon-compte' },

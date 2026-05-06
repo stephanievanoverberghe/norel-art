@@ -8,7 +8,7 @@ import { Text } from '@/ui/Text';
 const accountMoments = [
     {
         title: 'Favoris',
-        description: 'Garder les regards qui reviennent en tête avant de choisir.',
+        description: 'Mettre de côté les œuvres qui vous intéressent avant de décider.',
         href: '/mon-compte/favoris',
         icon: Heart,
     },
@@ -36,10 +36,10 @@ export function HomeCollectorExperienceSection() {
                     <div>
                         <p className="text-[11px] uppercase tracking-[0.32em] text-white/42">Espace client</p>
                         <Heading level={2} className="mt-4 max-w-xl text-white">
-                            Une boutique qui garde la mémoire de vos pièces.
+                            Un compte pour retrouver vos achats et vos favoris.
                         </Heading>
                         <Text variant="muted" className="mt-5 max-w-2xl text-white/66">
-                            Le compte n’est pas un simple formulaire de connexion : il devient le carnet personnel des œuvres aimées, achetées, attendues ou commandées sur mesure.
+                            Après connexion, chaque cliente ou client peut suivre ses commandes, retrouver les œuvres ajoutées aux favoris et revenir sur les pièces achetées.
                         </Text>
                         <Link href="/inscription" className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full border border-white/12 bg-white/5 px-6 text-sm font-semibold text-white transition hover:border-white/22 hover:bg-white/8">
                             Ouvrir mon espace
@@ -68,7 +68,7 @@ export function HomeCollectorExperienceSection() {
 
                 <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-white/10 pt-6 text-sm text-white/52">
                     <UserRound size={16} className="text-white/42" />
-                    <span>Connexion, achats, favoris et demandes sont maintenant au centre du parcours.</span>
+                    <span>Connexion, achats, favoris et demandes personnalisées sont intégrés au parcours.</span>
                 </div>
             </Container>
         </section>

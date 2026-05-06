@@ -30,12 +30,12 @@ export function Footer() {
                             <Image src="/images/logo/logo-white.png" alt="Logo Norel Art" width={170} height={64} className="h-auto w-32 sm:w-37" />
                         </Link>
 
-                        <p className="mt-8 text-[11px] uppercase tracking-[0.28em] text-white/48">L’art du regard, le trait de l’âme</p>
+                        <p className="mt-8 text-[11px] uppercase tracking-[0.28em] text-white/48">Peintures · affiches · commandes</p>
                         <Heading level={3} className="mt-4 max-w-xl text-white">
                             Une galerie à explorer, une boutique pour choisir, un espace pour revenir.
                         </Heading>
                         <Text variant="muted" className="mt-4 max-w-2xl text-white/66">
-                            Originaux, affiches limitées, commandes sur mesure et fresques. Chaque achat reste relié à votre compte, vos favoris et vos pièces de collection.
+                            Peintures originales, affiches limitées, commandes sur mesure et fresques. Chaque achat reste relié à votre compte, vos favoris et vos pièces de collection.
                         </Text>
                     </div>
 
@@ -62,7 +62,7 @@ export function Footer() {
                         <p className="mb-5 text-[11px] uppercase tracking-[0.24em] text-white/50">Boutique</p>
                         <div className="space-y-3">
                             <Text variant="small" className="text-white/68">
-                                Originaux et affiches signées.
+                                Peintures originales et affiches signées.
                             </Text>
                             <Text variant="small" className="text-white/68">
                                 Paiement Stripe, commandes retrouvées dans l’espace client.

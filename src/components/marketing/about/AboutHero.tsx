@@ -64,7 +64,7 @@ export function AboutHero({ content, className }: AboutHeroProps) {
 
                             <span className="hidden h-px w-14 bg-white/12 sm:block" />
 
-                            <p className="text-[11px] uppercase tracking-[0.26em] text-white/30">Regard • trace • présence</p>
+                            <p className="text-[11px] uppercase tracking-[0.26em] text-white/30">Portraits • peintures • affiches</p>
                         </div>
                     </div>
 

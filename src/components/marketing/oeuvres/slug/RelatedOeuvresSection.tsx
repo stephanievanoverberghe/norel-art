@@ -29,11 +29,11 @@ export function RelatedOeuvresSection({ artwork, artworks, favoriteArtworkIds = 
                         <p className="text-[11px] uppercase tracking-[0.28em] text-white/40">Continuer</p>
 
                         <Heading level={2} className="mt-4 text-white">
-                            D’autres présences à approcher.
+                            D’autres œuvres dans le même esprit.
                         </Heading>
 
                         <Text variant="muted" className="mt-4 text-white/70">
-                            Des œuvres voisines, par la matière, le regard ou la tension.
+                            Une sélection proche par catégorie, collection ou technique.
                         </Text>
                     </div>
 

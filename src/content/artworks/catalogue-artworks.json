@@ -1,0 +1,3772 @@
+[
+    {
+        "id":  "art-001",
+        "slug":  "alchemy",
+        "title":  "Alchemy",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Alchemy est une pièce Norel Art réalisée en Acrylique, pastel et bombe aérosol. Support : Toile. Format : Toile format 50x40 cm.",
+        "image":  "/images/oeuvres/catalogue/alchemy.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, pastel et bombe aérosol",
+        "support":  "Toile",
+        "dimensions":  "Toile format 50x40 cm",
+        "priceEur":  150,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-002",
+        "slug":  "ange-rouge",
+        "title":  "Ange rouge",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Ange rouge est une pièce Norel Art réalisée en Encre, aquarelle, acrylique et feuille d’or. Support : Papier. Format : Papier format 41 x 29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/ange-rouge.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle, acrylique et feuille d’or",
+        "support":  "Papier",
+        "dimensions":  "Papier format 41 x 29,7 cm",
+        "priceEur":  110,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-003",
+        "slug":  "apnee",
+        "title":  "Apnée",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Apnée est une pièce Norel Art réalisée en Pastel, fusain et acrylique. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/apnee.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel, fusain et acrylique",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-004",
+        "slug":  "autoportrait",
+        "title":  "Autoportrait",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Autoportrait est une pièce Norel Art réalisée en Acrylique, collage et bombe aérosol. Support : Carton entoile. Format : Carton format 50x65 cm.",
+        "image":  "/images/oeuvres/catalogue/autoportrait.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, collage et bombe aérosol",
+        "support":  "Carton entoile",
+        "dimensions":  "Carton format 50x65 cm",
+        "priceEur":  300,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-005",
+        "slug":  "beaute-ephemere",
+        "title":  "Beauté ephemere",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Beauté ephemere est une pièce Norel Art réalisée en Encre, aquarelle et pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/beaute-ephemere.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-006",
+        "slug":  "betty-boop",
+        "title":  "Betty Boop",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Betty Boop est une pièce Norel Art réalisée en Encre, aquarelle et pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/betty-boop.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-007",
+        "slug":  "big-eyes",
+        "title":  "Big eyes",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Big eyes est une pièce Norel Art réalisée en Fusain, graphite, crayon de couleurs et pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/big-eyes.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Fusain, graphite, crayon de couleurs et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-008",
+        "slug":  "blanche-neige-3",
+        "title":  "blanche neige 3",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "blanche neige 3 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/blanche-neige-3.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-009",
+        "slug":  "bono-2",
+        "title":  "bono 2",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "bono 2 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/bono-2.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-010",
+        "slug":  "cabaret",
+        "title":  "Cabaret",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Cabaret est une pièce Norel Art réalisée en Encre, aquarelle, fusains et feuille d’or. Support : Papier. Format : Papier format 41x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/cabaret.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle, fusains et feuille d’or",
+        "support":  "Papier",
+        "dimensions":  "Papier format 41x29,7 cm",
+        "priceEur":  110,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-011",
+        "slug":  "carnaval-bleu",
+        "title":  "Carnaval bleu",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Carnaval bleu est une pièce Norel Art réalisée en Encre, aquarelle et pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/carnaval-bleu.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-012",
+        "slug":  "catwoman",
+        "title":  "Catwoman",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Catwoman est une pièce Norel Art réalisée en Pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/catwoman.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-013",
+        "slug":  "celle-qui-porte-la-nuit-en-elle",
+        "title":  "celle qui porte la nuit en elle",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "celle qui porte la nuit en elle est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/celle-qui-porte-la-nuit-en-elle.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-014",
+        "slug":  "coeur-a-coeur",
+        "title":  "Coeur à coeur",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Coeur à coeur est une pièce Norel Art réalisée en Aquarelle, encre et pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/coeur-a-coeur.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Aquarelle, encre et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  110,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-015",
+        "slug":  "daisy",
+        "title":  "Daisy",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Daisy est une pièce Norel Art réalisée en Pastel à l’huile. Support : Papier. Format : Papier format 50x70 cm.",
+        "image":  "/images/oeuvres/catalogue/daisy.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel à l’huile",
+        "support":  "Papier",
+        "dimensions":  "Papier format 50x70 cm",
+        "priceEur":  200,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-016",
+        "slug":  "dense",
+        "title":  "Dense",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Dense est une pièce Norel Art réalisée en Acrylique, collage et bombe aérosol. Support : Toile. Format : Toile format 30x40 cm.",
+        "image":  "/images/oeuvres/catalogue/dense.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, collage et bombe aérosol",
+        "support":  "Toile",
+        "dimensions":  "Toile format 30x40 cm",
+        "priceEur":  180,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-017",
+        "slug":  "duo-larme-de-glace-1",
+        "title":  "Duo Larme de glace 1",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Duo Larme de glace 1 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/duo-larme-de-glace-1.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-018",
+        "slug":  "duo-larme-de-glace-2",
+        "title":  "Duo larme de glace 2",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Duo larme de glace 2 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/duo-larme-de-glace-2.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-019",
+        "slug":  "duo-metamorphose-1",
+        "title":  "Duo métamorphose 1",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Duo métamorphose 1 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/duo-metamorphose-1.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-020",
+        "slug":  "duo-metamorphose-2",
+        "title":  "Duo métamorphose 2",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Duo métamorphose 2 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/duo-metamorphose-2.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-021",
+        "slug":  "duo-rouge-passion-1",
+        "title":  "Duo rouge passion 1",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Duo rouge passion 1 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/duo-rouge-passion-1.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-022",
+        "slug":  "duo-rouge-passion-2",
+        "title":  "Duo rouge passion 2",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Duo rouge passion 2 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/duo-rouge-passion-2.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-023",
+        "slug":  "eclat-de-coeur-fleuri",
+        "title":  "Eclat de coeur fleuri",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Eclat de coeur fleuri est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/eclat-de-coeur-fleuri.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-024",
+        "slug":  "elle-a-grandi-avec-les-cassettes-qu-on-rembobinait-au-stylo",
+        "title":  "ELLE A GRANDI AVEC LES CASSETTES QU’ON REMBOBINAIT AU STYLO",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "ELLE A GRANDI AVEC LES CASSETTES QU’ON REMBOBINAIT AU STYLO est une pièce Norel Art réalisée en Acrylique, collage et bombe aérosol. Support : Toile. Format : Toile format 55x65 cm.",
+        "image":  "/images/oeuvres/catalogue/elle-a-grandi-avec-les-cassettes-qu-on-rembobinait-au-stylo.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, collage et bombe aérosol",
+        "support":  "Toile",
+        "dimensions":  "Toile format 55x65 cm",
+        "priceEur":  350,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-025",
+        "slug":  "elle-a-mange-le-bruit",
+        "title":  "Elle a mangé le bruit",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Elle a mangé le bruit est une pièce Norel Art réalisée en Acrylique, collage et bombe aérosol. Support : Toile. Format : Toile format 30x40 cm.",
+        "image":  "/images/oeuvres/catalogue/elle-a-mange-le-bruit.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, collage et bombe aérosol",
+        "support":  "Toile",
+        "dimensions":  "Toile format 30x40 cm",
+        "priceEur":  150,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-026",
+        "slug":  "evanescence",
+        "title":  "Evanescence",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Evanescence est une pièce Norel Art réalisée en Fusain. Support : Papier. Format : Papier format 25x25 cm.",
+        "image":  "/images/oeuvres/catalogue/evanescence.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Fusain",
+        "support":  "Papier",
+        "dimensions":  "Papier format 25x25 cm",
+        "priceEur":  85,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-027",
+        "slug":  "fatigue",
+        "title":  "Fatigue",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Fatigue est une pièce Norel Art réalisée en Acrylique et p astel. Support : Papier. Format : Papier format 42x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/fatigue.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Acrylique et p astel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 42x29,7 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-028",
+        "slug":  "femme-printemps",
+        "title":  "Femme printemps",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Femme printemps est une pièce Norel Art réalisée en Acrylique, graphite et marqueurs, année. Support : Papier. Format : Papier format 30x40 cm.",
+        "image":  "/images/oeuvres/catalogue/femme-printemps.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, graphite et marqueurs, année",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x40 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2023,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-029",
+        "slug":  "fifre",
+        "title":  "fifre",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "fifre est une pièce Norel Art réalisée en Encre, aquarelle et pastel. Support : Papier. Format : Papier format 40x30 cm.",
+        "image":  "/images/oeuvres/catalogue/fifre.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 40x30 cm",
+        "priceEur":  150,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-030",
+        "slug":  "freddy",
+        "title":  "freddy",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "freddy est une pièce Norel Art réalisée en Acrylique. Support : Toile. Format : Toile format 50x40 cm.",
+        "image":  "/images/oeuvres/catalogue/freddy.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique",
+        "support":  "Toile",
+        "dimensions":  "Toile format 50x40 cm",
+        "priceEur":  150,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-031",
+        "slug":  "frida-en-flammes",
+        "title":  "FRida en flammes",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "FRida en flammes est une pièce Norel Art réalisée en Acrylique, fusain et pastel. Support : Toile. Format : Toile format 50x50 cm.",
+        "image":  "/images/oeuvres/catalogue/frida-en-flammes.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, fusain et pastel",
+        "support":  "Toile",
+        "dimensions":  "Toile format 50x50 cm",
+        "priceEur":  200,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-032",
+        "slug":  "frida",
+        "title":  "Frida",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Frida est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/frida.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-033",
+        "slug":  "geisha-bleu",
+        "title":  "Geisha bleu",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Geisha bleu est une pièce Norel Art réalisée en Acrylique, graphite et marqueurs, année. Support : Papier. Format : Papier format 30x40 cm.",
+        "image":  "/images/oeuvres/catalogue/geisha-bleu.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Manga",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, graphite et marqueurs, année",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x40 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2023,
+        "tags":  [
+                     "peintures-originales",
+                     "manga",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-034",
+        "slug":  "geisha-rouge",
+        "title":  "Geisha rouge",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Geisha rouge est une pièce Norel Art réalisée en Acrylique, graphite et marqueurs, année. Support : Papier. Format : Papier format 30x40 cm.",
+        "image":  "/images/oeuvres/catalogue/geisha-rouge.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Manga",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, graphite et marqueurs, année",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x40 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2023,
+        "tags":  [
+                     "peintures-originales",
+                     "manga",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-035",
+        "slug":  "hypnose-ovale",
+        "title":  "Hypnose ovale",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Hypnose ovale est une pièce Norel Art réalisée en Acrylique. Support : Toile. Format : Toile Format 35x30 cm.",
+        "image":  "/images/oeuvres/catalogue/hypnose-ovale.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique",
+        "support":  "Toile",
+        "dimensions":  "Toile Format 35x30 cm",
+        "priceEur":  90,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-036",
+        "slug":  "implosion",
+        "title":  "IMplosion",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "IMplosion est une pièce Norel Art réalisée en Fusain. Support : Papier. Format : Papier format 25x25 cm.",
+        "image":  "/images/oeuvres/catalogue/implosion.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Fusain",
+        "support":  "Papier",
+        "dimensions":  "Papier format 25x25 cm",
+        "priceEur":  85,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-037",
+        "slug":  "jade",
+        "title":  "jade",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "jade est une pièce Norel Art réalisée en Pastel, fusain et acrylique. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/jade.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel, fusain et acrylique",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-038",
+        "slug":  "joker",
+        "title":  "Joker",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Joker est une pièce Norel Art réalisée en Acrylique et pastel. Support : Toile. Format : Toile format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/joker.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique et pastel",
+        "support":  "Toile",
+        "dimensions":  "Toile format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-039",
+        "slug":  "kafta",
+        "title":  "Kafta",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Kafta est une pièce Norel Art réalisée en Pastel. Support : Papier. Format : Papier format 21x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/kafta.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 21x29,7 cm",
+        "priceEur":  70,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-040",
+        "slug":  "katana",
+        "title":  "Katana",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Katana est une pièce Norel Art réalisée en Acrylique. Support : Carton entoile. Format : Carton entoilé format 24x30 cm.",
+        "image":  "/images/oeuvres/catalogue/katana.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Manga",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique",
+        "support":  "Carton entoile",
+        "dimensions":  "Carton entoilé format 24x30 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "peintures-originales",
+                     "manga",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-041",
+        "slug":  "la-buveur-d-absinthe",
+        "title":  "La buveur d\u0027absinthe",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "La buveur d\u0027absinthe est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/la-buveur-d-absinthe.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-042",
+        "slug":  "la-dame-au-paon",
+        "title":  "La dame au paon",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "La dame au paon est une pièce Norel Art réalisée en Gouache. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/la-dame-au-paon.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Gouache",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  70,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "peintures-originales",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-043",
+        "slug":  "la-fee-boule",
+        "title":  "La fée boule",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "La fée boule est une pièce Norel Art réalisée en Encre de chine, acrylique et aquarelle. Support : Papier. Format : Papier Format 26x36 cm.",
+        "image":  "/images/oeuvres/catalogue/la-fee-boule.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre de chine, acrylique et aquarelle",
+        "support":  "Papier",
+        "dimensions":  "Papier Format 26x36 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-044",
+        "slug":  "la-jeune-fille-a-la-perle",
+        "title":  "la jeune fille a la perle",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "la jeune fille a la perle est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/la-jeune-fille-a-la-perle.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-045",
+        "slug":  "la-perle-et-la-fleur",
+        "title":  "La perle et la fleur",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "La perle et la fleur est une pièce Norel Art réalisée en Encre, aquarelle, acrylique, fusain et feuilles d’or. Support : Papier. Format : Papier format 41x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/la-perle-et-la-fleur.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle, acrylique, fusain et feuilles d’or",
+        "support":  "Papier",
+        "dimensions":  "Papier format 41x29,7 cm",
+        "priceEur":  110,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "peintures-originales",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-046",
+        "slug":  "la-violoncelliste",
+        "title":  "La violoncelliste",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "La violoncelliste est une pièce Norel Art réalisée en Acrylique, fusain et pastel. Support : Toile. Format : Toile format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/la-violoncelliste.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, fusain et pastel",
+        "support":  "Toile",
+        "dimensions":  "Toile format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-047",
+        "slug":  "l-ange-baillonne",
+        "title":  "L\u0027ange baillonné",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "L\u0027ange baillonné est une pièce Norel Art réalisée en Technique mixte. Support : Papier. Format : Encre de chine, aquarelle et pastel sur papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/l-ange-baillonne.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Illustrations",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Papier",
+        "dimensions":  "Encre de chine, aquarelle et pastel sur papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "illustrations",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-048",
+        "slug":  "l-artiste-de-dos",
+        "title":  "L\u0027artiste de dos",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "L\u0027artiste de dos est une pièce Norel Art réalisée en Pastel. Support : Papier. Format : Papier format 42x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/l-artiste-de-dos.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 42x29,7 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-049",
+        "slug":  "l-artiste",
+        "title":  "L\u0027artiste",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "L\u0027artiste est une pièce Norel Art réalisée en Encre, aquarelle et pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/l-artiste.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-050",
+        "slug":  "l-aviatrice",
+        "title":  "L\u0027aviatrice",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "L\u0027aviatrice est une pièce Norel Art réalisée en Pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/l-aviatrice.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-051",
+        "slug":  "le-bruit-des-faux-semblants",
+        "title":  "LE BRUIT DES FAUX-SEMBLANTS.",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "LE BRUIT DES FAUX-SEMBLANTS. est une pièce Norel Art réalisée en Acrylique, collage et bombe aérosol. Support : Toile. Format : Toile format 30x40 cm.",
+        "image":  "/images/oeuvres/catalogue/le-bruit-des-faux-semblants.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, collage et bombe aérosol",
+        "support":  "Toile",
+        "dimensions":  "Toile format 30x40 cm",
+        "priceEur":  180,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-052",
+        "slug":  "le-derriere",
+        "title":  "Le derriere",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Le derriere est une pièce Norel Art réalisée en Acrylique, collage et bombe aérosol. Support : Carton entoile. Format : Carton format 40x60 cm.",
+        "image":  "/images/oeuvres/catalogue/le-derriere.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, collage et bombe aérosol",
+        "support":  "Carton entoile",
+        "dimensions":  "Carton format 40x60 cm",
+        "priceEur":  210,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-053",
+        "slug":  "le-lac-et-la-montagne",
+        "title":  "Le lac et la montagne",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Le lac et la montagne est une pièce Norel Art réalisée en Acrylique. Support : Carton entoile. Format : Carton format 44x34 cm.",
+        "image":  "/images/oeuvres/catalogue/le-lac-et-la-montagne.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique",
+        "support":  "Carton entoile",
+        "dimensions":  "Carton format 44x34 cm",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "peintures-originales",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-054",
+        "slug":  "le-petit-chaperon-rouge",
+        "title":  "Le petit chaperon rouge",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Le petit chaperon rouge est une pièce Norel Art réalisée en Encre, aquarelle et pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/le-petit-chaperon-rouge.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-055",
+        "slug":  "le-plongeur-d-ame",
+        "title":  "Le plongeur d\u0027ame",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Le plongeur d\u0027ame est une pièce Norel Art réalisée en Acrylique. Support : Papier. Format : Papier format 20x20 cm.",
+        "image":  "/images/oeuvres/catalogue/le-plongeur-d-ame.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique",
+        "support":  "Papier",
+        "dimensions":  "Papier format 20x20 cm",
+        "priceEur":  60,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-056",
+        "slug":  "le-vieux-loup-de-mer",
+        "title":  "Le vieux loup de mer",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Le vieux loup de mer est une pièce Norel Art réalisée en Acrylique et pastel. Support : Toile. Format : Toile format 20x20 cm.",
+        "image":  "/images/oeuvres/catalogue/le-vieux-loup-de-mer.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique et pastel",
+        "support":  "Toile",
+        "dimensions":  "Toile format 20x20 cm",
+        "priceEur":  60,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-057",
+        "slug":  "l-eclosion",
+        "title":  "L\u0027eclosion",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "L\u0027eclosion est une pièce Norel Art réalisée en Acrylique. Support : Toile. Format : Toile format 60x80 cm.",
+        "image":  "/images/oeuvres/catalogue/l-eclosion.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique",
+        "support":  "Toile",
+        "dimensions":  "Toile format 60x80 cm",
+        "priceEur":  400,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-058",
+        "slug":  "l-emprise",
+        "title":  "L\u0027emprise",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "L\u0027emprise est une pièce Norel Art réalisée en Acrylique et pastel. Support : Toile. Format : Toile format 50x50 cm.",
+        "image":  "/images/oeuvres/catalogue/l-emprise.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique et pastel",
+        "support":  "Toile",
+        "dimensions":  "Toile format 50x50 cm",
+        "priceEur":  200,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-059",
+        "slug":  "les-jonquilles",
+        "title":  "Les jonquilles",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Les jonquilles est une pièce Norel Art réalisée en Technique mixte. Support : Papier. Format : Encre de chine, aquarelle, pastel et acrylique sur papier format 24x24 cm.",
+        "image":  "/images/oeuvres/catalogue/les-jonquilles.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Illustrations",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Papier",
+        "dimensions":  "Encre de chine, aquarelle, pastel et acrylique sur papier format 24x24 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "illustrations",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-060",
+        "slug":  "les-larmes-rouges",
+        "title":  "Les larmes rouges",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Les larmes rouges est une pièce Norel Art réalisée en Encre de chine, aquarelle, fusains, pastel et acrylique, année. Support : Papier. Format : Papier format 21x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/les-larmes-rouges.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre de chine, aquarelle, fusains, pastel et acrylique, année",
+        "support":  "Papier",
+        "dimensions":  "Papier format 21x29,7 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2023,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-061",
+        "slug":  "les-roses",
+        "title":  "Les roses",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Les roses est une pièce Norel Art réalisée en Encre, aquarelle et pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/les-roses.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-062",
+        "slug":  "l-esprit-corbeau",
+        "title":  "L\u0027esprit corbeau",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "L\u0027esprit corbeau est une pièce Norel Art réalisée en Pastel. Support : Papier. Format : Papier format 42x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/l-esprit-corbeau.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 42x29,7 cm",
+        "priceEur":  110,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-063",
+        "slug":  "l-eveil-de-la-gueparde",
+        "title":  "L\u0027eveil de la guéparde",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "L\u0027eveil de la guéparde est une pièce Norel Art réalisée en Pastel, fusain et acrylique. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/l-eveil-de-la-gueparde.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel, fusain et acrylique",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-064",
+        "slug":  "link",
+        "title":  "Link",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Link est une pièce Norel Art réalisée en Pastel, fusain, graphite et marqueurs. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/link.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Manga",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel, fusain, graphite et marqueurs",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "manga",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-065",
+        "slug":  "listen",
+        "title":  "Listen",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Listen est une pièce Norel Art réalisée en Encre, aquarelle et pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/listen.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-066",
+        "slug":  "loeil-qui-voit-derriere-le-voile",
+        "title":  "Loeil qui voit derriere le voile",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Loeil qui voit derriere le voile est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/loeil-qui-voit-derriere-le-voile.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-067",
+        "slug":  "l-union-dans-l-arbre",
+        "title":  "l\u0027union dans l\u0027arbre",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "l\u0027union dans l\u0027arbre est une pièce Norel Art réalisée en Acrylique. Support : Papier. Format : Papier format 50x40 cm.",
+        "image":  "/images/oeuvres/catalogue/l-union-dans-l-arbre.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique",
+        "support":  "Papier",
+        "dimensions":  "Papier format 50x40 cm",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-068",
+        "slug":  "marlene",
+        "title":  "Marlène",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Marlène est une pièce Norel Art réalisée en Année. Support : Papier. Format : Acrylique sur papier format 30x40 cm.",
+        "image":  "/images/oeuvres/catalogue/marlene.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Année",
+        "support":  "Papier",
+        "dimensions":  "Acrylique sur papier format 30x40 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2021,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-069",
+        "slug":  "mur-e",
+        "title":  "Mûr(e)",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Mûr(e) est une pièce Norel Art réalisée en Acrylique, collage et bombe aérosol. Support : Toile. Format : Toile format 50x50 cm.",
+        "image":  "/images/oeuvres/catalogue/mur-e.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique, collage et bombe aérosol",
+        "support":  "Toile",
+        "dimensions":  "Toile format 50x50 cm",
+        "priceEur":  250,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-070",
+        "slug":  "ombre-et-lumiere",
+        "title":  "OMbre et lumiere",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "OMbre et lumiere est une pièce Norel Art réalisée en Fusain. Support : Papier. Format : Papier format 25x25 cm.",
+        "image":  "/images/oeuvres/catalogue/ombre-et-lumiere.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Fusain",
+        "support":  "Papier",
+        "dimensions":  "Papier format 25x25 cm",
+        "priceEur":  85,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-071",
+        "slug":  "orage",
+        "title":  "Orage",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Orage est une pièce Norel Art réalisée en Pastel, fusain et acrylique. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/orage.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel, fusain et acrylique",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-072",
+        "slug":  "paysage-marin-2",
+        "title":  "Paysage marin (2)",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Paysage marin (2) est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/paysage-marin-2.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-073",
+        "slug":  "paysage-marin",
+        "title":  "Paysage marin",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Paysage marin est une pièce Norel Art réalisée en Acrylique. Support : Carton entoile. Format : Carton entoilé format 25x25 cm.",
+        "image":  "/images/oeuvres/catalogue/paysage-marin.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique",
+        "support":  "Carton entoile",
+        "dimensions":  "Carton entoilé format 25x25 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "peintures-originales",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-074",
+        "slug":  "perle-1940",
+        "title":  "Perle 1940",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Perle 1940 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/perle-1940.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-075",
+        "slug":  "perroquet-en-fete",
+        "title":  "Perroquet en fete",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Perroquet en fete est une pièce Norel Art réalisée en Pastel à l’huile. Support : Papier. Format : Papier format 21x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/perroquet-en-fete.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel à l’huile",
+        "support":  "Papier",
+        "dimensions":  "Papier format 21x29,7 cm",
+        "priceEur":  70,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-076",
+        "slug":  "primerose-fluo",
+        "title":  "Primerose fluo",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Primerose fluo est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/primerose-fluo.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-077",
+        "slug":  "princesse-peach",
+        "title":  "Princesse Peach",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Princesse Peach est une pièce Norel Art réalisée en Pastel, fusain, graphite et marqueurs. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/princesse-peach.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Manga",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel, fusain, graphite et marqueurs",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "manga",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-078",
+        "slug":  "princesse-zelda",
+        "title":  "Princesse Zelda",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Princesse Zelda est une pièce Norel Art réalisée en Fusain, pastel, graphite et marqueurs. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/princesse-zelda.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Manga",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Fusain, pastel, graphite et marqueurs",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "manga",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-079",
+        "slug":  "reflet-jumeau",
+        "title":  "Reflet jumeau",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Reflet jumeau est une pièce Norel Art réalisée en Mixmédia. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/reflet-jumeau.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Mixmédia",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  110,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-080",
+        "slug":  "regard-boye",
+        "title":  "Regard boyé",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Regard boyé est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/regard-boye.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-081",
+        "slug":  "ressemblance",
+        "title":  "Ressemblance",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Ressemblance est une pièce Norel Art réalisée en Acrylique. Support : Toile. Format : Toile format 50x40 cm.",
+        "image":  "/images/oeuvres/catalogue/ressemblance.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique",
+        "support":  "Toile",
+        "dimensions":  "Toile format 50x40 cm",
+        "priceEur":  150,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-082",
+        "slug":  "robe-de-vent",
+        "title":  "Robe de vent",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Robe de vent est une pièce Norel Art réalisée en Encre, aquarelle, acrylique et pastel. Support : Papier. Format : Papier format 40x40 cm.",
+        "image":  "/images/oeuvres/catalogue/robe-de-vent.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle, acrylique et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 40x40 cm",
+        "priceEur":  150,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-083",
+        "slug":  "rosa-frida",
+        "title":  "Rosa Frida",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Rosa Frida est une pièce Norel Art réalisée en Encre, aquarelle et pastel. Support : Papier. Format : Papier format 40x30 cm.",
+        "image":  "/images/oeuvres/catalogue/rosa-frida.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 40x30 cm",
+        "priceEur":  150,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-084",
+        "slug":  "sailormoon",
+        "title":  "Sailormoon",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Sailormoon est une pièce Norel Art réalisée en Pastel. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/sailormoon.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Manga",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "manga",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-085",
+        "slug":  "salsa-2",
+        "title":  "salsa 2",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "salsa 2 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/salsa-2.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-086",
+        "slug":  "sans-titre2",
+        "title":  "Sans titre2",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Sans titre2 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/sans-titre2.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-087",
+        "slug":  "serie-7-emotion-1",
+        "title":  "Serie 7 émotion 1",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Serie 7 émotion 1 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/serie-7-emotion-1.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-088",
+        "slug":  "serie-7-emotion-2",
+        "title":  "Serie 7 émotion 2",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Serie 7 émotion 2 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/serie-7-emotion-2.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-089",
+        "slug":  "serie-7-emotion-3",
+        "title":  "Serie 7 émotion 3",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Serie 7 émotion 3 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/serie-7-emotion-3.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-090",
+        "slug":  "serie-7-emotion-4",
+        "title":  "Serie 7 émotion 4",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Serie 7 émotion 4 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/serie-7-emotion-4.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-091",
+        "slug":  "serie-7-emotion-5",
+        "title":  "Serie 7 émotion 5",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Serie 7 émotion 5 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/serie-7-emotion-5.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-092",
+        "slug":  "serie-7-emotion-6",
+        "title":  "Serie 7 émotion 6",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Serie 7 émotion 6 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/serie-7-emotion-6.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-093",
+        "slug":  "serie-7-emotion-7",
+        "title":  "Serie 7 émotion 7",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Serie 7 émotion 7 est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/serie-7-emotion-7.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Series et duos",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "series-et-duos",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-094",
+        "slug":  "silencieuse",
+        "title":  "Silencieuse",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Silencieuse est une pièce Norel Art réalisée en Pastel. Support : Papier. Format : Papier format 42x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/silencieuse.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 42x29,7 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-095",
+        "slug":  "soldat-rose",
+        "title":  "Soldat rose",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Soldat rose est une pièce Norel Art réalisée en Pastel et bombe aérosol. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/soldat-rose.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel et bombe aérosol",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  90,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-096",
+        "slug":  "sourire-d-ange",
+        "title":  "Sourire d\u0027ange",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Sourire d\u0027ange est une pièce Norel Art réalisée en Pastel. Support : Papier. Format : Papier forma t 42 x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/sourire-d-ange.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier forma t 42 x29,7 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-097",
+        "slug":  "tourbillon",
+        "title":  "Tourbillon",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Tourbillon est une pièce Norel Art réalisée en Encre, aquarelle, acrylique et pastel. Support : Papier. Format : Papier format 40x40 cm.",
+        "image":  "/images/oeuvres/catalogue/tourbillon.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, aquarelle, acrylique et pastel",
+        "support":  "Papier",
+        "dimensions":  "Papier format 40x40 cm",
+        "priceEur":  150,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-098",
+        "slug":  "tresor-de-bray-dunes",
+        "title":  "Trésor de bray dunes",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Trésor de bray dunes est une pièce Norel Art réalisée en Aquarelle, encre, pastel et acrylique. Support : Papier. Format : Papier format 42x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/tresor-de-bray-dunes.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Aquarelle, encre, pastel et acrylique",
+        "support":  "Papier",
+        "dimensions":  "Papier format 42x29,7 cm",
+        "priceEur":  80,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-099",
+        "slug":  "vase-en-fete",
+        "title":  "Vase en fete",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Vase en fete est une pièce Norel Art réalisée en Pastel à l’huile. Support : Papier. Format : Papier format 21x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/vase-en-fete.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel à l’huile",
+        "support":  "Papier",
+        "dimensions":  "Papier format 21x29,7 cm",
+        "priceEur":  70,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "graphisme",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-100",
+        "slug":  "vertige",
+        "title":  "Vertige",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Vertige est une pièce Norel Art réalisée en Pastel, fusain et acrylique. Support : Papier. Format : Papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/vertige.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel, fusain et acrylique",
+        "support":  "Papier",
+        "dimensions":  "Papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-101",
+        "slug":  "violet-orange",
+        "title":  "Violet orange",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Violet orange est une pièce Norel Art réalisée en Encre, graphite, feuille d’or et acrylique, année. Support : Papier. Format : Papier format 70x50 cm.",
+        "image":  "/images/oeuvres/catalogue/violet-orange.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Encre, graphite, feuille d’or et acrylique, année",
+        "support":  "Papier",
+        "dimensions":  "Papier format 70x50 cm",
+        "priceEur":  200,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2023,
+        "tags":  [
+                     "peintures-originales",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-102",
+        "slug":  "violette",
+        "title":  "violette",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "violette est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/violette.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-103",
+        "slug":  "who-let-the-dog-out",
+        "title":  "Who let the dog out",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Who let the dog out est une pièce Norel Art réalisée en Technique mixte. Support : Support sur demande. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/who-let-the-dog-out.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Portrait",
+        "collection":  "Oeuvres libres",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Support sur demande",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  null,
+        "tags":  [
+                     "oeuvres-libres",
+                     "portrait",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-104",
+        "slug":  "yuki-nohana",
+        "title":  "Yuki NOHANA",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Yuki NOHANA est une pièce Norel Art réalisée en Pastel et bombe aérosol. Support : Papier. Format : Papier format 42x29,7 cm.",
+        "image":  "/images/oeuvres/catalogue/yuki-nohana.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Manga",
+        "collection":  "Fusains et pastels",
+        "type":  "original",
+        "technique":  "Pastel et bombe aérosol",
+        "support":  "Papier",
+        "dimensions":  "Papier format 42x29,7 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2025,
+        "tags":  [
+                     "fusains-et-pastels",
+                     "manga",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-105",
+        "slug":  "bono",
+        "title":  "Bono",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  "Bono est une pièce Norel Art réalisée en Acrylique. Support : Toile. Format : Toile format 50x40 cm.",
+        "image":  "/images/oeuvres/catalogue/bono.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Peintures originales",
+        "type":  "original",
+        "technique":  "Acrylique",
+        "support":  "Toile",
+        "dimensions":  "Toile format 50x40 cm",
+        "priceEur":  150,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "peintures-originales",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-106",
+        "slug":  "eclosion-florale-beaute-ephemere",
+        "title":  " Eclosion Florale : Beauté Ephémère ",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  " Eclosion Florale : Beauté Ephémère  est une pièce Norel Art réalisée en Technique mixte. Support : Papier. Format : Encre de chine, aquarelle, pastel et acrylique sur papier format 30x30 cm.",
+        "image":  "/images/oeuvres/catalogue/eclosion-florale-beaute-ephemere.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Illustrations",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Papier",
+        "dimensions":  "Encre de chine, aquarelle, pastel et acrylique sur papier format 30x30 cm",
+        "priceEur":  100,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2026,
+        "tags":  [
+                     "illustrations",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-107",
+        "slug":  "regard-roses",
+        "title":  " Regard Roses ",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  " Regard Roses  est une pièce Norel Art réalisée en Technique mixte. Support : Papier. Format : Encre de chine, aquarelle, pastel et acrylique sur papier format 30x30cm.",
+        "image":  "/images/oeuvres/catalogue/regard-roses.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Illustrations",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Papier",
+        "dimensions":  "Encre de chine, aquarelle, pastel et acrylique sur papier format 30x30cm",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "illustrations",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-108",
+        "slug":  "les-anges",
+        "title":  " Les anges ",
+        "excerpt":  "Œuvre originale Norel Art, disponible dans la galerie.",
+        "story":  " Les anges  est une pièce Norel Art réalisée en Technique mixte. Support : Papier. Format : Encre de chine, aquarelle, pastel et acrylique sur papier format 30x30cm.",
+        "image":  "/images/oeuvres/catalogue/les-anges.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Pop Art",
+        "collection":  "Illustrations",
+        "type":  "original",
+        "technique":  "Technique mixte",
+        "support":  "Papier",
+        "dimensions":  "Encre de chine, aquarelle, pastel et acrylique sur papier format 30x30cm",
+        "priceEur":  120,
+        "availability":  "available",
+        "stock":  1,
+        "year":  2024,
+        "tags":  [
+                     "illustrations",
+                     "pop-art",
+                     "original"
+                 ]
+    },
+    {
+        "id":  "art-109",
+        "slug":  "la-loi-du-dimanche",
+        "title":  "La loi du dimanche",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "La loi du dimanche est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/la-loi-du-dimanche.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-110",
+        "slug":  "halo-de-cendres",
+        "title":  "Halo de Cendres",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Halo de Cendres est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats 30x30 cm / 40x40 cm.",
+        "image":  "/images/oeuvres/catalogue/halo-de-cendres.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats 30x30 cm / 40x40 cm",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-111",
+        "slug":  "bb",
+        "title":  "BB",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "BB est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/bb.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-112",
+        "slug":  "black-lips-rebellion",
+        "title":  "Black lips rebellion",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Black lips rebellion est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats 30x30 cm / 40x40 cm.",
+        "image":  "/images/oeuvres/catalogue/black-lips-rebellion.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats 30x30 cm / 40x40 cm",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-113",
+        "slug":  "carna-blanc",
+        "title":  "Carna blanc",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Carna blanc est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/carna-blanc.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-114",
+        "slug":  "carna-noir",
+        "title":  "Carna noir",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Carna noir est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A3.",
+        "image":  "/images/oeuvres/catalogue/carna-noir.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-115",
+        "slug":  "craie-de-survie",
+        "title":  "Craie de survie",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Craie de survie est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/craie-de-survie.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-116",
+        "slug":  "craie-du-coeur",
+        "title":  "Craie du coeur",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Craie du coeur est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/craie-du-coeur.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-117",
+        "slug":  "france-gall",
+        "title":  "France Gall",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "France Gall est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/france-gall.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-118",
+        "slug":  "frog-gaze",
+        "title":  "Frog Gaze",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Frog Gaze est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/frog-gaze.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-119",
+        "slug":  "humain-sous-pression",
+        "title":  "Humain sous pression",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Humain sous pression est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/humain-sous-pression.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-120",
+        "slug":  "jean-bart",
+        "title":  "Jean Bart",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Jean Bart est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/jean-bart.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-121",
+        "slug":  "jean-bart-street-art",
+        "title":  "Jean Bart Street Art",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Jean Bart Street Art est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/jean-bart-street-art.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-122",
+        "slug":  "jean-bart-neige-2026",
+        "title":  "Jean Bart neige 2026",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Jean Bart neige 2026 est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/jean-bart-neige-2026.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-123",
+        "slug":  "jm-basquiat",
+        "title":  "JM Basquiat",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "JM Basquiat est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/jm-basquiat.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-124",
+        "slug":  "johnny",
+        "title":  "Johnny",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Johnny est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/johnny.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-125",
+        "slug":  "la-vie-en-mome",
+        "title":  "La vie en môme",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "La vie en môme est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/la-vie-en-mome.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-126",
+        "slug":  "l-ame-de-soi",
+        "title":  "L’âme de soi",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "L’âme de soi est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/l-ame-de-soi.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-127",
+        "slug":  "l-indomptable",
+        "title":  "L’indomptable",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "L’indomptable est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/l-indomptable.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-128",
+        "slug":  "loana",
+        "title":  "Loana",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Loana est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Dimensions sur demande.",
+        "image":  "/images/oeuvres/catalogue/loana.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Dimensions sur demande",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-129",
+        "slug":  "l-eau-a-l-ame",
+        "title":  "L’eau à l’âme",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "L’eau à l’âme est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/l-eau-a-l-ame.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-130",
+        "slug":  "manotch",
+        "title":  "Manotch",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Manotch est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/manotch.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-131",
+        "slug":  "marylin",
+        "title":  "Marylin",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Marylin est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/marylin.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-132",
+        "slug":  "nina-simone",
+        "title":  "Nina simone",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Nina simone est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/nina-simone.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-133",
+        "slug":  "pense-le-monde",
+        "title":  "Pense le monde",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Pense le monde est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/pense-le-monde.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-134",
+        "slug":  "rose-en-main-jaune-en-vue",
+        "title":  "Rose en main jaune en vue",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Rose en main jaune en vue est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/rose-en-main-jaune-en-vue.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-135",
+        "slug":  "rose-la-poissonniere",
+        "title":  "Rose la poissonnière",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Rose la poissonnière est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/rose-la-poissonniere.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-136",
+        "slug":  "sakura",
+        "title":  "Sakura",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Sakura est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/sakura.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-137",
+        "slug":  "le-docker",
+        "title":  "Le docker",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Le docker est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/le-docker.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-138",
+        "slug":  "le-mineur-de-fond",
+        "title":  "Le mineur de fond",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Le mineur de fond est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/le-mineur-de-fond.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-139",
+        "slug":  "l-ouvriere-textile",
+        "title":  "L’ouvrière textile",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "L’ouvrière textile est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/l-ouvriere-textile.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-140",
+        "slug":  "smile",
+        "title":  "Smile",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Smile est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/smile.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-141",
+        "slug":  "trace-l-amour",
+        "title":  "Trace l’amour",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Trace l’amour est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/trace-l-amour.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-142",
+        "slug":  "ville-de-bergues",
+        "title":  "Ville de Bergues",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Ville de Bergues est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/ville-de-bergues.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-143",
+        "slug":  "a-ura",
+        "title":  "A ura",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "A ura est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/a-ura.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-144",
+        "slug":  "rose",
+        "title":  "Rose",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Rose est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/rose.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    },
+    {
+        "id":  "art-145",
+        "slug":  "nova",
+        "title":  "Nova",
+        "excerpt":  "Affiche signée Norel Art, disponible dans la galerie.",
+        "story":  "Nova est une pièce Norel Art réalisée en Affiche pigmentaire. Support : Papier fine art. Format : Formats A4 / A3.",
+        "image":  "/images/oeuvres/catalogue/nova.jpg",
+        "gallery":  [
+
+                    ],
+        "category":  "Graphisme",
+        "collection":  "Affiches graphiques",
+        "type":  "print",
+        "technique":  "Affiche pigmentaire",
+        "support":  "Papier fine art",
+        "dimensions":  "Formats A4 / A3",
+        "priceEur":  35,
+        "availability":  "available",
+        "stock":  50,
+        "year":  null,
+        "tags":  [
+                     "affiches-graphiques",
+                     "graphisme",
+                     "print"
+                 ]
+    }
+]

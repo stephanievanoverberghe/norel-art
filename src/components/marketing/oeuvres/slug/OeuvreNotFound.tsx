@@ -16,20 +16,18 @@ export function OeuvreNotFound({ className }: OeuvreNotFoundProps) {
         <section aria-label="Œuvre introuvable" className={cn('marketing-section marketing-bg-ash flex min-h-[calc(100vh-80px)] items-center justify-center', className)}>
             <Container className="relative z-10">
                 <div className="mx-auto max-w-2xl text-center">
-                    <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">Absence</p>
+                    <p className="text-[11px] uppercase tracking-[0.32em] text-white/40">Œuvre introuvable</p>
 
                     <Heading level={1} className="mt-4 text-white">
-                        Ce regard n’est plus là.
+                        Cette œuvre n’est pas disponible ici.
                     </Heading>
 
                     <Text variant="muted" className="mx-auto mt-6 max-w-xl text-white/70">
-                        Peut-être a-t-il déjà trouvé sa place.
-                        <br />
-                        Ou peut-être n’était-il pas destiné à apparaître ici.
+                        Le lien est peut-être ancien, ou la fiche a été retirée de la galerie.
                     </Text>
 
                     <Text variant="muted" className="mx-auto mt-4 max-w-xl text-white/60">
-                        D’autres présences attendent.
+                        Vous pouvez revenir aux œuvres disponibles.
                     </Text>
 
                     <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">

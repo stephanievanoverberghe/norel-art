@@ -1,9 +1,11 @@
 import { PrismaClient } from '@prisma/client';
 import { randomBytes, scryptSync } from 'node:crypto';
+import { readFile } from 'node:fs/promises';
 
 const prisma = new PrismaClient();
 const PASSWORD_HASH_PREFIX = 'scrypt';
 const PASSWORD_KEY_LENGTH = 64;
+const catalogueArtworks = JSON.parse(await readFile(new URL('../src/content/artworks/catalogue-artworks.json', import.meta.url), 'utf8'));
 
 function hashPassword(password) {
     const salt = randomBytes(16).toString('hex');
@@ -48,104 +50,61 @@ const categories = [
         imageAlt: 'Categorie Street Art Norel Art',
     },
 ];
-const collections = [
-    {
-        name: 'Fragments interieurs',
-        eyebrow: 'Serie intime',
-        description: 'Pieces sensibles autour du visage, du silence et des zones cachees.',
-        position: 0,
-        isFeatured: true,
+const collectionDetails = {
+    'Peintures originales': {
+        eyebrow: 'Pieces uniques',
+        description: 'Peintures et techniques mixtes disponibles a l achat.',
     },
-    {
-        name: 'Veilles nocturnes',
-        eyebrow: 'Tension graphique',
-        description: 'Compositions plus frontales, rythmees par le noir, le rouge et le mouvement.',
-        position: 1,
-        isFeatured: false,
+    'Fusains et pastels': {
+        eyebrow: 'Dessins originaux',
+        description: 'Portraits, fusains, pastels et formats papier.',
     },
-    {
-        name: 'Presences',
-        eyebrow: 'Corps et memoire',
-        description: 'Oeuvres plus tactiles, pensees comme des traces, des peaux et des apparitions.',
-        position: 2,
-        isFeatured: false,
+    'Series et duos': {
+        eyebrow: 'Ensembles',
+        description: 'Duos, series et compositions pensees comme un ensemble.',
     },
-];
+    Illustrations: {
+        eyebrow: 'Illustrations',
+        description: 'Illustrations originales issues des documents d atelier.',
+    },
+    'Affiches graphiques': {
+        eyebrow: 'Editions signees',
+        description: 'Affiches graphiques disponibles en formats papier.',
+    },
+    'Oeuvres libres': {
+        eyebrow: 'Catalogue',
+        description: 'Pieces ajoutees depuis les fichiers sources, a completer dans l admin si besoin.',
+    },
+};
 
-const artworks = [
-    {
-        slug: 'souffle-dans-l-ombre',
-        title: "Souffle dans l'ombre",
-        excerpt: 'Un visage suspendu, entre disparition et renaissance.',
-        story: "Cette piece travaille les zones de silence. Le regard se revele par couches, comme un souvenir qui insiste.",
-        image: '/images/oeuvres/oeuvre-1.jpg',
-        gallery: ['/images/oeuvres/oeuvre-1-detail.jpg', '/images/oeuvres/oeuvre-1-cadre.jpg'],
-        category: 'Portrait',
-        collection: 'Fragments interieurs',
-        variantType: 'ORIGINAL',
-        technique: 'Acrylique et fusain',
-        support: 'Toile coton sur chassis',
-        dimensions: '80 x 100 cm',
-        priceCents: 180000,
-        stock: 1,
-        availability: 'AVAILABLE',
-        tags: ['portrait', 'intime', 'contraste'],
-    },
-    {
-        slug: 'pulsation-verticale',
-        title: 'Pulsation verticale',
-        excerpt: "Un rythme rouge et noir qui traverse l'espace.",
-        story: 'Une oeuvre pensee comme une respiration debout. Les lignes ouvrent un passage vers le mouvement.',
-        image: '/images/oeuvres/oeuvre-2.jpg',
-        gallery: ['/images/oeuvres/oeuvre-2-detail.jpg', '/images/oeuvres/oeuvre-2-cadre.jpg'],
-        category: 'Pop Art',
-        collection: 'Veilles nocturnes',
-        variantType: 'ORIGINAL',
-        technique: 'Acrylique',
-        support: 'Bois apprete',
-        dimensions: '60 x 120 cm',
-        priceCents: 145000,
-        stock: 1,
-        availability: 'RESERVED',
-        tags: ['mouvement', 'abstrait'],
-    },
-    {
-        slug: 'trace-de-peau',
-        title: 'Trace de peau',
-        excerpt: 'Une presence douce, presque tactile.',
-        story: 'Cette serie aborde la memoire du corps avec des couches fines et des retraits de matiere.',
-        image: '/images/oeuvres/oeuvre-3.jpg',
-        gallery: ['/images/oeuvres/oeuvre-3-detail.jpg', '/images/oeuvres/oeuvre-3-cadre.jpg'],
-        category: 'Manga',
-        collection: 'Presences',
-        variantType: 'PRINT',
-        technique: 'Impression pigmentaire fine art',
-        support: 'Papier coton 310g',
-        dimensions: '50 x 70 cm',
-        priceCents: 22000,
-        stock: 25,
-        availability: 'AVAILABLE',
-        tags: ['corps', 'sensible'],
-    },
-    {
-        slug: 'velours-brut',
-        title: 'Velours brut',
-        excerpt: 'Le contraste entre douceur et griffure.',
-        story: 'Une piece sur la tension entre controle et abandon dans le geste.',
-        image: '/images/oeuvres/oeuvre-4.jpg',
-        gallery: ['/images/oeuvres/oeuvre-4-detail.jpg', '/images/oeuvres/oeuvre-4-cadre.jpg'],
-        category: 'Graphisme',
-        collection: 'Fragments interieurs',
-        variantType: 'PRINT',
-        technique: 'Impression giclee signee',
-        support: 'Papier texture',
-        dimensions: '40 x 60 cm',
-        priceCents: 16000,
-        stock: 0,
-        availability: 'SOLD',
-        tags: ['matiere', 'texture'],
-    },
-];
+const collections = Array.from(new Set(catalogueArtworks.map((artwork) => artwork.collection))).map((name, position) => ({
+    name,
+    eyebrow: collectionDetails[name]?.eyebrow ?? 'Catalogue',
+    description: collectionDetails[name]?.description ?? 'Selection d oeuvres Norel Art.',
+    position,
+    isFeatured: position === 0,
+}));
+
+const artworks = catalogueArtworks.map((artwork) => ({
+    slug: artwork.slug,
+    title: artwork.title,
+    excerpt: artwork.excerpt,
+    story: artwork.story,
+    image: artwork.image,
+    gallery: artwork.gallery ?? [],
+    category: artwork.category,
+    collection: artwork.collection,
+    variantType: artwork.type === 'print' ? 'PRINT' : 'ORIGINAL',
+    technique: artwork.technique,
+    support: artwork.support,
+    dimensions: artwork.dimensions,
+    priceCents: Math.round(artwork.priceEur * 100),
+    stock: artwork.stock ?? (artwork.type === 'print' ? 50 : 1),
+    availability: (artwork.availability ?? 'available').toUpperCase(),
+    tags: artwork.tags ?? [],
+}));
+
+const legacyArtworkSlugs = ['souffle-dans-l-ombre', 'pulsation-verticale', 'trace-de-peau', 'texture-de-peau', 'velours-brut'];
 
 async function seedAdminUser() {
     const email = process.env.ADMIN_SEED_EMAIL || process.env.ADMIN_NOTIFICATION_EMAIL;
@@ -267,7 +226,7 @@ async function main() {
             where: { sku: `NOREL-${artworkSeed.slug.toUpperCase()}` },
             update: {
                 type: artworkSeed.variantType,
-                title: artworkSeed.variantType === 'ORIGINAL' ? 'Original' : 'Print signe',
+                title: artworkSeed.variantType === 'ORIGINAL' ? 'Peinture originale' : 'Affiche signee',
                 priceCents: artworkSeed.priceCents,
                 stock: artworkSeed.stock,
                 isActive: artworkSeed.availability !== 'SOLD',
@@ -275,7 +234,7 @@ async function main() {
             create: {
                 artworkId: artwork.id,
                 type: artworkSeed.variantType,
-                title: artworkSeed.variantType === 'ORIGINAL' ? 'Original' : 'Print signe',
+                title: artworkSeed.variantType === 'ORIGINAL' ? 'Peinture originale' : 'Affiche signee',
                 sku: `NOREL-${artworkSeed.slug.toUpperCase()}`,
                 priceCents: artworkSeed.priceCents,
                 stock: artworkSeed.stock,
@@ -308,6 +267,32 @@ async function main() {
             ],
         });
     }
+
+    await prisma.artwork.updateMany({
+        where: {
+            slug: {
+                in: legacyArtworkSlugs,
+            },
+        },
+        data: {
+            status: 'ARCHIVED',
+            availability: 'SOLD',
+        },
+    });
+
+    await prisma.productVariant.updateMany({
+        where: {
+            artwork: {
+                slug: {
+                    in: legacyArtworkSlugs,
+                },
+            },
+        },
+        data: {
+            stock: 0,
+            isActive: false,
+        },
+    });
 
     await prisma.siteSettings.upsert({
         where: { key: 'shop' },

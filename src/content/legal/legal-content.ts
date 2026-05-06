@@ -34,11 +34,11 @@ export const termsPageContent: LegalPageContent = {
     intro: {
         eyebrow: 'Vente',
         title: 'Conditions générales de vente',
-        description: 'Cadre de vente des œuvres originales, affiches, commandes personnalisées et prestations artistiques.',
+        description: 'Cadre de vente des peintures originales, affiches, commandes personnalisées et prestations artistiques.',
     },
     paragraphs: [
         'Les présentes conditions encadrent les ventes réalisées sur le site Norel Art. Elles devront être relues et validées juridiquement avant ouverture commerciale complète.',
-        'Les produits peuvent inclure des œuvres originales, affiches, éditions limitées, commandes personnalisées et prestations de fresque. Les caractéristiques essentielles sont indiquées sur les fiches ou devis.',
+        'Les produits peuvent inclure des peintures originales, affiches, éditions limitées, commandes personnalisées et prestations de fresque. Les caractéristiques essentielles sont indiquées sur les fiches ou devis.',
         'Les prix sont indiqués en euros. Les frais de livraison, taxes et conditions particulières sont précisés avant validation du paiement ou dans le devis.',
         'Le paiement en ligne est réalisé via Stripe. Une commande est considérée comme confirmée après validation du paiement et traitement technique de la commande.',
         'Les commandes personnalisées et fresques peuvent faire l’objet d’un devis, d’un acompte, d’un calendrier spécifique et de conditions adaptées au projet.',

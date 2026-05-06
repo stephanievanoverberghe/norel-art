@@ -16,7 +16,7 @@ export function OeuvreStorySection({ artwork, className }: OeuvreStorySectionPro
         <section aria-label={`Histoire de l’œuvre ${artwork.title}`} className={cn('marketing-section marketing-bg-atelier py-16 sm:py-20 lg:py-24', className)}>
             <Container className="relative z-10">
                 <div className="mx-auto max-w-3xl">
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-white/40">Fragment d’histoire</p>
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-white/40">Détails de l’œuvre</p>
 
                     <Heading level={2} className="mt-4 text-white">
                         {artwork.title}
@@ -30,7 +30,7 @@ export function OeuvreStorySection({ artwork, className }: OeuvreStorySectionPro
                         <Text variant="muted" className="text-white/68">
                             {artwork.technique} sur {artwork.support.toLowerCase()}.
                             <br />
-                            Une présence tenue dans un format {artwork.dimensions}.
+                            Format {artwork.dimensions}.
                         </Text>
                     </div>
 
@@ -44,7 +44,7 @@ export function OeuvreStorySection({ artwork, className }: OeuvreStorySectionPro
                         <span className="hidden h-1 w-1 rounded-full bg-white/20 sm:block" />
 
                         <Link href="/oeuvres" className="inline-flex text-sm text-white/52 transition-colors duration-300 hover:text-white/74">
-                            Revenir aux autres présences
+                            Revenir aux autres œuvres
                         </Link>
                     </div>
                 </div>

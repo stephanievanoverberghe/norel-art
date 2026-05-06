@@ -3,14 +3,11 @@ import type { FresquesPageContent } from '@/domain/fresques/types';
 export const fresquesContent: FresquesPageContent = {
     hero: {
         eyebrow: 'Fresques murales',
-        title: `Faire entrer
-une présence
-dans un lieu.`,
-        description: `Une fresque ne s’ajoute pas simplement à un mur.
-Elle dialogue avec un espace, une lumière, un usage, une émotion.
-
-Je conçois des fresques sensibles et sur mesure,
-pour transformer un lieu sans le figer.`,
+        title: `Créer une fresque
+pour un mur réel
+et un lieu vivant.`,
+        description: `Maison, atelier, cabinet, commerce ou lieu d’accueil : chaque projet part du mur, de la lumière, des contraintes et de l’usage du lieu.
+Je prépare une proposition sur mesure avec surface, style, délai et budget.`,
         note: 'Projet sur devis · Intérieur ou extérieur selon le support · Étude préalable incluse',
         primaryCtaLabel: 'Parler de votre lieu',
         primaryCtaHref: '#formulaire',
@@ -23,14 +20,14 @@ pour transformer un lieu sans le figer.`,
         { id: 'formulaire', label: 'Formulaire' },
     ],
 
-    intentionsTitle: 'Ce qu’une fresque peut ouvrir dans un lieu.',
+    intentionsTitle: 'Ce qu’une fresque peut apporter à un lieu.',
     intentionsIntro:
-        'Habiter un mur, marquer une atmosphère, accueillir un regard, transformer une pièce sans la saturer : chaque fresque naît d’un espace réel et d’une intention précise.',
+        'Identifier un mur fort, rendre un accueil plus identifiable, créer une ambiance ou transformer une pièce sans la surcharger : chaque fresque part d’un besoin concret.',
 
     intentions: [
         {
-            title: 'Créer une présence',
-            text: 'La fresque peut donner au lieu une tension, un souffle, un centre de gravité sensible.',
+            title: 'Donner une identité au mur',
+            text: 'La fresque peut créer un point fort visuel dans une entrée, une pièce de vie, un atelier ou un commerce.',
         },
         {
             title: 'Transformer sans surcharger',
@@ -44,7 +41,7 @@ pour transformer un lieu sans le figer.`,
     usageTags: ['Maison', 'Atelier', 'Cabinet', 'Commerce', 'Lieu d’accueil', 'Projet privé'],
 
     examplesTitle: 'Quelques directions possibles.',
-    examplesIntro: 'Des fragments, des matières, des ambiances. Des repères pour sentir le type de présence qu’une fresque peut faire naître.',
+    examplesIntro: 'Des références de couleurs, de matières, de formats et de compositions pour préparer une direction visuelle.',
 
     examples: [
         { src: '/images/fresques/fr-001.jpg', alt: 'Inspiration de fresque murale 1', label: 'Présence organique' },
@@ -83,7 +80,7 @@ pour transformer un lieu sans le figer.`,
         {
             step: '04',
             title: 'Réalisation',
-            text: 'La fresque est réalisée in situ, avec un travail de matière, de rythme et de présence adapté au mur.',
+            text: 'La fresque est réalisée in situ, avec une composition, des couleurs et une technique adaptées au mur.',
             aside: 'Le lieu devient partie prenante de l’œuvre.',
         },
     ],
@@ -126,7 +123,7 @@ pour transformer un lieu sans le figer.`,
             { value: 'a-definir', label: 'À définir' },
         ],
         styleOptions: [
-            { value: 'organique', label: 'Organique / sensible' },
+            { value: 'organique', label: 'Organique / fluide' },
             { value: 'graphique', label: 'Graphique / contrasté' },
             { value: 'immersif', label: 'Immersif / enveloppant' },
             { value: 'a-definir', label: 'À définir ensemble' },

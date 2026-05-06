@@ -3,12 +3,11 @@ import type { CommandesPageContent } from '@/domain/commandes/types';
 export const commandesContent: CommandesPageContent = {
     hero: {
         eyebrow: 'Portraits sur commande',
-        title: `Confier un visage.
-Une histoire.
-Une présence à faire apparaître.`,
-        description: `Une commande peut naître d’une photo, d’un souvenir ou de quelques mots.
-Je travaille à partir de ce que vous me confiez, avec attention :
-le regard d’abord, puis la matière, puis ce qui affleure en silence.`,
+        title: `Commander un portrait
+à partir d’une photo
+ou d’une idée.`,
+        description: `Une commande peut partir d’un visage, d’un couple, d’une famille, d’un animal ou d’un cadeau à préparer.
+Vous envoyez vos références, le format souhaité et le délai. Je reviens ensuite avec une proposition claire.`,
         note: 'À partir de 80 € · Matériaux professionnels · Cadre possible en supplément.',
         primaryCtaLabel: 'Me confier une demande',
         primaryCtaHref: '#formulaire',
@@ -25,19 +24,19 @@ le regard d’abord, puis la matière, puis ce qui affleure en silence.`,
     types: {
         eyebrow: 'Possibles',
         title: 'Ce que vous pouvez me confier.',
-        intro: 'Un visage seul, un couple, une famille, un animal aimé, un cadeau, un hommage. Chaque demande part de ce que vous portez, puis trouve sa forme juste.',
+        intro: 'Un visage seul, un couple, une famille, un animal aimé, un cadeau ou un hommage. Chaque demande commence avec vos références, puis le format, la technique et le budget se précisent ensemble.',
         offerings: [
             {
                 title: 'À partir d’un visage',
-                text: 'Une photo, un regard, une présence. Je pars d’un visage réel sans chercher une copie froide, mais une traduction sensible.',
+                text: 'Je pars d’une ou plusieurs photos pour créer un portrait expressif, pas une copie mécanique.',
             },
             {
                 title: 'À partir d’un lien',
-                text: 'Couple, famille, enfant, animal : la commande peut garder la trace d’un attachement, d’un souvenir ou d’une présence partagée.',
+                text: 'Couple, famille, enfant ou animal : la composition s’adapte au nombre de sujets et au format choisi.',
             },
             {
                 title: 'À partir d’une intention',
-                text: 'Cadeau, hommage, élan plus intime : parfois quelques mots suffisent pour faire naître la pièce.',
+                text: 'Pour un cadeau ou un hommage, vous pouvez préciser le contexte, la date souhaitée et ce qui doit rester important.',
             },
         ],
         usageTags: ['Famille', 'Couple', 'Enfant', 'Animal', 'Cadeau', 'Hommage'],
@@ -46,13 +45,13 @@ le regard d’abord, puis la matière, puis ce qui affleure en silence.`,
 
     examples: {
         eyebrow: 'Fragments',
-        title: 'Quelques présences déjà confiées.',
-        intro: 'Des visages, des liens, des hommages. Quelques fragments réels pour sentir ce qui peut naître d’une demande confiée.',
+        title: 'Quelques commandes déjà réalisées.',
+        intro: 'Portraits personnels, cadeaux, hommages et animaux : des exemples pour imaginer le format et le rendu possibles.',
         items: [
             { src: '/images/commandes/co-001.jpg', alt: 'Portrait sur commande en noir et blanc', label: 'Portrait confié' },
             { src: '/images/commandes/co-002.jpg', alt: 'Portrait cadeau réalisé à partir d’une photo', label: 'Visage offert' },
             { src: '/images/commandes/co-003.jpg', alt: 'Portrait hommage à partir d’un souvenir', label: 'Hommage discret' },
-            { src: '/images/commandes/co-004.jpg', alt: 'Portrait expressif au regard marqué', label: 'Présence vive' },
+            { src: '/images/commandes/co-004.jpg', alt: 'Portrait expressif au regard marqué', label: 'Portrait expressif' },
             { src: '/images/commandes/co-005.jpg', alt: 'Portrait d’animal sur commande', label: 'Animal aimé' },
             { src: '/images/commandes/co-006.jpg', alt: 'Portrait de groupe sur mesure', label: 'Mémoire de famille' },
         ],
@@ -140,10 +139,10 @@ le regard d’abord, puis la matière, puis ce qui affleure en silence.`,
             techniqueLabel: 'Technique souhaitée',
             techniquePlaceholder: 'Choisir',
             messageLabel: 'Message',
-            messagePlaceholder: 'Parlez-moi du visage, de l’histoire, du contexte, d’un cadeau, d’un hommage, ou simplement de ce qui compte dans cette demande.',
+            messagePlaceholder: 'Parlez-moi du visage, du contexte, d’un cadeau, d’un hommage, du délai souhaité ou simplement de ce qui compte dans cette demande.',
             preformEyebrow: 'Avant d’écrire',
             preformTitle: 'Quelques repères pour commencer.',
-            closingText: 'Vous n’avez pas besoin de tout formuler parfaitement. L’essentiel est de me confier une première trace.',
+            closingText: 'Vous n’avez pas besoin de tout formuler parfaitement. Quelques éléments concrets suffisent pour commencer.',
             footerText: 'Je reviendrai vers vous avec attention pour préciser la suite, le cadre et la proposition la plus juste.',
         },
         requestTypeOptions: [

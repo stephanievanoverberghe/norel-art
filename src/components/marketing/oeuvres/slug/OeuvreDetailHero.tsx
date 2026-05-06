@@ -107,7 +107,7 @@ export function OeuvreDetailHero({ artwork, isFavorite = false, className }: Oeu
                                     <AddToCartButton variantId={artwork.purchasableVariant.id} />
                                 ) : (
                                     <MarketingSecondaryLink href="/contact" className="w-full">
-                                        Ce regard m&apos;appelle
+                                        Me contacter pour cette œuvre
                                     </MarketingSecondaryLink>
                                 )}
 

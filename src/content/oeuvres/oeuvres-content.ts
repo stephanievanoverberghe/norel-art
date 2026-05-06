@@ -3,14 +3,14 @@ import type { OeuvresPageContent } from '@/domain/oeuvres/types';
 export const oeuvresContent: OeuvresPageContent = {
     hero: {
         eyebrow: 'Galerie',
-        title: `Des présences.
-À laisser venir.`,
-        description: 'Originaux, affiches, fragments. Chaque œuvre ne se comprend pas immédiatement. Elle se laisse approcher.',
+        title: `Peintures, affiches
+et pièces disponibles.`,
+        description: 'Parcourez les œuvres par type, catégorie ou collection. Les fiches indiquent les images, le format, la technique, le prix et la disponibilité.',
     },
     filters: {
         eyebrow: 'Explorer',
         title: 'La galerie',
-        description: 'Approcher les œuvres par leur nature, leur série ou leur présence.',
+        description: 'Filtrer les œuvres par catégorie, collection ou type pour trouver rapidement la pièce qui vous intéresse.',
         categoriesLabel: 'Catégories',
         collectionsLabel: 'Collections',
         typesLabel: 'Type',
@@ -18,13 +18,13 @@ export const oeuvresContent: OeuvresPageContent = {
         allLabel: 'Toutes',
         typeOptions: [
             { label: 'Toutes', value: 'all' },
-            { label: 'Originaux', value: 'original' },
+            { label: 'Peintures', value: 'original' },
             { label: 'Affiches', value: 'print' },
         ],
     },
     grid: {
         eyebrow: 'Sélection',
-        countLabel: 'présences à approcher',
+        countLabel: 'œuvres affichées',
         emptyEyebrow: 'Aucune œuvre affichée',
         emptyDescription: 'Ajustez les filtres pour explorer une autre sélection.',
     },

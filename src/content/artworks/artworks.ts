@@ -1,80 +1,47 @@
-import type { Artwork } from '@/domain/artworks/types';
+import rawCatalogueArtworks from '@/content/artworks/catalogue-artworks.json';
+import type { ArtworkCategory } from '@/domain/artworks/categories';
+import type { Artwork, ArtworkAvailability, ArtworkType } from '@/domain/artworks/types';
 
-export const artworkCollections = ['Fragments intérieurs', 'Veilles nocturnes', 'Présences'] as const;
+interface CatalogueArtworkEntry {
+    id: string;
+    slug: string;
+    title: string;
+    excerpt: string;
+    story: string;
+    image: string;
+    gallery?: string[];
+    category: ArtworkCategory;
+    collection: string;
+    type: ArtworkType;
+    technique: string;
+    support: string;
+    dimensions: string;
+    priceEur: number;
+    availability: ArtworkAvailability;
+    tags: string[];
+}
 
-export const artworks: Artwork[] = [
-    {
-        id: 'art-001',
-        slug: 'souffle-dans-l-ombre',
-        title: 'Souffle dans l’ombre',
-        excerpt: 'Un visage suspendu, entre disparition et renaissance.',
-        story: 'Cette pièce travaille les zones de silence. Le regard n’arrive pas immédiatement : il se révèle par couches, comme un souvenir qui insiste.',
-        image: '/images/oeuvres/oeuvre-1.jpg',
-        gallery: ['/images/oeuvres/oeuvre-1-detail.jpg', '/images/oeuvres/oeuvre-1-cadre.jpg'],
-        category: 'Portrait',
-        collection: 'Fragments intérieurs',
-        type: 'original',
-        technique: 'Acrylique et fusain',
-        support: 'Toile coton sur châssis',
-        dimensions: '80 × 100 cm',
-        priceEur: 1800,
-        availability: 'available',
-        highlighted: true,
-        tags: ['portrait', 'intime', 'contraste'],
-    },
-    {
-        id: 'art-002',
-        slug: 'pulsation-verticale',
-        title: 'Pulsation verticale',
-        excerpt: 'Un rythme rouge et noir qui traverse l’espace.',
-        story: 'Une œuvre pensée comme une respiration debout. Les lignes ne ferment rien : elles ouvrent un passage vers le mouvement.',
-        image: '/images/oeuvres/oeuvre-2.jpg',
-        gallery: ['/images/oeuvres/oeuvre-2-detail.jpg', '/images/oeuvres/oeuvre-2-cadre.jpg'],
-        category: 'Pop Art',
-        collection: 'Veilles nocturnes',
-        type: 'original',
-        technique: 'Acrylique',
-        support: 'Bois apprêté',
-        dimensions: '60 × 120 cm',
-        priceEur: 1450,
-        availability: 'reserved',
-        highlighted: true,
-        tags: ['mouvement', 'abstrait'],
-    },
-    {
-        id: 'art-003',
-        slug: 'trace-de-peau',
-        title: 'Trace de peau',
-        excerpt: 'Une présence douce, presque tactile.',
-        story: 'Cette série aborde la mémoire du corps avec des couches fines et des retraits de matière.',
-        image: '/images/oeuvres/oeuvre-3.jpg',
-        gallery: ['/images/oeuvres/oeuvre-3-detail.jpg', '/images/oeuvres/oeuvre-3-cadre.jpg'],
-        category: 'Manga',
-        collection: 'Présences',
-        type: 'print',
-        technique: 'Affiche pigmentaire fine art',
-        support: 'Papier coton 310g',
-        dimensions: '50 × 70 cm',
-        priceEur: 220,
-        availability: 'available',
-        tags: ['corps', 'sensible'],
-    },
-    {
-        id: 'art-004',
-        slug: 'velours-brut',
-        title: 'Velours brut',
-        excerpt: 'Le contraste entre douceur et griffure.',
-        story: 'Une pièce sur la tension entre contrôle et abandon dans le geste.',
-        image: '/images/oeuvres/oeuvre-4.jpg',
-        gallery: ['/images/oeuvres/oeuvre-4-detail.jpg', '/images/oeuvres/oeuvre-4-cadre.jpg'],
-        category: 'Graphisme',
-        collection: 'Fragments intérieurs',
-        type: 'print',
-        technique: 'Affiche giclée signée',
-        support: 'Papier texturé',
-        dimensions: '40 × 60 cm',
-        priceEur: 160,
-        availability: 'sold',
-        tags: ['matière', 'texture'],
-    },
-];
+const catalogueArtworks = rawCatalogueArtworks as CatalogueArtworkEntry[];
+const highlightedSlugs = new Set(['alchemy', 'ange-rouge', 'apnee']);
+
+export const artworkCollections = Array.from(new Set(catalogueArtworks.map((artwork) => artwork.collection)));
+
+export const artworks: Artwork[] = catalogueArtworks.map((artwork) => ({
+    id: artwork.id,
+    slug: artwork.slug,
+    title: artwork.title,
+    excerpt: artwork.excerpt,
+    story: artwork.story,
+    image: artwork.image,
+    gallery: artwork.gallery ?? [],
+    category: artwork.category,
+    collection: artwork.collection,
+    type: artwork.type,
+    technique: artwork.technique,
+    support: artwork.support,
+    dimensions: artwork.dimensions,
+    priceEur: artwork.priceEur,
+    availability: artwork.availability,
+    highlighted: highlightedSlugs.has(artwork.slug),
+    tags: artwork.tags,
+}));

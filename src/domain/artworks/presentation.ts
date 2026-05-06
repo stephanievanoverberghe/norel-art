@@ -7,7 +7,7 @@ const availabilityLabelMap: Record<ArtworkAvailability, string> = {
 };
 
 const artworkTypeLabelMap: Record<ArtworkType, string> = {
-    original: 'Original',
+    original: 'Peinture',
     print: 'Affiche',
 };
 

@@ -1,3 +1,4 @@
+import { ArrowUpRight, CheckCircle2, ImageIcon, Palette } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -24,10 +25,18 @@ const availabilityLabel: Record<Artwork['availability'], string> = {
 };
 
 const availabilityTone: Record<Artwork['availability'], string> = {
-    available: 'bg-white/[0.12] text-white/86',
-    reserved: 'bg-(--accent)/24 text-white',
-    sold: 'bg-white/[0.08] text-white/55',
+    available: 'border border-emerald-200/18 bg-emerald-300/12 text-emerald-50',
+    reserved: 'border border-(--surface)/45 bg-(--surface)/28 text-white',
+    sold: 'border border-white/10 bg-black/42 text-white/58',
 };
+
+const commerceLinks = [
+    { href: '/oeuvres?type=original', label: 'Peintures', icon: Palette },
+    { href: '/oeuvres?type=print', label: 'Affiches', icon: ImageIcon },
+    { href: '/oeuvres', label: 'Tout voir', icon: ArrowUpRight },
+] as const;
+
+const buyerFacts = ['Prix et disponibilité visibles', 'Formats et techniques indiqués', 'Favoris pour revenir plus tard'] as const;
 
 function formatPrice(price: number) {
     return `${price.toLocaleString('fr-FR')} €`;
@@ -50,11 +59,11 @@ export function HomeFeaturedRevealSection({ content, artworks, className }: Home
     if (!mainArtwork) return null;
 
     return (
-        <section id={content.id} aria-label="Premières œuvres révélées" className={cn('marketing-section marketing-bg-gallery py-16 sm:py-20 lg:py-24', className)}>
+        <section id={content.id} aria-label="Œuvres disponibles" className={cn('marketing-section marketing-bg-gallery py-16 sm:py-20 lg:py-24', className)}>
             <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[linear-gradient(180deg,#060C15_0%,rgba(6,12,21,0)_100%)]" />
             <Container className="relative z-10">
-                <div className="grid gap-12 xl:grid-cols-[minmax(0,22rem)_minmax(0,1fr)] xl:gap-16">
-                    <div className="xl:pt-8">
+                <div className="grid gap-12 xl:grid-cols-[minmax(0,23rem)_minmax(0,1fr)] xl:gap-16">
+                    <div className="xl:sticky xl:top-28 xl:self-start xl:pt-8">
                         <p className="text-[11px] uppercase tracking-[0.32em] text-white/42">{content.eyebrow}</p>
 
                         <Heading level={2} className="mt-4 max-w-sm text-white">
@@ -65,12 +74,37 @@ export function HomeFeaturedRevealSection({ content, artworks, className }: Home
                             {content.description}
                         </Text>
 
+                        <div className="mt-6 grid gap-2 text-sm text-white/58">
+                            {buyerFacts.map((fact) => (
+                                <div key={fact} className="flex items-center gap-3">
+                                    <CheckCircle2 size={15} className="shrink-0 text-(--accent)" />
+                                    <span>{fact}</span>
+                                </div>
+                            ))}
+                        </div>
+
                         <div className="mt-8 h-px w-20 bg-[linear-gradient(90deg,rgba(255,255,255,0.26)_0%,rgba(255,255,255,0)_100%)]" />
 
                         <div className="mt-8 space-y-3">
                             <Link href={content.ctaHref} className="block w-full sm:inline-flex sm:w-auto">
                                 <Button className="min-h-12 w-full rounded-full px-6 sm:w-auto">{content.ctaLabel}</Button>
                             </Link>
+                        </div>
+
+                        <div className="mt-8 grid gap-2">
+                            {commerceLinks.map((item) => {
+                                const Icon = item.icon;
+
+                                return (
+                                    <Link key={item.href} href={item.href} className="group flex min-h-12 items-center justify-between rounded-md border border-white/10 bg-white/[0.04] px-4 text-sm font-medium text-white/62 transition hover:border-white/18 hover:bg-white/[0.07] hover:text-white">
+                                        <span className="inline-flex items-center gap-3">
+                                            <Icon size={16} className="text-(--accent)" />
+                                            {item.label}
+                                        </span>
+                                        <ArrowUpRight size={15} className="text-white/32 transition group-hover:text-white/70" />
+                                    </Link>
+                                );
+                            })}
                         </div>
                     </div>
 
@@ -110,7 +144,10 @@ export function HomeFeaturedRevealSection({ content, artworks, className }: Home
                                             <span className={cn('rounded-full px-3 py-1 text-xs tracking-[0.08em]', availabilityTone[mainArtwork.availability])}>
                                                 {availabilityLabel[mainArtwork.availability]}
                                             </span>
-                                            <span className="text-white/66">Voir cette œuvre</span>
+                                            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-1 text-white/72 transition group-hover:border-white/18 group-hover:text-white">
+                                                Voir cette œuvre
+                                                <ArrowUpRight size={14} />
+                                            </span>
                                         </div>
                                     </div>
                                 </Link>

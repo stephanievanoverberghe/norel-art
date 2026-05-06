@@ -1,6 +1,6 @@
 'use client';
 
-import { Heart, SlidersHorizontal, Sparkles, ShoppingBag } from 'lucide-react';
+import { Heart, SlidersHorizontal, ShoppingBag } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -50,8 +50,8 @@ export function OeuvresHero({ content, className }: OeuvresHeroProps) {
 
                     <aside className="border-t border-white/12 pt-5 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
                         <div className="flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-white/42">
-                            <Sparkles size={15} className="text-(--accent)" />
-                            Boutique vivante
+                            <ShoppingBag size={15} className="text-(--accent)" />
+                            Boutique en ligne
                         </div>
                         <div className="mt-5 grid gap-3">
                             {galleryPromises.map((item) => {
