@@ -40,7 +40,7 @@ function HeroArtworkCard({ artwork, compact = false }: { artwork: Artwork; compa
     return (
         <Link
             href={`/oeuvres/${artwork.slug}`}
-            className={cn('group relative block overflow-hidden rounded-md border border-white/10 bg-white/[0.035]', compact ? 'min-h-48' : 'min-h-[28rem]')}
+            className={cn('group relative block overflow-hidden rounded-md border border-white/10 bg-white/[0.035]', compact ? 'min-h-40 xl:min-h-48' : 'min-h-[22rem] xl:min-h-[29rem]')}
         >
             <Image
                 src={artwork.image}
@@ -74,7 +74,7 @@ export function HomeHero({ content, featuredArtworks = [], artworkCount = 0, cla
     };
 
     return (
-        <section className={cn('marketing-section marketing-bg-night overflow-hidden', className)} aria-label="Boutique Norel Art">
+        <section className={cn('marketing-section marketing-bg-night min-h-[100svh] overflow-hidden lg:min-h-screen', className)} aria-label="Boutique Norel Art">
             <div className="absolute inset-0">
                 <Image src={content.image.src} alt={content.image.alt} fill priority className="object-cover object-[58%_center]" sizes={content.image.sizes} />
             </div>
@@ -84,8 +84,8 @@ export function HomeHero({ content, featuredArtworks = [], artworkCount = 0, cla
             <div className="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,rgba(5,10,18,0.82)_0%,rgba(5,10,18,0)_100%)]" />
             <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(180deg,rgba(5,10,18,0)_0%,rgba(5,10,18,0.78)_76%,#050A12_100%)]" />
 
-            <Container className="relative z-10 pt-28 pb-12 sm:pt-36 sm:pb-18 lg:pt-38 lg:pb-20">
-                <div className="grid gap-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(27rem,0.82fr)] lg:items-end xl:gap-12">
+            <Container className="relative z-10 flex min-h-[100svh] items-end pt-28 pb-10 sm:pt-32 sm:pb-12 lg:min-h-screen lg:pt-36 lg:pb-14">
+                <div className="grid w-full gap-8 lg:grid-cols-[minmax(0,0.78fr)_minmax(25rem,0.82fr)] lg:items-end xl:gap-12">
                     <div className="max-w-3xl">
                         <div className="mb-5 flex flex-wrap items-center gap-3">
                             <span className="inline-flex min-h-8 items-center gap-2 rounded-full border border-white/12 bg-white/7 px-3 text-[10px] uppercase tracking-[0.2em] text-white/72 backdrop-blur-md">
@@ -134,7 +134,7 @@ export function HomeHero({ content, featuredArtworks = [], artworkCount = 0, cla
                     </div>
 
                     {mainArtwork ? (
-                        <aside className="hidden md:grid grid-cols-[minmax(0,1fr)_minmax(12rem,0.62fr)] gap-3 lg:pb-1">
+                        <aside className="hidden md:grid md:grid-cols-[minmax(0,1fr)_minmax(11rem,0.62fr)] md:gap-3 lg:pb-1">
                             <HeroArtworkCard artwork={mainArtwork} />
                             <div className="grid gap-3">
                                 {secondArtwork ? <HeroArtworkCard artwork={secondArtwork} compact /> : null}
